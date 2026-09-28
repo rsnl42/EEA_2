@@ -1,0 +1,86 @@
+system,use_any_se,use_any,idx,idx_se,wk_sum,wk_res,wk_draft,wk_learn,guid,guid_se,guid_reg,online,lag,gap,use_vs_oecd,guid_vs_oecd,quadrant,sig_mismatch,sig_low_low,sig_low_high,resid
+B-S-J-Z (China),0.606,82.331,-0.276,0.014,18.988,17.139,20.529,40.681,44.636,0.776,17.346,63.162,18.526,37.695,below,below,"low use, low guidance",False,True,False,-14.106
+Singapore,0.262,95.586,0.374,0.011,41.05,45.522,44.555,65.588,81.025,0.473,51.365,88.611,7.586,14.561,above,above,"high use, high guidance",False,False,False,8.231
+Macao (China),0.348,95.31,0.317,0.012,40.884,37.768,39.965,66.755,74.54,0.566,42.326,78.658,4.118,20.771,above,above,"high use, high guidance",False,False,False,2.037
+Chinese Taipei,0.672,84.06,-0.197,0.016,20.46,22.252,20.908,40.48,65.867,0.832,32.537,71.137,5.27,18.193,below,above,"low use, high guidance",False,False,True,5.291
+Japan,1.128,60.928,-0.691,0.022,13.787,11.244,14.877,27.386,31.162,1.282,14.736,53.711,22.549,29.766,below,below,"low use, low guidance",False,True,False,-4.89
+Estonia,0.365,92.692,0.016,0.014,28.257,25.227,23.427,58.352,72.511,0.761,39.092,74.754,2.243,20.181,above,above,"high use, high guidance",False,False,False,2.785
+Korea,0.74,87.814,0.174,0.03,36.81,43.948,37.433,50.704,66.517,1.347,38.659,68.753,2.236,21.297,above,above,"high use, high guidance",False,False,False,1.962
+United Kingdom,0.772,71.715,-0.466,0.016,17.267,17.581,17.571,31.481,42.382,0.853,17.426,69.923,27.542,29.334,below,below,"low use, low guidance",False,True,False,-5.106
+Canada*,0.492,77.302,-0.303,0.013,22.519,23.333,18.13,37.686,56.215,0.57,27.046,85.112,28.896,21.087,below,below,"low use, low guidance",False,True,False,2.804
+New Zealand*,0.704,83.772,-0.073,0.02,27.838,31.581,24.183,46.715,64.559,0.888,34.968,89.155,24.596,19.213,below,above,"low use, high guidance",False,False,True,4.289
+Australia,0.441,85.079,0.025,0.015,32.58,35.256,26.9,50.338,68.322,0.605,39.646,90.951,22.629,16.757,below,above,"low use, high guidance",False,False,True,6.667
+Finland,0.689,74.049,-0.352,0.017,16.462,20.857,20.843,30.125,60.971,0.687,26.301,83.213,22.242,13.079,below,below,"low use, low guidance",False,True,False,11.008
+United States*,1.074,79.307,-0.298,0.032,22.292,21.313,18.317,37.31,56.332,1.344,28.835,88.761,32.429,22.975,below,below,"low use, low guidance",False,True,False,0.795
+Switzerland,0.541,91.332,0.212,0.022,39.61,39.552,32.915,55.387,69.018,0.752,42.956,76.313,7.295,22.314,above,above,"high use, high guidance",False,False,False,0.733
+Ireland,0.776,72.483,-0.477,0.018,16.634,16.403,17.14,25.943,47.184,0.856,19.76,81.802,34.618,25.299,below,below,"low use, low guidance",False,True,False,-1.118
+Austria,0.5,88.674,0.107,0.017,34.065,36.612,30.964,49.781,62.777,0.835,37.684,70.157,7.381,25.897,above,similar,"high use, high guidance",False,False,False,-2.69
+Hong Kong (China),0.383,92.76,0.239,0.015,36.854,37.785,37.746,53.169,69.337,0.845,34.063,80.339,11.002,23.423,above,above,"high use, high guidance",False,False,False,-0.462
+Poland,0.413,90.135,0.218,0.016,37.39,35.785,36.508,55.116,62.402,0.709,34.71,75.277,12.875,27.733,above,similar,"high use, low guidance",False,False,False,-4.614
+Türkiye,0.326,91.851,0.306,0.014,33.889,44.131,44.326,52.408,68.058,0.832,43.024,84.648,16.59,23.793,above,above,"high use, high guidance",False,False,False,-0.777
+Czechia,0.475,87.926,0.016,0.018,29.707,28.792,28.797,46.525,70.041,0.756,39.77,75.17,5.129,17.885,above,above,"high use, high guidance",False,False,False,5.367
+Belgium,0.501,89.835,-0.049,0.015,27.447,25.895,26.217,42.475,58.568,0.869,31.58,69.435,10.867,31.267,above,below,"high use, low guidance",True,False,False,-8.13
+Lithuania,0.392,91.386,0.145,0.014,32.976,29.521,33.481,52.543,73.938,0.691,40.736,82.077,8.14,17.448,above,above,"high use, high guidance",False,False,False,5.596
+Germany,0.605,91.023,0.098,0.022,36.128,30.628,35.604,50.209,59.339,0.896,32.481,67.757,8.418,31.684,above,below,"high use, low guidance",True,False,False,-8.618
+Netherlands*,0.679,86.569,-0.096,0.019,25.271,26.796,25.604,35.199,55.387,0.876,28.019,72.168,16.781,31.182,similar,below,"high use, low guidance",False,False,False,-7.848
+Sweden,0.641,83.463,-0.089,0.021,27.488,29.578,24.912,47.613,64.898,0.937,34.112,90.039,25.141,18.564,below,above,"low use, high guidance",False,False,True,4.956
+Slovenia,0.507,89.541,0.084,0.016,29.984,26.965,32.271,48.299,63.706,0.757,32.809,69.23,5.523,25.834,above,similar,"high use, high guidance",False,False,False,-2.679
+France,0.612,84.77,-0.132,0.017,21.315,29.11,23.465,37.365,46.841,0.882,22.617,66.802,19.96,37.928,below,below,"low use, low guidance",False,True,False,-14.486
+Italy,0.513,90.971,0.146,0.018,36.199,39.056,29.861,47.482,73.668,0.726,44.829,81.217,7.548,17.303,above,above,"high use, high guidance",False,False,False,5.766
+Portugal,0.393,92.185,0.157,0.014,32.379,34.836,34.389,48.336,57.403,0.782,28.43,73.657,16.254,34.782,above,below,"high use, low guidance",True,False,False,-11.786
+Hungary,0.557,83.641,-0.135,0.018,24.632,25.251,29.173,36.936,60.979,1.132,35.688,57.286,-3.693,22.662,below,similar,"low use, low guidance",False,False,False,0.848
+Denmark,0.942,84.14,0.005,0.028,30.831,37.09,26.171,48.089,69.06,1.106,39.384,92.113,23.054,15.08,below,above,"low use, high guidance",False,False,True,8.399
+Spain,0.312,91.813,0.221,0.01,39.893,41.757,32.967,54.164,59.527,0.655,32.8,75.195,15.668,32.285,above,below,"high use, low guidance",True,False,False,-9.267
+Croatia,0.491,87.154,0.1,0.014,34.16,31.964,33.324,48.135,69.223,0.741,40.261,79.841,10.618,17.931,similar,above,"high use, high guidance",False,False,False,5.367
+Slovak Republic,0.521,89.068,0.073,0.018,32.274,27.292,35.567,46.08,71.113,0.805,41.88,80.54,9.427,17.956,above,above,"high use, high guidance",False,False,False,5.228
+Luxembourg,0.389,88.941,0.048,0.012,29.267,34.257,27.705,46.702,65.796,0.551,34.988,73.629,7.833,23.145,above,above,"high use, high guidance",False,False,False,0.046
+Norway*,0.482,88.543,0.058,0.015,31.711,29.852,29.156,53.717,74.321,0.693,43.256,92.715,18.394,14.222,above,above,"high use, high guidance",False,False,False,8.992
+Latvia,0.391,92.046,0.126,0.013,31.44,30.187,31.553,50.57,79.11,0.586,43.976,84.387,5.277,12.935,above,above,"high use, high guidance",False,False,False,10.069
+United Arab Emirates,0.229,94.735,0.554,0.011,50.041,53.169,46.252,64.317,81.715,0.329,55.104,87.059,5.344,13.02,above,above,"high use, high guidance",False,False,False,9.823
+Viet Nam,0.29,95.861,0.428,0.015,46.57,39.988,51.55,68.552,69.951,0.785,35.782,88.829,18.878,25.91,above,above,"high use, high guidance",False,False,False,-3.136
+Malta,0.514,90.535,0.229,0.019,37.091,39.544,36.101,55.548,61.935,0.932,35.102,70.251,8.315,28.6,above,similar,"high use, low guidance",False,False,False,-5.505
+Uruguay,0.431,92.8,0.322,0.016,42.724,42.285,35.5,53.021,65.306,0.866,33.184,82.76,17.454,27.494,above,above,"high use, high guidance",False,False,False,-4.535
+Chile,0.445,93.502,0.212,0.017,33.046,39.092,33.249,51.148,61.536,0.794,33.359,80.071,18.535,31.966,above,similar,"high use, low guidance",False,False,False,-9.05
+Israel,0.606,90.564,0.201,0.023,37.322,31.663,35.742,49.34,63.012,0.838,36.068,76.694,13.682,27.552,above,similar,"high use, high guidance",False,False,False,-4.459
+Iceland,0.828,82.057,-0.094,0.02,26.057,31.013,24.096,41.545,72.843,0.842,41.982,93.566,20.723,9.214,below,above,"low use, high guidance",False,False,True,14.391
+Brunei Darussalam,0.273,93.861,0.199,0.011,36.419,38.298,30.665,59.344,73.442,0.611,41.424,84.475,11.032,20.419,above,above,"high use, high guidance",False,False,False,2.476
+Uzbekistan,0.42,91.273,0.294,0.02,38.851,43.445,37.411,48.573,80.576,0.771,44.3,86.829,6.253,10.697,above,above,"high use, high guidance",False,False,False,12.353
+Montenegro,0.478,87.375,0.013,0.015,29.937,29.442,25.14,43.1,57.902,0.882,27.979,73.775,15.873,29.473,above,below,"high use, low guidance",True,False,False,-6.188
+Albania*,0.376,92.463,0.262,0.016,36.735,43.748,38.484,45.532,81.558,0.641,51.649,93.098,11.54,10.905,above,above,"high use, high guidance",False,False,False,12.074
+Qatar,0.476,89.691,0.14,0.018,33.703,34.375,30.062,46.03,68.6,0.869,37.838,77.422,8.823,21.091,above,above,"high use, high guidance",False,False,False,2.055
+Greece,0.579,83.837,-0.139,0.014,23.98,28.996,24.849,33.741,60.741,0.78,33.826,69.818,9.077,23.096,below,below,"low use, low guidance",False,True,False,0.402
+Thailand,0.356,95.504,0.38,0.021,41.979,41.189,40.776,50.743,68.876,0.816,34.487,90.756,21.88,26.628,above,above,"high use, high guidance",False,False,False,-3.832
+Serbia,0.478,87.858,0.212,0.02,35.007,39.13,35.821,51.813,61.61,0.874,32.642,69.274,7.664,26.249,above,similar,"high use, low guidance",False,False,False,-2.992
+Romania,0.446,90.558,0.124,0.015,31.335,33.091,32.956,39.899,72.627,0.708,40.868,83.21,10.583,17.93,above,above,"high use, high guidance",False,False,False,5.163
+Mongolia,0.363,91.953,0.235,0.012,40.6,35.429,44.991,57.16,74.267,0.585,41.358,84.228,9.961,17.685,above,above,"high use, high guidance",False,False,False,5.325
+Costa Rica,0.427,90.263,0.195,0.015,36.975,39.732,34.395,50.063,66.143,0.764,38.221,82.897,16.754,24.12,above,above,"high use, high guidance",False,False,False,-1.009
+Georgia,0.427,86.399,0.022,0.015,31.188,32.054,33.111,41.958,69.327,0.791,34.152,80.12,10.793,17.072,similar,above,"high use, high guidance",False,False,False,6.272
+Moldova,0.398,92.57,0.171,0.016,32.179,33.15,33.09,47.832,74.218,0.794,39.014,84.197,9.979,18.352,above,above,"high use, high guidance",False,False,False,4.621
+Bulgaria,0.534,86.344,0.039,0.018,29.398,30.251,30.321,41.164,71.266,0.912,39.098,80.731,9.465,15.078,similar,above,"high use, high guidance",False,False,False,8.269
+Kazakhstan,0.247,92.126,0.227,0.009,37.89,38.173,38.949,46.986,80.186,0.487,45.063,88.459,8.273,11.94,above,above,"high use, high guidance",False,False,False,11.059
+Malaysia,0.383,93.577,0.237,0.017,39.641,36.149,38.905,56.338,70.811,0.782,37.66,81.851,11.039,22.766,above,above,"high use, high guidance",False,False,False,0.146
+Colombia,0.361,93.735,0.339,0.018,39.46,45.209,38.688,55.714,63.527,0.841,30.403,80.684,17.157,30.208,above,similar,"high use, high guidance",False,False,False,-7.306
+Mexico,0.342,91.709,0.165,0.013,33.694,39.734,34.8,47.362,59.249,0.804,29.236,86.295,27.046,32.46,above,below,"high use, low guidance",True,False,False,-9.436
+Saudi Arabia,0.394,91.649,0.394,0.019,43.289,44.805,43.657,53.778,74.848,0.797,46.436,82.19,7.341,16.8,above,above,"high use, high guidance",False,False,False,6.228
+Cyprus,0.632,85.006,0.002,0.014,29.412,30.025,29.586,42.523,67.639,0.869,40.209,72.153,4.514,17.367,below,above,"low use, high guidance",False,False,True,6.061
+Azerbaijan,0.413,91.534,0.196,0.014,32.437,37.661,34.636,48.202,76.093,0.782,43.885,83.865,7.772,15.441,above,above,"high use, high guidance",False,False,False,7.594
+Brazil,0.248,88.719,0.092,0.011,31.419,39.555,26.787,47.801,51.23,0.634,24.049,66.401,15.171,37.489,above,below,"high use, low guidance",True,False,False,-14.284
+Jordan,0.51,87.663,0.052,0.017,30.442,32.497,31.637,41.033,59.171,0.961,29.632,76.104,16.933,28.492,above,below,"high use, low guidance",True,False,False,-5.224
+Peru,0.34,91.991,0.284,0.013,39.501,43.149,36.32,53.845,55.333,1.09,25.925,72.098,16.766,36.658,above,below,"high use, low guidance",True,False,False,-13.65
+Ecuador,0.382,93.243,0.275,0.014,38.169,41.642,38.461,51.901,61.206,0.659,29.291,78.876,17.669,32.037,above,below,"high use, low guidance",True,False,False,-9.105
+Argentina,0.572,90.415,0.237,0.022,40.556,40.988,32.131,51.812,60.709,0.903,35.396,79.459,18.75,29.706,above,below,"high use, low guidance",True,False,False,-6.604
+Indonesia,0.465,92.625,0.129,0.016,38.757,31.747,30.347,53.499,73.167,0.861,32.805,83.607,10.441,19.459,above,above,"high use, high guidance",False,False,False,3.511
+El Salvador,0.44,89.119,0.062,0.016,28.254,30.866,29.165,40.056,60.535,0.933,25.934,79.218,18.683,28.584,above,below,"high use, low guidance",True,False,False,-5.403
+North Macedonia,0.439,89.841,0.128,0.016,30.676,32.739,33.88,43.841,75.469,0.86,41.544,83.751,8.282,14.372,above,above,"high use, high guidance",False,False,False,8.765
+Philippines,0.314,95.19,0.297,0.014,44.64,36.898,41.982,54.661,70.796,0.652,26.729,89.171,18.375,24.394,above,above,"high use, high guidance",False,False,False,-1.579
+Lebanon,0.412,94.136,0.218,0.018,36.207,36.16,33.924,47.526,73.661,1.228,44.822,81.572,7.912,20.475,above,above,"high use, high guidance",False,False,False,2.403
+Armenia,0.77,89.72,0.208,0.024,35.911,35.912,39.776,49.129,75.949,1.355,43.726,78.728,2.779,13.771,above,above,"high use, high guidance",False,False,False,9.373
+Kyrgyzstan,0.457,93.705,0.275,0.017,38.383,40.141,38.862,50.393,74.85,0.686,38.437,88.347,13.497,18.855,above,above,"high use, high guidance",False,False,False,4.049
+Dominican Republic,0.457,90.59,0.304,0.019,40.149,43.701,35.996,50.382,64.693,0.927,34.62,79.315,14.623,25.897,above,above,"high use, high guidance",False,False,False,-2.805
+Palestinian Authority,0.521,87.714,0.114,0.018,32.27,33.296,35.499,44.617,61.37,0.765,29.126,80.634,19.263,26.344,above,similar,"high use, low guidance",False,False,False,-3.079
+Morocco,0.401,91.385,0.051,0.015,29.621,35.619,29.151,44.906,52.718,0.943,25.421,68.519,15.801,38.667,above,below,"high use, low guidance",True,False,False,-15.623
+Kosovo,0.387,93.115,0.203,0.015,32.227,36.223,37.137,45.963,76.653,0.775,43.751,85.944,9.292,16.462,above,above,"high use, high guidance",False,False,False,6.478
+Paraguay,0.517,89.519,0.122,0.017,34.62,35.753,29.171,44.995,53.725,1.105,24.726,76.164,22.439,35.794,above,below,"high use, low guidance",True,False,False,-12.638
+Guatemala,0.434,88.607,0.202,0.016,39.102,41.354,35.482,49.924,52.55,0.801,22.893,77.183,24.633,36.056,above,below,"high use, low guidance",True,False,False,-12.845
+Kenya,0.643,86.86,0.098,0.02,36.485,33.376,34.663,45.697,55.512,1.394,27.161,67.728,12.216,31.348,similar,below,"high use, low guidance",False,False,False,-8.032
+Ukrainian regions (17 of 27),0.358,91.947,0.306,0.018,42.385,37.009,43.229,54.188,77.707,0.553,45.136,87.712,10.005,14.24,above,above,"high use, high guidance",False,False,False,8.77

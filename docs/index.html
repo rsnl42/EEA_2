@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: digital devices and AI in school</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}}
+:root[data-theme="dark"]{--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 40px}
+h1{font-size:24px;font-weight:500;line-height:1.25;margin:0 0 6px;max-width:34ch}
+h2{font-size:18px;font-weight:500;margin:0 0 2px}
+.sub{color:var(--sec);margin:0 0 20px;max-width:70ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12px;color:var(--sec);align-items:center}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px}
+.note{font-size:12px;color:var(--sec);margin:8px 0 0;max-width:80ch}
+.sum{display:grid;gap:10px;margin:12px 0 14px;font-size:14px;max-width:85ch}
+.sum p{margin:0}
+.sum strong{font-weight:500}
+.bar{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sec);margin:0 0 4px}
+.bar button{font:inherit;font-size:12px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:3px 10px;cursor:pointer}
+.bar button[aria-pressed="true"]{border-color:var(--ink)}
+footer{font-size:12px;color:var(--mut);max-width:85ch}
+:focus-visible{outline:2px solid var(--hi);outline-offset:2px}
+.nav{margin:0 0 14px;font-size:13px}
+.nav a{color:var(--sec);text-decoration:none}
+.nav a:hover{color:var(--ink);text-decoration:underline}
+
+ul.pages{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:12px}
+ul.pages li{background:var(--surface);border:1px solid var(--line);border-radius:10px}
+ul.pages a.page{display:block;padding:16px 18px;color:inherit;text-decoration:none;border-radius:10px}
+ul.pages a.page:hover{outline:1px solid var(--sec)}
+ul.pages h2{margin:0 0 4px}
+ul.pages p{margin:0 0 8px;color:var(--sec);max-width:70ch;font-size:14px}
+ul.pages small{color:var(--mut);font-size:12px}
+</style>
+</head>
+<body>
+<main>
+<h1>Digital devices and AI in school: PISA 2025</h1>
+<p class="sub">Interactive analyses of the OECD's chapter 4 country tables. Each page is generated from the same workbook by a Python script in the repository.</p>
+<ul class="pages">
+<li><a class="page" href="equity-gaps/"><h2>Who uses AI and digital devices in class, and who doesn&#x27;t?</h2><p>72 group gaps (gender, SES, immigrant background, education level, programme, school location and type) across nine AI and device outcomes. Select any cell for country-level gaps with confidence intervals and a written summary.</p><small>Tables I.B1.4.26, 43, 54 to 59, 68 &middot; script analysis/01_equity_gaps.py</small></a></li>
+<li><a class="page" href="infrastructure-divides/"><h2>Do richer schools really have better tech? It depends what you ask.</h2><p>Seven school-resourcing measures, split by rich/poor, city/rural and private/public schools. Raw device counts often favour poorer or rural schools, but reported shortages, poor quality and readiness to teach digitally clearly favour richer and private ones. Plain-language grid plus a per-country lookup.</p><small>Tables I.B1.4.1, 4, 5, 7, 8, 11, 15 &middot; script analysis/02_infrastructure_divides.py</small></a></li>
+<li><a class="page" href="use-guidance/"><h2>Does school guidance keep pace with student AI use?</h2><p>Compares the share of students using AI for schoolwork with the share asked, in lessons, to assess AI output, across 85 systems. Includes a comparison with guidance on online information, a ranking, and a lookup for any system.</p><small>Tables I.B1.4.53, 55, 67, 68 &middot; script analysis/07_use_guidance_gap.py</small></a></li>
+<li><a class="page" href="policy-typologies/"><h2>How are schools governing devices and AI, and is it changing?</h2><p>A nine-item policy-intensity index, plus the four device-policy regimes compared 2022 vs 2025 with each system&#x27;s shift tested against its own standard error and classified as a fast adopter or lagging. Includes open questions on whether phone bans track with less in-school leisure device use or less AI use.</p><small>Tables I.B1.4.47, 49 &middot; script analysis/08_policy_typologies.py</small></a></li>
+<li><a class="page" href="cross-domain/"><h2>How do resources, capacity, time use and AI relate?</h2><p>Nine country-level composite indices built from resourcing, teacher capacity, time use, leisure, distraction, device rules and AI use/guidance. A correlation explorer with country-level scatterplots, plus five clustered country archetypes.</p><small>Tables I.B1.4.1, 4, 6, 11, 14, 21, 37, 43, 47, 53, 55, 67, 68 &middot; script analysis/09_cross_domain_panel.py + 09b + 09c</small></a></li>
+</ul>
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables. Pages are rebuilt from <code>data/digital_devices_AI_chapter4.xlsx</code> with <code>python build_site.py</code>. Figures are descriptive; see each page's footnote for how estimates and significance are defined.</footer>
+</main>
+</body>
+</html>

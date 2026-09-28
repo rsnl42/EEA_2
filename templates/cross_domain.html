@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: how digital resources, capacity, time use and AI relate</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:28ch}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.tabs button,.tabs select{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:5px 12px;cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--ink);font-weight:500}
+.tabs select{padding:5px 8px;background:var(--surface)}
+.tabs label{font-size:12px;color:var(--sec)}
+.pagetabs{display:flex;gap:6px;margin:0 0 16px}
+.pagetabs button{font:inherit;font-size:14px;padding:8px 14px;border-radius:7px 7px 0 0;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--sec);cursor:pointer}
+.pagetabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+.panel{display:none}
+.panel.on{display:block}
+#hmwrap{overflow-x:auto}
+.hm{display:grid;gap:2px;min-width:560px}
+.hm .cell{font-size:11px;text-align:center;padding:8px 2px;border-radius:4px;cursor:pointer;border:1px solid var(--line);color:var(--ink)}
+.hm .cell:hover{border-color:var(--sec)}
+.hm .cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.hm .lbl{font-size:11px;color:var(--sec);display:flex;align-items:center}
+.hm .diag{background:var(--bg)!important;border:none!important;cursor:default}
+#plot{overflow-x:auto}
+table.sys{border-collapse:collapse;font-size:13px;margin:8px 0;width:100%;max-width:640px}
+table.sys th{font-weight:400;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line)}
+table.sys th:first-child,table.sys td:first-child{text-align:left;padding-left:0}
+table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.cards{display:grid;gap:10px;margin:8px 0 16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.ccard{border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.ccard[aria-pressed="true"]{border-color:var(--ink);outline:1px solid var(--ink)}
+.ccard b{display:block;font-size:14px;margin-bottom:2px}
+.ccard span{display:block;font-size:12px;color:var(--sec)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<main>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<h1>How do digital resources, capacity, time use and AI relate?</h1>
+<p class="sub">PISA 2025, up to 91 education systems. Nine country-level composite indices, each averaging several chapter-4 indicators (see the footnote), plus mean science performance as context, not an input.</p>
+<div class="facts" id="facts"></div>
+
+<div class="pagetabs" role="tablist">
+<button id="pgCorr" role="tab" aria-pressed="true">How the pieces relate</button>
+<button id="pgClus" role="tab" aria-pressed="false">Country archetypes</button>
+</div>
+
+<section class="panel on" id="panelCorr" aria-labelledby="corrH">
+<div class="card">
+<h2 id="corrH" style="margin-bottom:10px">Correlation matrix</h2>
+<div id="hmwrap"><div id="hm" class="hm"></div></div>
+<p class="note">Spearman rank correlation across systems, every pair of composites plus science. Darker = stronger relationship; blue = positive, red = negative. Composites are z-scores of skewed raw indicators, so rank correlation is the safer default over Pearson. Click any cell (not on the diagonal) for that pair's country-level scatter.</p>
+</div>
+<section class="card" id="detail" aria-live="polite">
+<h2 id="dt"></h2>
+<div id="du" style="font-size:13px;color:var(--sec)"></div>
+<div class="sum" id="sum"></div>
+<div id="plot"></div>
+</section>
+<section class="card" aria-labelledby="nrH">
+<h2 id="nrH" style="margin-bottom:8px">A few relationships checked further</h2>
+<div id="notable"></div>
+</section>
+</section>
+
+<section class="panel" id="panelClus" aria-labelledby="clH">
+<div class="card">
+<h2 id="clH" style="margin-bottom:4px">Five archetypes</h2>
+<p class="note" style="margin:0 0 10px">Ward hierarchical clustering on the 9 composites (83 systems with complete data). Silhouette scores are low at every k tested (0.14-0.18) &mdash; these are broad gradients, not tightly separated groups. See the script's docstring (<code>analysis/09c_cross_domain_clusters.py</code>) for how k=5 was chosen and its limits. Click a card, a dot, or use the lookup below.</p>
+<div class="cards" id="cards"></div>
+<div id="plot2"></div>
+<div class="sum" id="sum2"></div>
+</div>
+<section class="card" aria-labelledby="shC">
+<h2 id="shC" style="margin-bottom:8px">Look up a system</h2>
+<div class="tabs"><label for="pick">System</label><select id="pick"></select></div>
+<div id="sysOut"></div>
+</section>
+</section>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.1, 4, 6, 11, 14, 21, 37, 43, 47, 53, 55, 67, 68, plus Table I.1 (science performance) for context. Each composite standardises and averages several same-direction indicators (script <code>analysis/09_cross_domain_panel.py</code> lists the exact indicators per composite). Country-level relationships and clusters are ecological (they describe systems, not students) and, without a GDP/wealth control in this workbook, may partly reflect national income &mdash; this applies most to anything involving <code>resources</code> or <code>science</code>. With 45 simultaneous correlation tests, some will be significant by chance; the page reports how many are, against that baseline. Systems marked * carry comparability flags in the source.</footer>
+</main>
+<script>
+const COMP=%%COMPOSITE_LABELS%%;
+const CORR=%%CORR%%;
+const ROWS_C=%%ROWS_C%%;
+const NOTABLE=%%NOTABLE%%;
+const CLUS_ROWS=%%CLUS_ROWS%%;
+const PROFILES=%%PROFILES%%;
+const VAR_EXPL=%%VAR_EXPL%%;
+const NAMES=Object.keys(COMP);
+const COMPOSITE_NAMES=NAMES.filter(n=>n!=='science');
+const lcLabel=n=>COMP[n].startsWith('AI')?COMP[n]:COMP[n][0].toLowerCase()+COMP[n].slice(1);
+const $=id=>document.getElementById(id);
+const f1=v=>v.toFixed(1),f2=v=>v.toFixed(2);
+const sg=(v,d)=>(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(d===undefined?1:d);
+const short=n=>n.replace(' (China)','').replace(' (17 of 27)','');
+const CCOL=["#8a8f99","#2a78d6","#eda100","#8e5fd6","#2fae7a"];
+
+// ---------- Correlation matrix ----------
+const M={};CORR.forEach(r=>{M[r.v1+'|'+r.v2]=r;M[r.v2+'|'+r.v1]=r});
+function cellInfo(a,b){if(a===b)return null;return M[a+'|'+b]}
+const hm=$('hm');hm.style.gridTemplateColumns=`120px repeat(${NAMES.length},minmax(48px,1fr))`;
+function addHM(cls,txt,onclick,title){const d=document.createElement('div');d.className=cls;if(txt!==undefined)d.innerHTML=txt;if(title)d.title=title;if(onclick){d.setAttribute('role','button');d.tabIndex=0;d.addEventListener('click',onclick);d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onclick()}})}hm.appendChild(d);return d}
+addHM('lbl','');
+NAMES.forEach(n=>addHM('lbl',`<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px">${COMP[n]}</span>`));
+let selA=NAMES[NAMES.length-1],selB='resources';
+const cellEls={};
+NAMES.forEach(a=>{
+ addHM('lbl',COMP[a]);
+ NAMES.forEach(b=>{
+  if(a===b){addHM('cell diag','');return}
+  const info=cellInfo(a,b);
+  const rho=info?info.rho:0;
+  const alpha=Math.min(Math.abs(rho),1)*0.75;
+  const bg=Math.abs(rho)<0.03?'transparent':`rgba(var(--${rho>0?'hib':'lob'}),${alpha})`;
+  const c=addHM('cell',sg(rho,2),()=>selectPair(a,b),`${COMP[a]} vs ${COMP[b]}: rho=${sg(rho,2)}, p=${info.p}, n=${info.n}`);
+  c.style.background=bg;c.setAttribute('aria-pressed','false');
+  cellEls[a+'|'+b]=c;cellEls[b+'|'+a]=c;
+ });
+});
+function selectPair(a,b){
+ selA=a;selB=b;
+ Object.values(cellEls).forEach(c=>c.setAttribute('aria-pressed','false'));
+ if(cellEls[a+'|'+b])cellEls[a+'|'+b].setAttribute('aria-pressed','true');
+ renderScatter();
+}
+function nice(range){for(const v of[0.1,0.2,0.5,1,2,5,10,20,50,100]){if(range/v<=8)return v}return 100}
+function renderScatter(){
+ const info=cellInfo(selA,selB);
+ const data=ROWS_C.map(r=>({n:r[0],x:r[1][selB],y:r[1][selA]})).filter(d=>d.x!=null&&d.y!=null);
+ const W=Math.max($('plot').clientWidth,340),H=W<520?360:440,L=48,R=16,T=10,B=42;
+ let xlo=Math.min(...data.map(d=>d.x)),xhi=Math.max(...data.map(d=>d.x));
+ let ylo=Math.min(...data.map(d=>d.y)),yhi=Math.max(...data.map(d=>d.y));
+ const xp=(xhi-xlo)*.08||1,yp=(yhi-ylo)*.08||1;xlo-=xp;xhi+=xp;ylo-=yp;yhi+=yp;
+ const xs=v=>L+(v-xlo)/(xhi-xlo)*(W-L-R),ys=v=>H-B-(v-ylo)/(yhi-ylo)*(H-B-T);
+ const xstep=nice(xhi-xlo),ystep=nice(yhi-ylo);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Scatter of ${COMP[selB]} against ${COMP[selA]} across systems">`;
+ for(let v=Math.ceil(xlo/xstep)*xstep;v<=xhi;v+=xstep){const vv=Math.round(v/xstep)*xstep;s+=`<line x1="${xs(vv)}" y1="${T}" x2="${xs(vv)}" y2="${H-B}" style="stroke:${vv===0?'var(--sec)':'var(--line)'};stroke-width:${vv===0?1:0.5}"/><text x="${xs(vv)}" y="${H-B+16}" text-anchor="middle" style="font-size:11px;fill:var(--mut)">${f1(vv)}</text>`}
+ for(let v=Math.ceil(ylo/ystep)*ystep;v<=yhi;v+=ystep){const vv=Math.round(v/ystep)*ystep;s+=`<line x1="${L}" y1="${ys(vv)}" x2="${W-R}" y2="${ys(vv)}" style="stroke:${vv===0?'var(--sec)':'var(--line)'};stroke-width:${vv===0?1:0.5}"/><text x="${L-6}" y="${ys(vv)+4}" text-anchor="end" style="font-size:11px;fill:var(--mut)">${f1(vv)}</text>`}
+ s+=`<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--sec)">${COMP[selB]} (standardised)</text>`;
+ s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">${COMP[selA]} (standardised)</text>`;
+ const lab=data.slice().sort((a,b)=>Math.abs(b.x*b.y)-Math.abs(a.x*a.y)).slice(0,5).map(d=>d.n);
+ const offs=[[6,4,'start'],[-6,-5,'end'],[6,-6,'start']];let k=0;
+ data.forEach(d=>{
+  s+=`<g><title>${d.n}: ${COMP[selB]} ${f2(d.x)}, ${COMP[selA]} ${f2(d.y)}</title><circle cx="${xs(d.x)}" cy="${ys(d.y)}" r="4" style="fill:var(--hi);fill-opacity:.85"/></g>`;
+  if(lab.includes(d.n)){const o=offs[k++%3];s+=`<text x="${xs(d.x)+o[0]}" y="${ys(d.y)+o[1]}" text-anchor="${o[2]}" style="font-size:11px;fill:var(--ink)">${short(d.n)}</text>`}
+ });
+ $('plot').innerHTML=s+'</svg>';
+ $('dt').textContent=`${COMP[selA]} vs ${COMP[selB]}`;
+ $('du').textContent=`Spearman rho = ${sg(info.rho,2)} (p = ${info.p}), n = ${info.n} systems.`;
+ const strength=Math.abs(info.rho)>=0.5?'a fairly strong':Math.abs(info.rho)>=0.3?'a moderate':Math.abs(info.rho)>=0.15?'a weak':'almost no';
+ const dir=info.rho>0?'higher':'lower';
+ $('sum').innerHTML=`<p><strong>How to read it.</strong> Each dot is one system. Both axes are standardised composites (z-scores): 0 is the group average, and the units are standard deviations, not the original percentages or hours.</p><p><strong>Headline.</strong> Systems with more ${lcLabel(selB)} tend to have ${dir} ${lcLabel(selA)} &mdash; ${strength} relationship (rho = ${sg(info.rho,2)}, ${info.p<0.05?'statistically significant':'not statistically significant'} at p<0.05, n=${info.n}).</p>`;
+}
+
+// ---------- Notable relationships (static, from 9b) ----------
+$('notable').innerHTML=NOTABLE.map(n=>`<p style="margin:0 0 10px"><strong>${n.t}</strong> ${n.d}</p>`).join('');
+
+// ---------- Correlation facts ----------
+const nSig=CORR.filter(r=>r.p<0.05).length;
+$('facts').innerHTML=[[nSig+' of '+CORR.length,'composite pairs are significantly correlated (p<0.05)'],
+ [sg(CORR.find(r=>r.v1==='resources'&&r.v2==='science').rho,2),'resources vs science, the strongest relationship'],
+ ['5','country archetypes identified by clustering'],
+ [PROFILES.length+' groups','from a well-resourced cluster to a low-AI-use outlier group']
+].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+
+// ---------- Cluster explorer ----------
+$('cards').innerHTML=PROFILES.map((p,i)=>`<div class="ccard" id="card${p.cluster}" role="button" tabindex="0" aria-pressed="false"><b><span class="dot" style="background:${CCOL[i]}"></span>Cluster ${p.cluster} (n=${p.n})</b><span>${p.label}</span><span>Science mean: ${p.science_mean}</span></div>`).join('');
+let selCluster=null,selSys='';
+function clusterColor(c){return CCOL[(c-1)%CCOL.length]}
+function renderClusterScatter(){
+ const W=Math.max($('plot2').clientWidth,340),H=W<520?380:460,L=44,R=16,T=10,B=42;
+ const xs_=CLUS_ROWS.map(r=>r.pc1),ys_=CLUS_ROWS.map(r=>r.pc2);
+ let xlo=Math.min(...xs_),xhi=Math.max(...xs_),ylo=Math.min(...ys_),yhi=Math.max(...ys_);
+ const xp=(xhi-xlo)*.08,yp=(yhi-ylo)*.08;xlo-=xp;xhi+=xp;ylo-=yp;yhi+=yp;
+ const xs=v=>L+(v-xlo)/(xhi-xlo)*(W-L-R),ys=v=>H-B-(v-ylo)/(yhi-ylo)*(H-B-T);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Scatter of systems on the first two principal components, coloured by cluster">`;
+ s+=`<line x1="${xs(0)}" y1="${T}" x2="${xs(0)}" y2="${H-B}" style="stroke:var(--line);stroke-width:0.5"/><line x1="${L}" y1="${ys(0)}" x2="${W-R}" y2="${ys(0)}" style="stroke:var(--line);stroke-width:0.5"/>`;
+ s+=`<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--sec)">PC1</text>`;
+ s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">PC2</text>`;
+ const lab=new Set(selSys?[selSys]:[]);
+ const offs=[[6,4,'start'],[-6,-5,'end'],[6,-6,'start']];let k=0;
+ CLUS_ROWS.forEach(r=>{
+  const dim=selCluster&&r.cluster!==selCluster,on=r.n===selSys;
+  const cx=xs(r.pc1),cy=ys(r.pc2);
+  s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: cluster ${r.cluster}, silhouette ${f2(r.silhouette)}</title>`;
+  if(on)s+=`<circle cx="${cx}" cy="${cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:2"/>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${on?5:4}" style="fill:${clusterColor(r.cluster)};fill-opacity:${dim?0.15:0.85}"/></g>`;
+  if(lab.has(r.n)){const o=offs[k++%3];s+=`<text x="${cx+o[0]}" y="${cy+o[1]}" text-anchor="${o[2]}" style="font-size:11px;fill:var(--ink)">${short(r.n)}</text>`}
+ });
+ $('plot2').innerHTML=s+'</svg>';
+ $('plot2').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>chooseSys(g.dataset.n)));
+ const p=selCluster?PROFILES.find(p=>p.cluster===selCluster):null;
+ $('sum2').innerHTML=p
+  ?`<p><strong>How to read it.</strong> Each dot is a system, positioned by its first two principal components (together explaining ${(VAR_EXPL*100).toFixed(0)}% of the variation across the 9 composites &mdash; a 2-D approximation, so nearby dots are similar overall but may differ on individual composites). Other clusters are faded.</p><p><strong>Cluster ${p.cluster}.</strong> ${p.label}. Science mean ${p.science_mean}. Systems: ${p.systems}.</p>`
+  :`<p><strong>How to read it.</strong> Each dot is a system, positioned by its first two principal components (together explaining ${(VAR_EXPL*100).toFixed(0)}% of the variation across the 9 composites). Click a card above, or a dot, to highlight one cluster.</p>`;
+}
+document.querySelectorAll('.ccard').forEach((el,i)=>{
+ const c=PROFILES[i].cluster;
+ const toggle=()=>{selCluster=selCluster===c?null:c;document.querySelectorAll('.ccard').forEach(x=>x.setAttribute('aria-pressed','false'));if(selCluster)el.setAttribute('aria-pressed','true');renderClusterScatter()};
+ el.addEventListener('click',toggle);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+});
+
+// ---------- System lookup ----------
+$('pick').innerHTML='<option value="">Choose a system</option>'+CLUS_ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
+function chooseSys(n){selSys=n;$('pick').value=n;renderSys();renderClusterScatter()}
+function renderSys(){
+ const r=CLUS_ROWS.find(x=>x.n===selSys),o=$('sysOut');
+ if(!r){o.innerHTML='<p class="note">Choose a system, or click a dot above, to see its composite profile.</p>';return}
+ const p=PROFILES.find(p=>p.cluster===r.cluster);
+ const rows=COMPOSITE_NAMES.map(n=>`<tr><td>${COMP[n]}</td><td>${f2(r[n])}</td><td>${f2(p[n])}</td></tr>`).join('');
+ o.innerHTML=`<table class="sys"><tr><th>${r.n}</th><th>System (z-score)</th><th>Cluster ${r.cluster} mean</th></tr>${rows}<tr><td>Science mean score</td><td>${r.science==null?'n/a':f1(r.science)}</td><td>${p.science_mean}</td></tr></table><p class="note">In cluster ${r.cluster}: ${p.label}. Silhouette ${f2(r.silhouette)} (near 0 or negative means it sits between clusters, rather than clearly inside one).</p>`;
+}
+$('pick').addEventListener('change',e=>{selSys=e.target.value;renderSys();renderClusterScatter()});
+
+// ---------- Page tabs ----------
+$('pgCorr').addEventListener('click',()=>{$('pgCorr').setAttribute('aria-pressed','true');$('pgClus').setAttribute('aria-pressed','false');$('panelCorr').classList.add('on');$('panelClus').classList.remove('on')});
+$('pgClus').addEventListener('click',()=>{$('pgClus').setAttribute('aria-pressed','true');$('pgCorr').setAttribute('aria-pressed','false');$('panelClus').classList.add('on');$('panelCorr').classList.remove('on');renderClusterScatter()});
+
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{renderScatter();if($('panelClus').classList.contains('on'))renderClusterScatter()},150)});
+selectPair(selA,selB);
+renderSys();
+</script>
+</body>
+</html>

@@ -1,0 +1,1933 @@
+system,table,table_label,dimension,lo_value,hi_value,gap,se,z,sig,favorability_gap
+OECD average,1,Computer availability,ses,9.776,8.282,-1.494,0.248,-6.018,True,-1.494
+B-S-J-Z (China),1,Computer availability,ses,4.05,4.931,0.881,0.374,2.354,True,0.881
+Singapore,1,Computer availability,ses,10.475,9.272,-1.202,0.339,-3.548,True,-1.202
+Macao (China),1,Computer availability,ses,10.412,10.353,-0.059,0.077,-0.767,False,-0.059
+Chinese Taipei,1,Computer availability,ses,6.308,5.669,-0.639,0.719,-0.889,False,-0.639
+Japan,1,Computer availability,ses,10.545,7.783,-2.762,2.488,-1.11,False,-2.762
+Estonia,1,Computer availability,ses,11.295,8.971,-2.325,0.69,-3.368,True,-2.325
+Korea,1,Computer availability,ses,7.713,4.045,-3.668,1.103,-3.326,True,-3.668
+United Kingdom,1,Computer availability,ses,15.389,12.315,-3.074,2.224,-1.382,False,-3.074
+Canada*,1,Computer availability,ses,11.624,10.366,-1.258,1.647,-0.763,False,-1.258
+New Zealand*,1,Computer availability,ses,9.551,8.112,-1.438,2.05,-0.702,False,-1.438
+Australia,1,Computer availability,ses,14.056,9.742,-4.315,1.26,-3.424,True,-4.315
+Finland,1,Computer availability,ses,9.235,7.808,-1.427,0.568,-2.513,True,-1.427
+United States*,1,Computer availability,ses,17.888,10.409,-7.478,3.403,-2.198,True,-7.478
+Switzerland,1,Computer availability,ses,8.52,7.779,-0.74,0.89,-0.832,False,-0.74
+Ireland,1,Computer availability,ses,9.389,8.061,-1.328,0.947,-1.403,False,-1.328
+Austria,1,Computer availability,ses,13.905,15.183,1.278,2.961,0.432,False,1.278
+Hong Kong (China),1,Computer availability,ses,8.056,6.556,-1.5,1.258,-1.193,False,-1.5
+Poland,1,Computer availability,ses,16.087,5.938,-10.149,2.011,-5.045,True,-10.149
+Türkiye,1,Computer availability,ses,3.913,4.406,0.493,0.952,0.518,False,0.493
+Czechia,1,Computer availability,ses,12.141,9.792,-2.35,0.904,-2.598,True,-2.35
+Belgium,1,Computer availability,ses,8.372,8.431,0.058,1.104,0.053,False,0.058
+Lithuania,1,Computer availability,ses,16.126,9.313,-6.813,1.977,-3.446,True,-6.813
+Germany,1,Computer availability,ses,6.565,8.697,2.131,1.506,1.415,False,2.131
+Netherlands*,1,Computer availability,ses,7.964,8.378,0.413,1.21,0.342,False,0.413
+Sweden,1,Computer availability,ses,8.552,9.953,1.402,1.248,1.123,False,1.402
+Slovenia,1,Computer availability,ses,6.585,6.237,-0.347,0.164,-2.114,True,-0.347
+France,1,Computer availability,ses,9.215,5.41,-3.805,0.886,-4.297,True,-3.805
+Italy,1,Computer availability,ses,9.921,7.662,-2.259,1.913,-1.181,False,-2.259
+Portugal,1,Computer availability,ses,7.83,6.906,-0.923,0.819,-1.127,False,-0.923
+Hungary,1,Computer availability,ses,7.129,9.128,1.998,0.875,2.284,True,1.998
+Denmark,1,Computer availability,ses,9.535,8.623,-0.912,0.92,-0.991,False,-0.912
+Spain,1,Computer availability,ses,11.535,9.792,-1.743,1.061,-1.642,False,-1.743
+Croatia,1,Computer availability,ses,5.168,3.669,-1.499,0.289,-5.192,True,-1.499
+Slovak Republic,1,Computer availability,ses,9.058,5.621,-3.437,1.095,-3.138,True,-3.437
+Luxembourg,1,Computer availability,ses,9.375,10.561,1.186,0.044,26.645,True,1.186
+Norway*,1,Computer availability,ses,,,,,,False,
+Latvia,1,Computer availability,ses,18.407,13.641,-4.766,1.826,-2.61,True,-4.766
+United Arab Emirates,1,Computer availability,ses,9.241,10.677,1.436,1.233,1.165,False,1.436
+Viet Nam,1,Computer availability,ses,2.827,3.931,1.104,1.166,0.946,False,1.104
+Malta,1,Computer availability,ses,3.063,7.308,4.246,0.033,130.482,True,4.246
+Uruguay,1,Computer availability,ses,3.392,6.103,2.711,0.646,4.193,True,2.711
+Chile,1,Computer availability,ses,4.196,7.776,3.581,0.868,4.127,True,3.581
+Israel,1,Computer availability,ses,5.501,7.617,2.115,0.864,2.45,True,2.115
+Iceland,1,Computer availability,ses,9.142,7.999,-1.143,0.059,-19.403,True,-1.143
+Brunei Darussalam,1,Computer availability,ses,9.209,8.02,-1.189,0.028,-42.36,True,-1.189
+Mauritius,1,Computer availability,ses,4.868,4.417,-0.452,0.538,-0.839,False,-0.452
+Uzbekistan,1,Computer availability,ses,5.694,5.555,-0.138,0.519,-0.266,False,-0.138
+Montenegro,1,Computer availability,ses,3.811,2.08,-1.732,0.069,-25.171,True,-1.732
+Albania*,1,Computer availability,ses,2.766,3.266,0.5,0.499,1.002,False,0.5
+Qatar,1,Computer availability,ses,4.176,10.897,6.72,0.115,58.337,True,6.72
+Greece,1,Computer availability,ses,4.551,3.318,-1.233,0.579,-2.13,True,-1.233
+Thailand,1,Computer availability,ses,4.471,3.21,-1.261,0.582,-2.167,True,-1.261
+Serbia,1,Computer availability,ses,4.041,4.365,0.324,0.634,0.51,False,0.324
+Romania,1,Computer availability,ses,15.068,7.874,-7.194,2.225,-3.234,True,-7.194
+Mongolia,1,Computer availability,ses,7.706,5.526,-2.18,0.995,-2.19,True,-2.18
+Costa Rica,1,Computer availability,ses,,,,,,False,
+Georgia,1,Computer availability,ses,8.027,5.813,-2.214,0.809,-2.737,True,-2.214
+Moldova,1,Computer availability,ses,9.231,5.212,-4.019,0.829,-4.85,True,-4.019
+Bulgaria,1,Computer availability,ses,9.362,8.657,-0.705,1.153,-0.612,False,-0.705
+Kazakhstan,1,Computer availability,ses,7.793,6.418,-1.375,0.682,-2.015,True,-1.375
+Malaysia,1,Computer availability,ses,2.916,3.544,0.628,0.57,1.102,False,0.628
+Colombia,1,Computer availability,ses,8.927,9.622,0.695,2.367,0.293,False,0.695
+Mexico,1,Computer availability,ses,2.215,2.77,0.555,0.403,1.377,False,0.555
+Saudi Arabia,1,Computer availability,ses,3.323,3.987,0.664,0.583,1.137,False,0.664
+Cyprus,1,Computer availability,ses,11.605,8.704,-2.901,0.895,-3.242,True,-2.901
+Azerbaijan,1,Computer availability,ses,6.717,8.629,1.912,1.027,1.861,False,1.912
+Brazil,1,Computer availability,ses,1.346,2.842,1.496,0.405,3.692,True,1.496
+Jordan,1,Computer availability,ses,2.92,5.812,2.892,0.616,4.694,True,2.892
+Peru,1,Computer availability,ses,4.494,5.822,1.328,0.891,1.49,False,1.328
+Ecuador,1,Computer availability,ses,3.167,4.158,0.992,0.492,2.015,True,0.992
+Argentina,1,Computer availability,ses,2.225,3.671,1.446,0.424,3.411,True,1.446
+Indonesia,1,Computer availability,ses,5.839,5.624,-0.215,0.611,-0.351,False,-0.215
+El Salvador,1,Computer availability,ses,11.403,9.206,-2.197,1.459,-1.505,False,-2.197
+Cambodia,1,Computer availability,ses,1.568,2.281,0.713,0.651,1.096,False,0.713
+North Macedonia,1,Computer availability,ses,0.836,1.104,0.269,0.027,9.999,True,0.269
+Philippines,1,Computer availability,ses,5.789,3.979,-1.811,1.117,-1.621,False,-1.811
+Lebanon,1,Computer availability,ses,1.67,5.479,3.808,0.669,5.697,True,3.808
+Armenia,1,Computer availability,ses,5.911,3.418,-2.493,0.61,-4.086,True,-2.493
+Kyrgyzstan,1,Computer availability,ses,5.358,2.579,-2.778,0.671,-4.138,True,-2.778
+Dominican Republic,1,Computer availability,ses,5.43,4.794,-0.636,0.946,-0.673,False,-0.636
+Palestinian Authority,1,Computer availability,ses,3.151,4.252,1.101,0.577,1.909,False,1.101
+Morocco,1,Computer availability,ses,2.492,2.748,0.256,0.511,0.501,False,0.256
+Kosovo,1,Computer availability,ses,2.893,2.482,-0.41,0.193,-2.121,True,-0.41
+Paraguay,1,Computer availability,ses,2.318,5.238,2.92,0.628,4.651,True,2.92
+Kurdistan Region (Iraq),1,Computer availability,ses,,,,,,False,
+Guatemala,1,Computer availability,ses,2.209,9.899,7.69,0.862,8.922,True,7.69
+Zambia,1,Computer availability,ses,2.031,1.905,-0.126,0.99,-0.127,False,-0.126
+Kenya,1,Computer availability,ses,2.114,5.437,3.324,1.705,1.949,False,3.324
+Dushanbe (Tajikistan),1,Computer availability,ses,1.397,2.311,0.913,0.189,4.832,True,0.913
+Rwanda,1,Computer availability,ses,3.072,6.752,3.68,1.911,1.925,False,3.68
+Ukrainian regions (17 of 27),1,Computer availability,ses,6.867,4.704,-2.163,0.947,-2.284,True,-2.163
+OECD average,1,Computer availability,location,10.817,8.313,-2.28,0.383,-5.946,True,-2.28
+B-S-J-Z (China),1,Computer availability,location,5.931,4.918,-1.013,1.318,-0.768,False,-1.013
+Singapore,1,Computer availability,location,,9.699,,,,False,
+Macao (China),1,Computer availability,location,,9.657,,,,False,
+Chinese Taipei,1,Computer availability,location,8.481,5.569,-2.912,0.831,-3.503,True,-2.912
+Japan,1,Computer availability,location,,7.713,,,,False,
+Estonia,1,Computer availability,location,13.2,11.099,-2.1,0.937,-2.241,True,-2.1
+Korea,1,Computer availability,location,12.861,5.236,-7.625,3.519,-2.167,True,-7.625
+United Kingdom,1,Computer availability,location,16.786,12.113,-4.673,2.677,-1.746,False,-4.673
+Canada*,1,Computer availability,location,13.651,9.818,-3.833,2.037,-1.882,False,-3.833
+New Zealand*,1,Computer availability,location,9.306,7.6,-1.706,1.934,-0.882,False,-1.706
+Australia,1,Computer availability,location,14.976,10.677,-4.299,2.499,-1.72,False,-4.299
+Finland,1,Computer availability,location,8.972,8.082,-0.891,1.145,-0.778,False,-0.891
+United States*,1,Computer availability,location,10.119,21.254,11.135,6.003,1.855,False,11.135
+Switzerland,1,Computer availability,location,9.456,7.77,-1.686,1.547,-1.089,False,-1.686
+Ireland,1,Computer availability,location,8.292,8.49,0.198,1.09,0.181,False,0.198
+Austria,1,Computer availability,location,14.04,11.578,-2.462,2.457,-1.002,False,-2.462
+Hong Kong (China),1,Computer availability,location,7.286,7.105,-0.181,1.243,-0.145,False,-0.181
+Poland,1,Computer availability,location,10.064,8.255,-1.808,1.82,-0.994,False,-1.808
+Türkiye,1,Computer availability,location,,4.067,,,,False,
+Czechia,1,Computer availability,location,15.722,8.666,-7.056,1.154,-6.112,True,-7.056
+Belgium,1,Computer availability,location,,8.114,,,,False,
+Lithuania,1,Computer availability,location,21.184,8.981,-12.203,3.764,-3.242,True,-12.203
+Germany,1,Computer availability,location,,6.325,,,,False,
+Netherlands*,1,Computer availability,location,,8.997,,,,False,
+Sweden,1,Computer availability,location,10.14,9.814,-0.326,0.66,-0.494,False,-0.326
+Slovenia,1,Computer availability,location,6.485,4.626,-1.858,0.519,-3.583,True,-1.858
+France,1,Computer availability,location,9.099,7.167,-1.933,1.202,-1.608,False,-1.933
+Italy,1,Computer availability,location,12.302,7.599,-4.703,1.85,-2.542,True,-4.703
+Portugal,1,Computer availability,location,8.709,7.572,-1.138,1.85,-0.615,False,-1.138
+Hungary,1,Computer availability,location,11.299,7.971,-3.328,1.117,-2.978,True,-3.328
+Denmark,1,Computer availability,location,8.456,9.863,1.407,1.161,1.212,False,1.407
+Spain,1,Computer availability,location,11.551,10.168,-1.383,1.552,-0.891,False,-1.383
+Croatia,1,Computer availability,location,7.153,4.26,-2.894,2.045,-1.415,False,-2.894
+Slovak Republic,1,Computer availability,location,9.919,6.964,-2.955,1.191,-2.481,True,-2.955
+Luxembourg,1,Computer availability,location,,9.804,,,,False,
+Norway*,1,Computer availability,location,,,,,,False,
+Latvia,1,Computer availability,location,17.552,14.421,-3.13,2.52,-1.242,False,-3.13
+United Arab Emirates,1,Computer availability,location,9.925,10.051,0.126,0.299,0.422,False,0.126
+Viet Nam,1,Computer availability,location,2.296,3.591,1.295,1.215,1.066,False,1.295
+Malta,1,Computer availability,location,,,,,,False,
+Uruguay,1,Computer availability,location,6.796,3.515,-3.28,1.232,-2.662,True,-3.28
+Chile,1,Computer availability,location,,6.44,,,,False,
+Israel,1,Computer availability,location,7.353,6.463,-0.89,1.112,-0.8,False,-0.89
+Iceland,1,Computer availability,location,9.532,8.44,-1.092,0.061,-17.803,True,-1.092
+Brunei Darussalam,1,Computer availability,location,7.898,,,,,False,
+Mauritius,1,Computer availability,location,4.252,,,,,False,
+Uzbekistan,1,Computer availability,location,6.572,4.296,-2.275,0.516,-4.413,True,-2.275
+Montenegro,1,Computer availability,location,,2.389,,,,False,
+Albania*,1,Computer availability,location,3.943,2.51,-1.433,0.718,-1.997,True,-1.433
+Qatar,1,Computer availability,location,9.606,6.975,-2.63,0.297,-8.845,True,-2.63
+Greece,1,Computer availability,location,6.67,2.629,-4.041,0.888,-4.55,True,-4.041
+Thailand,1,Computer availability,location,4.671,3.44,-1.231,0.697,-1.765,False,-1.231
+Serbia,1,Computer availability,location,,4.018,,,,False,
+Romania,1,Computer availability,location,17.028,7.604,-9.424,4.884,-1.93,False,-9.424
+Mongolia,1,Computer availability,location,10.243,4.916,-5.326,2.037,-2.615,True,-5.326
+Costa Rica,1,Computer availability,location,4.315,3.515,-0.799,0.837,-0.955,False,-0.799
+Georgia,1,Computer availability,location,8.622,5.2,-3.422,0.738,-4.635,True,-3.422
+Moldova,1,Computer availability,location,9.374,5.511,-3.863,0.763,-5.062,True,-3.863
+Bulgaria,1,Computer availability,location,14.098,7.872,-6.226,2.201,-2.828,True,-6.226
+Kazakhstan,1,Computer availability,location,9.254,7.059,-2.195,0.596,-3.686,True,-2.195
+Malaysia,1,Computer availability,location,3.791,2.78,-1.011,0.566,-1.787,False,-1.011
+Colombia,1,Computer availability,location,10.014,7.176,-2.839,2.674,-1.062,False,-2.839
+Mexico,1,Computer availability,location,2.484,2.107,-0.377,0.579,-0.651,False,-0.377
+Saudi Arabia,1,Computer availability,location,5.329,2.807,-2.521,1.34,-1.882,False,-2.521
+Cyprus,1,Computer availability,location,9.442,8.825,-0.617,0.367,-1.683,False,-0.617
+Azerbaijan,1,Computer availability,location,7.646,8.31,0.663,0.945,0.702,False,0.663
+Brazil,1,Computer availability,location,5.346,2.799,-2.547,1.321,-1.928,False,-2.547
+Jordan,1,Computer availability,location,5.753,4.139,-1.614,0.693,-2.329,True,-1.614
+Peru,1,Computer availability,location,4.623,4.757,0.134,1.077,0.125,False,0.134
+Ecuador,1,Computer availability,location,3.173,2.642,-0.531,0.586,-0.905,False,-0.531
+Argentina,1,Computer availability,location,5.369,3.226,-2.144,1.064,-2.014,True,-2.144
+Indonesia,1,Computer availability,location,6.083,5.472,-0.611,0.849,-0.72,False,-0.611
+El Salvador,1,Computer availability,location,10.331,9.008,-1.323,0.794,-1.666,False,-1.323
+Cambodia,1,Computer availability,location,1.631,2.237,0.606,0.642,0.944,False,0.606
+North Macedonia,1,Computer availability,location,,1.443,,,,False,
+Philippines,1,Computer availability,location,8.364,2.406,-5.958,1.695,-3.514,True,-5.958
+Lebanon,1,Computer availability,location,3.207,4.098,0.892,0.955,0.934,False,0.892
+Armenia,1,Computer availability,location,6.099,3.152,-2.947,0.505,-5.836,True,-2.947
+Kyrgyzstan,1,Computer availability,location,5.372,2.212,-3.16,0.408,-7.739,True,-3.16
+Dominican Republic,1,Computer availability,location,6.875,4.63,-2.246,1.562,-1.437,False,-2.246
+Palestinian Authority,1,Computer availability,location,5.937,2.793,-3.145,0.622,-5.056,True,-3.145
+Morocco,1,Computer availability,location,2.357,2.437,0.079,0.509,0.156,False,0.079
+Kosovo,1,Computer availability,location,3.667,3.267,-0.4,0.512,-0.782,False,-0.4
+Paraguay,1,Computer availability,location,1.94,5.406,3.466,0.775,4.473,True,3.466
+Kurdistan Region (Iraq),1,Computer availability,location,,,,,,False,
+Guatemala,1,Computer availability,location,2.835,6.804,3.969,1.114,3.562,True,3.969
+Zambia,1,Computer availability,location,2.349,1.003,-1.346,0.504,-2.668,True,-1.346
+Kenya,1,Computer availability,location,1.93,6.641,4.711,2.919,1.614,False,4.711
+Dushanbe (Tajikistan),1,Computer availability,location,1.614,2.49,0.876,0.22,3.985,True,0.876
+Rwanda,1,Computer availability,location,3.899,6.302,2.403,2.976,0.808,False,2.403
+Ukrainian regions (17 of 27),1,Computer availability,location,7.401,4.391,-3.01,0.562,-5.359,True,-3.01
+OECD average,1,Computer availability,type,8.734,8.684,0.306,0.293,1.044,False,0.306
+B-S-J-Z (China),1,Computer availability,type,4.59,4.525,-0.066,0.869,-0.075,False,-0.066
+Singapore,1,Computer availability,type,9.869,7.772,-2.097,1.187,-1.766,False,-2.097
+Macao (China),1,Computer availability,type,,9.654,,,,False,
+Chinese Taipei,1,Computer availability,type,5.43,6.469,1.039,0.601,1.727,False,1.039
+Japan,1,Computer availability,type,9.658,5.526,-4.132,1.277,-3.236,True,-4.132
+Estonia,1,Computer availability,type,10.615,9.222,-1.393,0.832,-1.674,False,-1.393
+Korea,1,Computer availability,type,4.852,5.958,1.106,0.906,1.22,False,1.106
+United Kingdom,1,Computer availability,type,13.265,11.13,-2.135,1.551,-1.377,False,-2.135
+Canada*,1,Computer availability,type,11.485,7.843,-3.642,0.9,-4.048,True,-3.642
+New Zealand*,1,Computer availability,type,9.154,10.099,0.944,0.71,1.329,False,0.944
+Australia,1,Computer availability,type,11.742,10.175,-1.567,0.776,-2.019,True,-1.567
+Finland,1,Computer availability,type,8.777,9.616,0.84,1.849,0.454,False,0.84
+United States*,1,Computer availability,type,13.249,,,,,False,
+Switzerland,1,Computer availability,type,8.005,8.898,0.894,0.746,1.198,False,0.894
+Ireland,1,Computer availability,type,,,,,,False,
+Austria,1,Computer availability,type,13.857,11.068,-2.789,1.385,-2.014,True,-2.789
+Hong Kong (China),1,Computer availability,type,7.076,6.474,-0.601,0.674,-0.893,False,-0.601
+Poland,1,Computer availability,type,11.098,11.193,0.095,1.344,0.071,False,0.095
+Türkiye,1,Computer availability,type,3.791,6.231,2.44,0.903,2.703,True,2.44
+Czechia,1,Computer availability,type,10.934,10.095,-0.838,1.514,-0.554,False,-0.838
+Belgium,1,Computer availability,type,8.744,8.671,-0.073,0.83,-0.087,False,-0.073
+Lithuania,1,Computer availability,type,11.336,13.456,2.12,1.242,1.707,False,2.12
+Germany,1,Computer availability,type,7.116,5.44,-1.675,1.585,-1.057,False,-1.675
+Netherlands*,1,Computer availability,type,8.25,,,,,False,
+Sweden,1,Computer availability,type,9.056,11.182,2.125,2.115,1.005,False,2.125
+Slovenia,1,Computer availability,type,6.128,3.157,-2.97,0.053,-55.746,True,-2.97
+France,1,Computer availability,type,8.249,7.044,-1.205,0.868,-1.389,False,-1.205
+Italy,1,Computer availability,type,8.792,15.78,6.988,6.836,1.022,False,6.988
+Portugal,1,Computer availability,type,7.559,7.871,0.312,0.814,0.383,False,0.312
+Hungary,1,Computer availability,type,8.202,8.852,0.65,0.884,0.735,False,0.65
+Denmark,1,Computer availability,type,10.157,9.005,-1.151,1.311,-0.879,False,-1.151
+Spain,1,Computer availability,type,11.256,9.464,-1.792,0.741,-2.417,True,-1.792
+Croatia,1,Computer availability,type,5.246,7.069,1.823,1.084,1.682,False,1.823
+Slovak Republic,1,Computer availability,type,8.269,6.248,-2.021,0.71,-2.847,True,-2.021
+Luxembourg,1,Computer availability,type,7.289,15.161,7.872,0.047,168.501,True,7.872
+Norway*,1,Computer availability,type,,,,,,False,
+Latvia,1,Computer availability,type,16.484,,,,,False,
+United Arab Emirates,1,Computer availability,type,10.38,9.926,-0.454,0.509,-0.892,False,-0.454
+Viet Nam,1,Computer availability,type,2.851,3.579,0.728,1.32,0.552,False,0.728
+Malta,1,Computer availability,type,4.371,6.956,2.585,0.02,126.599,True,2.585
+Uruguay,1,Computer availability,type,2.271,7.86,5.589,0.715,7.82,True,5.589
+Chile,1,Computer availability,type,3.802,7.571,3.768,0.564,6.688,True,3.768
+Israel,1,Computer availability,type,,,,,,False,
+Iceland,1,Computer availability,type,7.988,,,,,False,
+Brunei Darussalam,1,Computer availability,type,7.862,9.502,1.641,0.019,84.923,True,1.641
+Mauritius,1,Computer availability,type,2.608,4.912,2.304,0.283,8.139,True,2.304
+Uzbekistan,1,Computer availability,type,5.467,,,,,False,
+Montenegro,1,Computer availability,type,2.859,,,,,False,
+Albania*,1,Computer availability,type,2.497,3.781,1.284,0.398,3.227,True,1.284
+Qatar,1,Computer availability,type,4.007,8.826,4.818,0.086,56.285,True,4.818
+Greece,1,Computer availability,type,3.481,4.244,0.763,0.999,0.764,False,0.763
+Thailand,1,Computer availability,type,3.573,4.831,1.258,0.448,2.81,True,1.258
+Serbia,1,Computer availability,type,4.44,,,,,False,
+Romania,1,Computer availability,type,10.802,,,,,False,
+Mongolia,1,Computer availability,type,5.611,6.289,0.678,0.717,0.946,False,0.678
+Costa Rica,1,Computer availability,type,3.565,5.503,1.938,0.583,3.322,True,1.938
+Georgia,1,Computer availability,type,6.061,7.436,1.376,0.6,2.295,True,1.376
+Moldova,1,Computer availability,type,7.41,,,,,False,
+Bulgaria,1,Computer availability,type,8.785,,,,,False,
+Kazakhstan,1,Computer availability,type,8.095,4.945,-3.151,0.567,-5.559,True,-3.151
+Malaysia,1,Computer availability,type,2.7,5.535,2.836,1.175,2.414,True,2.836
+Colombia,1,Computer availability,type,7.516,9.188,1.672,1.218,1.373,False,1.672
+Mexico,1,Computer availability,type,1.974,4.323,2.349,0.559,4.199,True,2.349
+Saudi Arabia,1,Computer availability,type,2.585,6.259,3.674,0.556,6.605,True,3.674
+Cyprus,1,Computer availability,type,8.287,10.063,1.776,0.286,6.212,True,1.776
+Azerbaijan,1,Computer availability,type,7.852,,,,,False,
+Brazil,1,Computer availability,type,2.345,2.896,0.551,0.469,1.174,False,0.551
+Jordan,1,Computer availability,type,3.552,6.599,3.047,0.558,5.457,True,3.047
+Peru,1,Computer availability,type,3.649,6.016,2.367,0.595,3.98,True,2.367
+Ecuador,1,Computer availability,type,2.062,4.819,2.757,0.389,7.093,True,2.757
+Argentina,1,Computer availability,type,3.064,3.443,0.379,0.408,0.928,False,0.379
+Indonesia,1,Computer availability,type,5.27,6.643,1.373,0.515,2.668,True,1.373
+El Salvador,1,Computer availability,type,10.063,9.08,-0.983,0.947,-1.038,False,-0.983
+Cambodia,1,Computer availability,type,0.901,6.089,5.189,1.526,3.4,True,5.189
+North Macedonia,1,Computer availability,type,1.333,,,,,False,
+Philippines,1,Computer availability,type,3.366,5.914,2.549,0.733,3.478,True,2.549
+Lebanon,1,Computer availability,type,1.655,4.699,3.044,0.451,6.747,True,3.044
+Armenia,1,Computer availability,type,4.215,10.15,5.936,1.519,3.908,True,5.936
+Kyrgyzstan,1,Computer availability,type,3.514,4.96,1.446,0.724,1.998,True,1.446
+Dominican Republic,1,Computer availability,type,4.926,5.011,0.085,0.684,0.124,False,0.085
+Palestinian Authority,1,Computer availability,type,3.283,6.959,3.676,1.29,2.85,True,3.676
+Morocco,1,Computer availability,type,2.031,5.046,3.016,0.517,5.834,True,3.016
+Kosovo,1,Computer availability,type,2.484,4.835,2.35,0.239,9.829,True,2.35
+Paraguay,1,Computer availability,type,2.66,5.798,3.138,0.787,3.985,True,3.138
+Kurdistan Region (Iraq),1,Computer availability,type,,,,,,False,
+Guatemala,1,Computer availability,type,1.716,8.005,6.289,0.564,11.141,True,6.289
+Zambia,1,Computer availability,type,1.528,2.963,1.435,0.901,1.592,False,1.435
+Kenya,1,Computer availability,type,2.785,5.586,2.801,1.634,1.713,False,2.801
+Dushanbe (Tajikistan),1,Computer availability,type,2.214,2.991,0.776,0.65,1.195,False,0.776
+Rwanda,1,Computer availability,type,3.876,7.962,4.086,4.963,0.823,False,4.086
+Ukrainian regions (17 of 27),1,Computer availability,type,5.526,,,,,False,
+OECD average,4,Tablet availability,ses,4.099,3.489,-0.61,0.27,-2.257,True,-0.61
+B-S-J-Z (China),4,Tablet availability,ses,0.794,2.455,1.661,0.609,2.727,True,1.661
+Singapore,4,Tablet availability,ses,7.21,4.151,-3.06,0.333,-9.182,True,-3.06
+Macao (China),4,Tablet availability,ses,5.802,9.667,3.866,0.047,82.777,True,3.866
+Chinese Taipei,4,Tablet availability,ses,8.021,6.785,-1.237,0.782,-1.582,False,-1.237
+Japan,4,Tablet availability,ses,15.001,8.284,-6.717,2.985,-2.251,True,-6.717
+Estonia,4,Tablet availability,ses,4.806,3.532,-1.274,0.759,-1.677,False,-1.274
+Korea,4,Tablet availability,ses,13.549,13.703,0.154,2.416,0.064,False,0.154
+United Kingdom,4,Tablet availability,ses,2.578,1.812,-0.766,0.802,-0.955,False,-0.766
+Canada*,4,Tablet availability,ses,2.332,2.888,0.556,1.093,0.509,False,0.556
+New Zealand*,4,Tablet availability,ses,2.275,1.46,-0.815,0.533,-1.53,False,-0.815
+Australia,4,Tablet availability,ses,2.279,2.152,-0.127,0.417,-0.304,False,-0.127
+Finland,4,Tablet availability,ses,2.133,2.932,0.799,0.653,1.223,False,0.799
+United States*,4,Tablet availability,ses,6.032,2.766,-3.267,3.76,-0.869,False,-3.267
+Switzerland,4,Tablet availability,ses,3.134,2.856,-0.278,0.962,-0.289,False,-0.278
+Ireland,4,Tablet availability,ses,4.157,4.988,0.831,0.993,0.837,False,0.831
+Austria,4,Tablet availability,ses,8.085,2.976,-5.109,5.843,-0.874,False,-5.109
+Hong Kong (China),4,Tablet availability,ses,9.54,5.977,-3.563,1.348,-2.643,True,-3.563
+Poland,4,Tablet availability,ses,1.836,1.142,-0.693,0.437,-1.587,False,-0.693
+Türkiye,4,Tablet availability,ses,0.216,0.299,0.083,0.206,0.403,False,0.083
+Czechia,4,Tablet availability,ses,6.275,3.127,-3.148,0.64,-4.917,True,-3.148
+Belgium,4,Tablet availability,ses,1.334,2.515,1.181,1.402,0.842,False,1.181
+Lithuania,4,Tablet availability,ses,8.681,3.237,-5.444,1.251,-4.352,True,-5.444
+Germany,4,Tablet availability,ses,6.118,9.577,3.459,1.909,1.812,False,3.459
+Netherlands*,4,Tablet availability,ses,1.595,1.85,0.254,1.207,0.211,False,0.254
+Sweden,4,Tablet availability,ses,2.979,3.597,0.618,2.096,0.295,False,0.618
+Slovenia,4,Tablet availability,ses,1.226,1.144,-0.082,0.129,-0.636,False,-0.082
+France,4,Tablet availability,ses,1.277,2.507,1.231,0.697,1.766,False,1.231
+Italy,4,Tablet availability,ses,3.069,1.974,-1.096,0.603,-1.817,False,-1.096
+Portugal,4,Tablet availability,ses,1.437,1.274,-0.163,0.551,-0.295,False,-0.163
+Hungary,4,Tablet availability,ses,1.772,1.728,-0.043,0.713,-0.061,False,-0.043
+Denmark,4,Tablet availability,ses,1.774,1.195,-0.579,0.874,-0.663,False,-0.579
+Spain,4,Tablet availability,ses,2.336,3.751,1.416,1.124,1.259,False,1.416
+Croatia,4,Tablet availability,ses,1.069,0.483,-0.585,0.185,-3.167,True,-0.585
+Slovak Republic,4,Tablet availability,ses,4.431,3.398,-1.033,0.654,-1.58,False,-1.033
+Luxembourg,4,Tablet availability,ses,8.344,9.006,0.662,0.03,22.274,True,0.662
+Norway*,4,Tablet availability,ses,,,,,,False,
+Latvia,4,Tablet availability,ses,9.434,4.542,-4.892,1.269,-3.855,True,-4.892
+United Arab Emirates,4,Tablet availability,ses,2.952,6.91,3.958,0.345,11.461,True,3.958
+Viet Nam,4,Tablet availability,ses,0.63,0.73,0.1,0.425,0.235,False,0.1
+Malta,4,Tablet availability,ses,0.284,2.947,2.663,0.035,75.194,True,2.663
+Uruguay,4,Tablet availability,ses,0.773,1.183,0.409,0.48,0.854,False,0.409
+Chile,4,Tablet availability,ses,1.64,4.012,2.372,0.7,3.388,True,2.372
+Israel,4,Tablet availability,ses,0.586,0.963,0.377,0.484,0.779,False,0.377
+Iceland,4,Tablet availability,ses,8.306,8.387,0.082,0.119,0.685,False,0.082
+Brunei Darussalam,4,Tablet availability,ses,0.596,1.91,1.314,0.015,88.176,True,1.314
+Mauritius,4,Tablet availability,ses,0.114,0.662,0.549,0.421,1.303,False,0.549
+Uzbekistan,4,Tablet availability,ses,2.243,1.166,-1.077,1.419,-0.759,False,-1.077
+Montenegro,4,Tablet availability,ses,0.082,0.064,-0.018,0.004,-5.031,True,-0.018
+Albania*,4,Tablet availability,ses,1.027,0.958,-0.068,0.52,-0.131,False,-0.068
+Qatar,4,Tablet availability,ses,0.996,4.215,3.218,0.075,42.787,True,3.218
+Greece,4,Tablet availability,ses,1.796,1.163,-0.632,0.273,-2.316,True,-0.632
+Thailand,4,Tablet availability,ses,0.211,0.211,-0.001,0.15,-0.006,False,-0.001
+Serbia,4,Tablet availability,ses,0.064,0.454,0.39,0.28,1.392,False,0.39
+Romania,4,Tablet availability,ses,19.329,5.149,-14.18,4.713,-3.008,True,-14.18
+Mongolia,4,Tablet availability,ses,5.872,3.077,-2.795,1.493,-1.871,False,-2.795
+Costa Rica,4,Tablet availability,ses,,,,,,False,
+Georgia,4,Tablet availability,ses,0.488,0.416,-0.072,0.377,-0.192,False,-0.072
+Moldova,4,Tablet availability,ses,0.734,1.587,0.853,0.511,1.667,False,0.853
+Bulgaria,4,Tablet availability,ses,3.511,1.763,-1.749,0.98,-1.785,False,-1.749
+Kazakhstan,4,Tablet availability,ses,2.289,2.791,0.502,0.919,0.546,False,0.502
+Malaysia,4,Tablet availability,ses,0.617,1.146,0.528,0.503,1.05,False,0.528
+Colombia,4,Tablet availability,ses,4.573,4.027,-0.547,2.402,-0.228,False,-0.547
+Mexico,4,Tablet availability,ses,0.153,0.834,0.681,0.554,1.23,False,0.681
+Saudi Arabia,4,Tablet availability,ses,0.234,1.483,1.249,0.542,2.304,True,1.249
+Cyprus,4,Tablet availability,ses,3.065,2.308,-0.757,0.243,-3.109,True,-0.757
+Azerbaijan,4,Tablet availability,ses,0.079,0.275,0.195,0.153,1.278,False,0.195
+Brazil,4,Tablet availability,ses,1.391,1.22,-0.17,0.446,-0.382,False,-0.17
+Jordan,4,Tablet availability,ses,0.529,0.418,-0.111,0.277,-0.402,False,-0.111
+Peru,4,Tablet availability,ses,5.303,0.487,-4.816,1.323,-3.64,True,-4.816
+Ecuador,4,Tablet availability,ses,0.777,1.106,0.329,0.454,0.725,False,0.329
+Argentina,4,Tablet availability,ses,0.027,0.2,0.173,0.078,2.22,True,0.173
+Indonesia,4,Tablet availability,ses,1.026,1.92,0.894,0.84,1.064,False,0.894
+El Salvador,4,Tablet availability,ses,11.264,2.623,-8.641,3.321,-2.601,True,-8.641
+Cambodia,4,Tablet availability,ses,0.113,1.059,0.947,0.549,1.725,False,0.947
+North Macedonia,4,Tablet availability,ses,1.014,1.162,0.148,0.011,13.793,True,0.148
+Philippines,4,Tablet availability,ses,0.887,2.056,1.168,0.61,1.915,False,1.168
+Lebanon,4,Tablet availability,ses,1.358,2.133,0.776,0.806,0.962,False,0.776
+Armenia,4,Tablet availability,ses,2.306,0.554,-1.753,0.62,-2.829,True,-1.753
+Kyrgyzstan,4,Tablet availability,ses,0.369,0.558,0.189,0.335,0.565,False,0.189
+Dominican Republic,4,Tablet availability,ses,1.433,0.54,-0.893,0.48,-1.859,False,-0.893
+Palestinian Authority,4,Tablet availability,ses,,,,,,False,
+Morocco,4,Tablet availability,ses,1.135,0.599,-0.536,0.317,-1.692,False,-0.536
+Kosovo,4,Tablet availability,ses,0.395,0.62,0.225,0.237,0.95,False,0.225
+Paraguay,4,Tablet availability,ses,0.615,0.779,0.164,0.377,0.436,False,0.164
+Kurdistan Region (Iraq),4,Tablet availability,ses,,,,,,False,
+Guatemala,4,Tablet availability,ses,0.263,1.405,1.142,0.323,3.531,True,1.142
+Zambia,4,Tablet availability,ses,0.046,0.033,-0.013,0.03,-0.433,False,-0.013
+Kenya,4,Tablet availability,ses,0.485,3.195,2.71,1.391,1.948,False,2.71
+Dushanbe (Tajikistan),4,Tablet availability,ses,0.024,0.113,0.089,0.016,5.745,True,0.089
+Rwanda,4,Tablet availability,ses,0.03,0.302,0.272,0.222,1.228,False,0.272
+Ukrainian regions (17 of 27),4,Tablet availability,ses,2.499,0.542,-1.957,1.058,-1.849,False,-1.957
+OECD average,4,Tablet availability,location,4.245,3.171,-1.498,0.328,-4.568,True,-1.498
+B-S-J-Z (China),4,Tablet availability,location,1.836,2.049,0.213,1.071,0.199,False,0.213
+Singapore,4,Tablet availability,location,,6.411,,,,False,
+Macao (China),4,Tablet availability,location,,8.039,,,,False,
+Chinese Taipei,4,Tablet availability,location,14.436,6.586,-7.85,3.583,-2.191,True,-7.85
+Japan,4,Tablet availability,location,,9.937,,,,False,
+Estonia,4,Tablet availability,location,7.698,4.743,-2.954,0.97,-3.047,True,-2.954
+Korea,4,Tablet availability,location,12.575,12.225,-0.35,6.959,-0.05,False,-0.35
+United Kingdom,4,Tablet availability,location,2.311,2.931,0.62,1.45,0.428,False,0.62
+Canada*,4,Tablet availability,location,1.909,2.16,0.251,0.749,0.335,False,0.251
+New Zealand*,4,Tablet availability,location,1.508,1.371,-0.137,1.59,-0.086,False,-0.137
+Australia,4,Tablet availability,location,3.971,1.756,-2.215,0.985,-2.249,True,-2.215
+Finland,4,Tablet availability,location,2.559,2.198,-0.362,0.939,-0.385,False,-0.362
+United States*,4,Tablet availability,location,5.152,4.008,-1.144,2.193,-0.522,False,-1.144
+Switzerland,4,Tablet availability,location,3.724,0.81,-2.913,1.255,-2.321,True,-2.913
+Ireland,4,Tablet availability,location,6.065,5.043,-1.022,1.878,-0.544,False,-1.022
+Austria,4,Tablet availability,location,2.263,2.608,0.345,1.979,0.174,False,0.345
+Hong Kong (China),4,Tablet availability,location,8.207,8.589,0.382,1.887,0.203,False,0.382
+Poland,4,Tablet availability,location,1.447,2.308,0.861,1.12,0.768,False,0.861
+Türkiye,4,Tablet availability,location,,0.281,,,,False,
+Czechia,4,Tablet availability,location,9.845,4.111,-5.735,1.287,-4.457,True,-5.735
+Belgium,4,Tablet availability,location,,1.442,,,,False,
+Lithuania,4,Tablet availability,location,14.162,3.362,-10.801,2.642,-4.089,True,-10.801
+Germany,4,Tablet availability,location,,8.404,,,,False,
+Netherlands*,4,Tablet availability,location,,2.392,,,,False,
+Sweden,4,Tablet availability,location,0.974,1.797,0.823,0.597,1.379,False,0.823
+Slovenia,4,Tablet availability,location,2.186,1.067,-1.119,0.308,-3.629,True,-1.119
+France,4,Tablet availability,location,1.851,1.825,-0.026,1.314,-0.02,False,-0.026
+Italy,4,Tablet availability,location,4.474,2.408,-2.066,1.758,-1.175,False,-2.066
+Portugal,4,Tablet availability,location,0.163,1.211,1.048,0.346,3.026,True,1.048
+Hungary,4,Tablet availability,location,6.168,1.029,-5.139,1.366,-3.763,True,-5.139
+Denmark,4,Tablet availability,location,2.128,3.095,0.967,1.375,0.703,False,0.967
+Spain,4,Tablet availability,location,5.104,2.012,-3.092,1.379,-2.243,True,-3.092
+Croatia,4,Tablet availability,location,1.858,0.69,-1.167,1.06,-1.101,False,-1.167
+Slovak Republic,4,Tablet availability,location,4.728,3.963,-0.765,0.766,-0.999,False,-0.765
+Luxembourg,4,Tablet availability,location,,10.0,,,,False,
+Norway*,4,Tablet availability,location,,,,,,False,
+Latvia,4,Tablet availability,location,8.95,4.753,-4.197,1.22,-3.439,True,-4.197
+United Arab Emirates,4,Tablet availability,location,2.465,4.665,2.2,1.009,2.181,True,2.2
+Viet Nam,4,Tablet availability,location,0.398,0.611,0.213,0.353,0.603,False,0.213
+Malta,4,Tablet availability,location,,,,,,False,
+Uruguay,4,Tablet availability,location,0.534,0.951,0.417,0.367,1.135,False,0.417
+Chile,4,Tablet availability,location,,2.422,,,,False,
+Israel,4,Tablet availability,location,1.388,0.567,-0.822,0.572,-1.437,False,-0.822
+Iceland,4,Tablet availability,location,5.656,4.113,-1.542,0.134,-11.495,True,-1.542
+Brunei Darussalam,4,Tablet availability,location,0.084,,,,,False,
+Mauritius,4,Tablet availability,location,0.323,,,,,False,
+Uzbekistan,4,Tablet availability,location,2.059,0.5,-1.559,0.9,-1.732,False,-1.559
+Montenegro,4,Tablet availability,location,,0.433,,,,False,
+Albania*,4,Tablet availability,location,0.525,1.205,0.68,0.449,1.513,False,0.68
+Qatar,4,Tablet availability,location,5.402,2.297,-3.105,0.507,-6.129,True,-3.105
+Greece,4,Tablet availability,location,2.901,1.55,-1.351,0.481,-2.809,True,-1.351
+Thailand,4,Tablet availability,location,0.356,0.425,0.07,0.281,0.247,False,0.07
+Serbia,4,Tablet availability,location,,0.231,,,,False,
+Romania,4,Tablet availability,location,22.637,5.156,-17.481,8.498,-2.057,True,-17.481
+Mongolia,4,Tablet availability,location,23.509,2.698,-20.811,11.889,-1.75,False,-20.811
+Costa Rica,4,Tablet availability,location,0.574,0.446,-0.127,0.392,-0.325,False,-0.127
+Georgia,4,Tablet availability,location,0.218,0.456,0.238,0.234,1.018,False,0.238
+Moldova,4,Tablet availability,location,1.524,1.096,-0.429,0.464,-0.924,False,-0.429
+Bulgaria,4,Tablet availability,location,6.48,1.53,-4.95,1.941,-2.55,True,-4.95
+Kazakhstan,4,Tablet availability,location,2.359,2.08,-0.278,0.483,-0.575,False,-0.278
+Malaysia,4,Tablet availability,location,1.567,1.08,-0.487,0.564,-0.862,False,-0.487
+Colombia,4,Tablet availability,location,4.894,2.497,-2.397,1.63,-1.471,False,-2.397
+Mexico,4,Tablet availability,location,0.034,0.47,0.436,0.252,1.733,False,0.436
+Saudi Arabia,4,Tablet availability,location,0.675,0.734,0.059,0.673,0.088,False,0.059
+Cyprus,4,Tablet availability,location,5.492,1.353,-4.139,0.137,-30.159,True,-4.139
+Azerbaijan,4,Tablet availability,location,0.102,0.086,-0.016,0.117,-0.136,False,-0.016
+Brazil,4,Tablet availability,location,3.056,1.321,-1.735,0.99,-1.752,False,-1.735
+Jordan,4,Tablet availability,location,0.205,0.482,0.277,0.18,1.537,False,0.277
+Peru,4,Tablet availability,location,3.52,1.184,-2.336,0.914,-2.555,True,-2.336
+Ecuador,4,Tablet availability,location,0.836,0.376,-0.46,0.596,-0.773,False,-0.46
+Argentina,4,Tablet availability,location,0.15,0.095,-0.055,0.115,-0.484,False,-0.055
+Indonesia,4,Tablet availability,location,2.335,2.03,-0.305,1.439,-0.212,False,-0.305
+El Salvador,4,Tablet availability,location,5.082,2.598,-2.485,1.148,-2.164,True,-2.485
+Cambodia,4,Tablet availability,location,0.072,0.742,0.67,0.47,1.425,False,0.67
+North Macedonia,4,Tablet availability,location,,1.181,,,,False,
+Philippines,4,Tablet availability,location,1.629,1.744,0.115,0.988,0.116,False,0.115
+Lebanon,4,Tablet availability,location,0.918,1.676,0.759,0.774,0.98,False,0.759
+Armenia,4,Tablet availability,location,2.157,0.427,-1.73,0.505,-3.428,True,-1.73
+Kyrgyzstan,4,Tablet availability,location,0.488,0.531,0.043,0.274,0.156,False,0.043
+Dominican Republic,4,Tablet availability,location,0.66,0.729,0.068,0.379,0.181,False,0.068
+Palestinian Authority,4,Tablet availability,location,,,,,,False,
+Morocco,4,Tablet availability,location,1.219,0.713,-0.506,0.326,-1.552,False,-0.506
+Kosovo,4,Tablet availability,location,1.428,0.291,-1.138,0.753,-1.512,False,-1.138
+Paraguay,4,Tablet availability,location,0.304,0.583,0.278,0.282,0.988,False,0.278
+Kurdistan Region (Iraq),4,Tablet availability,location,,,,,,False,
+Guatemala,4,Tablet availability,location,0.128,1.321,1.193,0.58,2.058,True,1.193
+Zambia,4,Tablet availability,location,0.13,0.02,-0.11,0.082,-1.349,False,-0.11
+Kenya,4,Tablet availability,location,1.673,2.372,0.699,2.186,0.32,False,0.699
+Dushanbe (Tajikistan),4,Tablet availability,location,0.008,0.319,0.311,0.264,1.179,False,0.311
+Rwanda,4,Tablet availability,location,0.565,0.181,-0.384,0.539,-0.713,False,-0.384
+Ukrainian regions (17 of 27),4,Tablet availability,location,1.899,0.604,-1.295,0.705,-1.837,False,-1.295
+OECD average,4,Tablet availability,type,3.446,3.687,0.446,0.223,2.0,True,0.446
+B-S-J-Z (China),4,Tablet availability,type,1.625,1.481,-0.144,0.583,-0.248,False,-0.144
+Singapore,4,Tablet availability,type,6.522,5.292,-1.23,1.881,-0.654,False,-1.23
+Macao (China),4,Tablet availability,type,,8.11,,,,False,
+Chinese Taipei,4,Tablet availability,type,7.293,7.057,-0.236,0.685,-0.345,False,-0.236
+Japan,4,Tablet availability,type,10.257,11.326,1.069,1.883,0.568,False,1.069
+Estonia,4,Tablet availability,type,5.112,3.496,-1.616,1.016,-1.591,False,-1.616
+Korea,4,Tablet availability,type,12.367,12.361,-0.006,1.446,-0.004,False,-0.006
+United Kingdom,4,Tablet availability,type,2.23,1.996,-0.233,0.745,-0.313,False,-0.233
+Canada*,4,Tablet availability,type,1.911,2.519,0.608,0.662,0.918,False,0.608
+New Zealand*,4,Tablet availability,type,1.403,1.96,0.557,1.016,0.548,False,0.557
+Australia,4,Tablet availability,type,1.955,2.154,0.199,0.36,0.554,False,0.199
+Finland,4,Tablet availability,type,2.316,2.055,-0.262,0.984,-0.266,False,-0.262
+United States*,4,Tablet availability,type,3.626,,,,,False,
+Switzerland,4,Tablet availability,type,3.798,2.703,-1.095,1.304,-0.84,False,-1.095
+Ireland,4,Tablet availability,type,,,,,,False,
+Austria,4,Tablet availability,type,3.109,2.39,-0.719,1.649,-0.436,False,-0.719
+Hong Kong (China),4,Tablet availability,type,9.038,5.409,-3.629,0.993,-3.654,True,-3.629
+Poland,4,Tablet availability,type,1.7,4.3,2.6,1.902,1.367,False,2.6
+Türkiye,4,Tablet availability,type,0.27,0.384,0.114,0.386,0.295,False,0.114
+Czechia,4,Tablet availability,type,4.824,4.364,-0.46,0.846,-0.543,False,-0.46
+Belgium,4,Tablet availability,type,2.689,2.24,-0.449,1.099,-0.409,False,-0.449
+Lithuania,4,Tablet availability,type,5.04,7.169,2.129,1.134,1.878,False,2.129
+Germany,4,Tablet availability,type,7.656,7.238,-0.418,1.904,-0.219,False,-0.418
+Netherlands*,4,Tablet availability,type,2.762,,,,,False,
+Sweden,4,Tablet availability,type,1.947,4.874,2.927,2.281,1.283,False,2.927
+Slovenia,4,Tablet availability,type,1.087,1.928,0.841,0.063,13.305,True,0.841
+France,4,Tablet availability,type,1.57,3.141,1.571,0.766,2.05,True,1.571
+Italy,4,Tablet availability,type,2.175,3.501,1.326,1.669,0.794,False,1.326
+Portugal,4,Tablet availability,type,1.097,2.055,0.959,0.663,1.446,False,0.959
+Hungary,4,Tablet availability,type,1.644,1.966,0.322,0.508,0.634,False,0.322
+Denmark,4,Tablet availability,type,1.302,1.311,0.01,0.616,0.016,False,0.01
+Spain,4,Tablet availability,type,2.14,3.808,1.668,0.869,1.92,False,1.668
+Croatia,4,Tablet availability,type,0.906,0.597,-0.309,0.283,-1.091,False,-0.309
+Slovak Republic,4,Tablet availability,type,3.808,4.026,0.218,0.621,0.351,False,0.218
+Luxembourg,4,Tablet availability,type,9.89,5.141,-4.749,0.02,-240.328,True,-4.749
+Norway*,4,Tablet availability,type,,,,,,False,
+Latvia,4,Tablet availability,type,6.42,,,,,False,
+United Arab Emirates,4,Tablet availability,type,4.426,4.531,0.106,0.209,0.506,False,0.106
+Viet Nam,4,Tablet availability,type,0.42,1.571,1.151,0.951,1.211,False,1.151
+Malta,4,Tablet availability,type,0.41,1.806,1.396,0.021,67.743,True,1.396
+Uruguay,4,Tablet availability,type,0.414,1.565,1.151,0.616,1.87,False,1.151
+Chile,4,Tablet availability,type,2.573,2.992,0.42,1.117,0.376,False,0.42
+Israel,4,Tablet availability,type,,,,,,False,
+Iceland,4,Tablet availability,type,7.35,,,,,False,
+Brunei Darussalam,4,Tablet availability,type,0.647,2.316,1.669,0.016,106.675,True,1.669
+Mauritius,4,Tablet availability,type,0.114,0.212,0.098,0.171,0.575,False,0.098
+Uzbekistan,4,Tablet availability,type,1.148,,,,,False,
+Montenegro,4,Tablet availability,type,0.182,,,,,False,
+Albania*,4,Tablet availability,type,0.979,0.798,-0.181,0.317,-0.571,False,-0.181
+Qatar,4,Tablet availability,type,1.095,2.639,1.544,0.045,34.117,True,1.544
+Greece,4,Tablet availability,type,1.857,0.418,-1.439,0.314,-4.58,True,-1.439
+Thailand,4,Tablet availability,type,0.155,0.676,0.522,0.402,1.299,False,0.522
+Serbia,4,Tablet availability,type,0.168,,,,,False,
+Romania,4,Tablet availability,type,8.431,,,,,False,
+Mongolia,4,Tablet availability,type,4.615,1.881,-2.734,0.633,-4.318,True,-2.734
+Costa Rica,4,Tablet availability,type,0.25,3.358,3.109,0.625,4.973,True,3.109
+Georgia,4,Tablet availability,type,0.477,0.346,-0.131,0.226,-0.58,False,-0.131
+Moldova,4,Tablet availability,type,1.231,,,,,False,
+Bulgaria,4,Tablet availability,type,1.757,,,,,False,
+Kazakhstan,4,Tablet availability,type,2.317,1.585,-0.732,0.639,-1.145,False,-0.732
+Malaysia,4,Tablet availability,type,1.048,0.998,-0.05,0.584,-0.086,False,-0.05
+Colombia,4,Tablet availability,type,2.405,5.403,2.999,3.045,0.985,False,2.999
+Mexico,4,Tablet availability,type,0.075,1.708,1.633,1.105,1.479,False,1.633
+Saudi Arabia,4,Tablet availability,type,0.286,2.94,2.654,0.787,3.372,True,2.654
+Cyprus,4,Tablet availability,type,1.748,2.721,0.974,0.083,11.724,True,0.974
+Azerbaijan,4,Tablet availability,type,0.297,,,,,False,
+Brazil,4,Tablet availability,type,1.377,1.228,-0.149,0.572,-0.261,False,-0.149
+Jordan,4,Tablet availability,type,0.247,0.828,0.581,0.311,1.868,False,0.581
+Peru,4,Tablet availability,type,3.14,0.27,-2.87,0.528,-5.439,True,-2.87
+Ecuador,4,Tablet availability,type,0.353,1.283,0.93,0.386,2.412,True,0.93
+Argentina,4,Tablet availability,type,0.036,0.176,0.14,0.054,2.569,True,0.14
+Indonesia,4,Tablet availability,type,2.371,0.45,-1.921,0.638,-3.011,True,-1.921
+El Salvador,4,Tablet availability,type,6.228,2.122,-4.106,1.133,-3.625,True,-4.106
+Cambodia,4,Tablet availability,type,0.211,2.549,2.337,1.628,1.436,False,2.337
+North Macedonia,4,Tablet availability,type,1.099,,,,,False,
+Philippines,4,Tablet availability,type,1.67,0.859,-0.811,0.511,-1.587,False,-0.811
+Lebanon,4,Tablet availability,type,1.225,1.555,0.33,0.503,0.657,False,0.33
+Armenia,4,Tablet availability,type,1.137,1.796,0.66,1.188,0.556,False,0.66
+Kyrgyzstan,4,Tablet availability,type,0.457,0.694,0.237,0.572,0.415,False,0.237
+Dominican Republic,4,Tablet availability,type,1.144,0.502,-0.642,0.369,-1.738,False,-0.642
+Palestinian Authority,4,Tablet availability,type,,,,,,False,
+Morocco,4,Tablet availability,type,0.778,1.08,0.302,0.538,0.561,False,0.302
+Kosovo,4,Tablet availability,type,0.264,1.46,1.196,0.805,1.485,False,1.196
+Paraguay,4,Tablet availability,type,0.52,0.845,0.325,0.379,0.857,False,0.325
+Kurdistan Region (Iraq),4,Tablet availability,type,,,,,,False,
+Guatemala,4,Tablet availability,type,0.144,0.772,0.628,0.163,3.844,True,0.628
+Zambia,4,Tablet availability,type,0.079,0.057,-0.023,0.058,-0.391,False,-0.023
+Kenya,4,Tablet availability,type,1.145,3.39,2.245,1.83,1.227,False,2.245
+Dushanbe (Tajikistan),4,Tablet availability,type,0.239,0.295,0.056,0.228,0.247,False,0.056
+Rwanda,4,Tablet availability,type,0.064,5.309,5.245,4.056,1.293,False,5.245
+Ukrainian regions (17 of 27),4,Tablet availability,type,1.159,,,,,False,
+OECD average,5,E-book reader availability,ses,0.465,0.497,0.032,0.113,0.283,False,0.032
+B-S-J-Z (China),5,E-book reader availability,ses,0.096,1.13,1.034,0.35,2.952,True,1.034
+Singapore,5,E-book reader availability,ses,0.57,1.525,0.955,0.058,16.489,True,0.955
+Macao (China),5,E-book reader availability,ses,0.618,2.943,2.325,0.028,84.369,True,2.325
+Chinese Taipei,5,E-book reader availability,ses,1.886,0.542,-1.344,0.459,-2.93,True,-1.344
+Japan,5,E-book reader availability,ses,0.327,0.582,0.255,0.429,0.595,False,0.255
+Estonia,5,E-book reader availability,ses,0.197,0.1,-0.097,0.164,-0.591,False,-0.097
+Korea,5,E-book reader availability,ses,1.14,1.585,0.444,0.995,0.447,False,0.444
+United Kingdom,5,E-book reader availability,ses,0.656,0.363,-0.293,0.384,-0.762,False,-0.293
+Canada*,5,E-book reader availability,ses,0.193,0.12,-0.073,0.116,-0.63,False,-0.073
+New Zealand*,5,E-book reader availability,ses,0.136,0.075,-0.06,0.046,-1.295,False,-0.06
+Australia,5,E-book reader availability,ses,0.245,0.352,0.107,0.206,0.518,False,0.107
+Finland,5,E-book reader availability,ses,0.0,0.148,0.148,0.022,6.845,True,0.148
+United States*,5,E-book reader availability,ses,0.471,1.903,1.431,1.75,0.818,False,1.431
+Switzerland,5,E-book reader availability,ses,0.119,0.008,-0.111,0.064,-1.744,False,-0.111
+Ireland,5,E-book reader availability,ses,0.934,0.924,-0.009,0.542,-0.017,False,-0.009
+Austria,5,E-book reader availability,ses,0.193,0.037,-0.156,0.102,-1.531,False,-0.156
+Hong Kong (China),5,E-book reader availability,ses,1.144,1.409,0.265,0.485,0.546,False,0.265
+Poland,5,E-book reader availability,ses,0.108,0.104,-0.004,0.091,-0.046,False,-0.004
+Türkiye,5,E-book reader availability,ses,0.048,0.0,-0.048,0.034,-1.404,False,-0.048
+Czechia,5,E-book reader availability,ses,0.259,0.335,0.076,0.205,0.372,False,0.076
+Belgium,5,E-book reader availability,ses,0.0,0.016,0.016,0.01,1.713,False,0.016
+Lithuania,5,E-book reader availability,ses,1.301,0.32,-0.98,0.752,-1.303,False,-0.98
+Germany,5,E-book reader availability,ses,0.264,1.124,0.859,0.591,1.454,False,0.859
+Netherlands*,5,E-book reader availability,ses,0.0,0.02,0.02,0.021,0.955,False,0.02
+Sweden,5,E-book reader availability,ses,0.526,0.556,0.031,0.452,0.068,False,0.031
+Slovenia,5,E-book reader availability,ses,0.091,0.038,-0.054,0.019,-2.861,True,-0.054
+France,5,E-book reader availability,ses,0.0,0.038,0.038,0.033,1.163,False,0.038
+Italy,5,E-book reader availability,ses,0.363,0.219,-0.144,0.336,-0.429,False,-0.144
+Portugal,5,E-book reader availability,ses,0.051,0.014,-0.037,0.025,-1.461,False,-0.037
+Hungary,5,E-book reader availability,ses,0.004,0.26,0.256,0.154,1.659,False,0.256
+Denmark,5,E-book reader availability,ses,2.193,0.522,-1.67,1.029,-1.623,False,-1.67
+Spain,5,E-book reader availability,ses,0.181,0.157,-0.024,0.092,-0.258,False,-0.024
+Croatia,5,E-book reader availability,ses,0.059,0.038,-0.021,0.021,-0.993,False,-0.021
+Slovak Republic,5,E-book reader availability,ses,0.068,0.023,-0.045,0.053,-0.857,False,-0.045
+Luxembourg,5,E-book reader availability,ses,2.05,1.537,-0.513,0.017,-29.932,True,-0.513
+Norway*,5,E-book reader availability,ses,,,,,,False,
+Latvia,5,E-book reader availability,ses,0.989,0.768,-0.221,0.535,-0.413,False,-0.221
+United Arab Emirates,5,E-book reader availability,ses,1.733,2.615,0.881,0.196,4.486,True,0.881
+Viet Nam,5,E-book reader availability,ses,0.327,0.651,0.325,0.372,0.874,False,0.325
+Malta,5,E-book reader availability,ses,0.0,0.224,0.224,0.002,145.584,True,0.224
+Uruguay,5,E-book reader availability,ses,0.034,0.116,0.082,0.09,0.913,False,0.082
+Chile,5,E-book reader availability,ses,0.175,0.498,0.324,0.338,0.958,False,0.324
+Israel,5,E-book reader availability,ses,0.408,0.06,-0.348,0.141,-2.464,True,-0.348
+Iceland,5,E-book reader availability,ses,0.097,0.139,0.042,0.004,9.383,True,0.042
+Brunei Darussalam,5,E-book reader availability,ses,1.907,0.466,-1.442,0.02,-70.566,True,-1.442
+Mauritius,5,E-book reader availability,ses,0.328,0.604,0.276,0.479,0.577,False,0.276
+Uzbekistan,5,E-book reader availability,ses,0.94,2.773,1.833,0.731,2.506,True,1.833
+Montenegro,5,E-book reader availability,ses,0.018,0.021,0.003,0.002,1.53,False,0.003
+Albania*,5,E-book reader availability,ses,0.294,0.646,0.352,0.289,1.217,False,0.352
+Qatar,5,E-book reader availability,ses,0.193,1.376,1.183,0.03,39.23,True,1.183
+Greece,5,E-book reader availability,ses,0.198,0.061,-0.137,0.132,-1.037,False,-0.137
+Thailand,5,E-book reader availability,ses,0.104,0.157,0.053,0.109,0.484,False,0.053
+Serbia,5,E-book reader availability,ses,0.0,0.0,0.0,,,False,0.0
+Romania,5,E-book reader availability,ses,0.103,1.684,1.581,1.597,0.99,False,1.581
+Mongolia,5,E-book reader availability,ses,2.118,1.112,-1.006,0.663,-1.516,False,-1.006
+Costa Rica,5,E-book reader availability,ses,,,,,,False,
+Georgia,5,E-book reader availability,ses,1.049,0.138,-0.912,0.442,-2.063,True,-0.912
+Moldova,5,E-book reader availability,ses,0.191,0.383,0.192,0.302,0.637,False,0.192
+Bulgaria,5,E-book reader availability,ses,0.228,0.276,0.048,0.271,0.178,False,0.048
+Kazakhstan,5,E-book reader availability,ses,3.915,4.828,0.914,1.57,0.582,False,0.914
+Malaysia,5,E-book reader availability,ses,0.694,1.93,1.236,0.723,1.709,False,1.236
+Colombia,5,E-book reader availability,ses,0.622,4.108,3.486,2.184,1.596,False,3.486
+Mexico,5,E-book reader availability,ses,2.138,0.779,-1.358,2.048,-0.663,False,-1.358
+Saudi Arabia,5,E-book reader availability,ses,0.023,0.421,0.398,0.132,3.019,True,0.398
+Cyprus,5,E-book reader availability,ses,0.344,0.088,-0.256,0.097,-2.644,True,-0.256
+Azerbaijan,5,E-book reader availability,ses,0.0,0.38,0.38,0.246,1.543,False,0.38
+Brazil,5,E-book reader availability,ses,0.074,0.176,0.103,0.105,0.981,False,0.103
+Jordan,5,E-book reader availability,ses,0.001,0.281,0.28,0.108,2.596,True,0.28
+Peru,5,E-book reader availability,ses,0.21,0.077,-0.134,0.139,-0.959,False,-0.134
+Ecuador,5,E-book reader availability,ses,0.142,1.063,0.921,0.554,1.661,False,0.921
+Argentina,5,E-book reader availability,ses,0.019,0.048,0.029,0.031,0.918,False,0.029
+Indonesia,5,E-book reader availability,ses,1.268,0.967,-0.3,0.948,-0.317,False,-0.3
+El Salvador,5,E-book reader availability,ses,10.361,3.523,-6.838,3.619,-1.889,False,-6.838
+Cambodia,5,E-book reader availability,ses,0.024,0.342,0.318,0.306,1.039,False,0.318
+North Macedonia,5,E-book reader availability,ses,0.154,0.427,0.273,0.004,74.62,True,0.273
+Philippines,5,E-book reader availability,ses,0.272,1.439,1.167,0.872,1.339,False,1.167
+Lebanon,5,E-book reader availability,ses,0.148,0.384,0.237,0.283,0.837,False,0.237
+Armenia,5,E-book reader availability,ses,0.189,0.191,0.002,0.128,0.015,False,0.002
+Kyrgyzstan,5,E-book reader availability,ses,0.493,0.603,0.11,0.34,0.322,False,0.11
+Dominican Republic,5,E-book reader availability,ses,0.566,0.511,-0.055,0.396,-0.138,False,-0.055
+Palestinian Authority,5,E-book reader availability,ses,,,,,,False,
+Morocco,5,E-book reader availability,ses,0.052,0.182,0.129,0.1,1.293,False,0.129
+Kosovo,5,E-book reader availability,ses,0.199,0.391,0.192,0.167,1.152,False,0.192
+Paraguay,5,E-book reader availability,ses,0.758,1.058,0.3,0.524,0.572,False,0.3
+Kurdistan Region (Iraq),5,E-book reader availability,ses,,,,,,False,
+Guatemala,5,E-book reader availability,ses,0.013,0.827,0.814,0.268,3.039,True,0.814
+Zambia,5,E-book reader availability,ses,0.013,41.354,41.341,38.293,1.08,False,41.341
+Kenya,5,E-book reader availability,ses,0.013,1.081,1.069,0.963,1.11,False,1.069
+Dushanbe (Tajikistan),5,E-book reader availability,ses,0.231,0.333,0.103,0.007,13.854,True,0.103
+Rwanda,5,E-book reader availability,ses,,,,,,False,
+Ukrainian regions (17 of 27),5,E-book reader availability,ses,0.154,0.062,-0.092,0.09,-1.023,False,-0.092
+OECD average,5,E-book reader availability,location,0.839,0.377,-0.47,0.238,-1.97,True,-0.47
+B-S-J-Z (China),5,E-book reader availability,location,0.59,0.756,0.167,0.537,0.311,False,0.167
+Singapore,5,E-book reader availability,location,,1.255,,,,False,
+Macao (China),5,E-book reader availability,location,,2.668,,,,False,
+Chinese Taipei,5,E-book reader availability,location,2.648,0.862,-1.786,1.094,-1.633,False,-1.786
+Japan,5,E-book reader availability,location,,0.474,,,,False,
+Estonia,5,E-book reader availability,location,0.187,0.273,0.086,0.268,0.321,False,0.086
+Korea,5,E-book reader availability,location,6.361,1.469,-4.891,5.934,-0.824,False,-4.891
+United Kingdom,5,E-book reader availability,location,0.403,0.242,-0.161,0.242,-0.666,False,-0.161
+Canada*,5,E-book reader availability,location,0.052,0.173,0.121,0.074,1.64,False,0.121
+New Zealand*,5,E-book reader availability,location,0.0,0.111,0.111,0.022,5.046,True,0.111
+Australia,5,E-book reader availability,location,0.689,0.228,-0.461,0.611,-0.754,False,-0.461
+Finland,5,E-book reader availability,location,0.0,0.004,0.004,0.005,0.881,False,0.004
+United States*,5,E-book reader availability,location,3.231,1.57,-1.661,2.379,-0.698,False,-1.661
+Switzerland,5,E-book reader availability,location,0.177,0.0,-0.177,0.182,-0.969,False,-0.177
+Ireland,5,E-book reader availability,location,3.717,0.665,-3.052,1.786,-1.709,False,-3.052
+Austria,5,E-book reader availability,location,0.122,0.08,-0.042,0.137,-0.305,False,-0.042
+Hong Kong (China),5,E-book reader availability,location,3.601,1.491,-2.11,2.296,-0.919,False,-2.11
+Poland,5,E-book reader availability,location,0.072,0.113,0.041,0.072,0.566,False,0.041
+Türkiye,5,E-book reader availability,location,,0.071,,,,False,
+Czechia,5,E-book reader availability,location,0.469,0.329,-0.139,0.239,-0.581,False,-0.139
+Belgium,5,E-book reader availability,location,,0.04,,,,False,
+Lithuania,5,E-book reader availability,location,2.167,0.351,-1.817,1.677,-1.083,False,-1.817
+Germany,5,E-book reader availability,location,,0.812,,,,False,
+Netherlands*,5,E-book reader availability,location,,0.018,,,,False,
+Sweden,5,E-book reader availability,location,0.12,0.171,0.051,0.194,0.262,False,0.051
+Slovenia,5,E-book reader availability,location,0.046,0.053,0.007,0.033,0.208,False,0.007
+France,5,E-book reader availability,location,0.0,0.0,0.0,,,False,0.0
+Italy,5,E-book reader availability,location,0.169,0.325,0.156,0.247,0.633,False,0.156
+Portugal,5,E-book reader availability,location,0.018,0.033,0.015,0.021,0.707,False,0.015
+Hungary,5,E-book reader availability,location,0.037,0.155,0.118,0.097,1.214,False,0.118
+Denmark,5,E-book reader availability,location,2.009,1.215,-0.794,0.88,-0.903,False,-0.794
+Spain,5,E-book reader availability,location,0.103,0.158,0.055,0.088,0.627,False,0.055
+Croatia,5,E-book reader availability,location,0.0,0.189,0.189,0.115,1.638,False,0.189
+Slovak Republic,5,E-book reader availability,location,0.296,0.009,-0.288,0.165,-1.745,False,-0.288
+Luxembourg,5,E-book reader availability,location,,1.207,,,,False,
+Norway*,5,E-book reader availability,location,,,,,,False,
+Latvia,5,E-book reader availability,location,2.023,0.488,-1.535,1.035,-1.483,False,-1.535
+United Arab Emirates,5,E-book reader availability,location,1.721,2.226,0.505,0.654,0.772,False,0.505
+Viet Nam,5,E-book reader availability,location,0.187,0.45,0.263,0.288,0.914,False,0.263
+Malta,5,E-book reader availability,location,,,,,,False,
+Uruguay,5,E-book reader availability,location,0.0,0.112,0.112,0.058,1.923,False,0.112
+Chile,5,E-book reader availability,location,,0.253,,,,False,
+Israel,5,E-book reader availability,location,0.764,0.19,-0.574,0.461,-1.245,False,-0.574
+Iceland,5,E-book reader availability,location,0.243,0.0,-0.243,0.039,-6.246,True,-0.243
+Brunei Darussalam,5,E-book reader availability,location,2.719,,,,,False,
+Mauritius,5,E-book reader availability,location,0.253,,,,,False,
+Uzbekistan,5,E-book reader availability,location,1.5,1.59,0.09,0.426,0.21,False,0.09
+Montenegro,5,E-book reader availability,location,,0.011,,,,False,
+Albania*,5,E-book reader availability,location,0.0,0.631,0.631,0.176,3.58,True,0.631
+Qatar,5,E-book reader availability,location,0.168,0.587,0.418,0.026,15.946,True,0.418
+Greece,5,E-book reader availability,location,0.351,0.058,-0.293,0.307,-0.954,False,-0.293
+Thailand,5,E-book reader availability,location,0.173,0.487,0.313,0.266,1.179,False,0.313
+Serbia,5,E-book reader availability,location,,0.0,,,,False,
+Romania,5,E-book reader availability,location,0.0,1.132,1.132,1.06,1.069,False,1.132
+Mongolia,5,E-book reader availability,location,5.411,1.066,-4.345,1.913,-2.271,True,-4.345
+Costa Rica,5,E-book reader availability,location,0.083,0.279,0.196,0.287,0.684,False,0.196
+Georgia,5,E-book reader availability,location,1.615,0.332,-1.282,0.522,-2.459,True,-1.282
+Moldova,5,E-book reader availability,location,0.61,0.148,-0.461,0.282,-1.635,False,-0.461
+Bulgaria,5,E-book reader availability,location,0.438,0.18,-0.258,0.428,-0.603,False,-0.258
+Kazakhstan,5,E-book reader availability,location,5.581,4.547,-1.034,1.263,-0.818,False,-1.034
+Malaysia,5,E-book reader availability,location,1.913,1.641,-0.271,0.859,-0.316,False,-0.271
+Colombia,5,E-book reader availability,location,0.971,2.052,1.081,1.093,0.989,False,1.081
+Mexico,5,E-book reader availability,location,0.298,0.288,-0.01,0.33,-0.03,False,-0.01
+Saudi Arabia,5,E-book reader availability,location,0.103,0.336,0.233,0.123,1.896,False,0.233
+Cyprus,5,E-book reader availability,location,0.213,0.091,-0.122,0.033,-3.668,True,-0.122
+Azerbaijan,5,E-book reader availability,location,0.448,0.84,0.392,0.829,0.473,False,0.392
+Brazil,5,E-book reader availability,location,0.486,0.215,-0.271,0.471,-0.576,False,-0.271
+Jordan,5,E-book reader availability,location,0.029,0.136,0.107,0.058,1.833,False,0.107
+Peru,5,E-book reader availability,location,0.352,0.177,-0.175,0.21,-0.832,False,-0.175
+Ecuador,5,E-book reader availability,location,0.212,0.489,0.277,0.292,0.947,False,0.277
+Argentina,5,E-book reader availability,location,0.16,0.057,-0.103,0.128,-0.808,False,-0.103
+Indonesia,5,E-book reader availability,location,2.099,0.381,-1.718,1.284,-1.338,False,-1.718
+El Salvador,5,E-book reader availability,location,7.653,3.828,-3.824,2.014,-1.899,False,-3.824
+Cambodia,5,E-book reader availability,location,0.232,0.534,0.303,0.49,0.618,False,0.303
+North Macedonia,5,E-book reader availability,location,,0.333,,,,False,
+Philippines,5,E-book reader availability,location,0.958,0.745,-0.213,0.954,-0.223,False,-0.213
+Lebanon,5,E-book reader availability,location,0.187,0.242,0.056,0.201,0.278,False,0.056
+Armenia,5,E-book reader availability,location,0.225,0.166,-0.059,0.107,-0.554,False,-0.059
+Kyrgyzstan,5,E-book reader availability,location,0.889,0.499,-0.39,0.297,-1.313,False,-0.39
+Dominican Republic,5,E-book reader availability,location,0.017,0.328,0.31,0.178,1.741,False,0.31
+Palestinian Authority,5,E-book reader availability,location,,,,,,False,
+Morocco,5,E-book reader availability,location,0.093,0.137,0.043,0.068,0.637,False,0.043
+Kosovo,5,E-book reader availability,location,0.508,0.418,-0.09,0.261,-0.346,False,-0.09
+Paraguay,5,E-book reader availability,location,0.102,0.799,0.697,0.35,1.991,True,0.697
+Kurdistan Region (Iraq),5,E-book reader availability,location,,,,,,False,
+Guatemala,5,E-book reader availability,location,0.018,0.711,0.693,0.279,2.483,True,0.693
+Zambia,5,E-book reader availability,location,22.786,0.009,-22.776,21.592,-1.055,False,-22.776
+Kenya,5,E-book reader availability,location,0.315,0.099,-0.216,0.289,-0.749,False,-0.216
+Dushanbe (Tajikistan),5,E-book reader availability,location,0.22,0.43,0.21,0.024,8.868,True,0.21
+Rwanda,5,E-book reader availability,location,,,,,,False,
+Ukrainian regions (17 of 27),5,E-book reader availability,location,0.187,0.139,-0.048,0.125,-0.386,False,-0.048
+OECD average,5,E-book reader availability,type,0.364,0.636,0.318,0.115,2.764,True,0.318
+B-S-J-Z (China),5,E-book reader availability,type,0.422,1.584,1.162,0.881,1.319,False,1.162
+Singapore,5,E-book reader availability,type,1.401,0.901,-0.499,0.835,-0.598,False,-0.499
+Macao (China),5,E-book reader availability,type,,2.714,,,,False,
+Chinese Taipei,5,E-book reader availability,type,1.252,1.084,-0.167,0.359,-0.466,False,-0.167
+Japan,5,E-book reader availability,type,0.54,0.485,-0.055,0.412,-0.135,False,-0.055
+Estonia,5,E-book reader availability,type,0.18,0.0,-0.18,0.084,-2.136,True,-0.18
+Korea,5,E-book reader availability,type,0.821,2.398,1.577,0.817,1.931,False,1.577
+United Kingdom,5,E-book reader availability,type,0.627,0.143,-0.484,0.298,-1.627,False,-0.484
+Canada*,5,E-book reader availability,type,0.144,0.188,0.043,0.179,0.241,False,0.043
+New Zealand*,5,E-book reader availability,type,0.211,0.0,-0.211,0.014,-14.924,True,-0.211
+Australia,5,E-book reader availability,type,0.233,0.353,0.12,0.135,0.889,False,0.12
+Finland,5,E-book reader availability,type,0.059,0.0,-0.059,0.004,-16.597,True,-0.059
+United States*,5,E-book reader availability,type,1.197,,,,,False,
+Switzerland,5,E-book reader availability,type,0.056,0.012,-0.044,0.024,-1.846,False,-0.044
+Ireland,5,E-book reader availability,type,,,,,,False,
+Austria,5,E-book reader availability,type,0.062,0.031,-0.03,0.041,-0.74,False,-0.03
+Hong Kong (China),5,E-book reader availability,type,1.593,1.312,-0.281,0.47,-0.598,False,-0.281
+Poland,5,E-book reader availability,type,0.193,0.256,0.063,0.208,0.304,False,0.063
+Türkiye,5,E-book reader availability,type,0.065,0.0,-0.065,0.038,-1.702,False,-0.065
+Czechia,5,E-book reader availability,type,0.334,0.578,0.244,0.404,0.604,False,0.244
+Belgium,5,E-book reader availability,type,0.006,0.016,0.009,0.012,0.754,False,0.009
+Lithuania,5,E-book reader availability,type,0.496,0.785,0.289,0.302,0.955,False,0.289
+Germany,5,E-book reader availability,type,0.728,0.0,-0.728,0.217,-3.349,True,-0.728
+Netherlands*,5,E-book reader availability,type,0.145,,,,,False,
+Sweden,5,E-book reader availability,type,0.218,1.228,1.01,0.596,1.694,False,1.01
+Slovenia,5,E-book reader availability,type,0.15,0.0,-0.15,0.02,-7.321,True,-0.15
+France,5,E-book reader availability,type,0.013,0.086,0.073,0.12,0.613,False,0.073
+Italy,5,E-book reader availability,type,0.205,0.0,-0.205,0.091,-2.258,True,-0.205
+Portugal,5,E-book reader availability,type,0.075,0.0,-0.075,0.018,-4.257,True,-0.075
+Hungary,5,E-book reader availability,type,0.087,0.258,0.171,0.166,1.027,False,0.171
+Denmark,5,E-book reader availability,type,1.631,0.708,-0.923,0.526,-1.754,False,-0.923
+Spain,5,E-book reader availability,type,0.206,0.176,-0.03,0.069,-0.431,False,-0.03
+Croatia,5,E-book reader availability,type,0.157,0.014,-0.143,0.062,-2.298,True,-0.143
+Slovak Republic,5,E-book reader availability,type,0.07,0.219,0.149,0.194,0.768,False,0.149
+Luxembourg,5,E-book reader availability,type,0.717,2.32,1.603,0.016,100.076,True,1.603
+Norway*,5,E-book reader availability,type,,,,,,False,
+Latvia,5,E-book reader availability,type,1.406,,,,,False,
+United Arab Emirates,5,E-book reader availability,type,2.338,2.143,-0.195,0.098,-1.981,True,-0.195
+Viet Nam,5,E-book reader availability,type,0.325,1.257,0.932,0.829,1.124,False,0.932
+Malta,5,E-book reader availability,type,0.0,0.154,0.154,0.001,157.643,True,0.154
+Uruguay,5,E-book reader availability,type,0.033,0.154,0.121,0.113,1.073,False,0.121
+Chile,5,E-book reader availability,type,0.472,0.235,-0.238,0.271,-0.877,False,-0.238
+Israel,5,E-book reader availability,type,,,,,,False,
+Iceland,5,E-book reader availability,type,0.133,,,,,False,
+Brunei Darussalam,5,E-book reader availability,type,0.764,0.561,-0.203,0.007,-29.298,True,-0.203
+Mauritius,5,E-book reader availability,type,0.085,0.308,0.223,0.205,1.085,False,0.223
+Uzbekistan,5,E-book reader availability,type,1.641,,,,,False,
+Montenegro,5,E-book reader availability,type,0.007,,,,,False,
+Albania*,5,E-book reader availability,type,0.495,0.601,0.106,0.23,0.461,False,0.106
+Qatar,5,E-book reader availability,type,0.182,0.861,0.679,0.018,38.546,True,0.679
+Greece,5,E-book reader availability,type,0.098,0.192,0.094,0.162,0.581,False,0.094
+Thailand,5,E-book reader availability,type,0.158,0.601,0.443,0.4,1.108,False,0.443
+Serbia,5,E-book reader availability,type,0.053,,,,,False,
+Romania,5,E-book reader availability,type,0.746,,,,,False,
+Mongolia,5,E-book reader availability,type,1.423,1.634,0.21,0.57,0.369,False,0.21
+Costa Rica,5,E-book reader availability,type,0.06,1.24,1.18,0.534,2.209,True,1.18
+Georgia,5,E-book reader availability,type,0.678,0.251,-0.427,0.24,-1.776,False,-0.427
+Moldova,5,E-book reader availability,type,0.315,,,,,False,
+Bulgaria,5,E-book reader availability,type,0.099,,,,,False,
+Kazakhstan,5,E-book reader availability,type,5.174,2.031,-3.143,1.001,-3.14,True,-3.143
+Malaysia,5,E-book reader availability,type,1.476,0.522,-0.954,0.543,-1.756,False,-0.954
+Colombia,5,E-book reader availability,type,0.506,6.251,5.745,2.987,1.923,False,5.745
+Mexico,5,E-book reader availability,type,0.601,1.559,0.958,1.158,0.827,False,0.958
+Saudi Arabia,5,E-book reader availability,type,0.17,1.238,1.068,0.496,2.154,True,1.068
+Cyprus,5,E-book reader availability,type,0.214,0.172,-0.042,0.029,-1.458,False,-0.042
+Azerbaijan,5,E-book reader availability,type,0.512,,,,,False,
+Brazil,5,E-book reader availability,type,0.173,0.083,-0.09,0.061,-1.484,False,-0.09
+Jordan,5,E-book reader availability,type,0.018,0.319,0.301,0.121,2.485,True,0.301
+Peru,5,E-book reader availability,type,0.155,0.221,0.066,0.135,0.484,False,0.066
+Ecuador,5,E-book reader availability,type,0.134,1.144,1.01,0.632,1.598,False,1.01
+Argentina,5,E-book reader availability,type,0.047,0.022,-0.026,0.037,-0.706,False,-0.026
+Indonesia,5,E-book reader availability,type,1.006,0.775,-0.23,0.636,-0.363,False,-0.23
+El Salvador,5,E-book reader availability,type,12.894,1.893,-11.001,6.181,-1.78,False,-11.001
+Cambodia,5,E-book reader availability,type,0.051,1.039,0.988,0.971,1.018,False,0.988
+North Macedonia,5,E-book reader availability,type,0.265,,,,,False,
+Philippines,5,E-book reader availability,type,0.616,1.573,0.956,1.383,0.692,False,0.956
+Lebanon,5,E-book reader availability,type,0.122,0.448,0.325,0.166,1.954,False,0.325
+Armenia,5,E-book reader availability,type,0.253,0.823,0.57,0.809,0.705,False,0.57
+Kyrgyzstan,5,E-book reader availability,type,0.673,0.345,-0.328,0.189,-1.734,False,-0.328
+Dominican Republic,5,E-book reader availability,type,0.588,0.166,-0.422,0.201,-2.101,True,-0.422
+Palestinian Authority,5,E-book reader availability,type,,,,,,False,
+Morocco,5,E-book reader availability,type,0.071,0.417,0.347,0.228,1.518,False,0.347
+Kosovo,5,E-book reader availability,type,0.302,0.863,0.561,0.623,0.901,False,0.561
+Paraguay,5,E-book reader availability,type,0.409,1.135,0.726,0.37,1.96,False,0.726
+Kurdistan Region (Iraq),5,E-book reader availability,type,,,,,,False,
+Guatemala,5,E-book reader availability,type,0.014,0.628,0.614,0.198,3.095,True,0.614
+Zambia,5,E-book reader availability,type,13.474,0.228,-13.247,13.068,-1.014,False,-13.247
+Kenya,5,E-book reader availability,type,0.2,0.623,0.423,0.34,1.246,False,0.423
+Dushanbe (Tajikistan),5,E-book reader availability,type,0.379,0.178,-0.201,0.069,-2.911,True,-0.201
+Rwanda,5,E-book reader availability,type,,,,,,False,
+Ukrainian regions (17 of 27),5,E-book reader availability,type,0.101,,,,,False,
+OECD average,7,Lack of digital resources,ses,25.387,16.744,-8.644,1.228,-7.041,True,8.644
+B-S-J-Z (China),7,Lack of digital resources,ses,43.88,17.571,-26.309,7.679,-3.426,True,26.309
+Singapore,7,Lack of digital resources,ses,0.0,0.0,0.0,,,False,-0.0
+Macao (China),7,Lack of digital resources,ses,2.545,0.0,-2.545,0.013,-196.537,True,2.545
+Chinese Taipei,7,Lack of digital resources,ses,5.228,4.24,-0.989,3.913,-0.253,False,0.989
+Japan,7,Lack of digital resources,ses,47.287,43.879,-3.408,11.601,-0.294,False,3.408
+Estonia,7,Lack of digital resources,ses,30.197,20.85,-9.347,6.818,-1.371,False,9.347
+Korea,7,Lack of digital resources,ses,27.383,36.177,8.794,9.387,0.937,False,-8.794
+United Kingdom,7,Lack of digital resources,ses,25.505,17.891,-7.615,8.021,-0.949,False,7.615
+Canada*,7,Lack of digital resources,ses,28.502,12.446,-16.056,5.014,-3.202,True,16.056
+New Zealand*,7,Lack of digital resources,ses,25.833,0.0,-25.833,5.724,-4.513,True,25.833
+Australia,7,Lack of digital resources,ses,22.835,1.021,-21.814,3.189,-6.841,True,21.814
+Finland,7,Lack of digital resources,ses,5.451,18.121,12.669,7.413,1.709,False,-12.669
+United States*,7,Lack of digital resources,ses,8.122,6.706,-1.416,10.757,-0.132,False,1.416
+Switzerland,7,Lack of digital resources,ses,14.842,5.411,-9.432,7.618,-1.238,False,9.432
+Ireland,7,Lack of digital resources,ses,47.185,20.473,-26.712,10.251,-2.606,True,26.712
+Austria,7,Lack of digital resources,ses,30.115,22.491,-7.625,7.794,-0.978,False,7.625
+Hong Kong (China),7,Lack of digital resources,ses,6.712,1.959,-4.753,3.983,-1.194,False,4.753
+Poland,7,Lack of digital resources,ses,10.036,17.781,7.745,7.139,1.085,False,-7.745
+Türkiye,7,Lack of digital resources,ses,35.792,8.464,-27.327,8.185,-3.339,True,27.327
+Czechia,7,Lack of digital resources,ses,11.32,30.363,19.042,6.802,2.799,True,-19.042
+Belgium,7,Lack of digital resources,ses,17.132,4.36,-12.772,6.018,-2.122,True,12.772
+Lithuania,7,Lack of digital resources,ses,14.497,8.858,-5.639,4.26,-1.324,False,5.639
+Germany,7,Lack of digital resources,ses,37.977,19.13,-18.847,9.26,-2.035,True,18.847
+Netherlands*,7,Lack of digital resources,ses,0.0,12.464,12.464,8.586,1.452,False,-12.464
+Sweden,7,Lack of digital resources,ses,1.507,0.0,-1.507,1.546,-0.975,False,1.507
+Slovenia,7,Lack of digital resources,ses,22.325,5.477,-16.848,2.667,-6.318,True,16.848
+France,7,Lack of digital resources,ses,25.23,15.383,-9.847,8.294,-1.187,False,9.847
+Italy,7,Lack of digital resources,ses,13.32,8.051,-5.269,6.825,-0.772,False,5.269
+Portugal,7,Lack of digital resources,ses,33.788,21.795,-11.993,8.086,-1.483,False,11.993
+Hungary,7,Lack of digital resources,ses,18.618,11.905,-6.713,6.807,-0.986,False,6.713
+Denmark,7,Lack of digital resources,ses,0.712,0.0,-0.712,0.709,-1.004,False,0.712
+Spain,7,Lack of digital resources,ses,25.89,14.15,-11.74,6.128,-1.916,False,11.74
+Croatia,7,Lack of digital resources,ses,27.072,31.425,4.354,5.513,0.79,False,-4.354
+Slovak Republic,7,Lack of digital resources,ses,48.258,35.961,-12.298,9.113,-1.349,False,12.298
+Luxembourg,7,Lack of digital resources,ses,0.0,9.341,9.341,0.061,153.302,True,-9.341
+Norway*,7,Lack of digital resources,ses,5.376,10.656,5.281,4.962,1.064,False,-5.281
+Latvia,7,Lack of digital resources,ses,9.49,5.118,-4.372,2.969,-1.473,False,4.372
+United Arab Emirates,7,Lack of digital resources,ses,12.238,4.512,-7.726,1.382,-5.59,True,7.726
+Viet Nam,7,Lack of digital resources,ses,42.986,42.577,-0.409,10.431,-0.039,False,0.409
+Malta,7,Lack of digital resources,ses,40.196,3.549,-36.647,0.342,-107.014,True,36.647
+Uruguay,7,Lack of digital resources,ses,58.115,16.323,-41.792,6.934,-6.027,True,41.792
+Chile,7,Lack of digital resources,ses,47.238,20.71,-26.528,10.264,-2.585,True,26.528
+Israel,7,Lack of digital resources,ses,52.95,41.976,-10.974,12.017,-0.913,False,10.974
+Iceland,7,Lack of digital resources,ses,6.649,0.0,-6.649,0.365,-18.199,True,6.649
+Brunei Darussalam,7,Lack of digital resources,ses,56.856,6.247,-50.609,0.405,-125.093,True,50.609
+Mauritius,7,Lack of digital resources,ses,32.602,37.504,4.902,8.795,0.557,False,-4.902
+Uzbekistan,7,Lack of digital resources,ses,34.705,11.29,-23.414,8.292,-2.824,True,23.414
+Montenegro,7,Lack of digital resources,ses,18.117,13.543,-4.574,2.847,-1.607,False,4.574
+Albania*,7,Lack of digital resources,ses,46.78,16.378,-30.402,9.195,-3.306,True,30.402
+Qatar,7,Lack of digital resources,ses,11.01,4.219,-6.79,0.511,-13.299,True,6.79
+Greece,7,Lack of digital resources,ses,40.527,31.938,-8.588,9.448,-0.909,False,8.588
+Thailand,7,Lack of digital resources,ses,52.425,5.351,-47.074,8.733,-5.391,True,47.074
+Serbia,7,Lack of digital resources,ses,35.791,21.857,-13.934,9.58,-1.454,False,13.934
+Romania,7,Lack of digital resources,ses,12.293,11.474,-0.819,5.771,-0.142,False,0.819
+Mongolia,7,Lack of digital resources,ses,25.055,13.957,-11.098,9.206,-1.206,False,11.098
+Costa Rica,7,Lack of digital resources,ses,,,,,,False,
+Georgia,7,Lack of digital resources,ses,40.181,19.173,-21.008,7.92,-2.652,True,21.008
+Moldova,7,Lack of digital resources,ses,36.463,26.237,-10.226,7.675,-1.332,False,10.226
+Bulgaria,7,Lack of digital resources,ses,6.948,17.75,10.802,7.08,1.526,False,-10.802
+Kazakhstan,7,Lack of digital resources,ses,31.465,25.355,-6.111,5.866,-1.042,False,6.111
+Malaysia,7,Lack of digital resources,ses,49.507,38.169,-11.338,12.406,-0.914,False,11.338
+Colombia,7,Lack of digital resources,ses,83.475,45.637,-37.838,9.589,-3.946,True,37.838
+Mexico,7,Lack of digital resources,ses,63.972,34.542,-29.43,8.171,-3.602,True,29.43
+Saudi Arabia,7,Lack of digital resources,ses,69.566,23.484,-46.082,10.161,-4.535,True,46.082
+Cyprus,7,Lack of digital resources,ses,20.523,20.749,0.226,2.874,0.079,False,-0.226
+Azerbaijan,7,Lack of digital resources,ses,53.876,48.064,-5.812,9.453,-0.615,False,5.812
+Brazil,7,Lack of digital resources,ses,48.936,11.553,-37.382,4.722,-7.917,True,37.382
+Jordan,7,Lack of digital resources,ses,65.471,37.295,-28.176,8.813,-3.197,True,28.176
+Peru,7,Lack of digital resources,ses,81.957,15.514,-66.443,6.855,-9.692,True,66.443
+Ecuador,7,Lack of digital resources,ses,65.584,25.258,-40.326,8.417,-4.791,True,40.326
+Argentina,7,Lack of digital resources,ses,81.314,30.696,-50.619,8.767,-5.774,True,50.619
+Indonesia,7,Lack of digital resources,ses,53.431,26.041,-27.39,9.168,-2.988,True,27.39
+El Salvador,7,Lack of digital resources,ses,30.233,20.018,-10.215,8.598,-1.188,False,10.215
+Cambodia,7,Lack of digital resources,ses,80.57,60.809,-19.761,9.735,-2.03,True,19.761
+North Macedonia,7,Lack of digital resources,ses,45.564,20.856,-24.708,1.418,-17.43,True,24.708
+Philippines,7,Lack of digital resources,ses,56.829,48.446,-8.383,9.896,-0.847,False,8.383
+Lebanon,7,Lack of digital resources,ses,51.499,16.822,-34.678,8.143,-4.258,True,34.678
+Armenia,7,Lack of digital resources,ses,56.431,55.64,-0.791,6.523,-0.121,False,0.791
+Kyrgyzstan,7,Lack of digital resources,ses,59.406,66.357,6.951,10.443,0.666,False,-6.951
+Dominican Republic,7,Lack of digital resources,ses,64.927,34.996,-29.931,10.798,-2.772,True,29.931
+Palestinian Authority,7,Lack of digital resources,ses,61.855,43.839,-18.016,10.61,-1.698,False,18.016
+Morocco,7,Lack of digital resources,ses,70.957,46.761,-24.196,10.439,-2.318,True,24.196
+Kosovo,7,Lack of digital resources,ses,42.764,27.368,-15.396,4.193,-3.672,True,15.396
+Paraguay,7,Lack of digital resources,ses,69.364,36.272,-33.092,8.282,-3.996,True,33.092
+Kurdistan Region (Iraq),7,Lack of digital resources,ses,,,,,,False,
+Guatemala,7,Lack of digital resources,ses,79.668,20.428,-59.24,5.465,-10.84,True,59.24
+Zambia,7,Lack of digital resources,ses,77.474,51.442,-26.032,15.343,-1.697,False,26.032
+Kenya,7,Lack of digital resources,ses,69.731,58.529,-11.202,9.676,-1.158,False,11.202
+Dushanbe (Tajikistan),7,Lack of digital resources,ses,30.351,17.382,-12.969,1.357,-9.558,True,12.969
+Rwanda,7,Lack of digital resources,ses,63.389,32.979,-30.41,7.765,-3.916,True,30.41
+Ukrainian regions (17 of 27),7,Lack of digital resources,ses,59.9,52.266,-7.634,9.237,-0.826,False,7.634
+OECD average,7,Lack of digital resources,location,22.931,22.178,-1.363,1.842,-0.74,False,1.363
+B-S-J-Z (China),7,Lack of digital resources,location,46.812,27.324,-19.487,18.278,-1.066,False,19.487
+Singapore,7,Lack of digital resources,location,,0.0,,,,False,
+Macao (China),7,Lack of digital resources,location,,19.644,,,,False,
+Chinese Taipei,7,Lack of digital resources,location,0.0,5.47,5.47,1.992,2.746,True,-5.47
+Japan,7,Lack of digital resources,location,,53.541,,,,False,
+Estonia,7,Lack of digital resources,location,27.483,20.983,-6.5,6.303,-1.031,False,6.5
+Korea,7,Lack of digital resources,location,29.412,26.17,-3.241,21.707,-0.149,False,3.241
+United Kingdom,7,Lack of digital resources,location,8.476,29.309,20.833,7.316,2.848,True,-20.833
+Canada*,7,Lack of digital resources,location,6.021,22.492,16.471,2.805,5.872,True,-16.471
+New Zealand*,7,Lack of digital resources,location,0.0,11.747,11.747,2.499,4.701,True,-11.747
+Australia,7,Lack of digital resources,location,13.424,11.333,-2.091,7.93,-0.264,False,2.091
+Finland,7,Lack of digital resources,location,5.132,11.537,6.405,6.961,0.92,False,-6.405
+United States*,7,Lack of digital resources,location,3.331,2.808,-0.523,3.799,-0.138,False,0.523
+Switzerland,7,Lack of digital resources,location,0.771,9.416,8.646,6.461,1.338,False,-8.646
+Ireland,7,Lack of digital resources,location,35.939,32.844,-3.095,12.384,-0.25,False,3.095
+Austria,7,Lack of digital resources,location,0.0,30.481,30.481,5.809,5.248,True,-30.481
+Hong Kong (China),7,Lack of digital resources,location,17.97,9.863,-8.106,19.074,-0.425,False,8.106
+Poland,7,Lack of digital resources,location,19.152,14.71,-4.442,12.503,-0.355,False,4.442
+Türkiye,7,Lack of digital resources,location,,19.991,,,,False,
+Czechia,7,Lack of digital resources,location,19.055,27.703,8.647,7.328,1.18,False,-8.647
+Belgium,7,Lack of digital resources,location,0.0,13.658,13.658,3.955,3.453,True,-13.658
+Lithuania,7,Lack of digital resources,location,9.22,8.657,-0.563,5.574,-0.101,False,0.563
+Germany,7,Lack of digital resources,location,,39.277,,,,False,
+Netherlands*,7,Lack of digital resources,location,,10.046,,,,False,
+Sweden,7,Lack of digital resources,location,0.0,1.828,1.828,1.274,1.435,False,-1.828
+Slovenia,7,Lack of digital resources,location,26.327,11.536,-14.792,9.34,-1.584,False,14.792
+France,7,Lack of digital resources,location,7.096,14.886,7.79,8.879,0.877,False,-7.79
+Italy,7,Lack of digital resources,location,42.444,5.248,-37.197,23.879,-1.558,False,37.197
+Portugal,7,Lack of digital resources,location,42.774,35.672,-7.102,25.693,-0.276,False,7.102
+Hungary,7,Lack of digital resources,location,10.003,14.394,4.391,6.717,0.654,False,-4.391
+Denmark,7,Lack of digital resources,location,4.269,0.0,-4.269,4.052,-1.054,False,4.269
+Spain,7,Lack of digital resources,location,34.538,23.841,-10.697,8.222,-1.301,False,10.697
+Croatia,7,Lack of digital resources,location,46.214,27.878,-18.335,25.348,-0.723,False,18.335
+Slovak Republic,7,Lack of digital resources,location,48.005,31.714,-16.292,10.167,-1.602,False,16.292
+Luxembourg,7,Lack of digital resources,location,,0.0,,,,False,
+Norway*,7,Lack of digital resources,location,7.051,11.319,4.268,6.64,0.643,False,-4.268
+Latvia,7,Lack of digital resources,location,9.08,7.666,-1.414,4.136,-0.342,False,1.414
+United Arab Emirates,7,Lack of digital resources,location,7.735,9.153,1.417,2.962,0.478,False,-1.417
+Viet Nam,7,Lack of digital resources,location,38.429,29.918,-8.511,10.056,-0.846,False,8.511
+Malta,7,Lack of digital resources,location,,,,,,False,
+Uruguay,7,Lack of digital resources,location,53.216,48.281,-4.935,18.243,-0.271,False,4.935
+Chile,7,Lack of digital resources,location,,29.73,,,,False,
+Israel,7,Lack of digital resources,location,43.373,38.418,-4.955,11.971,-0.414,False,4.955
+Iceland,7,Lack of digital resources,location,19.186,4.931,-14.255,0.611,-23.322,True,14.255
+Brunei Darussalam,7,Lack of digital resources,location,33.19,,,,,False,
+Mauritius,7,Lack of digital resources,location,48.374,,,,,False,
+Uzbekistan,7,Lack of digital resources,location,20.422,18.64,-1.783,7.836,-0.227,False,1.783
+Montenegro,7,Lack of digital resources,location,,11.436,,,,False,
+Albania*,7,Lack of digital resources,location,27.823,33.532,5.709,9.614,0.594,False,-5.709
+Qatar,7,Lack of digital resources,location,0.0,8.411,8.411,0.229,36.678,True,-8.411
+Greece,7,Lack of digital resources,location,40.875,30.261,-10.614,12.456,-0.852,False,10.614
+Thailand,7,Lack of digital resources,location,55.641,23.412,-32.229,9.764,-3.301,True,32.229
+Serbia,7,Lack of digital resources,location,,30.25,,,,False,
+Romania,7,Lack of digital resources,location,9.357,13.826,4.469,5.125,0.872,False,-4.469
+Mongolia,7,Lack of digital resources,location,22.705,15.436,-7.27,20.741,-0.35,False,7.27
+Costa Rica,7,Lack of digital resources,location,68.545,81.905,13.36,11.253,1.187,False,-13.36
+Georgia,7,Lack of digital resources,location,36.806,32.129,-4.677,7.349,-0.636,False,4.677
+Moldova,7,Lack of digital resources,location,35.904,30.344,-5.56,7.164,-0.776,False,5.56
+Bulgaria,7,Lack of digital resources,location,6.065,14.357,8.292,7.686,1.079,False,-8.292
+Kazakhstan,7,Lack of digital resources,location,41.509,17.242,-24.267,4.616,-5.258,True,24.267
+Malaysia,7,Lack of digital resources,location,55.953,47.215,-8.738,12.608,-0.693,False,8.738
+Colombia,7,Lack of digital resources,location,84.9,59.827,-25.073,7.6,-3.299,True,25.073
+Mexico,7,Lack of digital resources,location,67.924,42.884,-25.039,10.438,-2.399,True,25.039
+Saudi Arabia,7,Lack of digital resources,location,63.753,43.664,-20.09,16.866,-1.191,False,20.09
+Cyprus,7,Lack of digital resources,location,10.928,27.526,16.597,1.227,13.522,True,-16.597
+Azerbaijan,7,Lack of digital resources,location,51.921,49.351,-2.57,9.177,-0.28,False,2.57
+Brazil,7,Lack of digital resources,location,35.017,33.254,-1.762,10.372,-0.17,False,1.762
+Jordan,7,Lack of digital resources,location,56.253,48.854,-7.399,9.197,-0.805,False,7.399
+Peru,7,Lack of digital resources,location,76.595,34.288,-42.307,10.092,-4.192,True,42.307
+Ecuador,7,Lack of digital resources,location,62.524,56.86,-5.664,10.558,-0.536,False,5.664
+Argentina,7,Lack of digital resources,location,68.425,56.664,-11.761,12.294,-0.957,False,11.761
+Indonesia,7,Lack of digital resources,location,51.862,32.356,-19.506,9.439,-2.067,True,19.506
+El Salvador,7,Lack of digital resources,location,29.625,19.115,-10.51,7.93,-1.325,False,10.51
+Cambodia,7,Lack of digital resources,location,89.448,62.285,-27.163,10.331,-2.629,True,27.163
+North Macedonia,7,Lack of digital resources,location,8.104,26.227,18.123,0.551,32.911,True,-18.123
+Philippines,7,Lack of digital resources,location,58.352,52.316,-6.036,11.511,-0.524,False,6.036
+Lebanon,7,Lack of digital resources,location,50.333,32.78,-17.553,9.994,-1.756,False,17.553
+Armenia,7,Lack of digital resources,location,51.859,56.321,4.462,5.909,0.755,False,-4.462
+Kyrgyzstan,7,Lack of digital resources,location,67.129,73.489,6.361,8.214,0.774,False,-6.361
+Dominican Republic,7,Lack of digital resources,location,68.911,53.242,-15.668,11.331,-1.383,False,15.668
+Palestinian Authority,7,Lack of digital resources,location,64.47,54.308,-10.162,9.335,-1.089,False,10.162
+Morocco,7,Lack of digital resources,location,71.026,59.721,-11.305,9.142,-1.237,False,11.305
+Kosovo,7,Lack of digital resources,location,52.187,36.775,-15.412,8.314,-1.854,False,15.412
+Paraguay,7,Lack of digital resources,location,81.508,32.656,-48.852,8.491,-5.754,True,48.852
+Kurdistan Region (Iraq),7,Lack of digital resources,location,,,,,,False,
+Guatemala,7,Lack of digital resources,location,75.377,37.666,-37.711,8.095,-4.658,True,37.711
+Zambia,7,Lack of digital resources,location,77.594,62.944,-14.65,15.017,-0.976,False,14.65
+Kenya,7,Lack of digital resources,location,68.661,57.92,-10.741,16.166,-0.664,False,10.741
+Dushanbe (Tajikistan),7,Lack of digital resources,location,45.366,31.241,-14.125,2.228,-6.34,True,14.125
+Rwanda,7,Lack of digital resources,location,56.343,40.425,-15.917,10.183,-1.563,False,15.917
+Ukrainian regions (17 of 27),7,Lack of digital resources,location,44.083,47.465,3.382,8.095,0.418,False,-3.382
+OECD average,7,Lack of digital resources,type,23.899,12.122,-12.224,1.213,-10.081,True,12.224
+B-S-J-Z (China),7,Lack of digital resources,type,33.09,25.489,-7.601,7.701,-0.987,False,7.601
+Singapore,7,Lack of digital resources,type,0.0,0.0,0.0,,,False,-0.0
+Macao (China),7,Lack of digital resources,type,,19.399,,,,False,
+Chinese Taipei,7,Lack of digital resources,type,5.15,4.291,-0.859,2.364,-0.363,False,0.859
+Japan,7,Lack of digital resources,type,57.087,35.057,-22.031,8.429,-2.614,True,22.031
+Estonia,7,Lack of digital resources,type,21.94,19.95,-1.99,10.069,-0.198,False,1.99
+Korea,7,Lack of digital resources,type,27.259,26.528,-0.731,7.77,-0.094,False,0.731
+United Kingdom,7,Lack of digital resources,type,27.505,0.695,-26.809,3.314,-8.089,True,26.809
+Canada*,7,Lack of digital resources,type,24.512,6.858,-17.653,5.914,-2.985,True,17.653
+New Zealand*,7,Lack of digital resources,type,17.877,1.045,-16.833,2.65,-6.353,True,16.833
+Australia,7,Lack of digital resources,type,20.181,2.058,-18.123,2.853,-6.352,True,18.123
+Finland,7,Lack of digital resources,type,11.148,8.328,-2.82,5.918,-0.476,False,2.82
+United States*,7,Lack of digital resources,type,4.541,2.23,-2.311,2.988,-0.773,False,2.311
+Switzerland,7,Lack of digital resources,type,5.213,0.0,-5.213,1.683,-3.097,True,5.213
+Ireland,7,Lack of digital resources,type,,,,,,False,
+Austria,7,Lack of digital resources,type,20.166,6.812,-13.354,7.395,-1.806,False,13.354
+Hong Kong (China),7,Lack of digital resources,type,13.012,0.0,-13.012,2.657,-4.898,True,13.012
+Poland,7,Lack of digital resources,type,18.205,7.528,-10.677,3.213,-3.323,True,10.677
+Türkiye,7,Lack of digital resources,type,22.849,24.594,1.745,9.417,0.185,False,-1.745
+Czechia,7,Lack of digital resources,type,21.871,23.896,2.025,10.738,0.189,False,-2.025
+Belgium,7,Lack of digital resources,type,11.987,10.226,-1.761,3.498,-0.504,False,1.761
+Lithuania,7,Lack of digital resources,type,11.955,0.0,-11.955,1.532,-7.803,True,11.955
+Germany,7,Lack of digital resources,type,27.396,22.254,-5.142,15.749,-0.327,False,5.142
+Netherlands*,7,Lack of digital resources,type,2.813,0.0,-2.813,2.015,-1.396,False,2.813
+Sweden,7,Lack of digital resources,type,0.47,1.535,1.065,1.512,0.704,False,-1.065
+Slovenia,7,Lack of digital resources,type,15.523,0.0,-15.523,1.023,-15.171,True,15.523
+France,7,Lack of digital resources,type,19.687,15.911,-3.776,7.39,-0.511,False,3.776
+Italy,7,Lack of digital resources,type,12.571,0.059,-12.512,2.199,-5.691,True,12.512
+Portugal,7,Lack of digital resources,type,37.317,12.826,-24.491,7.494,-3.268,True,24.491
+Hungary,7,Lack of digital resources,type,19.72,6.514,-13.207,5.127,-2.576,True,13.207
+Denmark,7,Lack of digital resources,type,1.973,0.0,-1.973,1.414,-1.395,False,1.973
+Spain,7,Lack of digital resources,type,26.275,18.847,-7.428,4.575,-1.624,False,7.428
+Croatia,7,Lack of digital resources,type,23.063,36.414,13.352,14.03,0.952,False,-13.352
+Slovak Republic,7,Lack of digital resources,type,37.652,22.334,-15.318,8.939,-1.714,False,15.318
+Luxembourg,7,Lack of digital resources,type,2.797,0.0,-2.797,0.018,-157.958,True,2.797
+Norway*,7,Lack of digital resources,type,,,,,,False,
+Latvia,7,Lack of digital resources,type,10.486,13.397,2.911,16.83,0.173,False,-2.911
+United Arab Emirates,7,Lack of digital resources,type,22.05,8.048,-14.002,0.381,-36.732,True,14.002
+Viet Nam,7,Lack of digital resources,type,44.906,9.582,-35.324,6.835,-5.168,True,35.324
+Malta,7,Lack of digital resources,type,18.062,7.759,-10.302,0.184,-56.089,True,10.302
+Uruguay,7,Lack of digital resources,type,60.908,5.632,-55.275,4.913,-11.251,True,55.275
+Chile,7,Lack of digital resources,type,49.342,25.922,-23.42,7.88,-2.972,True,23.42
+Israel,7,Lack of digital resources,type,,,,,,False,
+Iceland,7,Lack of digital resources,type,8.692,,,,,False,
+Brunei Darussalam,7,Lack of digital resources,type,52.327,5.831,-46.496,0.107,-435.722,True,46.496
+Mauritius,7,Lack of digital resources,type,61.369,19.919,-41.45,3.801,-10.904,True,41.45
+Uzbekistan,7,Lack of digital resources,type,19.943,,,,,False,
+Montenegro,7,Lack of digital resources,type,20.975,,,,,False,
+Albania*,7,Lack of digital resources,type,41.358,0.0,-41.358,3.947,-10.479,True,41.358
+Qatar,7,Lack of digital resources,type,8.652,5.196,-3.456,0.385,-8.988,True,3.456
+Greece,7,Lack of digital resources,type,34.307,0.0,-34.307,3.453,-9.936,True,34.307
+Thailand,7,Lack of digital resources,type,41.154,19.405,-21.749,7.341,-2.963,True,21.749
+Serbia,7,Lack of digital resources,type,29.489,,,,,False,
+Romania,7,Lack of digital resources,type,10.268,24.863,14.594,23.339,0.625,False,-14.594
+Mongolia,7,Lack of digital resources,type,22.532,7.801,-14.731,6.815,-2.161,True,14.731
+Costa Rica,7,Lack of digital resources,type,67.912,55.255,-12.656,10.581,-1.196,False,12.656
+Georgia,7,Lack of digital resources,type,33.689,12.212,-21.477,7.991,-2.688,True,21.477
+Moldova,7,Lack of digital resources,type,28.462,0.0,-28.462,2.912,-9.775,True,28.462
+Bulgaria,7,Lack of digital resources,type,11.702,,,,,False,
+Kazakhstan,7,Lack of digital resources,type,26.322,11.659,-14.662,6.419,-2.284,True,14.662
+Malaysia,7,Lack of digital resources,type,50.493,20.736,-29.757,14.61,-2.037,True,29.757
+Colombia,7,Lack of digital resources,type,78.516,20.69,-57.826,6.485,-8.917,True,57.826
+Mexico,7,Lack of digital resources,type,58.731,20.815,-37.916,8.01,-4.734,True,37.916
+Saudi Arabia,7,Lack of digital resources,type,54.148,2.067,-52.081,4.599,-11.326,True,52.081
+Cyprus,7,Lack of digital resources,type,18.419,10.142,-8.277,1.027,-8.057,True,8.277
+Azerbaijan,7,Lack of digital resources,type,48.008,30.628,-17.38,24.819,-0.7,False,17.38
+Brazil,7,Lack of digital resources,type,41.634,3.784,-37.85,3.387,-11.175,True,37.85
+Jordan,7,Lack of digital resources,type,56.031,32.121,-23.91,7.273,-3.288,True,23.91
+Peru,7,Lack of digital resources,type,76.366,11.956,-64.41,5.413,-11.898,True,64.41
+Ecuador,7,Lack of digital resources,type,72.509,16.261,-56.248,6.169,-9.118,True,56.248
+Argentina,7,Lack of digital resources,type,73.283,37.623,-35.66,6.235,-5.719,True,35.66
+Indonesia,7,Lack of digital resources,type,45.528,35.184,-10.344,6.735,-1.536,False,10.344
+El Salvador,7,Lack of digital resources,type,25.857,23.639,-2.217,7.543,-0.294,False,2.217
+Cambodia,7,Lack of digital resources,type,79.661,11.715,-67.946,9.089,-7.476,True,67.946
+North Macedonia,7,Lack of digital resources,type,33.961,,,,,False,
+Philippines,7,Lack of digital resources,type,58.644,26.639,-32.005,7.024,-4.556,True,32.005
+Lebanon,7,Lack of digital resources,type,58.273,23.144,-35.129,6.97,-5.04,True,35.129
+Armenia,7,Lack of digital resources,type,56.939,27.19,-29.749,14.453,-2.058,True,29.749
+Kyrgyzstan,7,Lack of digital resources,type,70.905,11.068,-59.837,10.07,-5.942,True,59.837
+Dominican Republic,7,Lack of digital resources,type,59.753,40.343,-19.41,7.904,-2.456,True,19.41
+Palestinian Authority,7,Lack of digital resources,type,61.845,29.815,-32.03,15.661,-2.045,True,32.03
+Morocco,7,Lack of digital resources,type,68.578,41.705,-26.872,15.493,-1.735,False,26.872
+Kosovo,7,Lack of digital resources,type,49.04,0.0,-49.04,1.361,-36.024,True,49.04
+Paraguay,7,Lack of digital resources,type,61.839,32.589,-29.249,7.64,-3.828,True,29.249
+Kurdistan Region (Iraq),7,Lack of digital resources,type,,,,,,False,
+Guatemala,7,Lack of digital resources,type,80.524,31.016,-49.508,3.949,-12.537,True,49.508
+Zambia,7,Lack of digital resources,type,77.512,50.316,-27.195,14.201,-1.915,False,27.195
+Kenya,7,Lack of digital resources,type,69.784,25.973,-43.811,16.334,-2.682,True,43.811
+Dushanbe (Tajikistan),7,Lack of digital resources,type,30.81,42.14,11.33,13.723,0.826,False,-11.33
+Rwanda,7,Lack of digital resources,type,53.582,29.519,-24.063,11.861,-2.029,True,24.063
+Ukrainian regions (17 of 27),7,Lack of digital resources,type,54.152,,,,,False,
+OECD average,8,Inadequate/poor-quality digital resources,ses,26.648,16.59,-10.058,1.234,-8.149,True,10.058
+B-S-J-Z (China),8,Inadequate/poor-quality digital resources,ses,42.184,17.984,-24.2,6.619,-3.656,True,24.2
+Singapore,8,Inadequate/poor-quality digital resources,ses,0.0,0.0,0.0,,,False,-0.0
+Macao (China),8,Inadequate/poor-quality digital resources,ses,3.579,9.716,6.136,0.096,63.741,True,-6.136
+Chinese Taipei,8,Inadequate/poor-quality digital resources,ses,8.355,4.254,-4.101,3.754,-1.092,False,4.101
+Japan,8,Inadequate/poor-quality digital resources,ses,52.967,44.388,-8.579,11.764,-0.729,False,8.579
+Estonia,8,Inadequate/poor-quality digital resources,ses,20.159,20.85,0.691,5.834,0.118,False,-0.691
+Korea,8,Inadequate/poor-quality digital resources,ses,35.737,40.144,4.406,9.588,0.46,False,-4.406
+United Kingdom,8,Inadequate/poor-quality digital resources,ses,16.457,19.601,3.144,8.103,0.388,False,-3.144
+Canada*,8,Inadequate/poor-quality digital resources,ses,27.29,12.084,-15.206,5.301,-2.869,True,15.206
+New Zealand*,8,Inadequate/poor-quality digital resources,ses,29.198,0.0,-29.198,6.61,-4.418,True,29.198
+Australia,8,Inadequate/poor-quality digital resources,ses,25.124,1.774,-23.35,3.843,-6.076,True,23.35
+Finland,8,Inadequate/poor-quality digital resources,ses,6.996,22.369,15.373,8.243,1.865,False,-15.373
+United States*,8,Inadequate/poor-quality digital resources,ses,5.298,6.706,1.408,10.123,0.139,False,-1.408
+Switzerland,8,Inadequate/poor-quality digital resources,ses,9.46,4.544,-4.916,5.252,-0.936,False,4.916
+Ireland,8,Inadequate/poor-quality digital resources,ses,45.788,18.37,-27.418,10.334,-2.653,True,27.418
+Austria,8,Inadequate/poor-quality digital resources,ses,28.755,23.156,-5.599,8.137,-0.688,False,5.599
+Hong Kong (China),8,Inadequate/poor-quality digital resources,ses,5.658,5.481,-0.177,5.001,-0.035,False,0.177
+Poland,8,Inadequate/poor-quality digital resources,ses,19.473,27.42,7.947,7.526,1.056,False,-7.947
+Türkiye,8,Inadequate/poor-quality digital resources,ses,29.083,11.008,-18.075,8.137,-2.221,True,18.075
+Czechia,8,Inadequate/poor-quality digital resources,ses,14.653,31.704,17.051,6.412,2.659,True,-17.051
+Belgium,8,Inadequate/poor-quality digital resources,ses,25.499,4.475,-21.024,6.998,-3.004,True,21.024
+Lithuania,8,Inadequate/poor-quality digital resources,ses,9.663,9.172,-0.491,2.874,-0.171,False,0.491
+Germany,8,Inadequate/poor-quality digital resources,ses,39.111,15.325,-23.787,9.045,-2.63,True,23.787
+Netherlands*,8,Inadequate/poor-quality digital resources,ses,7.454,12.464,5.01,9.88,0.507,False,-5.01
+Sweden,8,Inadequate/poor-quality digital resources,ses,8.654,0.0,-8.654,4.466,-1.938,False,8.654
+Slovenia,8,Inadequate/poor-quality digital resources,ses,20.939,4.12,-16.819,2.613,-6.437,True,16.819
+France,8,Inadequate/poor-quality digital resources,ses,25.742,15.811,-9.931,7.759,-1.28,False,9.931
+Italy,8,Inadequate/poor-quality digital resources,ses,12.417,6.075,-6.342,5.508,-1.151,False,6.342
+Portugal,8,Inadequate/poor-quality digital resources,ses,40.887,24.018,-16.87,8.259,-2.043,True,16.87
+Hungary,8,Inadequate/poor-quality digital resources,ses,23.894,13.973,-9.922,7.724,-1.284,False,9.922
+Denmark,8,Inadequate/poor-quality digital resources,ses,0.0,0.0,0.0,,,False,-0.0
+Spain,8,Inadequate/poor-quality digital resources,ses,25.471,13.692,-11.779,5.231,-2.252,True,11.779
+Croatia,8,Inadequate/poor-quality digital resources,ses,30.089,30.027,-0.062,5.535,-0.011,False,0.062
+Slovak Republic,8,Inadequate/poor-quality digital resources,ses,61.785,32.924,-28.861,9.681,-2.981,True,28.861
+Luxembourg,8,Inadequate/poor-quality digital resources,ses,20.154,0.0,-20.154,0.119,-169.457,True,20.154
+Norway*,8,Inadequate/poor-quality digital resources,ses,14.284,8.11,-6.174,5.744,-1.075,False,6.174
+Latvia,8,Inadequate/poor-quality digital resources,ses,14.823,2.023,-12.8,3.324,-3.851,True,12.8
+United Arab Emirates,8,Inadequate/poor-quality digital resources,ses,13.112,4.196,-8.917,1.498,-5.953,True,8.917
+Viet Nam,8,Inadequate/poor-quality digital resources,ses,41.203,32.694,-8.508,10.987,-0.774,False,8.508
+Malta,8,Inadequate/poor-quality digital resources,ses,26.766,3.549,-23.216,0.27,-86.108,True,23.216
+Uruguay,8,Inadequate/poor-quality digital resources,ses,48.169,15.883,-32.286,6.811,-4.74,True,32.286
+Chile,8,Inadequate/poor-quality digital resources,ses,37.782,14.331,-23.45,9.841,-2.383,True,23.45
+Israel,8,Inadequate/poor-quality digital resources,ses,46.513,41.976,-4.537,11.632,-0.39,False,4.537
+Iceland,8,Inadequate/poor-quality digital resources,ses,6.649,17.359,10.71,0.447,23.983,True,-10.71
+Brunei Darussalam,8,Inadequate/poor-quality digital resources,ses,64.319,2.711,-61.608,0.351,-175.692,True,61.608
+Mauritius,8,Inadequate/poor-quality digital resources,ses,32.602,42.85,10.248,8.679,1.181,False,-10.248
+Uzbekistan,8,Inadequate/poor-quality digital resources,ses,32.121,10.15,-21.971,8.341,-2.634,True,21.971
+Montenegro,8,Inadequate/poor-quality digital resources,ses,14.732,10.303,-4.429,2.689,-1.647,False,4.429
+Albania*,8,Inadequate/poor-quality digital resources,ses,49.999,20.448,-29.552,10.227,-2.889,True,29.552
+Qatar,8,Inadequate/poor-quality digital resources,ses,8.394,3.689,-4.704,0.477,-9.866,True,4.704
+Greece,8,Inadequate/poor-quality digital resources,ses,45.482,26.714,-18.768,8.767,-2.141,True,18.768
+Thailand,8,Inadequate/poor-quality digital resources,ses,42.051,7.646,-34.405,8.97,-3.835,True,34.405
+Serbia,8,Inadequate/poor-quality digital resources,ses,44.657,22.527,-22.13,10.736,-2.061,True,22.13
+Romania,8,Inadequate/poor-quality digital resources,ses,16.782,10.739,-6.043,5.762,-1.049,False,6.043
+Mongolia,8,Inadequate/poor-quality digital resources,ses,33.087,16.55,-16.537,8.233,-2.008,True,16.537
+Costa Rica,8,Inadequate/poor-quality digital resources,ses,,,,,,False,
+Georgia,8,Inadequate/poor-quality digital resources,ses,42.317,20.643,-21.674,8.602,-2.52,True,21.674
+Moldova,8,Inadequate/poor-quality digital resources,ses,36.578,23.424,-13.154,7.869,-1.672,False,13.154
+Bulgaria,8,Inadequate/poor-quality digital resources,ses,11.461,15.665,4.203,7.444,0.565,False,-4.203
+Kazakhstan,8,Inadequate/poor-quality digital resources,ses,33.648,19.923,-13.725,5.771,-2.378,True,13.725
+Malaysia,8,Inadequate/poor-quality digital resources,ses,54.568,30.724,-23.844,12.51,-1.906,False,23.844
+Colombia,8,Inadequate/poor-quality digital resources,ses,80.247,39.961,-40.286,10.018,-4.021,True,40.286
+Mexico,8,Inadequate/poor-quality digital resources,ses,52.101,27.21,-24.891,8.787,-2.833,True,24.891
+Saudi Arabia,8,Inadequate/poor-quality digital resources,ses,64.524,20.894,-43.631,10.382,-4.202,True,43.631
+Cyprus,8,Inadequate/poor-quality digital resources,ses,23.982,15.764,-8.219,2.839,-2.895,True,8.219
+Azerbaijan,8,Inadequate/poor-quality digital resources,ses,49.821,46.388,-3.433,9.568,-0.359,False,3.433
+Brazil,8,Inadequate/poor-quality digital resources,ses,48.422,13.495,-34.927,4.554,-7.67,True,34.927
+Jordan,8,Inadequate/poor-quality digital resources,ses,63.838,37.222,-26.616,9.187,-2.897,True,26.616
+Peru,8,Inadequate/poor-quality digital resources,ses,79.382,15.04,-64.342,7.103,-9.058,True,64.342
+Ecuador,8,Inadequate/poor-quality digital resources,ses,56.716,23.746,-32.97,8.223,-4.01,True,32.97
+Argentina,8,Inadequate/poor-quality digital resources,ses,79.513,29.146,-50.368,9.129,-5.517,True,50.368
+Indonesia,8,Inadequate/poor-quality digital resources,ses,51.9,24.801,-27.099,8.952,-3.027,True,27.099
+El Salvador,8,Inadequate/poor-quality digital resources,ses,33.011,17.189,-15.822,8.399,-1.884,False,15.822
+Cambodia,8,Inadequate/poor-quality digital resources,ses,71.776,52.872,-18.904,10.661,-1.773,False,18.904
+North Macedonia,8,Inadequate/poor-quality digital resources,ses,48.707,20.856,-27.851,1.426,-19.537,True,27.851
+Philippines,8,Inadequate/poor-quality digital resources,ses,54.764,41.776,-12.988,10.116,-1.284,False,12.988
+Lebanon,8,Inadequate/poor-quality digital resources,ses,54.036,17.036,-37.0,8.379,-4.416,True,37.0
+Armenia,8,Inadequate/poor-quality digital resources,ses,55.861,48.042,-7.819,6.37,-1.227,False,7.819
+Kyrgyzstan,8,Inadequate/poor-quality digital resources,ses,63.87,62.796,-1.074,10.59,-0.101,False,1.074
+Dominican Republic,8,Inadequate/poor-quality digital resources,ses,56.188,38.95,-17.238,10.326,-1.669,False,17.238
+Palestinian Authority,8,Inadequate/poor-quality digital resources,ses,65.302,46.068,-19.234,11.077,-1.736,False,19.234
+Morocco,8,Inadequate/poor-quality digital resources,ses,68.524,43.154,-25.369,11.777,-2.154,True,25.369
+Kosovo,8,Inadequate/poor-quality digital resources,ses,48.549,34.667,-13.882,4.327,-3.208,True,13.882
+Paraguay,8,Inadequate/poor-quality digital resources,ses,55.473,34.546,-20.927,8.008,-2.613,True,20.927
+Kurdistan Region (Iraq),8,Inadequate/poor-quality digital resources,ses,,,,,,False,
+Guatemala,8,Inadequate/poor-quality digital resources,ses,72.36,15.246,-57.114,5.864,-9.739,True,57.114
+Zambia,8,Inadequate/poor-quality digital resources,ses,77.605,62.82,-14.785,15.889,-0.931,False,14.785
+Kenya,8,Inadequate/poor-quality digital resources,ses,73.359,67.109,-6.25,9.308,-0.671,False,6.25
+Dushanbe (Tajikistan),8,Inadequate/poor-quality digital resources,ses,26.523,20.93,-5.593,1.397,-4.003,True,5.593
+Rwanda,8,Inadequate/poor-quality digital resources,ses,52.402,38.485,-13.917,8.737,-1.593,False,13.917
+Ukrainian regions (17 of 27),8,Inadequate/poor-quality digital resources,ses,57.374,49.759,-7.615,9.192,-0.828,False,7.615
+OECD average,8,Inadequate/poor-quality digital resources,location,24.822,21.923,-3.327,1.954,-1.703,False,3.327
+B-S-J-Z (China),8,Inadequate/poor-quality digital resources,location,32.334,27.688,-4.647,17.759,-0.262,False,4.647
+Singapore,8,Inadequate/poor-quality digital resources,location,,0.0,,,,False,
+Macao (China),8,Inadequate/poor-quality digital resources,location,,22.367,,,,False,
+Chinese Taipei,8,Inadequate/poor-quality digital resources,location,4.662,8.318,3.655,5.062,0.722,False,-3.655
+Japan,8,Inadequate/poor-quality digital resources,location,,54.126,,,,False,
+Estonia,8,Inadequate/poor-quality digital resources,location,26.486,19.362,-7.125,5.936,-1.2,False,7.125
+Korea,8,Inadequate/poor-quality digital resources,location,34.563,33.152,-1.412,23.212,-0.061,False,1.412
+United Kingdom,8,Inadequate/poor-quality digital resources,location,10.392,23.592,13.2,7.369,1.791,False,-13.2
+Canada*,8,Inadequate/poor-quality digital resources,location,10.569,21.098,10.529,3.829,2.75,True,-10.529
+New Zealand*,8,Inadequate/poor-quality digital resources,location,0.0,11.747,11.747,2.499,4.701,True,-11.747
+Australia,8,Inadequate/poor-quality digital resources,location,13.424,10.658,-2.765,7.729,-0.358,False,2.765
+Finland,8,Inadequate/poor-quality digital resources,location,11.247,12.742,1.494,9.976,0.15,False,-1.494
+United States*,8,Inadequate/poor-quality digital resources,location,0.0,1.832,1.832,2.203,0.832,False,-1.832
+Switzerland,8,Inadequate/poor-quality digital resources,location,2.06,8.898,6.839,6.653,1.028,False,-6.839
+Ireland,8,Inadequate/poor-quality digital resources,location,33.045,26.981,-6.064,12.475,-0.486,False,6.064
+Austria,8,Inadequate/poor-quality digital resources,location,9.373,33.028,23.655,10.246,2.309,True,-23.655
+Hong Kong (China),8,Inadequate/poor-quality digital resources,location,17.97,9.265,-8.704,19.095,-0.456,False,8.704
+Poland,8,Inadequate/poor-quality digital resources,location,28.677,23.741,-4.936,13.992,-0.353,False,4.936
+Türkiye,8,Inadequate/poor-quality digital resources,location,,20.71,,,,False,
+Czechia,8,Inadequate/poor-quality digital resources,location,18.623,33.431,14.808,7.333,2.019,True,-14.808
+Belgium,8,Inadequate/poor-quality digital resources,location,1.824,18.708,16.884,4.983,3.388,True,-16.884
+Lithuania,8,Inadequate/poor-quality digital resources,location,7.624,11.616,3.992,4.804,0.831,False,-3.992
+Germany,8,Inadequate/poor-quality digital resources,location,,34.737,,,,False,
+Netherlands*,8,Inadequate/poor-quality digital resources,location,,10.046,,,,False,
+Sweden,8,Inadequate/poor-quality digital resources,location,6.903,3.302,-3.602,6.935,-0.519,False,3.602
+Slovenia,8,Inadequate/poor-quality digital resources,location,23.002,11.536,-11.466,9.469,-1.211,False,11.466
+France,8,Inadequate/poor-quality digital resources,location,10.521,16.228,5.707,10.296,0.554,False,-5.707
+Italy,8,Inadequate/poor-quality digital resources,location,42.444,3.494,-38.95,23.77,-1.639,False,38.95
+Portugal,8,Inadequate/poor-quality digital resources,location,42.774,39.117,-3.657,25.65,-0.143,False,3.657
+Hungary,8,Inadequate/poor-quality digital resources,location,25.236,19.295,-5.941,10.765,-0.552,False,5.941
+Denmark,8,Inadequate/poor-quality digital resources,location,0.0,0.0,0.0,,,False,-0.0
+Spain,8,Inadequate/poor-quality digital resources,location,33.307,25.145,-8.162,8.584,-0.951,False,8.162
+Croatia,8,Inadequate/poor-quality digital resources,location,46.214,28.569,-17.645,25.41,-0.694,False,17.645
+Slovak Republic,8,Inadequate/poor-quality digital resources,location,56.738,28.063,-28.675,9.198,-3.117,True,28.675
+Luxembourg,8,Inadequate/poor-quality digital resources,location,,3.885,,,,False,
+Norway*,8,Inadequate/poor-quality digital resources,location,11.34,13.405,2.066,7.266,0.284,False,-2.066
+Latvia,8,Inadequate/poor-quality digital resources,location,15.429,6.225,-9.204,5.029,-1.83,False,9.204
+United Arab Emirates,8,Inadequate/poor-quality digital resources,location,7.792,8.843,1.051,2.952,0.356,False,-1.051
+Viet Nam,8,Inadequate/poor-quality digital resources,location,34.96,24.175,-10.785,8.889,-1.213,False,10.785
+Malta,8,Inadequate/poor-quality digital resources,location,,,,,,False,
+Uruguay,8,Inadequate/poor-quality digital resources,location,41.365,42.413,1.048,17.236,0.061,False,-1.048
+Chile,8,Inadequate/poor-quality digital resources,location,,21.73,,,,False,
+Israel,8,Inadequate/poor-quality digital resources,location,45.2,37.138,-8.062,12.257,-0.658,False,8.062
+Iceland,8,Inadequate/poor-quality digital resources,location,20.986,18.385,-2.6,0.763,-3.406,True,2.6
+Brunei Darussalam,8,Inadequate/poor-quality digital resources,location,48.67,,,,,False,
+Mauritius,8,Inadequate/poor-quality digital resources,location,48.374,,,,,False,
+Uzbekistan,8,Inadequate/poor-quality digital resources,location,19.714,14.875,-4.839,7.185,-0.674,False,4.839
+Montenegro,8,Inadequate/poor-quality digital resources,location,,11.436,,,,False,
+Albania*,8,Inadequate/poor-quality digital resources,location,39.836,36.84,-2.997,10.326,-0.29,False,2.997
+Qatar,8,Inadequate/poor-quality digital resources,location,0.0,9.007,9.007,0.279,32.244,True,-9.007
+Greece,8,Inadequate/poor-quality digital resources,location,47.806,29.383,-18.423,12.564,-1.466,False,18.423
+Thailand,8,Inadequate/poor-quality digital resources,location,43.996,20.217,-23.778,10.405,-2.285,True,23.778
+Serbia,8,Inadequate/poor-quality digital resources,location,,34.884,,,,False,
+Romania,8,Inadequate/poor-quality digital resources,location,17.454,16.387,-1.067,6.987,-0.153,False,1.067
+Mongolia,8,Inadequate/poor-quality digital resources,location,32.979,17.095,-15.884,23.004,-0.69,False,15.884
+Costa Rica,8,Inadequate/poor-quality digital resources,location,68.341,53.512,-14.829,12.997,-1.141,False,14.829
+Georgia,8,Inadequate/poor-quality digital resources,location,34.327,31.555,-2.773,7.18,-0.386,False,2.773
+Moldova,8,Inadequate/poor-quality digital resources,location,36.032,32.29,-3.741,7.237,-0.517,False,3.741
+Bulgaria,8,Inadequate/poor-quality digital resources,location,14.638,14.359,-0.278,11.205,-0.025,False,0.278
+Kazakhstan,8,Inadequate/poor-quality digital resources,location,45.034,17.488,-27.545,5.694,-4.838,True,27.545
+Malaysia,8,Inadequate/poor-quality digital resources,location,53.933,43.507,-10.426,12.602,-0.827,False,10.426
+Colombia,8,Inadequate/poor-quality digital resources,location,78.954,58.86,-20.094,8.391,-2.395,True,20.094
+Mexico,8,Inadequate/poor-quality digital resources,location,57.429,34.169,-23.26,11.32,-2.055,True,23.26
+Saudi Arabia,8,Inadequate/poor-quality digital resources,location,63.753,41.838,-21.915,16.861,-1.3,False,21.915
+Cyprus,8,Inadequate/poor-quality digital resources,location,10.928,27.871,16.943,1.273,13.308,True,-16.943
+Azerbaijan,8,Inadequate/poor-quality digital resources,location,51.361,47.444,-3.917,9.59,-0.408,False,3.917
+Brazil,8,Inadequate/poor-quality digital resources,location,32.009,35.907,3.898,10.423,0.374,False,-3.898
+Jordan,8,Inadequate/poor-quality digital resources,location,56.798,49.722,-7.076,10.311,-0.686,False,7.076
+Peru,8,Inadequate/poor-quality digital resources,location,75.309,38.166,-37.143,11.209,-3.314,True,37.143
+Ecuador,8,Inadequate/poor-quality digital resources,location,56.677,54.38,-2.297,10.723,-0.214,False,2.297
+Argentina,8,Inadequate/poor-quality digital resources,location,68.718,56.68,-12.038,12.334,-0.976,False,12.038
+Indonesia,8,Inadequate/poor-quality digital resources,location,52.583,32.3,-20.283,9.657,-2.1,True,20.283
+El Salvador,8,Inadequate/poor-quality digital resources,location,30.109,13.029,-17.08,7.064,-2.418,True,17.08
+Cambodia,8,Inadequate/poor-quality digital resources,location,70.351,49.257,-21.094,13.779,-1.531,False,21.094
+North Macedonia,8,Inadequate/poor-quality digital resources,location,8.104,24.744,16.64,0.551,30.18,True,-16.64
+Philippines,8,Inadequate/poor-quality digital resources,location,50.741,51.59,0.849,11.164,0.076,False,-0.849
+Lebanon,8,Inadequate/poor-quality digital resources,location,49.051,34.831,-14.22,10.873,-1.308,False,14.22
+Armenia,8,Inadequate/poor-quality digital resources,location,52.698,49.643,-3.055,5.412,-0.564,False,3.055
+Kyrgyzstan,8,Inadequate/poor-quality digital resources,location,62.973,65.159,2.186,9.593,0.228,False,-2.186
+Dominican Republic,8,Inadequate/poor-quality digital resources,location,61.39,52.377,-9.014,10.306,-0.875,False,9.014
+Palestinian Authority,8,Inadequate/poor-quality digital resources,location,70.262,57.054,-13.209,9.148,-1.444,False,13.209
+Morocco,8,Inadequate/poor-quality digital resources,location,66.998,53.207,-13.792,10.851,-1.271,False,13.792
+Kosovo,8,Inadequate/poor-quality digital resources,location,53.351,44.91,-8.44,8.176,-1.032,False,8.44
+Paraguay,8,Inadequate/poor-quality digital resources,location,64.337,18.205,-46.132,8.139,-5.668,True,46.132
+Kurdistan Region (Iraq),8,Inadequate/poor-quality digital resources,location,,,,,,False,
+Guatemala,8,Inadequate/poor-quality digital resources,location,64.701,29.848,-34.853,8.162,-4.27,True,34.853
+Zambia,8,Inadequate/poor-quality digital resources,location,72.83,83.814,10.985,8.959,1.226,False,-10.985
+Kenya,8,Inadequate/poor-quality digital resources,location,74.066,57.92,-16.146,15.826,-1.02,False,16.146
+Dushanbe (Tajikistan),8,Inadequate/poor-quality digital resources,location,48.437,30.11,-18.327,2.309,-7.936,True,18.327
+Rwanda,8,Inadequate/poor-quality digital resources,location,52.15,47.319,-4.831,10.846,-0.445,False,4.831
+Ukrainian regions (17 of 27),8,Inadequate/poor-quality digital resources,location,43.313,44.291,0.979,8.277,0.118,False,-0.979
+OECD average,8,Inadequate/poor-quality digital resources,type,24.8,12.789,-12.362,1.461,-8.46,True,12.362
+B-S-J-Z (China),8,Inadequate/poor-quality digital resources,type,33.393,23.935,-9.458,7.936,-1.192,False,9.458
+Singapore,8,Inadequate/poor-quality digital resources,type,0.0,0.0,0.0,,,False,-0.0
+Macao (China),8,Inadequate/poor-quality digital resources,type,,22.838,,,,False,
+Chinese Taipei,8,Inadequate/poor-quality digital resources,type,6.73,9.122,2.391,3.313,0.722,False,-2.391
+Japan,8,Inadequate/poor-quality digital resources,type,64.484,31.273,-33.21,7.858,-4.226,True,33.21
+Estonia,8,Inadequate/poor-quality digital resources,type,19.453,19.95,0.497,10.048,0.05,False,-0.497
+Korea,8,Inadequate/poor-quality digital resources,type,30.284,38.768,8.484,9.195,0.923,False,-8.484
+United Kingdom,8,Inadequate/poor-quality digital resources,type,26.114,0.0,-26.114,2.992,-8.729,True,26.114
+Canada*,8,Inadequate/poor-quality digital resources,type,22.497,7.785,-14.711,5.894,-2.496,True,14.711
+New Zealand*,8,Inadequate/poor-quality digital resources,type,18.982,1.045,-17.937,2.787,-6.436,True,17.937
+Australia,8,Inadequate/poor-quality digital resources,type,19.898,1.627,-18.271,2.746,-6.653,True,18.271
+Finland,8,Inadequate/poor-quality digital resources,type,12.894,9.228,-3.666,6.168,-0.594,False,3.666
+United States*,8,Inadequate/poor-quality digital resources,type,4.032,0.0,-4.032,2.234,-1.805,False,4.032
+Switzerland,8,Inadequate/poor-quality digital resources,type,4.978,0.0,-4.978,1.838,-2.708,True,4.978
+Ireland,8,Inadequate/poor-quality digital resources,type,,,,,,False,
+Austria,8,Inadequate/poor-quality digital resources,type,20.84,3.25,-17.59,4.215,-4.173,True,17.59
+Hong Kong (China),8,Inadequate/poor-quality digital resources,type,10.22,6.633,-3.588,5.707,-0.629,False,3.588
+Poland,8,Inadequate/poor-quality digital resources,type,28.339,7.528,-20.811,3.569,-5.83,True,20.811
+Türkiye,8,Inadequate/poor-quality digital resources,type,22.65,28.103,5.453,10.212,0.534,False,-5.453
+Czechia,8,Inadequate/poor-quality digital resources,type,23.826,24.88,1.054,10.489,0.101,False,-1.054
+Belgium,8,Inadequate/poor-quality digital resources,type,16.484,10.127,-6.357,4.774,-1.332,False,6.357
+Lithuania,8,Inadequate/poor-quality digital resources,type,11.31,0.0,-11.31,1.415,-7.995,True,11.31
+Germany,8,Inadequate/poor-quality digital resources,type,23.146,8.596,-14.55,9.502,-1.531,False,14.55
+Netherlands*,8,Inadequate/poor-quality digital resources,type,3.722,34.112,30.389,29.86,1.018,False,-30.389
+Sweden,8,Inadequate/poor-quality digital resources,type,2.036,4.144,2.108,3.291,0.641,False,-2.108
+Slovenia,8,Inadequate/poor-quality digital resources,type,15.219,0.0,-15.219,1.025,-14.841,True,15.219
+France,8,Inadequate/poor-quality digital resources,type,19.808,12.423,-7.385,6.188,-1.193,False,7.385
+Italy,8,Inadequate/poor-quality digital resources,type,11.214,0.059,-11.155,2.191,-5.092,True,11.155
+Portugal,8,Inadequate/poor-quality digital resources,type,45.717,15.319,-30.398,8.245,-3.687,True,30.398
+Hungary,8,Inadequate/poor-quality digital resources,type,25.798,8.919,-16.879,5.715,-2.954,True,16.879
+Denmark,8,Inadequate/poor-quality digital resources,type,0.296,0.0,-0.296,0.079,-3.772,True,0.296
+Spain,8,Inadequate/poor-quality digital resources,type,30.279,14.471,-15.807,3.91,-4.042,True,15.807
+Croatia,8,Inadequate/poor-quality digital resources,type,23.641,28.035,4.394,12.778,0.344,False,-4.394
+Slovak Republic,8,Inadequate/poor-quality digital resources,type,45.345,24.482,-20.863,9.069,-2.3,True,20.863
+Luxembourg,8,Inadequate/poor-quality digital resources,type,6.04,0.0,-6.04,0.026,-230.516,True,6.04
+Norway*,8,Inadequate/poor-quality digital resources,type,,,,,,False,
+Latvia,8,Inadequate/poor-quality digital resources,type,12.765,13.397,0.632,16.861,0.038,False,-0.632
+United Arab Emirates,8,Inadequate/poor-quality digital resources,type,22.557,7.025,-15.531,0.342,-45.471,True,15.531
+Viet Nam,8,Inadequate/poor-quality digital resources,type,38.833,6.82,-32.013,5.864,-5.459,True,32.013
+Malta,8,Inadequate/poor-quality digital resources,type,17.65,8.064,-9.586,0.171,-56.216,True,9.586
+Uruguay,8,Inadequate/poor-quality digital resources,type,51.133,5.632,-45.501,5.091,-8.938,True,45.501
+Chile,8,Inadequate/poor-quality digital resources,type,42.719,18.363,-24.356,8.045,-3.028,True,24.356
+Israel,8,Inadequate/poor-quality digital resources,type,,,,,,False,
+Iceland,8,Inadequate/poor-quality digital resources,type,12.869,,,,,False,
+Brunei Darussalam,8,Inadequate/poor-quality digital resources,type,55.806,0.0,-55.806,0.096,-579.741,True,55.806
+Mauritius,8,Inadequate/poor-quality digital resources,type,54.39,20.107,-34.284,4.023,-8.522,True,34.284
+Uzbekistan,8,Inadequate/poor-quality digital resources,type,17.872,,,,,False,
+Montenegro,8,Inadequate/poor-quality digital resources,type,23.662,,,,,False,
+Albania*,8,Inadequate/poor-quality digital resources,type,43.017,0.0,-43.017,3.912,-10.996,True,43.017
+Qatar,8,Inadequate/poor-quality digital resources,type,7.076,6.108,-0.969,0.385,-2.517,True,0.969
+Greece,8,Inadequate/poor-quality digital resources,type,37.165,0.0,-37.165,3.57,-10.41,True,37.165
+Thailand,8,Inadequate/poor-quality digital resources,type,36.34,16.545,-19.794,6.698,-2.955,True,19.794
+Serbia,8,Inadequate/poor-quality digital resources,type,36.068,,,,,False,
+Romania,8,Inadequate/poor-quality digital resources,type,12.467,24.863,12.396,23.353,0.531,False,-12.396
+Mongolia,8,Inadequate/poor-quality digital resources,type,28.917,7.801,-21.116,6.802,-3.105,True,21.116
+Costa Rica,8,Inadequate/poor-quality digital resources,type,63.709,55.494,-8.216,11.246,-0.731,False,8.216
+Georgia,8,Inadequate/poor-quality digital resources,type,33.061,16.006,-17.055,9.911,-1.721,False,17.055
+Moldova,8,Inadequate/poor-quality digital resources,type,30.068,0.0,-30.068,3.142,-9.57,True,30.068
+Bulgaria,8,Inadequate/poor-quality digital resources,type,12.703,,,,,False,
+Kazakhstan,8,Inadequate/poor-quality digital resources,type,27.545,7.98,-19.565,7.224,-2.708,True,19.565
+Malaysia,8,Inadequate/poor-quality digital resources,type,50.346,10.482,-39.864,9.627,-4.141,True,39.864
+Colombia,8,Inadequate/poor-quality digital resources,type,75.061,21.459,-53.602,7.514,-7.134,True,53.602
+Mexico,8,Inadequate/poor-quality digital resources,type,48.033,20.025,-28.008,8.141,-3.44,True,28.008
+Saudi Arabia,8,Inadequate/poor-quality digital resources,type,53.129,1.142,-51.987,4.603,-11.293,True,51.987
+Cyprus,8,Inadequate/poor-quality digital resources,type,21.206,3.1,-18.105,1.032,-17.544,True,18.105
+Azerbaijan,8,Inadequate/poor-quality digital resources,type,44.623,30.628,-13.995,24.861,-0.563,False,13.995
+Brazil,8,Inadequate/poor-quality digital resources,type,42.946,6.818,-36.129,4.147,-8.713,True,36.129
+Jordan,8,Inadequate/poor-quality digital resources,type,54.307,32.298,-22.009,7.415,-2.968,True,22.009
+Peru,8,Inadequate/poor-quality digital resources,type,74.482,13.463,-61.02,5.361,-11.383,True,61.02
+Ecuador,8,Inadequate/poor-quality digital resources,type,68.366,15.398,-52.968,5.471,-9.682,True,52.968
+Argentina,8,Inadequate/poor-quality digital resources,type,71.961,34.65,-37.311,6.404,-5.827,True,37.311
+Indonesia,8,Inadequate/poor-quality digital resources,type,40.912,36.42,-4.492,6.757,-0.665,False,4.492
+El Salvador,8,Inadequate/poor-quality digital resources,type,25.926,20.17,-5.756,6.66,-0.864,False,5.756
+Cambodia,8,Inadequate/poor-quality digital resources,type,69.896,17.336,-52.56,7.302,-7.198,True,52.56
+North Macedonia,8,Inadequate/poor-quality digital resources,type,35.88,,,,,False,
+Philippines,8,Inadequate/poor-quality digital resources,type,57.133,26.639,-30.495,6.931,-4.399,True,30.495
+Lebanon,8,Inadequate/poor-quality digital resources,type,61.527,24.108,-37.418,6.962,-5.375,True,37.418
+Armenia,8,Inadequate/poor-quality digital resources,type,55.201,15.158,-40.043,12.355,-3.241,True,40.043
+Kyrgyzstan,8,Inadequate/poor-quality digital resources,type,67.035,0.0,-67.035,3.76,-17.827,True,67.035
+Dominican Republic,8,Inadequate/poor-quality digital resources,type,59.52,32.619,-26.901,6.924,-3.885,True,26.901
+Palestinian Authority,8,Inadequate/poor-quality digital resources,type,62.431,50.486,-11.944,15.939,-0.749,False,11.944
+Morocco,8,Inadequate/poor-quality digital resources,type,64.983,41.705,-23.278,15.887,-1.465,False,23.278
+Kosovo,8,Inadequate/poor-quality digital resources,type,52.296,0.0,-52.296,1.306,-40.05,True,52.296
+Paraguay,8,Inadequate/poor-quality digital resources,type,52.007,20.938,-31.069,6.324,-4.913,True,31.069
+Kurdistan Region (Iraq),8,Inadequate/poor-quality digital resources,type,,,,,,False,
+Guatemala,8,Inadequate/poor-quality digital resources,type,75.175,24.791,-50.384,4.26,-11.827,True,50.384
+Zambia,8,Inadequate/poor-quality digital resources,type,79.274,62.172,-17.102,19.378,-0.883,False,17.102
+Kenya,8,Inadequate/poor-quality digital resources,type,74.041,30.024,-44.017,15.489,-2.842,True,44.017
+Dushanbe (Tajikistan),8,Inadequate/poor-quality digital resources,type,29.598,42.14,12.541,13.7,0.915,False,-12.541
+Rwanda,8,Inadequate/poor-quality digital resources,type,50.474,31.781,-18.693,12.361,-1.512,False,18.693
+Ukrainian regions (17 of 27),8,Inadequate/poor-quality digital resources,type,50.744,,,,,False,
+OECD average,11,Internet-connected computers for teachers,ses,11.978,11.466,-0.511,0.531,-0.963,False,-0.511
+B-S-J-Z (China),11,Internet-connected computers for teachers,ses,10.135,13.163,3.028,0.697,4.347,True,3.028
+Singapore,11,Internet-connected computers for teachers,ses,15.489,13.641,-1.848,0.234,-7.9,True,-1.848
+Macao (China),11,Internet-connected computers for teachers,ses,12.339,14.883,2.545,0.042,59.887,True,2.545
+Chinese Taipei,11,Internet-connected computers for teachers,ses,12.511,7.88,-4.631,2.016,-2.297,True,-4.631
+Japan,11,Internet-connected computers for teachers,ses,12.573,14.224,1.651,2.795,0.591,False,1.651
+Estonia,11,Internet-connected computers for teachers,ses,18.648,13.089,-5.559,4.054,-1.371,False,-5.559
+Korea,11,Internet-connected computers for teachers,ses,15.353,17.992,2.639,3.472,0.76,False,2.639
+United Kingdom,11,Internet-connected computers for teachers,ses,13.596,16.792,3.195,4.174,0.766,False,3.195
+Canada*,11,Internet-connected computers for teachers,ses,13.117,12.259,-0.858,0.714,-1.201,False,-0.858
+New Zealand*,11,Internet-connected computers for teachers,ses,12.422,11.488,-0.935,0.596,-1.568,False,-0.935
+Australia,11,Internet-connected computers for teachers,ses,13.727,12.956,-0.771,0.499,-1.546,False,-0.771
+Finland,11,Internet-connected computers for teachers,ses,12.777,11.621,-1.156,0.909,-1.271,False,-1.156
+United States*,11,Internet-connected computers for teachers,ses,33.026,17.269,-15.757,14.464,-1.089,False,-15.757
+Switzerland,11,Internet-connected computers for teachers,ses,15.276,13.738,-1.538,2.719,-0.566,False,-1.538
+Ireland,11,Internet-connected computers for teachers,ses,11.863,12.174,0.311,1.3,0.239,False,0.311
+Austria,11,Internet-connected computers for teachers,ses,8.783,9.979,1.195,2.05,0.583,False,1.195
+Hong Kong (China),11,Internet-connected computers for teachers,ses,11.095,13.132,2.037,1.054,1.933,False,2.037
+Poland,11,Internet-connected computers for teachers,ses,18.817,8.124,-10.693,5.425,-1.971,True,-10.693
+Türkiye,11,Internet-connected computers for teachers,ses,2.621,4.34,1.719,0.778,2.21,True,1.719
+Czechia,11,Internet-connected computers for teachers,ses,16.737,15.755,-0.982,1.201,-0.818,False,-0.982
+Belgium,11,Internet-connected computers for teachers,ses,6.088,9.576,3.487,1.094,3.187,True,3.487
+Lithuania,11,Internet-connected computers for teachers,ses,19.837,15.525,-4.312,2.269,-1.9,False,-4.312
+Germany,11,Internet-connected computers for teachers,ses,9.559,13.621,4.062,2.423,1.677,False,4.062
+Netherlands*,11,Internet-connected computers for teachers,ses,23.462,18.125,-5.337,2.635,-2.025,True,-5.337
+Sweden,11,Internet-connected computers for teachers,ses,12.966,12.458,-0.508,0.813,-0.624,False,-0.508
+Slovenia,11,Internet-connected computers for teachers,ses,11.489,16.152,4.663,0.307,15.192,True,4.663
+France,11,Internet-connected computers for teachers,ses,9.005,5.877,-3.127,0.827,-3.78,True,-3.127
+Italy,11,Internet-connected computers for teachers,ses,3.319,6.632,3.314,1.128,2.938,True,3.314
+Portugal,11,Internet-connected computers for teachers,ses,6.153,7.197,1.044,0.911,1.146,False,1.044
+Hungary,11,Internet-connected computers for teachers,ses,12.371,10.201,-2.17,1.901,-1.142,False,-2.17
+Denmark,11,Internet-connected computers for teachers,ses,16.2,17.615,1.416,2.965,0.477,False,1.416
+Spain,11,Internet-connected computers for teachers,ses,9.48,8.214,-1.266,1.209,-1.047,False,-1.266
+Croatia,11,Internet-connected computers for teachers,ses,11.91,10.953,-0.957,0.524,-1.826,False,-0.957
+Slovak Republic,11,Internet-connected computers for teachers,ses,12.217,13.35,1.134,0.922,1.23,False,1.134
+Luxembourg,11,Internet-connected computers for teachers,ses,3.274,6.631,3.357,0.02,171.694,True,3.357
+Norway*,11,Internet-connected computers for teachers,ses,,,,,,False,
+Latvia,11,Internet-connected computers for teachers,ses,17.531,14.325,-3.206,2.499,-1.283,False,-3.206
+United Arab Emirates,11,Internet-connected computers for teachers,ses,8.244,10.758,2.515,0.868,2.896,True,2.515
+Viet Nam,11,Internet-connected computers for teachers,ses,4.497,3.624,-0.873,1.243,-0.702,False,-0.873
+Malta,11,Internet-connected computers for teachers,ses,9.769,12.188,2.419,0.088,27.466,True,2.419
+Uruguay,11,Internet-connected computers for teachers,ses,3.101,6.203,3.102,1.29,2.405,True,3.102
+Chile,11,Internet-connected computers for teachers,ses,5.534,7.319,1.785,1.239,1.441,False,1.785
+Israel,11,Internet-connected computers for teachers,ses,6.622,7.256,0.634,1.734,0.365,False,0.634
+Iceland,11,Internet-connected computers for teachers,ses,13.767,14.415,0.648,0.094,6.92,True,0.648
+Brunei Darussalam,11,Internet-connected computers for teachers,ses,9.364,8.352,-1.012,0.041,-24.554,True,-1.012
+Mauritius,11,Internet-connected computers for teachers,ses,2.436,1.794,-0.642,0.56,-1.146,False,-0.642
+Uzbekistan,11,Internet-connected computers for teachers,ses,4.733,5.837,1.104,1.046,1.055,False,1.104
+Montenegro,11,Internet-connected computers for teachers,ses,3.257,5.899,2.642,0.117,22.546,True,2.642
+Albania*,11,Internet-connected computers for teachers,ses,2.859,5.541,2.682,0.771,3.48,True,2.682
+Qatar,11,Internet-connected computers for teachers,ses,10.489,11.426,0.938,0.08,11.703,True,0.938
+Greece,11,Internet-connected computers for teachers,ses,3.886,3.462,-0.423,0.514,-0.822,False,-0.423
+Thailand,11,Internet-connected computers for teachers,ses,6.63,6.51,-0.12,1.905,-0.063,False,-0.12
+Serbia,11,Internet-connected computers for teachers,ses,4.616,5.804,1.188,1.086,1.094,False,1.188
+Romania,11,Internet-connected computers for teachers,ses,8.237,6.666,-1.571,0.656,-2.395,True,-1.571
+Mongolia,11,Internet-connected computers for teachers,ses,10.477,9.883,-0.594,0.833,-0.714,False,-0.594
+Costa Rica,11,Internet-connected computers for teachers,ses,,,,,,False,
+Georgia,11,Internet-connected computers for teachers,ses,6.076,6.101,0.025,0.77,0.032,False,0.025
+Moldova,11,Internet-connected computers for teachers,ses,10.58,8.827,-1.752,0.788,-2.223,True,-1.752
+Bulgaria,11,Internet-connected computers for teachers,ses,10.846,9.081,-1.765,0.917,-1.925,False,-1.765
+Kazakhstan,11,Internet-connected computers for teachers,ses,6.7,7.047,0.347,0.861,0.403,False,0.347
+Malaysia,11,Internet-connected computers for teachers,ses,2.214,4.505,2.291,0.907,2.526,True,2.291
+Colombia,11,Internet-connected computers for teachers,ses,2.262,7.773,5.511,2.028,2.717,True,5.511
+Mexico,11,Internet-connected computers for teachers,ses,6.834,5.266,-1.568,1.813,-0.865,False,-1.568
+Saudi Arabia,11,Internet-connected computers for teachers,ses,3.361,7.271,3.91,1.174,3.33,True,3.91
+Cyprus,11,Internet-connected computers for teachers,ses,6.207,11.322,5.114,0.176,29.034,True,5.114
+Azerbaijan,11,Internet-connected computers for teachers,ses,1.761,5.371,3.61,0.791,4.563,True,3.61
+Brazil,11,Internet-connected computers for teachers,ses,4.712,8.092,3.38,1.663,2.033,True,3.38
+Jordan,11,Internet-connected computers for teachers,ses,4.064,4.021,-0.044,0.926,-0.047,False,-0.044
+Peru,11,Internet-connected computers for teachers,ses,1.761,7.081,5.32,0.915,5.814,True,5.32
+Ecuador,11,Internet-connected computers for teachers,ses,2.233,4.159,1.925,0.806,2.39,True,1.925
+Argentina,11,Internet-connected computers for teachers,ses,1.299,2.849,1.55,0.626,2.475,True,1.55
+Indonesia,11,Internet-connected computers for teachers,ses,5.356,5.897,0.541,0.989,0.547,False,0.541
+El Salvador,11,Internet-connected computers for teachers,ses,14.599,9.214,-5.385,4.355,-1.237,False,-5.385
+Cambodia,11,Internet-connected computers for teachers,ses,1.599,4.872,3.273,1.449,2.258,True,3.273
+North Macedonia,11,Internet-connected computers for teachers,ses,6.774,8.201,1.427,0.181,7.903,True,1.427
+Philippines,11,Internet-connected computers for teachers,ses,6.734,7.552,0.818,1.582,0.517,False,0.818
+Lebanon,11,Internet-connected computers for teachers,ses,1.726,3.009,1.283,0.74,1.735,False,1.283
+Armenia,11,Internet-connected computers for teachers,ses,2.406,4.246,1.84,0.324,5.675,True,1.84
+Kyrgyzstan,11,Internet-connected computers for teachers,ses,3.33,4.203,0.873,0.68,1.284,False,0.873
+Dominican Republic,11,Internet-connected computers for teachers,ses,17.717,5.996,-11.721,14.585,-0.804,False,-11.721
+Palestinian Authority,11,Internet-connected computers for teachers,ses,3.021,3.716,0.694,0.659,1.054,False,0.694
+Morocco,11,Internet-connected computers for teachers,ses,1.588,2.366,0.778,0.614,1.267,False,0.778
+Kosovo,11,Internet-connected computers for teachers,ses,3.234,3.988,0.755,0.25,3.016,True,0.755
+Paraguay,11,Internet-connected computers for teachers,ses,1.5,4.13,2.63,0.902,2.916,True,2.63
+Kurdistan Region (Iraq),11,Internet-connected computers for teachers,ses,,,,,,False,
+Guatemala,11,Internet-connected computers for teachers,ses,2.496,7.676,5.181,1.168,4.437,True,5.181
+Zambia,11,Internet-connected computers for teachers,ses,0.458,0.704,0.246,0.291,0.848,False,0.246
+Kenya,11,Internet-connected computers for teachers,ses,1.446,3.947,2.5,1.18,2.119,True,2.5
+Dushanbe (Tajikistan),11,Internet-connected computers for teachers,ses,3.655,7.046,3.39,0.63,5.379,True,3.39
+Rwanda,11,Internet-connected computers for teachers,ses,1.855,5.603,3.749,1.723,2.176,True,3.749
+Ukrainian regions (17 of 27),11,Internet-connected computers for teachers,ses,11.345,7.634,-3.712,1.536,-2.416,True,-3.712
+OECD average,11,Internet-connected computers for teachers,location,14.349,11.26,-3.032,1.189,-2.55,True,-3.032
+B-S-J-Z (China),11,Internet-connected computers for teachers,location,10.637,12.228,1.591,1.337,1.19,False,1.591
+Singapore,11,Internet-connected computers for teachers,location,,14.251,,,,False,
+Macao (China),11,Internet-connected computers for teachers,location,,13.179,,,,False,
+Chinese Taipei,11,Internet-connected computers for teachers,location,13.78,9.909,-3.871,2.39,-1.62,False,-3.871
+Japan,11,Internet-connected computers for teachers,location,,13.876,,,,False,
+Estonia,11,Internet-connected computers for teachers,location,20.433,13.89,-6.543,4.709,-1.389,False,-6.543
+Korea,11,Internet-connected computers for teachers,location,35.907,15.609,-20.298,9.218,-2.202,True,-20.298
+United Kingdom,11,Internet-connected computers for teachers,location,,13.845,,,,False,
+Canada*,11,Internet-connected computers for teachers,location,16.446,13.536,-2.91,2.468,-1.179,False,-2.91
+New Zealand*,11,Internet-connected computers for teachers,location,12.073,11.926,-0.147,0.445,-0.33,False,-0.147
+Australia,11,Internet-connected computers for teachers,location,16.724,13.494,-3.23,2.027,-1.593,False,-3.23
+Finland,11,Internet-connected computers for teachers,location,14.827,12.217,-2.61,1.616,-1.615,False,-2.61
+United States*,11,Internet-connected computers for teachers,location,33.988,19.314,-14.674,21.844,-0.672,False,-14.674
+Switzerland,11,Internet-connected computers for teachers,location,15.022,10.439,-4.583,2.089,-2.194,True,-4.583
+Ireland,11,Internet-connected computers for teachers,location,12.104,12.582,0.478,1.431,0.334,False,0.478
+Austria,11,Internet-connected computers for teachers,location,7.944,8.456,0.512,2.151,0.238,False,0.512
+Hong Kong (China),11,Internet-connected computers for teachers,location,15.736,12.527,-3.209,3.364,-0.954,False,-3.209
+Poland,11,Internet-connected computers for teachers,location,39.76,9.502,-30.258,22.594,-1.339,False,-30.258
+Türkiye,11,Internet-connected computers for teachers,location,,4.016,,,,False,
+Czechia,11,Internet-connected computers for teachers,location,20.214,16.196,-4.018,2.407,-1.669,False,-4.018
+Belgium,11,Internet-connected computers for teachers,location,,12.24,,,,False,
+Lithuania,11,Internet-connected computers for teachers,location,20.486,15.609,-4.878,3.671,-1.329,False,-4.878
+Germany,11,Internet-connected computers for teachers,location,14.226,9.068,-5.158,6.387,-0.808,False,-5.158
+Netherlands*,11,Internet-connected computers for teachers,location,,20.23,,,,False,
+Sweden,11,Internet-connected computers for teachers,location,12.509,16.359,3.85,2.712,1.42,False,3.85
+Slovenia,11,Internet-connected computers for teachers,location,11.431,13.582,2.151,0.91,2.363,True,2.151
+France,11,Internet-connected computers for teachers,location,9.821,6.513,-3.307,1.303,-2.538,True,-3.307
+Italy,11,Internet-connected computers for teachers,location,3.317,6.783,3.466,2.138,1.621,False,3.466
+Portugal,11,Internet-connected computers for teachers,location,6.69,6.578,-0.112,2.174,-0.052,False,-0.112
+Hungary,11,Internet-connected computers for teachers,location,13.412,10.611,-2.8,1.608,-1.741,False,-2.8
+Denmark,11,Internet-connected computers for teachers,location,15.249,22.095,6.846,6.744,1.015,False,6.846
+Spain,11,Internet-connected computers for teachers,location,10.687,8.211,-2.476,3.05,-0.812,False,-2.476
+Croatia,11,Internet-connected computers for teachers,location,15.605,11.033,-4.572,1.067,-4.287,True,-4.572
+Slovak Republic,11,Internet-connected computers for teachers,location,11.926,13.557,1.631,1.329,1.227,False,1.631
+Luxembourg,11,Internet-connected computers for teachers,location,,5.971,,,,False,
+Norway*,11,Internet-connected computers for teachers,location,,,,,,False,
+Latvia,11,Internet-connected computers for teachers,location,12.801,16.303,3.502,0.816,4.291,True,3.502
+United Arab Emirates,11,Internet-connected computers for teachers,location,11.861,9.136,-2.725,0.549,-4.968,True,-2.725
+Viet Nam,11,Internet-connected computers for teachers,location,3.244,4.498,1.254,1.059,1.184,False,1.254
+Malta,11,Internet-connected computers for teachers,location,,,,,,False,
+Uruguay,11,Internet-connected computers for teachers,location,6.841,3.198,-3.643,2.15,-1.694,False,-3.643
+Chile,11,Internet-connected computers for teachers,location,,6.927,,,,False,
+Israel,11,Internet-connected computers for teachers,location,6.499,6.299,-0.2,1.96,-0.102,False,-0.2
+Iceland,11,Internet-connected computers for teachers,location,15.533,12.029,-3.504,0.125,-28.094,True,-3.504
+Brunei Darussalam,11,Internet-connected computers for teachers,location,9.788,,,,,False,
+Mauritius,11,Internet-connected computers for teachers,location,1.61,,,,,False,
+Uzbekistan,11,Internet-connected computers for teachers,location,5.821,4.603,-1.218,0.901,-1.352,False,-1.218
+Montenegro,11,Internet-connected computers for teachers,location,,2.872,,,,False,
+Albania*,11,Internet-connected computers for teachers,location,3.341,4.037,0.696,1.016,0.685,False,0.696
+Qatar,11,Internet-connected computers for teachers,location,14.692,9.822,-4.87,0.183,-26.568,True,-4.87
+Greece,11,Internet-connected computers for teachers,location,5.411,3.382,-2.029,0.862,-2.353,True,-2.029
+Thailand,11,Internet-connected computers for teachers,location,4.067,5.124,1.056,0.826,1.279,False,1.056
+Serbia,11,Internet-connected computers for teachers,location,,5.22,,,,False,
+Romania,11,Internet-connected computers for teachers,location,8.568,7.06,-1.508,0.787,-1.917,False,-1.508
+Mongolia,11,Internet-connected computers for teachers,location,10.904,9.361,-1.542,1.585,-0.973,False,-1.542
+Costa Rica,11,Internet-connected computers for teachers,location,5.047,5.102,0.054,1.884,0.029,False,0.054
+Georgia,11,Internet-connected computers for teachers,location,5.781,5.645,-0.136,0.618,-0.221,False,-0.136
+Moldova,11,Internet-connected computers for teachers,location,11.199,7.737,-3.462,0.657,-5.269,True,-3.462
+Bulgaria,11,Internet-connected computers for teachers,location,11.168,9.198,-1.971,1.372,-1.436,False,-1.971
+Kazakhstan,11,Internet-connected computers for teachers,location,4.257,7.904,3.647,0.543,6.719,True,3.647
+Malaysia,11,Internet-connected computers for teachers,location,3.324,2.968,-0.356,0.907,-0.393,False,-0.356
+Colombia,11,Internet-connected computers for teachers,location,2.036,4.913,2.877,1.046,2.751,True,2.877
+Mexico,11,Internet-connected computers for teachers,location,7.944,5.364,-2.58,2.325,-1.11,False,-2.58
+Saudi Arabia,11,Internet-connected computers for teachers,location,2.166,4.659,2.493,1.278,1.95,False,2.493
+Cyprus,11,Internet-connected computers for teachers,location,6.596,7.144,0.548,0.145,3.786,True,0.548
+Azerbaijan,11,Internet-connected computers for teachers,location,1.554,3.77,2.216,0.53,4.18,True,2.216
+Brazil,11,Internet-connected computers for teachers,location,8.212,5.716,-2.497,2.394,-1.043,False,-2.497
+Jordan,11,Internet-connected computers for teachers,location,4.863,5.159,0.296,1.287,0.23,False,0.296
+Peru,11,Internet-connected computers for teachers,location,2.14,3.959,1.819,1.008,1.805,False,1.819
+Ecuador,11,Internet-connected computers for teachers,location,2.512,2.877,0.365,0.937,0.389,False,0.365
+Argentina,11,Internet-connected computers for teachers,location,3.684,2.137,-1.547,2.812,-0.55,False,-1.547
+Indonesia,11,Internet-connected computers for teachers,location,5.104,5.914,0.809,1.123,0.721,False,0.809
+El Salvador,11,Internet-connected computers for teachers,location,10.713,11.421,0.708,1.713,0.414,False,0.708
+Cambodia,11,Internet-connected computers for teachers,location,2.146,4.029,1.884,1.248,1.509,False,1.884
+North Macedonia,11,Internet-connected computers for teachers,location,30.352,6.848,-23.504,2.644,-8.89,True,-23.504
+Philippines,11,Internet-connected computers for teachers,location,6.827,5.296,-1.531,1.264,-1.211,False,-1.531
+Lebanon,11,Internet-connected computers for teachers,location,1.258,2.672,1.414,0.624,2.266,True,1.414
+Armenia,11,Internet-connected computers for teachers,location,2.6,3.972,1.373,0.347,3.952,True,1.373
+Kyrgyzstan,11,Internet-connected computers for teachers,location,3.816,4.145,0.328,0.684,0.48,False,0.328
+Dominican Republic,11,Internet-connected computers for teachers,location,4.853,13.08,8.226,8.872,0.927,False,8.226
+Palestinian Authority,11,Internet-connected computers for teachers,location,4.87,3.237,-1.633,0.78,-2.093,True,-1.633
+Morocco,11,Internet-connected computers for teachers,location,1.092,2.324,1.232,0.473,2.605,True,1.232
+Kosovo,11,Internet-connected computers for teachers,location,3.211,4.149,0.938,0.859,1.092,False,0.938
+Paraguay,11,Internet-connected computers for teachers,location,0.906,4.044,3.137,0.969,3.238,True,3.137
+Kurdistan Region (Iraq),11,Internet-connected computers for teachers,location,,,,,,False,
+Guatemala,11,Internet-connected computers for teachers,location,2.46,5.752,3.292,1.01,3.258,True,3.292
+Zambia,11,Internet-connected computers for teachers,location,0.744,1.558,0.814,0.48,1.695,False,0.814
+Kenya,11,Internet-connected computers for teachers,location,1.986,2.155,0.169,1.0,0.169,False,0.169
+Dushanbe (Tajikistan),11,Internet-connected computers for teachers,location,3.376,7.53,4.153,0.212,19.561,True,4.153
+Rwanda,11,Internet-connected computers for teachers,location,3.089,4.0,0.91,1.005,0.905,False,0.91
+Ukrainian regions (17 of 27),11,Internet-connected computers for teachers,location,10.489,8.173,-2.317,2.124,-1.091,False,-2.317
+OECD average,11,Internet-connected computers for teachers,type,11.658,10.998,-0.197,0.339,-0.582,False,-0.197
+B-S-J-Z (China),11,Internet-connected computers for teachers,type,11.855,11.742,-0.113,1.206,-0.093,False,-0.113
+Singapore,11,Internet-connected computers for teachers,type,14.782,11.044,-3.738,0.679,-5.506,True,-3.738
+Macao (China),11,Internet-connected computers for teachers,type,,13.227,,,,False,
+Chinese Taipei,11,Internet-connected computers for teachers,type,9.287,10.967,1.679,1.632,1.029,False,1.679
+Japan,11,Internet-connected computers for teachers,type,16.444,10.186,-6.257,2.108,-2.969,True,-6.257
+Estonia,11,Internet-connected computers for teachers,type,14.987,12.23,-2.757,1.4,-1.968,True,-2.757
+Korea,11,Internet-connected computers for teachers,type,15.389,16.517,1.128,1.707,0.661,False,1.128
+United Kingdom,11,Internet-connected computers for teachers,type,16.788,,,,,False,
+Canada*,11,Internet-connected computers for teachers,type,13.574,11.597,-1.977,1.151,-1.718,False,-1.977
+New Zealand*,11,Internet-connected computers for teachers,type,12.191,13.13,0.939,0.769,1.221,False,0.939
+Australia,11,Internet-connected computers for teachers,type,13.656,13.947,0.29,0.618,0.47,False,0.29
+Finland,11,Internet-connected computers for teachers,type,11.581,14.059,2.477,1.185,2.09,True,2.477
+United States*,11,Internet-connected computers for teachers,type,21.329,16.786,-4.544,4.616,-0.984,False,-4.544
+Switzerland,11,Internet-connected computers for teachers,type,16.407,13.188,-3.219,2.221,-1.45,False,-3.219
+Ireland,11,Internet-connected computers for teachers,type,,,,,,False,
+Austria,11,Internet-connected computers for teachers,type,11.618,6.848,-4.77,1.662,-2.87,True,-4.77
+Hong Kong (China),11,Internet-connected computers for teachers,type,12.441,12.358,-0.083,0.681,-0.123,False,-0.083
+Poland,11,Internet-connected computers for teachers,type,11.104,10.441,-0.663,2.307,-0.287,False,-0.663
+Türkiye,11,Internet-connected computers for teachers,type,3.723,5.453,1.73,0.857,2.02,True,1.73
+Czechia,11,Internet-connected computers for teachers,type,17.144,13.021,-4.122,1.04,-3.965,True,-4.122
+Belgium,11,Internet-connected computers for teachers,type,10.397,10.401,0.004,1.868,0.002,False,0.004
+Lithuania,11,Internet-connected computers for teachers,type,18.554,13.038,-5.516,2.271,-2.429,True,-5.516
+Germany,11,Internet-connected computers for teachers,type,12.892,9.638,-3.254,2.739,-1.188,False,-3.254
+Netherlands*,11,Internet-connected computers for teachers,type,19.983,,,,,False,
+Sweden,11,Internet-connected computers for teachers,type,13.78,16.569,2.789,3.599,0.775,False,2.789
+Slovenia,11,Internet-connected computers for teachers,type,14.487,9.903,-4.584,0.162,-28.211,True,-4.584
+France,11,Internet-connected computers for teachers,type,7.34,8.02,0.68,0.856,0.795,False,0.68
+Italy,11,Internet-connected computers for teachers,type,5.847,9.241,3.394,1.699,1.998,True,3.394
+Portugal,11,Internet-connected computers for teachers,type,7.098,7.406,0.308,1.352,0.228,False,0.308
+Hungary,11,Internet-connected computers for teachers,type,10.663,11.01,0.347,1.54,0.225,False,0.347
+Denmark,11,Internet-connected computers for teachers,type,17.788,16.222,-1.566,2.187,-0.716,False,-1.566
+Spain,11,Internet-connected computers for teachers,type,9.045,8.183,-0.862,0.731,-1.178,False,-0.862
+Croatia,11,Internet-connected computers for teachers,type,11.668,10.48,-1.188,1.89,-0.629,False,-1.188
+Slovak Republic,11,Internet-connected computers for teachers,type,12.84,12.257,-0.583,0.758,-0.769,False,-0.583
+Luxembourg,11,Internet-connected computers for teachers,type,3.386,12.218,8.832,0.017,522.294,True,8.832
+Norway*,11,Internet-connected computers for teachers,type,,,,,,False,
+Latvia,11,Internet-connected computers for teachers,type,14.893,12.239,-2.654,3.905,-0.68,False,-2.654
+United Arab Emirates,11,Internet-connected computers for teachers,type,11.816,8.688,-3.128,0.376,-8.328,True,-3.128
+Viet Nam,11,Internet-connected computers for teachers,type,4.188,4.966,0.777,0.832,0.934,False,0.777
+Malta,11,Internet-connected computers for teachers,type,13.972,13.051,-0.921,0.04,-22.845,True,-0.921
+Uruguay,11,Internet-connected computers for teachers,type,1.988,7.65,5.661,1.401,4.041,True,5.661
+Chile,11,Internet-connected computers for teachers,type,4.731,7.379,2.648,0.772,3.43,True,2.648
+Israel,11,Internet-connected computers for teachers,type,,,,,,False,
+Iceland,11,Internet-connected computers for teachers,type,13.004,,,,,False,
+Brunei Darussalam,11,Internet-connected computers for teachers,type,8.813,5.973,-2.84,0.034,-82.576,True,-2.84
+Mauritius,11,Internet-connected computers for teachers,type,1.088,3.35,2.262,0.326,6.928,True,2.262
+Uzbekistan,11,Internet-connected computers for teachers,type,4.857,,,,,False,
+Montenegro,11,Internet-connected computers for teachers,type,4.516,,,,,False,
+Albania*,11,Internet-connected computers for teachers,type,2.961,7.615,4.654,0.843,5.519,True,4.654
+Qatar,11,Internet-connected computers for teachers,type,10.875,9.93,-0.944,0.06,-15.749,True,-0.944
+Greece,11,Internet-connected computers for teachers,type,3.811,5.062,1.251,0.726,1.724,False,1.251
+Thailand,11,Internet-connected computers for teachers,type,5.412,5.758,0.346,0.773,0.448,False,0.346
+Serbia,11,Internet-connected computers for teachers,type,5.694,,,,,False,
+Romania,11,Internet-connected computers for teachers,type,7.785,5.42,-2.365,1.488,-1.589,False,-2.365
+Mongolia,11,Internet-connected computers for teachers,type,9.405,9.863,0.458,0.792,0.579,False,0.458
+Costa Rica,11,Internet-connected computers for teachers,type,4.185,7.54,3.355,1.31,2.561,True,3.355
+Georgia,11,Internet-connected computers for teachers,type,5.574,6.424,0.85,0.978,0.869,False,0.85
+Moldova,11,Internet-connected computers for teachers,type,9.847,7.065,-2.782,1.978,-1.407,False,-2.782
+Bulgaria,11,Internet-connected computers for teachers,type,9.973,,,,,False,
+Kazakhstan,11,Internet-connected computers for teachers,type,6.738,7.568,0.83,1.017,0.816,False,0.83
+Malaysia,11,Internet-connected computers for teachers,type,2.406,7.797,5.391,1.468,3.674,True,5.391
+Colombia,11,Internet-connected computers for teachers,type,2.381,10.328,7.947,2.29,3.47,True,7.947
+Mexico,11,Internet-connected computers for teachers,type,4.979,7.877,2.898,1.535,1.888,False,2.898
+Saudi Arabia,11,Internet-connected computers for teachers,type,3.468,10.111,6.642,1.241,5.354,True,6.642
+Cyprus,11,Internet-connected computers for teachers,type,5.251,11.236,5.985,0.087,68.749,True,5.985
+Azerbaijan,11,Internet-connected computers for teachers,type,3.05,,,,,False,
+Brazil,11,Internet-connected computers for teachers,type,5.131,9.266,4.135,2.667,1.55,False,4.135
+Jordan,11,Internet-connected computers for teachers,type,5.218,3.995,-1.224,0.694,-1.763,False,-1.224
+Peru,11,Internet-connected computers for teachers,type,2.814,6.192,3.378,0.885,3.816,True,3.378
+Ecuador,11,Internet-connected computers for teachers,type,2.133,4.733,2.6,0.673,3.863,True,2.6
+Argentina,11,Internet-connected computers for teachers,type,1.763,2.466,0.703,0.569,1.235,False,0.703
+Indonesia,11,Internet-connected computers for teachers,type,4.422,5.977,1.556,0.746,2.086,True,1.556
+El Salvador,11,Internet-connected computers for teachers,type,10.93,11.911,0.981,2.02,0.486,False,0.981
+Cambodia,11,Internet-connected computers for teachers,type,1.983,12.085,10.102,3.28,3.079,True,10.102
+North Macedonia,11,Internet-connected computers for teachers,type,7.05,,,,,False,
+Philippines,11,Internet-connected computers for teachers,type,5.233,9.086,3.853,1.815,2.123,True,3.853
+Lebanon,11,Internet-connected computers for teachers,type,1.67,2.503,0.833,0.461,1.806,False,0.833
+Armenia,11,Internet-connected computers for teachers,type,3.191,4.352,1.161,0.565,2.054,True,1.161
+Kyrgyzstan,11,Internet-connected computers for teachers,type,3.391,8.007,4.616,1.117,4.131,True,4.616
+Dominican Republic,11,Internet-connected computers for teachers,type,10.337,16.306,5.969,12.109,0.493,False,5.969
+Palestinian Authority,11,Internet-connected computers for teachers,type,5.231,3.221,-2.01,0.875,-2.298,True,-2.01
+Morocco,11,Internet-connected computers for teachers,type,1.578,3.562,1.984,0.888,2.233,True,1.984
+Kosovo,11,Internet-connected computers for teachers,type,3.711,6.197,2.486,0.716,3.471,True,2.486
+Paraguay,11,Internet-connected computers for teachers,type,1.897,5.239,3.342,1.198,2.79,True,3.342
+Kurdistan Region (Iraq),11,Internet-connected computers for teachers,type,,,,,,False,
+Guatemala,11,Internet-connected computers for teachers,type,1.425,7.811,6.386,0.675,9.467,True,6.386
+Zambia,11,Internet-connected computers for teachers,type,0.86,1.579,0.719,0.618,1.163,False,0.719
+Kenya,11,Internet-connected computers for teachers,type,1.581,6.647,5.066,2.011,2.519,True,5.066
+Dushanbe (Tajikistan),11,Internet-connected computers for teachers,type,7.083,5.283,-1.8,1.424,-1.264,False,-1.8
+Rwanda,11,Internet-connected computers for teachers,type,3.053,5.037,1.985,1.118,1.775,False,1.985
+Ukrainian regions (17 of 27),11,Internet-connected computers for teachers,type,8.923,,,,,False,
+OECD average,15,Capacity to enhance teaching with digital devices,ses,-0.107,0.133,0.24,0.028,8.517,True,0.24
+B-S-J-Z (China),15,Capacity to enhance teaching with digital devices,ses,0.236,0.727,0.491,0.199,2.461,True,0.491
+Singapore,15,Capacity to enhance teaching with digital devices,ses,0.917,0.964,0.048,0.086,0.558,False,0.048
+Macao (China),15,Capacity to enhance teaching with digital devices,ses,0.074,0.7,0.626,0.006,107.964,True,0.626
+Chinese Taipei,15,Capacity to enhance teaching with digital devices,ses,0.22,0.474,0.255,0.162,1.575,False,0.255
+Japan,15,Capacity to enhance teaching with digital devices,ses,-0.584,-0.478,0.106,0.157,0.677,False,0.106
+Estonia,15,Capacity to enhance teaching with digital devices,ses,-0.219,-0.114,0.105,0.097,1.08,False,0.105
+Korea,15,Capacity to enhance teaching with digital devices,ses,0.467,0.234,-0.233,0.229,-1.017,False,-0.233
+United Kingdom,15,Capacity to enhance teaching with digital devices,ses,-0.37,0.074,0.444,0.147,3.011,True,0.444
+Canada*,15,Capacity to enhance teaching with digital devices,ses,-0.118,0.222,0.339,0.162,2.092,True,0.339
+New Zealand*,15,Capacity to enhance teaching with digital devices,ses,-0.205,0.557,0.762,0.145,5.274,True,0.762
+Australia,15,Capacity to enhance teaching with digital devices,ses,-0.029,0.826,0.854,0.133,6.445,True,0.854
+Finland,15,Capacity to enhance teaching with digital devices,ses,0.311,0.064,-0.247,0.109,-2.274,True,-0.247
+United States*,15,Capacity to enhance teaching with digital devices,ses,0.152,0.588,0.435,0.339,1.284,False,0.435
+Switzerland,15,Capacity to enhance teaching with digital devices,ses,0.521,0.966,0.445,0.167,2.662,True,0.445
+Ireland,15,Capacity to enhance teaching with digital devices,ses,-0.715,-0.05,0.665,0.184,3.619,True,0.665
+Austria,15,Capacity to enhance teaching with digital devices,ses,0.154,0.346,0.193,0.163,1.184,False,0.193
+Hong Kong (China),15,Capacity to enhance teaching with digital devices,ses,0.171,0.23,0.058,0.174,0.336,False,0.058
+Poland,15,Capacity to enhance teaching with digital devices,ses,-0.074,-0.301,-0.227,0.132,-1.722,False,-0.227
+Türkiye,15,Capacity to enhance teaching with digital devices,ses,-0.303,0.393,0.696,0.22,3.164,True,0.696
+Czechia,15,Capacity to enhance teaching with digital devices,ses,0.015,-0.121,-0.136,0.132,-1.033,False,-0.136
+Belgium,15,Capacity to enhance teaching with digital devices,ses,-0.222,0.131,0.353,0.109,3.245,True,0.353
+Lithuania,15,Capacity to enhance teaching with digital devices,ses,0.156,0.08,-0.076,0.127,-0.596,False,-0.076
+Germany,15,Capacity to enhance teaching with digital devices,ses,-0.326,0.184,0.51,0.23,2.215,True,0.51
+Netherlands*,15,Capacity to enhance teaching with digital devices,ses,0.524,0.448,-0.076,0.288,-0.264,False,-0.076
+Sweden,15,Capacity to enhance teaching with digital devices,ses,0.65,0.774,0.124,0.179,0.693,False,0.124
+Slovenia,15,Capacity to enhance teaching with digital devices,ses,-0.006,0.181,0.187,0.047,3.931,True,0.187
+France,15,Capacity to enhance teaching with digital devices,ses,-0.396,-0.053,0.342,0.148,2.307,True,0.342
+Italy,15,Capacity to enhance teaching with digital devices,ses,-0.075,-0.034,0.041,0.13,0.315,False,0.041
+Portugal,15,Capacity to enhance teaching with digital devices,ses,-0.52,-0.319,0.201,0.111,1.814,False,0.201
+Hungary,15,Capacity to enhance teaching with digital devices,ses,-0.261,0.139,0.4,0.174,2.291,True,0.4
+Denmark,15,Capacity to enhance teaching with digital devices,ses,1.067,0.851,-0.216,0.338,-0.64,False,-0.216
+Spain,15,Capacity to enhance teaching with digital devices,ses,-0.414,0.04,0.454,0.123,3.7,True,0.454
+Croatia,15,Capacity to enhance teaching with digital devices,ses,0.08,-0.144,-0.224,0.091,-2.463,True,-0.224
+Slovak Republic,15,Capacity to enhance teaching with digital devices,ses,-0.39,-0.096,0.295,0.15,1.962,True,0.295
+Luxembourg,15,Capacity to enhance teaching with digital devices,ses,0.41,0.494,0.084,0.003,33.261,True,0.084
+Norway*,15,Capacity to enhance teaching with digital devices,ses,0.403,0.55,0.148,0.125,1.176,False,0.148
+Latvia,15,Capacity to enhance teaching with digital devices,ses,0.004,-0.253,-0.257,0.08,-3.219,True,-0.257
+United Arab Emirates,15,Capacity to enhance teaching with digital devices,ses,1.01,1.227,0.218,0.277,0.786,False,0.218
+Viet Nam,15,Capacity to enhance teaching with digital devices,ses,0.294,0.329,0.035,0.26,0.134,False,0.035
+Malta,15,Capacity to enhance teaching with digital devices,ses,-0.459,-0.266,0.194,0.006,32.708,True,0.194
+Uruguay,15,Capacity to enhance teaching with digital devices,ses,-0.675,-0.378,0.297,0.125,2.377,True,0.297
+Chile,15,Capacity to enhance teaching with digital devices,ses,-0.874,-0.429,0.445,0.184,2.425,True,0.445
+Israel,15,Capacity to enhance teaching with digital devices,ses,-0.14,-0.211,-0.071,0.168,-0.422,False,-0.071
+Iceland,15,Capacity to enhance teaching with digital devices,ses,0.305,0.54,0.235,0.014,16.607,True,0.235
+Brunei Darussalam,15,Capacity to enhance teaching with digital devices,ses,-0.548,0.159,0.708,0.005,143.527,True,0.708
+Mauritius,15,Capacity to enhance teaching with digital devices,ses,-0.622,-0.606,0.017,0.128,0.128,False,0.017
+Uzbekistan,15,Capacity to enhance teaching with digital devices,ses,0.645,1.125,0.481,0.245,1.963,True,0.481
+Montenegro,15,Capacity to enhance teaching with digital devices,ses,0.126,-0.367,-0.493,0.033,-14.923,True,-0.493
+Albania*,15,Capacity to enhance teaching with digital devices,ses,-0.792,0.115,0.907,0.126,7.178,True,0.907
+Qatar,15,Capacity to enhance teaching with digital devices,ses,0.347,0.195,-0.152,0.026,-5.863,True,-0.152
+Greece,15,Capacity to enhance teaching with digital devices,ses,-0.688,-0.319,0.369,0.177,2.089,True,0.369
+Thailand,15,Capacity to enhance teaching with digital devices,ses,0.205,1.004,0.799,0.296,2.698,True,0.799
+Serbia,15,Capacity to enhance teaching with digital devices,ses,-0.643,-0.292,0.35,0.141,2.49,True,0.35
+Romania,15,Capacity to enhance teaching with digital devices,ses,-0.167,0.062,0.228,0.148,1.541,False,0.228
+Mongolia,15,Capacity to enhance teaching with digital devices,ses,-0.3,0.204,0.504,0.171,2.945,True,0.504
+Costa Rica,15,Capacity to enhance teaching with digital devices,ses,,,,,,False,
+Georgia,15,Capacity to enhance teaching with digital devices,ses,-0.126,-0.092,0.034,0.21,0.164,False,0.034
+Moldova,15,Capacity to enhance teaching with digital devices,ses,-0.384,-0.262,0.122,0.133,0.921,False,0.122
+Bulgaria,15,Capacity to enhance teaching with digital devices,ses,0.138,0.326,0.189,0.21,0.896,False,0.189
+Kazakhstan,15,Capacity to enhance teaching with digital devices,ses,0.274,0.35,0.076,0.161,0.473,False,0.076
+Malaysia,15,Capacity to enhance teaching with digital devices,ses,-0.659,-0.502,0.158,0.223,0.706,False,0.158
+Colombia,15,Capacity to enhance teaching with digital devices,ses,-1.13,-0.548,0.582,0.152,3.827,True,0.582
+Mexico,15,Capacity to enhance teaching with digital devices,ses,-1.053,-0.447,0.607,0.213,2.848,True,0.607
+Saudi Arabia,15,Capacity to enhance teaching with digital devices,ses,-0.758,0.914,1.672,0.256,6.524,True,1.672
+Cyprus,15,Capacity to enhance teaching with digital devices,ses,0.079,-0.202,-0.281,0.043,-6.517,True,-0.281
+Azerbaijan,15,Capacity to enhance teaching with digital devices,ses,-0.826,-0.279,0.547,0.211,2.587,True,0.547
+Brazil,15,Capacity to enhance teaching with digital devices,ses,-1.225,-0.267,0.958,0.138,6.957,True,0.958
+Jordan,15,Capacity to enhance teaching with digital devices,ses,-0.732,0.07,0.801,0.23,3.487,True,0.801
+Peru,15,Capacity to enhance teaching with digital devices,ses,-1.03,-0.203,0.827,0.237,3.489,True,0.827
+Ecuador,15,Capacity to enhance teaching with digital devices,ses,-1.222,-0.222,1.0,0.171,5.844,True,1.0
+Argentina,15,Capacity to enhance teaching with digital devices,ses,-1.391,-0.649,0.742,0.243,3.054,True,0.742
+Indonesia,15,Capacity to enhance teaching with digital devices,ses,-0.266,0.34,0.607,0.176,3.438,True,0.607
+El Salvador,15,Capacity to enhance teaching with digital devices,ses,-0.179,0.143,0.322,0.19,1.695,False,0.322
+Cambodia,15,Capacity to enhance teaching with digital devices,ses,-0.097,0.125,0.222,0.241,0.924,False,0.222
+North Macedonia,15,Capacity to enhance teaching with digital devices,ses,-0.584,-0.285,0.299,0.053,5.664,True,0.299
+Philippines,15,Capacity to enhance teaching with digital devices,ses,-0.229,0.41,0.639,0.242,2.638,True,0.639
+Lebanon,15,Capacity to enhance teaching with digital devices,ses,-1.147,-0.166,0.981,0.256,3.834,True,0.981
+Armenia,15,Capacity to enhance teaching with digital devices,ses,-0.818,-0.277,0.541,0.101,5.356,True,0.541
+Kyrgyzstan,15,Capacity to enhance teaching with digital devices,ses,-0.505,-0.213,0.293,0.195,1.499,False,0.293
+Dominican Republic,15,Capacity to enhance teaching with digital devices,ses,-0.968,-0.404,0.563,0.163,3.463,True,0.563
+Palestinian Authority,15,Capacity to enhance teaching with digital devices,ses,-0.989,-0.738,0.251,0.14,1.786,False,0.251
+Morocco,15,Capacity to enhance teaching with digital devices,ses,-0.999,0.051,1.05,0.33,3.183,True,1.05
+Kosovo,15,Capacity to enhance teaching with digital devices,ses,-0.322,-0.309,0.013,0.084,0.151,False,0.013
+Paraguay,15,Capacity to enhance teaching with digital devices,ses,-1.23,-0.534,0.696,0.19,3.666,True,0.696
+Kurdistan Region (Iraq),15,Capacity to enhance teaching with digital devices,ses,-0.845,-0.684,0.162,0.169,0.956,False,0.162
+Guatemala,15,Capacity to enhance teaching with digital devices,ses,-1.248,0.18,1.427,0.167,8.55,True,1.427
+Zambia,15,Capacity to enhance teaching with digital devices,ses,-1.177,-0.789,0.388,0.227,1.707,False,0.388
+Kenya,15,Capacity to enhance teaching with digital devices,ses,-1.184,-1.023,0.161,0.182,0.882,False,0.161
+Dushanbe (Tajikistan),15,Capacity to enhance teaching with digital devices,ses,-0.332,-0.099,0.232,0.016,14.637,True,0.232
+Rwanda,15,Capacity to enhance teaching with digital devices,ses,-0.748,-0.512,0.236,0.184,1.281,False,0.236
+Ukrainian regions (17 of 27),15,Capacity to enhance teaching with digital devices,ses,-0.309,-0.114,0.195,0.174,1.12,False,0.195
+OECD average,15,Capacity to enhance teaching with digital devices,location,-0.035,-0.01,0.032,0.046,0.697,False,0.032
+B-S-J-Z (China),15,Capacity to enhance teaching with digital devices,location,0.217,0.606,0.39,0.325,1.2,False,0.39
+Singapore,15,Capacity to enhance teaching with digital devices,location,,0.91,,,,False,
+Macao (China),15,Capacity to enhance teaching with digital devices,location,,0.002,,,,False,
+Chinese Taipei,15,Capacity to enhance teaching with digital devices,location,-0.098,0.404,0.502,0.253,1.983,True,0.502
+Japan,15,Capacity to enhance teaching with digital devices,location,,-0.551,,,,False,
+Estonia,15,Capacity to enhance teaching with digital devices,location,-0.075,0.022,0.098,0.113,0.866,False,0.098
+Korea,15,Capacity to enhance teaching with digital devices,location,0.447,0.38,-0.067,0.332,-0.202,False,-0.067
+United Kingdom,15,Capacity to enhance teaching with digital devices,location,0.214,-0.101,-0.315,0.304,-1.036,False,-0.315
+Canada*,15,Capacity to enhance teaching with digital devices,location,0.379,-0.032,-0.411,0.243,-1.693,False,-0.411
+New Zealand*,15,Capacity to enhance teaching with digital devices,location,0.18,0.308,0.128,0.337,0.378,False,0.128
+Australia,15,Capacity to enhance teaching with digital devices,location,-0.203,0.437,0.64,0.108,5.935,True,0.64
+Finland,15,Capacity to enhance teaching with digital devices,location,0.342,0.216,-0.126,0.173,-0.73,False,-0.126
+United States*,15,Capacity to enhance teaching with digital devices,location,1.058,0.422,-0.636,0.735,-0.866,False,-0.636
+Switzerland,15,Capacity to enhance teaching with digital devices,location,0.692,0.552,-0.141,0.158,-0.887,False,-0.141
+Ireland,15,Capacity to enhance teaching with digital devices,location,-0.484,-0.226,0.258,0.273,0.945,False,0.258
+Austria,15,Capacity to enhance teaching with digital devices,location,0.925,0.178,-0.747,0.341,-2.189,True,-0.747
+Hong Kong (China),15,Capacity to enhance teaching with digital devices,location,-0.792,0.153,0.944,0.621,1.52,False,0.944
+Poland,15,Capacity to enhance teaching with digital devices,location,-0.313,-0.103,0.209,0.25,0.839,False,0.209
+Türkiye,15,Capacity to enhance teaching with digital devices,location,,-0.105,,,,False,
+Czechia,15,Capacity to enhance teaching with digital devices,location,-0.072,-0.253,-0.181,0.127,-1.425,False,-0.181
+Belgium,15,Capacity to enhance teaching with digital devices,location,-0.273,-0.221,0.052,0.323,0.161,False,0.052
+Lithuania,15,Capacity to enhance teaching with digital devices,location,0.349,0.069,-0.28,0.132,-2.125,True,-0.28
+Germany,15,Capacity to enhance teaching with digital devices,location,,-0.277,,,,False,
+Netherlands*,15,Capacity to enhance teaching with digital devices,location,,0.491,,,,False,
+Sweden,15,Capacity to enhance teaching with digital devices,location,0.429,0.709,0.279,0.255,1.093,False,0.279
+Slovenia,15,Capacity to enhance teaching with digital devices,location,-0.06,0.094,0.154,0.16,0.965,False,0.154
+France,15,Capacity to enhance teaching with digital devices,location,-0.4,-0.279,0.121,0.175,0.691,False,0.121
+Italy,15,Capacity to enhance teaching with digital devices,location,-0.26,-0.076,0.183,0.236,0.776,False,0.183
+Portugal,15,Capacity to enhance teaching with digital devices,location,-0.454,-0.418,0.037,0.274,0.134,False,0.037
+Hungary,15,Capacity to enhance teaching with digital devices,location,0.195,-0.032,-0.227,0.247,-0.916,False,-0.227
+Denmark,15,Capacity to enhance teaching with digital devices,location,0.591,0.508,-0.083,0.375,-0.222,False,-0.083
+Spain,15,Capacity to enhance teaching with digital devices,location,-0.274,-0.183,0.091,0.114,0.8,False,0.091
+Croatia,15,Capacity to enhance teaching with digital devices,location,0.153,-0.092,-0.245,0.501,-0.489,False,-0.245
+Slovak Republic,15,Capacity to enhance teaching with digital devices,location,-0.478,-0.004,0.474,0.194,2.448,True,0.474
+Luxembourg,15,Capacity to enhance teaching with digital devices,location,,0.689,,,,False,
+Norway*,15,Capacity to enhance teaching with digital devices,location,0.327,0.589,0.262,0.186,1.409,False,0.262
+Latvia,15,Capacity to enhance teaching with digital devices,location,-0.086,-0.09,-0.004,0.074,-0.053,False,-0.004
+United Arab Emirates,15,Capacity to enhance teaching with digital devices,location,0.65,1.028,0.378,0.091,4.178,True,0.378
+Viet Nam,15,Capacity to enhance teaching with digital devices,location,0.296,0.468,0.172,0.239,0.72,False,0.172
+Malta,15,Capacity to enhance teaching with digital devices,location,,,,,,False,
+Uruguay,15,Capacity to enhance teaching with digital devices,location,-0.518,-0.682,-0.164,0.294,-0.56,False,-0.164
+Chile,15,Capacity to enhance teaching with digital devices,location,,-0.51,,,,False,
+Israel,15,Capacity to enhance teaching with digital devices,location,-0.128,-0.276,-0.148,0.217,-0.682,False,-0.148
+Iceland,15,Capacity to enhance teaching with digital devices,location,0.2,0.471,0.27,0.022,12.066,True,0.27
+Brunei Darussalam,15,Capacity to enhance teaching with digital devices,location,-0.565,,,,,False,
+Mauritius,15,Capacity to enhance teaching with digital devices,location,-0.801,,,,,False,
+Uzbekistan,15,Capacity to enhance teaching with digital devices,location,0.731,1.141,0.411,0.218,1.884,False,0.411
+Montenegro,15,Capacity to enhance teaching with digital devices,location,,-0.1,,,,False,
+Albania*,15,Capacity to enhance teaching with digital devices,location,-0.702,-0.39,0.312,0.108,2.898,True,0.312
+Qatar,15,Capacity to enhance teaching with digital devices,location,1.088,0.299,-0.79,0.035,-22.257,True,-0.79
+Greece,15,Capacity to enhance teaching with digital devices,location,-0.434,-0.521,-0.087,0.204,-0.425,False,-0.087
+Thailand,15,Capacity to enhance teaching with digital devices,location,0.626,0.879,0.253,0.341,0.741,False,0.253
+Serbia,15,Capacity to enhance teaching with digital devices,location,,-0.323,,,,False,
+Romania,15,Capacity to enhance teaching with digital devices,location,-0.001,-0.027,-0.026,0.147,-0.178,False,-0.026
+Mongolia,15,Capacity to enhance teaching with digital devices,location,-0.179,0.141,0.32,0.2,1.604,False,0.32
+Costa Rica,15,Capacity to enhance teaching with digital devices,location,-1.244,-0.804,0.441,0.272,1.621,False,0.441
+Georgia,15,Capacity to enhance teaching with digital devices,location,-0.185,-0.238,-0.053,0.142,-0.369,False,-0.053
+Moldova,15,Capacity to enhance teaching with digital devices,location,-0.353,-0.416,-0.063,0.092,-0.679,False,-0.063
+Bulgaria,15,Capacity to enhance teaching with digital devices,location,0.88,0.122,-0.758,0.443,-1.712,False,-0.758
+Kazakhstan,15,Capacity to enhance teaching with digital devices,location,-0.194,0.492,0.687,0.117,5.865,True,0.687
+Malaysia,15,Capacity to enhance teaching with digital devices,location,-0.779,-0.634,0.145,0.27,0.536,False,0.145
+Colombia,15,Capacity to enhance teaching with digital devices,location,-1.126,-0.88,0.247,0.144,1.713,False,0.247
+Mexico,15,Capacity to enhance teaching with digital devices,location,-1.1,-0.568,0.532,0.182,2.925,True,0.532
+Saudi Arabia,15,Capacity to enhance teaching with digital devices,location,-0.803,-0.057,0.746,0.191,3.9,True,0.746
+Cyprus,15,Capacity to enhance teaching with digital devices,location,0.23,-0.176,-0.407,0.063,-6.435,True,-0.407
+Azerbaijan,15,Capacity to enhance teaching with digital devices,location,-1.004,-0.314,0.69,0.176,3.919,True,0.69
+Brazil,15,Capacity to enhance teaching with digital devices,location,-0.823,-0.723,0.1,0.171,0.587,False,0.1
+Jordan,15,Capacity to enhance teaching with digital devices,location,-0.748,-0.36,0.388,0.205,1.895,False,0.388
+Peru,15,Capacity to enhance teaching with digital devices,location,-1.137,-0.587,0.55,0.302,1.819,False,0.55
+Ecuador,15,Capacity to enhance teaching with digital devices,location,-1.08,-0.941,0.139,0.17,0.818,False,0.139
+Argentina,15,Capacity to enhance teaching with digital devices,location,-1.416,-1.065,0.351,0.304,1.155,False,0.351
+Indonesia,15,Capacity to enhance teaching with digital devices,location,-0.409,0.426,0.835,0.198,4.213,True,0.835
+El Salvador,15,Capacity to enhance teaching with digital devices,location,-0.201,-0.059,0.142,0.147,0.967,False,0.142
+Cambodia,15,Capacity to enhance teaching with digital devices,location,-0.148,0.208,0.355,0.262,1.354,False,0.355
+North Macedonia,15,Capacity to enhance teaching with digital devices,location,0.077,-0.465,-0.542,0.199,-2.716,True,-0.542
+Philippines,15,Capacity to enhance teaching with digital devices,location,-0.265,0.058,0.323,0.272,1.19,False,0.323
+Lebanon,15,Capacity to enhance teaching with digital devices,location,-1.008,-0.591,0.417,0.272,1.531,False,0.417
+Armenia,15,Capacity to enhance teaching with digital devices,location,-0.76,-0.468,0.293,0.077,3.826,True,0.293
+Kyrgyzstan,15,Capacity to enhance teaching with digital devices,location,-0.376,-0.424,-0.047,0.118,-0.401,False,-0.047
+Dominican Republic,15,Capacity to enhance teaching with digital devices,location,-0.829,-0.553,0.277,0.194,1.427,False,0.277
+Palestinian Authority,15,Capacity to enhance teaching with digital devices,location,-0.8,-0.867,-0.068,0.177,-0.382,False,-0.068
+Morocco,15,Capacity to enhance teaching with digital devices,location,-0.827,-0.495,0.332,0.236,1.403,False,0.332
+Kosovo,15,Capacity to enhance teaching with digital devices,location,-0.61,-0.418,0.192,0.193,0.995,False,0.192
+Paraguay,15,Capacity to enhance teaching with digital devices,location,-1.321,-0.876,0.446,0.186,2.397,True,0.446
+Kurdistan Region (Iraq),15,Capacity to enhance teaching with digital devices,location,-0.732,-0.875,-0.143,0.144,-0.996,False,-0.143
+Guatemala,15,Capacity to enhance teaching with digital devices,location,-1.17,-0.265,0.904,0.226,4.007,True,0.904
+Zambia,15,Capacity to enhance teaching with digital devices,location,-1.065,-0.995,0.071,0.148,0.477,False,0.071
+Kenya,15,Capacity to enhance teaching with digital devices,location,-1.203,-0.778,0.425,0.194,2.193,True,0.425
+Dushanbe (Tajikistan),15,Capacity to enhance teaching with digital devices,location,-0.382,-0.178,0.204,0.006,32.663,True,0.204
+Rwanda,15,Capacity to enhance teaching with digital devices,location,-0.827,-0.418,0.409,0.153,2.678,True,0.409
+Ukrainian regions (17 of 27),15,Capacity to enhance teaching with digital devices,location,-0.191,-0.111,0.08,0.128,0.627,False,0.08
+OECD average,15,Capacity to enhance teaching with digital devices,type,-0.086,0.246,0.348,0.039,9.021,True,0.348
+B-S-J-Z (China),15,Capacity to enhance teaching with digital devices,type,0.559,0.184,-0.375,0.218,-1.723,False,-0.375
+Singapore,15,Capacity to enhance teaching with digital devices,type,0.91,0.905,-0.006,0.271,-0.021,False,-0.006
+Macao (China),15,Capacity to enhance teaching with digital devices,type,,-0.002,,,,False,
+Chinese Taipei,15,Capacity to enhance teaching with digital devices,type,0.33,0.369,0.039,0.131,0.301,False,0.039
+Japan,15,Capacity to enhance teaching with digital devices,type,-0.694,-0.29,0.404,0.108,3.742,True,0.404
+Estonia,15,Capacity to enhance teaching with digital devices,type,-0.081,0.069,0.15,0.171,0.875,False,0.15
+Korea,15,Capacity to enhance teaching with digital devices,type,0.352,0.336,-0.016,0.17,-0.097,False,-0.016
+United Kingdom,15,Capacity to enhance teaching with digital devices,type,-0.273,0.678,0.951,0.312,3.046,True,0.951
+Canada*,15,Capacity to enhance teaching with digital devices,type,-0.085,0.885,0.97,0.166,5.856,True,0.97
+New Zealand*,15,Capacity to enhance teaching with digital devices,type,0.157,0.931,0.774,0.23,3.366,True,0.774
+Australia,15,Capacity to enhance teaching with digital devices,type,0.062,0.761,0.699,0.091,7.677,True,0.699
+Finland,15,Capacity to enhance teaching with digital devices,type,0.262,0.013,-0.249,0.279,-0.892,False,-0.249
+United States*,15,Capacity to enhance teaching with digital devices,type,0.601,-0.044,-0.645,0.211,-3.053,True,-0.645
+Switzerland,15,Capacity to enhance teaching with digital devices,type,0.693,1.217,0.524,0.214,2.444,True,0.524
+Ireland,15,Capacity to enhance teaching with digital devices,type,,,,,,False,
+Austria,15,Capacity to enhance teaching with digital devices,type,0.434,0.301,-0.133,0.22,-0.605,False,-0.133
+Hong Kong (China),15,Capacity to enhance teaching with digital devices,type,0.124,0.32,0.196,0.163,1.201,False,0.196
+Poland,15,Capacity to enhance teaching with digital devices,type,-0.231,0.037,0.267,0.134,1.998,True,0.267
+Türkiye,15,Capacity to enhance teaching with digital devices,type,-0.212,0.041,0.253,0.284,0.891,False,0.253
+Czechia,15,Capacity to enhance teaching with digital devices,type,-0.123,-0.003,0.121,0.176,0.684,False,0.121
+Belgium,15,Capacity to enhance teaching with digital devices,type,0.014,0.076,0.062,0.118,0.524,False,0.062
+Lithuania,15,Capacity to enhance teaching with digital devices,type,0.151,0.085,-0.066,0.387,-0.171,False,-0.066
+Germany,15,Capacity to enhance teaching with digital devices,type,-0.102,0.767,0.869,0.412,2.108,True,0.869
+Netherlands*,15,Capacity to enhance teaching with digital devices,type,0.515,0.237,-0.278,0.383,-0.725,False,-0.278
+Sweden,15,Capacity to enhance teaching with digital devices,type,0.664,0.47,-0.194,0.142,-1.364,False,-0.194
+Slovenia,15,Capacity to enhance teaching with digital devices,type,0.124,-0.165,-0.288,0.014,-20.077,True,-0.288
+France,15,Capacity to enhance teaching with digital devices,type,-0.304,-0.043,0.261,0.143,1.817,False,0.261
+Italy,15,Capacity to enhance teaching with digital devices,type,-0.023,0.511,0.534,0.228,2.338,True,0.534
+Portugal,15,Capacity to enhance teaching with digital devices,type,-0.586,-0.016,0.571,0.112,5.112,True,0.571
+Hungary,15,Capacity to enhance teaching with digital devices,type,-0.176,0.126,0.302,0.146,2.072,True,0.302
+Denmark,15,Capacity to enhance teaching with digital devices,type,0.697,0.72,0.023,0.229,0.102,False,0.023
+Spain,15,Capacity to enhance teaching with digital devices,type,-0.443,0.033,0.476,0.096,4.971,True,0.476
+Croatia,15,Capacity to enhance teaching with digital devices,type,0.093,0.194,0.101,0.355,0.284,False,0.101
+Slovak Republic,15,Capacity to enhance teaching with digital devices,type,-0.25,-0.128,0.122,0.164,0.742,False,0.122
+Luxembourg,15,Capacity to enhance teaching with digital devices,type,0.478,0.575,0.097,0.002,41.417,True,0.097
+Norway*,15,Capacity to enhance teaching with digital devices,type,,,,,,False,
+Latvia,15,Capacity to enhance teaching with digital devices,type,-0.107,-0.072,0.035,0.129,0.268,False,0.035
+United Arab Emirates,15,Capacity to enhance teaching with digital devices,type,0.847,1.031,0.184,0.112,1.646,False,0.184
+Viet Nam,15,Capacity to enhance teaching with digital devices,type,0.174,0.916,0.742,0.254,2.92,True,0.742
+Malta,15,Capacity to enhance teaching with digital devices,type,-0.239,-0.226,0.012,0.004,2.83,True,0.012
+Uruguay,15,Capacity to enhance teaching with digital devices,type,-0.876,-0.132,0.745,0.131,5.678,True,0.745
+Chile,15,Capacity to enhance teaching with digital devices,type,-1.0,-0.404,0.596,0.133,4.484,True,0.596
+Israel,15,Capacity to enhance teaching with digital devices,type,,,,,,False,
+Iceland,15,Capacity to enhance teaching with digital devices,type,0.483,,,,,False,
+Brunei Darussalam,15,Capacity to enhance teaching with digital devices,type,-0.695,0.365,1.06,0.005,203.034,True,1.06
+Mauritius,15,Capacity to enhance teaching with digital devices,type,-0.984,-0.356,0.628,0.082,7.633,True,0.628
+Uzbekistan,15,Capacity to enhance teaching with digital devices,type,0.943,,,,,False,
+Montenegro,15,Capacity to enhance teaching with digital devices,type,-0.248,,,,,False,
+Albania*,15,Capacity to enhance teaching with digital devices,type,-0.643,0.852,1.495,0.19,7.885,True,1.495
+Qatar,15,Capacity to enhance teaching with digital devices,type,0.578,0.254,-0.324,0.025,-12.912,True,-0.324
+Greece,15,Capacity to enhance teaching with digital devices,type,-0.692,0.833,1.524,0.395,3.859,True,1.524
+Thailand,15,Capacity to enhance teaching with digital devices,type,0.608,0.879,0.27,0.233,1.159,False,0.27
+Serbia,15,Capacity to enhance teaching with digital devices,type,-0.391,,,,,False,
+Romania,15,Capacity to enhance teaching with digital devices,type,-0.076,0.669,0.746,0.435,1.715,False,0.746
+Mongolia,15,Capacity to enhance teaching with digital devices,type,-0.22,0.484,0.704,0.197,3.576,True,0.704
+Costa Rica,15,Capacity to enhance teaching with digital devices,type,-1.323,0.199,1.522,0.338,4.496,True,1.522
+Georgia,15,Capacity to enhance teaching with digital devices,type,-0.24,0.022,0.262,0.275,0.953,False,0.262
+Moldova,15,Capacity to enhance teaching with digital devices,type,-0.289,0.374,0.663,0.701,0.945,False,0.663
+Bulgaria,15,Capacity to enhance teaching with digital devices,type,0.143,,,,,False,
+Kazakhstan,15,Capacity to enhance teaching with digital devices,type,0.243,0.51,0.267,0.175,1.53,False,0.267
+Malaysia,15,Capacity to enhance teaching with digital devices,type,-0.739,0.002,0.742,0.344,2.156,True,0.742
+Colombia,15,Capacity to enhance teaching with digital devices,type,-1.15,-0.177,0.974,0.137,7.097,True,0.974
+Mexico,15,Capacity to enhance teaching with digital devices,type,-0.835,-0.201,0.633,0.319,1.983,True,0.633
+Saudi Arabia,15,Capacity to enhance teaching with digital devices,type,-0.464,1.582,2.046,0.274,7.457,True,2.046
+Cyprus,15,Capacity to enhance teaching with digital devices,type,-0.216,0.357,0.573,0.016,35.545,True,0.573
+Azerbaijan,15,Capacity to enhance teaching with digital devices,type,-0.527,0.039,0.566,0.097,5.807,True,0.566
+Brazil,15,Capacity to enhance teaching with digital devices,type,-1.024,0.033,1.057,0.178,5.952,True,1.057
+Jordan,15,Capacity to enhance teaching with digital devices,type,-0.571,0.264,0.835,0.196,4.264,True,0.835
+Peru,15,Capacity to enhance teaching with digital devices,type,-0.93,-0.198,0.732,0.188,3.904,True,0.732
+Ecuador,15,Capacity to enhance teaching with digital devices,type,-1.267,-0.019,1.249,0.164,7.6,True,1.249
+Argentina,15,Capacity to enhance teaching with digital devices,type,-1.244,-0.802,0.442,0.123,3.61,True,0.442
+Indonesia,15,Capacity to enhance teaching with digital devices,type,-0.067,0.017,0.084,0.142,0.595,False,0.084
+El Salvador,15,Capacity to enhance teaching with digital devices,type,-0.191,0.07,0.261,0.189,1.385,False,0.261
+Cambodia,15,Capacity to enhance teaching with digital devices,type,-0.167,0.534,0.701,0.261,2.686,True,0.701
+North Macedonia,15,Capacity to enhance teaching with digital devices,type,-0.403,,,,,False,
+Philippines,15,Capacity to enhance teaching with digital devices,type,-0.094,0.51,0.604,0.285,2.12,True,0.604
+Lebanon,15,Capacity to enhance teaching with digital devices,type,-1.312,-0.304,1.008,0.184,5.464,True,1.008
+Armenia,15,Capacity to enhance teaching with digital devices,type,-0.661,0.145,0.806,0.203,3.961,True,0.806
+Kyrgyzstan,15,Capacity to enhance teaching with digital devices,type,-0.448,0.389,0.837,0.252,3.314,True,0.837
+Dominican Republic,15,Capacity to enhance teaching with digital devices,type,-0.882,-0.464,0.419,0.153,2.74,True,0.419
+Palestinian Authority,15,Capacity to enhance teaching with digital devices,type,-0.874,-0.128,0.747,0.131,5.704,True,0.747
+Morocco,15,Capacity to enhance teaching with digital devices,type,-0.827,0.944,1.771,0.447,3.959,True,1.771
+Kosovo,15,Capacity to enhance teaching with digital devices,type,-0.582,0.761,1.343,0.166,8.068,True,1.343
+Paraguay,15,Capacity to enhance teaching with digital devices,type,-1.258,-0.202,1.056,0.153,6.903,True,1.056
+Kurdistan Region (Iraq),15,Capacity to enhance teaching with digital devices,type,-0.823,,,,,False,
+Guatemala,15,Capacity to enhance teaching with digital devices,type,-1.356,-0.097,1.259,0.11,11.495,True,1.259
+Zambia,15,Capacity to enhance teaching with digital devices,type,-1.11,-0.646,0.464,0.132,3.528,True,0.464
+Kenya,15,Capacity to enhance teaching with digital devices,type,-1.217,-0.363,0.854,0.161,5.305,True,0.854
+Dushanbe (Tajikistan),15,Capacity to enhance teaching with digital devices,type,-0.203,-0.46,-0.256,0.123,-2.08,True,-0.256
+Rwanda,15,Capacity to enhance teaching with digital devices,type,-0.798,-0.108,0.69,0.335,2.06,True,0.69
+Ukrainian regions (17 of 27),15,Capacity to enhance teaching with digital devices,type,-0.211,,,,,False,

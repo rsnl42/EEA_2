@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: device and AI policy typologies</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:28ch}
+.pagetabs{display:flex;gap:6px;margin:0 0 16px}
+.pagetabs button{font:inherit;font-size:14px;padding:8px 14px;border-radius:7px 7px 0 0;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--sec);cursor:pointer}
+.pagetabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+.panel{display:none}
+.panel.on{display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.tabs button,.tabs select{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:5px 12px;cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--ink);font-weight:500}
+.tabs select{padding:5px 8px;background:var(--surface)}
+.tabs label{font-size:12px;color:var(--sec)}
+#slopewrap,#plot{overflow-x:auto}
+.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;color:#fff}
+.b-fast{background:#2a9d6f}.b-lag{background:#c04b4b}.b-mod{background:#8a8f99}
+table.rank{border-collapse:collapse;font-size:13px;width:100%;max-width:720px}
+table.rank th{font-weight:400;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line);cursor:pointer}
+table.rank th:first-child,table.rank td:first-child{text-align:left;padding-left:0}
+table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line)}
+table.sys{border-collapse:collapse;font-size:13px;margin:8px 0;width:100%;max-width:640px}
+table.sys th{font-weight:400;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line)}
+table.sys th:first-child,table.sys td:first-child{text-align:left;padding-left:0}
+table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.corrpick{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+</style>
+</head>
+<body>
+<main>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<h1>How are schools governing devices and AI &mdash; and is it changing?</h1>
+<p class="sub">PISA 2025, up to 91 education systems. Table 4.47's nine 2025 policy items rolled into a policy-intensity index; table 4.49's four device-policy regimes compared 2022 vs 2025, with each system's shift tested against its own standard error.</p>
+<div class="facts" id="facts"></div>
+
+<div class="pagetabs" role="tablist">
+<button id="pgShift" role="tab" aria-pressed="true">2022 &rarr; 2025 shift</button>
+<button id="pgPolicy" role="tab" aria-pressed="false">Policy intensity &amp; open questions</button>
+</div>
+
+<section class="panel on" id="panelShift" aria-labelledby="shH">
+<div class="card">
+<h2 id="shH" style="margin-bottom:4px">Regulatory depth, 2022 vs 2025</h2>
+<p class="note" style="margin:0 0 10px">Depth = 0&times;(neither) + 1&times;(bans-only or guidelines-only) + 2&times;(both), averaged across schools &mdash; 0 means no school reports either policy, 2 means every school reports both. Each dot-pair is one system; drag your eye from the left dot (2022) to the right (2025). Colour marks whether that system's shift on the "both" regime is significant at |z|&gt;1.96, using the S.E. the workbook already reports for the change &mdash; see the caveat below about a few systems with mechanically tiny S.E.s.</p>
+<div id="slopewrap"><div id="slope"></div></div>
+<p class="note" id="seCaveat"></p>
+</div>
+<section class="card" aria-labelledby="rkH">
+<h2 id="rkH" style="margin-bottom:8px">All systems, ranked by the shift into "both"</h2>
+<div id="rankOut"></div>
+</section>
+<section class="card" aria-labelledby="lkH">
+<h2 id="lkH" style="margin-bottom:8px">Look up a system</h2>
+<div class="tabs"><label for="pick">System</label><select id="pick"></select></div>
+<div id="sysOut"></div>
+</section>
+</section>
+
+<section class="panel" id="panelPolicy" aria-labelledby="piH">
+<div class="card">
+<h2 id="piH" style="margin-bottom:4px">Policy-intensity index</h2>
+<p class="note" style="margin:0 0 10px">Average z-score across all nine table 4.47 items (written statement, phone ban, subject guidelines, teacher-set rules, co-set rules, responsible-use programme, social-network policy, teacher-collaboration programme, scheduled collaboration time). Higher = a more formalised policy environment across the board, not just bans.</p>
+<div id="idxOut"></div>
+</div>
+<section class="card" aria-labelledby="oqH">
+<h2 id="oqH" style="margin-bottom:4px">Open questions: does a phone ban track with less leisure-at-school, or less AI use?</h2>
+<p class="note" style="margin:0 0 10px">The OECD text reports the OECD-average shift and a system-level correlation between bans and distraction (reproduced below as a sanity check). It leaves two questions open, tested here against the #9 panel composites.</p>
+<div class="corrpick" id="corrPick"></div>
+<div id="oqPlot"></div>
+<div id="oqSum" class="sum"></div>
+</section>
+</section>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.47 and I.B1.4.49, plus the #9 panel composites (<code>outputs/09_panel_composites.csv</code>) for the open-question outcomes. "Significant" means |estimate or change / S.E.| &gt; 1.96. Systems marked * carry comparability flags in the source.</footer>
+</main>
+<script>
+const STATS=%%STATS%%;
+const REGIME_ROWS=%%REGIME_ROWS%%;
+const POLICY_ROWS=%%POLICY_ROWS%%;
+const OPEN_Q=%%OPEN_Q%%;
+const $=id=>document.getElementById(id);
+const f1=v=>v==null?'n/a':v.toFixed(1);
+const f2=v=>v==null?'n/a':v.toFixed(2);
+const sg=(v,d)=>v==null?'n/a':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(d===undefined?1:d);
+const short=n=>n.replace(' (China)','').replace(' (17 of 27)','');
+const badge=s=>s==='fast adopter'?'<span class="badge b-fast">fast adopter</span>':s==='lagging'?'<span class="badge b-lag">lagging</span>':'<span class="badge b-mod">moderate</span>';
+
+// ---------- Facts ----------
+$('facts').innerHTML=[
+ [sg(STATS.depth_change,2),'OECD-average regulatory-depth shift, 2022\u21922025 (0\u20132 scale)'],
+ [STATS.n_fast,'systems are significant fast adopters (of '+STATS.n_systems+')'],
+ [STATS.n_lag,'systems are still lagging (mostly "neither", no significant move)'],
+ [sg(STATS.rho_ban_distraction,2),'phone-ban vs distraction, rho (reproduces the OECD text)']
+].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+
+$('seCaveat').innerHTML='<strong>Caveat.</strong> Per-system S.E.s on the "both" change range from about 0.07 to 6 percentage points (median ~3.9). The smallest belong to a few systems PISA samples close to a full school census (e.g. Macao, Brunei, Malta, Qatar, Iceland), so a modest change there can produce a very large z. The ranked table below sorts by raw percentage-point change for that reason \u2014 use the z column as a significance flag, not a size ranking.';
+
+// ---------- Slope chart: depth 2022 -> 2025 ----------
+function renderSlope(){
+ const W=Math.max($('slope').clientWidth,340),H=440,L=40,R=40,T=16,B=28;
+ const xs=v=>v===0?L:W-R;
+ const all=REGIME_ROWS.filter(r=>r.depth_2022!=null);
+ const ylo=0,yhi=2;
+ const ys=v=>H-B-(v-ylo)/(yhi-ylo)*(H-B-T);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Slope chart of regulatory depth, 2022 to 2025, per system">`;
+ for(const v of [0,0.5,1,1.5,2]){
+  s+=`<line x1="${L}" y1="${ys(v)}" x2="${W-R}" y2="${ys(v)}" style="stroke:var(--line);stroke-width:0.5"/><text x="${L-6}" y="${ys(v)+4}" text-anchor="end" style="font-size:11px;fill:var(--mut)">${v}</text>`;
+ }
+ s+=`<text x="${L}" y="${T-2}" text-anchor="middle" style="font-size:12px;fill:var(--sec)">2022</text>`;
+ s+=`<text x="${W-R}" y="${T-2}" text-anchor="middle" style="font-size:12px;fill:var(--sec)">2025</text>`;
+ const col=r=>r.adopter_status==='fast adopter'?'#2a9d6f':r.adopter_status==='lagging'?'#c04b4b':'#8a8f99';
+ all.forEach(r=>{
+  const y1=ys(r.depth_2022),y2=ys(r.depth_2025);
+  s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: depth ${f2(r.depth_2022)} \u2192 ${f2(r.depth_2025)} (${r.adopter_status})</title>`;
+  s+=`<line x1="${xs(0)}" y1="${y1}" x2="${xs(1)}" y2="${y2}" style="stroke:${col(r)};stroke-width:1.3;stroke-opacity:0.55"/>`;
+  s+=`<circle cx="${xs(0)}" cy="${y1}" r="2.6" style="fill:${col(r)};fill-opacity:0.7"/>`;
+  s+=`<circle cx="${xs(1)}" cy="${y2}" r="2.6" style="fill:${col(r)};fill-opacity:0.85"/></g>`;
+ });
+ // OECD average, drawn last so it's on top
+ const o=STATS.oecd;
+ s+=`<line x1="${xs(0)}" y1="${ys(o.depth_2022)}" x2="${xs(1)}" y2="${ys(o.depth_2025)}" style="stroke:var(--ink);stroke-width:2.4"/>`;
+ s+=`<circle cx="${xs(0)}" cy="${ys(o.depth_2022)}" r="5" style="fill:var(--ink)"/><circle cx="${xs(1)}" cy="${ys(o.depth_2025)}" r="5" style="fill:var(--ink)"/>`;
+ s+=`<text x="${xs(1)+8}" y="${ys(o.depth_2025)+4}" style="font-size:11px;fill:var(--ink)">OECD average</text>`;
+ $('slope').innerHTML=s+'</svg>';
+ $('slope').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>chooseSys(g.dataset.n)));
+}
+
+// ---------- Ranked table (by raw pp change on "both") ----------
+function renderRank(){
+ const rows=REGIME_ROWS.filter(r=>r.both_change!=null).slice().sort((a,b)=>b.both_change-a.both_change);
+ const top=rows.slice(0,12),bottom=rows.slice(-8).reverse();
+ const row=r=>`<tr><td>${short(r.n)}</td><td>${f1(r.both_2022)}</td><td>${f1(r.both_2025)}</td><td>${sg(r.both_change)}</td><td>${f1(r.both_z)}</td><td>${badge(r.adopter_status)}</td></tr>`;
+ $('rankOut').innerHTML=`<p class="note" style="margin:4px 0 8px">Biggest moves into "both cell-phone bans and subject guidelines," 2022&rarr;2025 (percentage points):</p>
+  <div style="overflow-x:auto"><table class="rank"><tr><th>System</th><th>Both, 2022</th><th>Both, 2025</th><th>Change</th><th>z</th><th></th></tr>${top.map(row).join('')}</table></div>
+  <p class="note" style="margin:14px 0 8px">Smallest moves (or reversals):</p>
+  <div style="overflow-x:auto"><table class="rank"><tr><th>System</th><th>Both, 2022</th><th>Both, 2025</th><th>Change</th><th>z</th><th></th></tr>${bottom.map(row).join('')}</table></div>`;
+}
+
+// ---------- System lookup ----------
+$('pick').innerHTML='<option value="">Choose a system</option>'+REGIME_ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
+let selSys='';
+function chooseSys(n){selSys=n;$('pick').value=n;renderSysOut()}
+function renderSysOut(){
+ const r=REGIME_ROWS.find(x=>x.n===selSys),o=$('sysOut');
+ if(!r){o.innerHTML='<p class="note">Choose a system, or click a dot above, to see its 2022 vs 2025 regime shares.</p>';return}
+ const cats=[['neither','Neither'],['bans_only','Bans only'],['guidelines_only','Guidelines only'],['both','Both']];
+ const rows=cats.map(([k,lab])=>`<tr><td>${lab}</td><td>${f1(r[k+'_2022'])}</td><td>${f1(r[k+'_2025'])}</td><td>${sg(r[k+'_change'])}</td><td>${f1(r[k+'_z'])}${r[k+'_sig']?' *':''}</td></tr>`).join('');
+ o.innerHTML=`<table class="sys"><tr><th>${short(r.n)}</th><th>2022 %</th><th>2025 %</th><th>Change</th><th>z</th></tr>${rows}</table><p class="note">Regulatory depth ${f2(r.depth_2022)} \u2192 ${f2(r.depth_2025)}. Classified as ${badge(r.adopter_status)}. * marks |z|&gt;1.96.</p>`;
+}
+$('pick').addEventListener('change',e=>{selSys=e.target.value;renderSysOut()});
+
+// ---------- Policy-intensity ranking ----------
+function renderIdx(){
+ const rows=POLICY_ROWS.filter(r=>r.policy_intensity!=null).slice().sort((a,b)=>b.policy_intensity-a.policy_intensity);
+ const top=rows.slice(0,8),bottom=rows.slice(-8).reverse();
+ const row=r=>`<tr><td>${short(r.n)}</td><td>${f2(r.policy_intensity)}</td></tr>`;
+ $('idxOut').innerHTML=`<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+  <div><p class="note" style="margin:0 0 6px">Highest policy intensity</p><table class="sys">${top.map(row).join('')}</table></div>
+  <div><p class="note" style="margin:0 0 6px">Lowest policy intensity</p><table class="sys">${bottom.map(row).join('')}</table></div>
+ </div>`;
+}
+
+// ---------- Open-question scatter ----------
+const OQ_LABELS={distraction:'Distraction',leisure_at_school:'Leisure at school',ai_use:'AI use'};
+let selOQ='distraction';
+$('corrPick').innerHTML=OPEN_Q.map(o=>`<button data-k="${o.outcome}" aria-pressed="${o.outcome===selOQ}">Bans vs ${OQ_LABELS[o.outcome]} (rho=${sg(o.rho,2)})</button>`).join('');
+function renderOQ(){
+ const info=OPEN_Q.find(o=>o.outcome===selOQ);
+ const data=info.points;
+ const W=Math.max($('oqPlot').clientWidth,340),H=380,L=48,R=16,T=10,B=42;
+ let xlo=Math.min(...data.map(d=>d.x)),xhi=Math.max(...data.map(d=>d.x));
+ let ylo=Math.min(...data.map(d=>d.y)),yhi=Math.max(...data.map(d=>d.y));
+ const xp=(xhi-xlo)*.08||1,yp=(yhi-ylo)*.08||1;xlo-=xp;xhi+=xp;ylo-=yp;yhi+=yp;
+ const xs=v=>L+(v-xlo)/(xhi-xlo)*(W-L-R),ys=v=>H-B-(v-ylo)/(yhi-ylo)*(H-B-T);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Scatter of phone-ban prevalence against ${OQ_LABELS[selOQ]}">`;
+ s+=`<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--sec)">Phone ban prevalence, 2025 (%)</text>`;
+ s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">${OQ_LABELS[selOQ]} (standardised)</text>`;
+ for(let v=Math.ceil(xlo/20)*20;v<=xhi;v+=20){s+=`<line x1="${xs(v)}" y1="${T}" x2="${xs(v)}" y2="${H-B}" style="stroke:var(--line);stroke-width:0.5"/><text x="${xs(v)}" y="${H-B+16}" text-anchor="middle" style="font-size:11px;fill:var(--mut)">${v}</text>`}
+ data.forEach(d=>{
+  s+=`<g><title>${d.n}: ban ${f1(d.x)}%, ${OQ_LABELS[selOQ]} ${f2(d.y)}</title><circle cx="${xs(d.x)}" cy="${ys(d.y)}" r="4" style="fill:var(--hi);fill-opacity:.85"/></g>`;
+ });
+ $('oqPlot').innerHTML=s+'</svg>';
+ const strength=Math.abs(info.rho)>=0.3?'a moderate':Math.abs(info.rho)>=0.15?'a weak':'almost no';
+ const sig=info.p<0.05?'statistically significant':'not statistically significant';
+ $('oqSum').innerHTML=`<p><strong>Spearman rho = ${sg(info.rho,2)}</strong>, p = ${info.p}, n = ${info.n}. Systems with more phone bans show ${strength} tendency toward ${info.rho<0?'less':'more'} ${OQ_LABELS[selOQ].toLowerCase()} &mdash; ${sig} at p&lt;0.05.</p>`;
+ document.querySelectorAll('#corrPick button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===selOQ?'true':'false'));
+}
+document.querySelectorAll('#corrPick button').forEach(b=>b.addEventListener('click',()=>{selOQ=b.dataset.k;renderOQ()}));
+
+// ---------- Page tabs ----------
+$('pgShift').addEventListener('click',()=>{$('pgShift').setAttribute('aria-pressed','true');$('pgPolicy').setAttribute('aria-pressed','false');$('panelShift').classList.add('on');$('panelPolicy').classList.remove('on')});
+$('pgPolicy').addEventListener('click',()=>{$('pgPolicy').setAttribute('aria-pressed','true');$('pgShift').setAttribute('aria-pressed','false');$('panelPolicy').classList.add('on');$('panelShift').classList.remove('on')});
+
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{renderSlope();renderOQ()},150)});
+renderSlope();renderRank();renderSysOut();renderIdx();renderOQ();
+</script>
+</body>
+</html>

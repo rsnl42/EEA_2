@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: do richer schools really have better tech?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:30ch}
+.pagetabs{display:flex;gap:6px;margin:0 0 16px}
+.pagetabs button{font:inherit;font-size:14px;padding:8px 14px;border-radius:7px 7px 0 0;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--sec);cursor:pointer}
+.pagetabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+.panel{display:none}
+.panel.on{display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.tabs select{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:5px;padding:5px 8px;background:var(--surface)}
+.tabs label{font-size:12px;color:var(--sec)}
+.grid{border-collapse:separate;border-spacing:3px;font-size:13px}
+.grid th{font-weight:400;color:var(--sec);text-align:left;padding:4px 8px}
+.grid td.rl{text-align:left;color:var(--ink);padding:4px 10px 4px 0;white-space:nowrap}
+.gcell{text-align:center;padding:8px 10px;border-radius:5px;cursor:pointer;min-width:64px}
+.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;color:#fff;white-space:nowrap}
+.b-exp{background:#2461a8}.b-flip{background:#c0453f}.b-mix{background:#8a8f99}.b-few{background:#c7ccd3;color:#333}
+table.rank{border-collapse:collapse;font-size:13px;width:100%;max-width:640px}
+table.rank th{font-weight:400;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line)}
+table.rank th:first-child,table.rank td:first-child{text-align:left;padding-left:0}
+table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line)}
+.mini{border-collapse:separate;border-spacing:3px;font-size:12px}
+.mini td.rl{text-align:left;padding:4px 8px 4px 0;white-space:nowrap;color:var(--sec)}
+.mcell{width:26px;height:26px;border-radius:5px;text-align:center;vertical-align:middle;font-size:11px}
+</style>
+</head>
+<body>
+<main>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<h1>Do richer schools really have better tech? It depends what you ask.</h1>
+<p class="sub">PISA 2025, up to 91 education systems. We looked at seven measures of school computer/device resourcing and checked, for each one, whether richer schools, city schools and private schools are actually ahead &mdash; or whether the gap runs the other way.</p>
+<div class="facts" id="facts"></div>
+
+<div class="pagetabs" role="tablist">
+<button id="pgGrid" role="tab" aria-pressed="true">Which way each gap runs</button>
+<button id="pgScore" role="tab" aria-pressed="false">Look up a country</button>
+</div>
+
+<section class="panel on" id="panelGrid" aria-labelledby="gH">
+<div class="card" id="headline"></div>
+<div class="card">
+<h2 id="gH" style="margin-bottom:4px">Seven resources, three ways schools differ</h2>
+<p class="note" style="margin:0 0 10px">Each row is one resource; each column is one way of splitting schools. <strong style="color:#2461a8">Blue</strong> means richer / city / private schools are better off on average, which is what you'd usually expect (for the two shortage rows, that means fewer reported problems). <strong style="color:#c0453f">Red</strong> means the opposite: poorer, rural or public schools are better off. <strong style="color:#8a8f99">Grey</strong> means no statistically clear average gap. Tap or click any box for the full story in that one cell.</p>
+<div style="overflow-x:auto"><table class="grid" id="gridTable"></table></div>
+<div id="gridDetail" class="sum"></div>
+</div>
+<div class="card">
+<h2 style="margin-bottom:8px">What stands out</h2>
+<ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.55">
+<li><strong>Private vs public is the clearest divide.</strong> On both "lack of resources" and "poor-quality resources", private schools are better off by about 12 percentage points on average. In 51 of 79 countries the gap clearly favours private schools, and in none does it clearly favour public ones.</li>
+<li><strong>Richer schools report fewer problems too.</strong> The gap is about 9 to 10 percentage points on average, and it clearly favours richer schools in 40 to 45 of 89 countries, against only 2 or 3 the other way.</li>
+<li><strong>Raw device counts tell a different story.</strong> For computers, poorer schools are clearly ahead in 29 countries and richer schools in 17. Rural schools are clearly ahead in 28 countries and city schools in only 3. Because these are per-student counts, a small school can look well supplied without having more in total, and the OECD notes the pattern may partly reflect that.</li>
+<li><strong>Readiness to teach digitally leans towards richer and private schools.</strong> The average gap is modest (about 0.2 to 0.35 index points) but very consistent: richer schools clearly ahead in 47 of 90 countries versus 6 the other way, private schools in 48 of 79 versus 4.</li>
+<li><strong>Location matters least for quality.</strong> City vs rural gaps on shortages and poor quality are not statistically clear on average, and in 71 of 77 countries there's no clear difference at all.</li>
+<li><strong>Teacher connectivity is mixed.</strong> Average gaps are small or unclear, yet richer schools are clearly ahead in more countries than behind (32 vs 9 by socio-economic profile, 25 vs 12 by school type), while by location countries split 12 vs 11. E-readers are so rare that their gaps hardly matter.</li>
+</ul>
+<p class="note" style="margin:10px 0 0">"Clearly" means the difference is larger than sampling error would explain (about 95% confidence). Country counts come from testing each country separately.</p>
+</div>
+</section>
+
+<section class="panel" id="panelScore" aria-labelledby="sH">
+<div class="card">
+<h2 id="sH" style="margin-bottom:8px">Which countries buck the usual pattern?</h2>
+<p class="note" style="margin:0 0 10px">For each country we can test up to 21 gaps (7 resources &times; 3 ways of splitting schools). This ranks countries by how many of their <em>statistically clear</em> gaps go against the usual "richer schools have more" pattern.</p>
+<div id="rankOut"></div>
+</div>
+<div class="card">
+<h2 style="margin-bottom:8px">Pick a country to see its full picture</h2>
+<div class="tabs"><label for="pick">Country</label><select id="pick"></select></div>
+<p class="note" id="legend" style="margin:8px 0"><span class="mcell" style="background:#2461a8;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Richer/city/private schools clearly ahead &nbsp; <span class="mcell" style="background:#c0453f;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Poorer/rural/public schools clearly ahead &nbsp; <span class="mcell" style="background:#e3e7ec;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> No clear gap</p>
+<div id="sysOut"></div>
+</div>
+</section>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.1, 4, 5, 7, 8, 11 and 15. "Significant" means |gap / S.E.| &gt; 1.96. Ratio-based tables (computers, tablets, e-readers, connected computers) can be mechanically affected by school size &mdash; a small school needs fewer devices to hit the same ratio &mdash; and this workbook has no enrolment figures to test or correct for that, so treat the ratio-table flips with a bit more caution than the percentage-based ones.</footer>
+</main>
+<script>
+const SUMMARY=%%SUMMARY%%;
+const SCORE=%%SCORE%%;
+const TABLES=%%TABLES%%;
+const DIMS=["ses","location","type"];
+const DIMLABEL={ses:"Rich vs poor",location:"City vs rural",type:"Private vs public"};
+const DIMWORDS={ses:["richer schools","poorer schools"],location:["city schools","rural schools"],type:["private schools","public schools"]};
+const META={
+ "Computer availability":{desc:"How many computers the school has (about 9 per 10 students on average).",unit:"computers per 10 students",kind:"count"},
+ "Tablet availability":{desc:"How many tablets the school has (about 3 per 10 students on average).",unit:"tablets per 10 students",kind:"count"},
+ "E-book reader availability":{desc:"Dedicated e-readers. Rare (under 1 per 10 students), so gaps are tiny.",unit:"e-readers per 10 students",kind:"count"},
+ "Lack of digital resources":{desc:"Share of students whose principal says a lack of digital resources hinders teaching \u2018to some extent or a lot\u2019. Lower is better.",unit:"percentage points",kind:"problem"},
+ "Inadequate/poor-quality digital resources":{desc:"Same question, but about digital resources that are inadequate or poor quality. Lower is better.",unit:"percentage points",kind:"problem"},
+ "Internet-connected computers for teachers":{desc:"Internet-connected computers teachers can use (about 12 per 10 teachers on average).",unit:"computers per 10 teachers",kind:"count"},
+ "Capacity to enhance teaching with digital devices":{desc:"Principals\u2019 rating of whether the school has the devices, skills and time to teach well with digital tools. Higher is better.",unit:"index points",kind:"index"},
+};
+const UNITS=Object.fromEntries(Object.entries(META).map(([k,v])=>[k,v.unit]));
+const DIMNOTE={ses:"Schools grouped by their students\u2019 average socio-economic background (PISA\u2019s ESCS index).",location:"City = over 100,000 people. Rural = under 3,000 people.",type:"Privately run vs publicly run schools."};
+const $=id=>document.getElementById(id);
+const f1=v=>v==null?'n/a':v.toFixed(1);
+const sg=(v,d)=>v==null?'n/a':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(d===undefined?2:d);
+const short=n=>n.replace(' (China)','');
+function badgeFor(p){
+  if(p.startsWith('mostly flipped'))return '<span class="badge b-flip">Poorer schools ahead</span>';
+  if(p.startsWith('mostly as expected'))return '<span class="badge b-exp">Richer schools ahead</span>';
+  if(p.startsWith('mixed'))return '<span class="badge b-mix">No clear pattern</span>';
+  return '<span class="badge b-few">Not enough data</span>';
+}
+function cellColor(gap,se){
+  const z = se ? gap/se : 0;
+  const a = Math.min(Math.abs(z)/8,1);
+  return gap>=0 ? `rgba(36,97,168,${0.12+0.68*a})` : `rgba(192,69,63,${0.12+0.68*a})`;
+}
+
+// ---------- Headline + facts ----------
+const flippedCount=Object.values(SCORE).filter(r=>r.pattern.startsWith('mostly flipped')).length;
+const expectedCount=Object.values(SCORE).filter(r=>r.pattern.startsWith('mostly as expected')).length;
+const compCount=SUMMARY.find(r=>r.table_label==='Computer availability'&&r.dimension==='ses');
+const inadCount=SUMMARY.find(r=>r.table_label==='Inadequate/poor-quality digital resources'&&r.dimension==='ses');
+$('headline').innerHTML=`<p style="font-size:16px;margin:0">Where there is a clear gap in raw computer counts, it more often favours <strong>poorer and rural schools</strong> than richer or city ones. The OECD suggests this may reflect smaller rural schools, targeted programmes, or richer schools relying on students\u2019 own devices. But when principals are asked whether a <strong>lack of digital resources, or poor-quality ones, hinders teaching</strong>, richer and especially private schools come out clearly better off, and their readiness to teach with digital tools is rated somewhat higher. Having devices and having good, well-supported ones are different divides.</p>`;
+$('facts').innerHTML=[
+ [flippedCount,'countries: poorer schools ahead on most of what we can measure'],
+ [expectedCount,'countries: richer schools ahead on most of what we can measure'],
+ [f1(Math.abs(compCount.oecd_favorability_gap)),'more computers per 10 students in poorer schools than richer schools, on average across countries'],
+ [f1(Math.abs(inadCount.oecd_favorability_gap)),'more schools reporting poor-quality resources among poorer schools than richer schools, on average (percentage points)']
+].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+
+// ---------- Grid ----------
+function cellText(t,d,r){
+  if(Math.abs(r.oecd_z)<1.96) return `<div style="font-size:12px;line-height:1.3">no clear<br>average gap</div><div style="font-size:11px;opacity:0.75;margin-top:2px">${sg(r.oecd_favorability_gap,1)}</div>`;
+  const words = r.oecd_favorability_gap>=0 ? DIMWORDS[d][0] : DIMWORDS[d][1];
+  return `<div style="font-size:12px;line-height:1.3">${words}<br>ahead</div><div style="font-size:11px;opacity:0.75;margin-top:2px">${sg(r.oecd_favorability_gap,1)}</div>`;
+}
+function renderGrid(){
+  let h='<tr><th>Resource</th>'+DIMS.map(d=>`<th style="vertical-align:bottom">${DIMLABEL[d]}<div class="note" style="font-weight:400;font-size:11px;max-width:20ch;white-space:normal">${DIMNOTE[d]}</div></th>`).join('')+'</tr>';
+  for(const t of TABLES){
+    h+=`<tr><td class="rl" style="white-space:normal;max-width:34ch">${t}<div class="note" style="font-weight:400;font-size:11px">${META[t].desc} <em>Unit: ${META[t].unit}.</em></div></td>`;
+    for(const d of DIMS){
+      const r=SUMMARY.find(x=>x.table_label===t&&x.dimension===d);
+      const bg=Math.abs(r.oecd_z)<1.96?'#eef0f3':cellColor(r.oecd_favorability_gap,r.oecd_se);
+      h+=`<td><div class="gcell" style="background:${bg}" data-t="${t}" data-d="${d}">${cellText(t,d,r)}</div></td>`;
+    }
+    h+='</tr>';
+  }
+  $('gridTable').innerHTML=h;
+  $('gridTable').querySelectorAll('.gcell').forEach(c=>c.addEventListener('click',()=>{
+    const t=c.dataset.t, d=c.dataset.d, m=META[t];
+    const r=SUMMARY.find(x=>x.table_label===t&&x.dimension===d);
+    const clear=Math.abs(r.oecd_z)>=1.96;
+    const winner = r.oecd_favorability_gap>=0 ? DIMWORDS[d][0] : DIMWORDS[d][1];
+    const g=sg(Math.abs(r.oecd_favorability_gap),2);
+    let lead;
+    if(!clear) lead=`On average across countries there is no statistically clear difference (the average gap is only ${g} ${m.unit}).`;
+    else if(m.kind==='problem') lead=`On average across countries, ${winner} are less likely to report this problem, by about ${g} ${m.unit}.`;
+    else if(m.kind==='index') lead=`On average across countries, ${winner} rate their readiness higher, by about ${g} ${m.unit}.`;
+    else lead=`On average across countries, ${winner} have more, by about ${g} ${m.unit}.`;
+    $('gridDetail').innerHTML=`<p><strong>${t}, ${DIMLABEL[d].toLowerCase()}.</strong> ${lead} But an average hides variation: out of ${r.n_systems} countries with usable data, <strong>${r.n_sig_expected}</strong> clearly show richer/city/private schools ahead, <strong>${r.n_sig_flipped}</strong> clearly show the opposite, and ${r.n_not_sig} show no clear difference either way.</p>`;
+  }));
+}
+
+// ---------- Rank ----------
+function renderRank(){
+  const rows=Object.entries(SCORE).filter(([n,r])=>r.n_scored>=3).sort((a,b)=>b[1].share_flipped-a[1].share_flipped);
+  const top=rows.slice(0,10),bottom=rows.slice(-10).reverse();
+  const row=([n,r])=>`<tr><td>${short(n)}</td><td>${r.n_expected}</td><td>${r.n_flipped}</td><td>${(r.share_flipped*100).toFixed(0)}%</td><td>${badgeFor(r.pattern)}</td></tr>`;
+  const hdr='<tr><th>Country</th><th>Richer ahead</th><th>Poorer ahead</th><th>Share poorer-ahead</th><th></th></tr>';
+  $('rankOut').innerHTML=`<p class="note" style="margin:4px 0 8px">Most likely to buck the usual pattern &mdash; poorer schools ahead on most of what's measurable:</p>
+  <div style="overflow-x:auto"><table class="rank">${hdr}${top.map(row).join('')}</table></div>
+  <p class="note" style="margin:14px 0 8px">Most "as usual" &mdash; richer schools ahead on nearly everything measurable:</p>
+  <div style="overflow-x:auto"><table class="rank">${hdr}${bottom.map(row).join('')}</table></div>`;
+}
+
+// ---------- System lookup ----------
+$('pick').innerHTML='<option value="">Choose a country</option>'+Object.keys(SCORE).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
+function renderSys(name){
+  const o=$('sysOut');
+  if(!name){o.innerHTML='<p class="note">Choose a country above to see which way each of its 21 gaps runs.</p>';return}
+  const r=SCORE[name];
+  let h=`<p>${badgeFor(r.pattern)} &mdash; richer/city/private schools clearly ahead on ${r.n_expected} of ${r.n_expected+r.n_flipped+r.n_flat} measures we could test, poorer/rural/public schools clearly ahead on ${r.n_flipped}, and ${r.n_flat} show no clear gap.</p>`;
+  h+='<table class="mini"><tr><td></td>'+DIMS.map(d=>`<td class="rl">${DIMLABEL[d]}</td>`).join('')+'</tr>';
+  for(const t of TABLES){
+    h+=`<tr><td class="rl">${t}</td>`;
+    for(const d of DIMS){
+      const v=r[d+':'+t];
+      const bg=v===1?'#2461a8':v===-1?'#c0453f':'#e3e7ec';
+      const sym=v===1?'R':v===-1?'P':'\u2013';
+      const words=v===1?DIMWORDS[d][0]+' clearly ahead':v===-1?DIMWORDS[d][1]+' clearly ahead':'no clear gap';
+      h+=`<td><div class="mcell" style="background:${bg};color:#fff" title="${t}, ${DIMLABEL[d]}: ${words}">${sym}</div></td>`;
+    }
+    h+='</tr>';
+  }
+  h+='</table>';
+  o.innerHTML=h;
+}
+$('pick').addEventListener('change',e=>renderSys(e.target.value));
+
+// ---------- Page tabs ----------
+$('pgGrid').addEventListener('click',()=>{$('pgGrid').setAttribute('aria-pressed','true');$('pgScore').setAttribute('aria-pressed','false');$('panelGrid').classList.add('on');$('panelScore').classList.remove('on')});
+$('pgScore').addEventListener('click',()=>{$('pgScore').setAttribute('aria-pressed','true');$('pgGrid').setAttribute('aria-pressed','false');$('panelScore').classList.add('on');$('panelGrid').classList.remove('on')});
+
+renderGrid();renderRank();renderSys('');
+</script>
+</body>
+</html>

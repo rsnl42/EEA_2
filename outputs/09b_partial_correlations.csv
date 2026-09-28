@@ -1,0 +1,7 @@
+x,y,control,rho_unadjusted,rho_partial,n,note
+resources,science,capacity,0.773,0.713,89,Does resourcing associate with science performance beyond what capacity explains?
+capacity,science,resources,0.444,-0.067,89,Does school capacity associate with science performance beyond raw resources?
+ai_use,ai_guidance,resources,0.51,0.606,84,Does AI use still track AI guidance once resourcing is held constant? (#7 found this at the raw level)
+ai_use,ai_guidance,capacity,0.51,0.589,85,"Same check, controlling for capacity instead of resources"
+leisure_at_school,distraction,rules,0.312,0.293,84,Does in-school leisure device use still associate with distraction once device rules are held constant?
+resources,ai_use,science,-0.388,-0.219,84,Is the resources-AI use relationship just a performance effect?

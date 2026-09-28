@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: does school guidance keep pace with AI use?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:24px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:26ch}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.tabs button,.tabs select{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:5px 12px;cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--ink);font-weight:500}
+.tabs select{padding:5px 8px;background:var(--surface)}
+.tabs label{font-size:12px;color:var(--sec)}
+#plot{overflow-x:auto}
+.lg{margin:0 0 6px}
+.lg i{border-radius:50%}
+table.sys{border-collapse:collapse;font-size:13px;margin:8px 0;width:100%;max-width:560px}
+table.sys th{font-weight:400;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line)}
+table.sys th:first-child,table.sys td:first-child{text-align:left;padding-left:0}
+table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<h1>Does school guidance keep pace with student AI use?</h1>
+<p class="sub">PISA 2025, up to 85 education systems. How many students use AI for schoolwork, against how many are asked in lessons to judge what AI tells them. OECD averages first.</p>
+<div class="facts" id="facts"></div>
+
+<section class="card" aria-labelledby="ch">
+<h2 id="ch" style="margin-bottom:10px">Compare systems</h2>
+<div class="tabs" role="group" aria-label="Chart view">
+<button id="tA" aria-pressed="true">AI use vs AI guidance</button>
+<button id="tB" aria-pressed="false">AI vs online-information guidance</button>
+<button id="tC" aria-pressed="false">Ranking</button>
+<label id="mwrap" style="display:none">Rank by <select id="metric">
+<option value="lag">Online minus AI guidance</option>
+<option value="gap">Use minus AI guidance</option>
+<option value="res">Guidance vs what use predicts</option>
+</select></label>
+</div>
+<div class="lg" id="lgd"></div>
+<div id="plot"></div>
+<div class="sum" id="sum"></div>
+</section>
+
+<section class="card" aria-labelledby="sh">
+<h2 id="sh" style="margin-bottom:8px">Look up a system</h2>
+<div class="tabs"><label for="pick">System</label><select id="pick"></select></div>
+<div id="sysOut"></div>
+</section>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.53, 55, 67 and 68. "Used AI" means at least one of four schoolwork purposes; "AI guidance" means students said they assess the quality of chatbot-generated information in lessons at least sometimes. Use and guidance are country shares from different questions, not the same students, and the comparisons are correlational across systems. Groups compare each system with the OECD average; "significantly" means a 95% confidence interval that excludes it. Systems marked * carry comparability flags in the source.</footer>
+</main>
+<script>
+const ROWS=%%ROWS%%.map(r=>({n:r[0],u:r[1],g:r[2],o:r[3],q:r[4],res:r[5],f:r[6],lag:r[3]-r[2],gap:r[1]-r[2]}));
+const ST=%%STATS%%;
+const OE=ST.oecd;
+const QN=["High use, high guidance","High use, low guidance","Low use, low guidance","Low use, high guidance"];
+const QC=["var(--ns)","#eb6834","#eda100","var(--hi)"];
+const ML={lag:"online minus AI guidance (pp)",gap:"AI use minus AI guidance (pp)",res:"AI guidance relative to what use predicts (pp)"};
+const $=id=>document.getElementById(id);
+const f1=v=>v.toFixed(1),sg=v=>(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(1);
+const short=n=>n.replace(' (China)','').replace(' (17 of 27)','');
+const list=(a,fn)=>a.map(fn).join(', ');
+let view='A',metric='lag',sel='';
+const cnt=[0,0,0,0];ROWS.forEach(r=>cnt[r.q]++);
+$('facts').innerHTML=[[OE.use_any.toFixed(0)+'%','used AI for at least one schoolwork purpose'],[OE.guid.toFixed(0)+'%','were tasked in lessons with assessing AI output'],[OE.online.toFixed(0)+'%','were tasked with assessing information found online'],[OE.gap.toFixed(0)+' pp','between using AI and being asked to assess it']].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+$('lgd').innerHTML=QN.map((q,i)=>`<span><i style="background:${QC[i]}"></i>${q} (${cnt[i]})</span>`).join('');
+$('pick').innerHTML='<option value="">Choose a system</option>'+ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
+function nice(r){for(const v of[1,2,5,10,20,50]){if(r/v<=8)return v}return 50}
+const ln=(x1,y1,x2,y2,c,w,d)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${c};stroke-width:${w||1}${d?';stroke-dasharray:'+d:''}"/>`;
+const tx=(x,y,t,a,sz,c,wt)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" style="font-size:${sz||11}px;fill:${c||'var(--mut)'}${wt?';font-weight:'+wt:''}">${t}</text>`;
+function labelSet(){
+ const s=new Set();if(sel)s.add(sel);
+ if(view==='A'){ROWS.slice().sort((a,b)=>a.res-b.res).slice(0,4).forEach(r=>s.add(r.n));ROWS.slice().sort((a,b)=>b.res-a.res).slice(0,2).forEach(r=>s.add(r.n))}
+ else{ROWS.slice().sort((a,b)=>b.lag-a.lag).slice(0,5).forEach(r=>s.add(r.n));ROWS.slice().sort((a,b)=>a.lag-b.lag).slice(0,1).forEach(r=>s.add(r.n))}
+ return s}
+function scatter(){
+ const A=view==='A',W=Math.max($('plot').clientWidth,340),H=W<520?380:470,L=46,R=14,T=10,B=44;
+ const xr=A?[58,98]:[50,94],yr=A?[28,86]:[28,92];
+ const xs=v=>L+(v-xr[0])/(xr[1]-xr[0])*(W-L-R),ys=v=>H-B-(v-yr[0])/(yr[1]-yr[0])*(H-B-T);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="${A?'Scatter of AI use against AI guidance':'Scatter of online-information guidance against AI guidance'} for ${ROWS.length} systems">`;
+ for(let v=Math.ceil(xr[0]/10)*10;v<=xr[1];v+=10){s+=ln(xs(v),T,xs(v),H-B,'var(--line)',0.5)+tx(xs(v),H-B+15,v)}
+ for(let v=Math.ceil(yr[0]/10)*10;v<=yr[1];v+=10){s+=ln(L,ys(v),W-R,ys(v),'var(--line)',0.5)+tx(L-6,ys(v)+4,v,'end')}
+ s+=tx((L+W-R)/2,H-6,A?'% who used AI for at least one purpose':'% tasked with assessing information found online','middle',11,'var(--sec)');
+ s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">% tasked with assessing AI output</text>`;
+ if(A){
+  s+=ln(xs(OE.use_any),T,xs(OE.use_any),H-B,'var(--mut)',1,'4 4')+ln(L,ys(OE.guid),W-R,ys(OE.guid),'var(--mut)',1,'4 4');
+  s+=ln(xs(xr[0]),ys(ST.ols.a+ST.ols.b*xr[0]),xs(xr[1]),ys(ST.ols.a+ST.ols.b*xr[1]),'var(--ink)',1);
+  s+=tx(xs(OE.use_any)+4,T+10,'OECD average','start',11,'var(--sec)');
+ }else{
+  s+=ln(xs(50),ys(50),xs(92),ys(92),'var(--mut)',1,'4 4')+tx(xs(88),ys(92)-6,'equal','end',11,'var(--sec)');
+  const px=xs(OE.online),py=ys(OE.guid);
+  s+=`<path d="M${px} ${py-6}L${px+6} ${py}L${px} ${py+6}L${px-6} ${py}Z" style="fill:var(--ink)"><title>OECD average: online ${OE.online}%, AI ${OE.guid}%</title></path>`;
+ }
+ const lab=labelSet(),offs=[[7,4,'start'],[-7,-4,'end'],[7,-6,'start']];let k=0;
+ ROWS.forEach(r=>{
+  const cx=xs(A?r.u:r.o),cy=ys(r.g),on=r.n===sel;
+  s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: used AI ${f1(r.u)}%, assess AI ${f1(r.g)}%, assess online ${f1(r.o)}%</title>`;
+  if(on)s+=`<circle cx="${cx}" cy="${cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:2"/>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${on?5:4}" style="fill:${QC[r.q]};fill-opacity:.9"/></g>`;
+  if(lab.has(r.n)){const o=offs[k++%3];s+=tx(cx+o[0],cy+o[1],short(r.n),o[2],11,'var(--ink)',on?500:400)}
+ });
+ $('plot').innerHTML=s+'</svg>';
+ $('plot').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>choose(g.dataset.n)));
+}
+function ranking(){
+ const W=Math.max($('plot').clientWidth,340),L=W<520?128:176,R=14,T=8,RH=15,B=40;
+ const rows=ROWS.slice().sort((a,b)=>b[metric]-a[metric]);
+ let lo=Math.min(0,...rows.map(r=>r[metric])),hi=Math.max(0,...rows.map(r=>r[metric]));
+ const pad=(hi-lo)*.05;lo-=pad;hi+=pad;const st=nice(hi-lo),xs=v=>L+(v-lo)/(hi-lo)*(W-L-R),H=T+rows.length*RH+B;
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Systems ranked by ${ML[metric]}">`;
+ for(let v=Math.ceil(lo/st)*st;v<=hi;v+=st){const vv=Math.round(v/st)*st;s+=ln(xs(vv),T,xs(vv),H-B+2,vv===0?'var(--sec)':'var(--line)',vv===0?1:.5)+tx(xs(vv),H-B+16,sg(vv).replace('+','').replace('.0',''))}
+ s+=tx((L+W-R)/2,H-4,ML[metric],'middle',11,'var(--sec)');
+ if(metric!=='res'){const o=OE[metric];s+=ln(xs(o),T,xs(o),H-B+2,'var(--mut)',1,'3 3')+tx(xs(o)+3,T+9,'OECD '+f1(o),'start',11,'var(--sec)')}
+ rows.forEach((r,i)=>{const y=T+i*RH+RH/2+6,on=r.n===sel;
+  s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: ${sg(r[metric])} pp</title>`;
+  s+=tx(L-8,y+4,short(r.n),'end',11,on?'var(--ink)':'var(--sec)',on?500:400)+ln(xs(0),y,xs(r[metric]),y,QC[r.q],1.5);
+  s+=`<circle cx="${xs(r[metric])}" cy="${y}" r="${on?5.5:3.5}" style="fill:${QC[r.q]}"/></g>`});
+ $('plot').innerHTML=s+'</svg>';
+ $('plot').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>choose(g.dataset.n)));
+}
+function summary(){
+ const by=(k,d,n)=>ROWS.slice().sort((a,b)=>d*(a[k]-b[k])).slice(0,n);
+ let how,head,st;
+ if(view==='A'){
+  how=`Each dot is a system. Across: share of students who used AI for at least one schoolwork purpose. Up: share tasked in lessons with assessing what AI chatbots produce. Dashed lines mark OECD averages and split systems into four groups; the solid line is the fitted trend across systems.`;
+  head=`Systems where more students use AI also tend to teach more about assessing it (rank correlation ${ST.rho['use_any~guid']}), and each extra point of use goes with about ${ST.ols.b.toFixed(1)} points more guidance. Even so, the OECD average is ${OE.gap.toFixed(0)} pp lower on guidance (${OE.guid}%) than on use (${OE.use_any}%), and a typical system misses the trend by about ${ST.resid_sd} pp.`;
+  const mis=ROWS.filter(r=>r.f===1).map(r=>short(r.n));
+  st=`Furthest below the trend: ${list(by('res',1,4),r=>`${short(r.n)} (${sg(r.res)})`)}. Furthest above: ${list(by('res',-1,3),r=>`${short(r.n)} (${sg(r.res)})`)}. ${mis.length} systems combine significantly higher use with significantly lower guidance than the OECD average: ${mis.slice(0,8).join(', ')}${mis.length>8?' and '+(mis.length-8)+' more':''}.`;
+ }else if(view==='B'){
+  how=`Across: share tasked with assessing information found online. Up: share tasked with assessing AI output. Below the dashed diagonal, AI guidance is less common than online-information guidance; the diamond is the OECD average.`;
+  head=`AI guidance is less common than online-information guidance in ${ST.lag_pos} of ${ST.n} systems (median gap ${ST.lag_median} pp, over 20 pp in ${ST.lag_gt20}). Online guidance alone accounts for ${Math.round(ST.r2.online*100)}% of the variation in AI guidance; adding AI use lifts that to ${Math.round(ST.r2.both*100)}%, and use still matters once online guidance is held constant (partial r = ${ST.partial}).`;
+  st=`Widest gaps: ${list(by('lag',-1,5),r=>`${short(r.n)} (${f1(r.lag)} pp)`)}. ${by('lag',1,1).map(r=>r.lag<0?`${short(r.n)} is the only system above the line (${sg(r.lag)} pp)`:`Narrowest: ${short(r.n)} (${f1(r.lag)} pp)`)[0]}.`;
+ }else{
+  const desc={lag:`Lollipops show, for each system, the share tasked with assessing online information minus the share tasked with assessing AI output. Longer to the right means AI guidance lags further behind.`,gap:`Lollipops show the share who used AI minus the share tasked with assessing AI output. Longer to the right means more students use AI than are asked to assess it.`,res:`Lollipops show how far each system's AI guidance sits from the level predicted by its AI use (the fitted trend). Left of zero: less guidance than use predicts; right: more.`};
+  how=desc[metric]+` Colours are the four groups from the first view.`;
+  const k=metric,hi=by(k,-1,3),lo=by(k,1,3);
+  head=metric==='res'?`A typical system sits about ${ST.resid_sd} pp from the trend (standard deviation of the gaps). The extremes are ${list(hi.slice(0,2),r=>short(r.n)+' ('+sg(r[k])+')')} at the top and ${list(lo.slice(0,2),r=>short(r.n)+' ('+sg(r[k])+')')} at the bottom.`:`OECD average: ${f1(OE[k])} pp. Largest: ${list(hi,r=>`${short(r.n)} (${f1(r[k])})`)}. Smallest: ${list(lo,r=>`${short(r.n)} (${f1(r[k])})`)}.`;
+  st=`Click any row to select it and see its numbers below.`;
+ }
+ $('sum').innerHTML=`<p><strong>How to read it.</strong> ${how}</p><p><strong>Headline.</strong> ${head}</p><p><strong>Standouts.</strong> ${st}</p>`;
+}
+function sysPanel(){
+ const r=ROWS.find(x=>x.n===sel),o=$('sysOut');
+ if(!r){o.innerHTML='<p class="note">Choose a system, or click a dot or row above, to see its numbers against the OECD average.</p>';return}
+ const rows=[['Used AI for at least one purpose (%)',r.u,OE.use_any],['Tasked to assess AI output (%)',r.g,OE.guid],['Tasked to assess online information (%)',r.o,OE.online],['Online minus AI guidance (pp)',r.lag,OE.lag],['Use minus AI guidance (pp)',r.gap,OE.gap]];
+ const fl=['','significantly higher use and lower guidance than the OECD average','significantly lower use and lower guidance than the OECD average','significantly lower use and higher guidance than the OECD average'][r.f];
+ o.innerHTML=`<table class="sys"><tr><th>${r.n}</th><th>System</th><th>OECD</th></tr>${rows.map(x=>`<tr><td>${x[0]}</td><td>${f1(x[1])}</td><td>${f1(x[2])}</td></tr>`).join('')}</table><p class="note" style="max-width:70ch">In the group "${QN[r.q]}"${fl?', '+fl:''}. Its AI guidance is ${Math.abs(r.res).toFixed(1)} pp ${r.res<0?'below':'above'} what its level of AI use predicts across systems.</p>`;
+}
+function render(){
+ ['A','B','C'].forEach(v=>$('t'+v).setAttribute('aria-pressed',v===view?'true':'false'));
+ $('mwrap').style.display=view==='C'?'':'none';
+ view==='C'?ranking():scatter();summary();sysPanel();
+}
+function choose(n){sel=n;$('pick').value=n;render()}
+['A','B','C'].forEach(v=>$('t'+v).addEventListener('click',()=>{view=v;render()}));
+$('metric').addEventListener('change',e=>{metric=e.target.value;render()});
+$('pick').addEventListener('change',e=>{sel=e.target.value;render()});
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,150)});
+render();
+</script>
+</body>
+</html>
