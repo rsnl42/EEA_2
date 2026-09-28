@@ -5,18 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: do richer schools really have better tech?</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<script>
+(function(){
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72}
+--bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72;
+--tag-equity-bg:#eef6ff;--tag-equity-fg:#1e65bd;
+--tag-infra-bg:#f0fdf4;--tag-infra-fg:#166534;
+--tag-guidance-bg:#faf5ff;--tag-guidance-fg:#6b21a8;
+--tag-policy-bg:#fff7ed;--tag-policy-fg:#c2410c;
+--tag-analytics-bg:#fdf2f8;--tag-analytics-fg:#be185d;
+}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}}
-:root[data-theme="dark"]{--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103;
+--tag-equity-bg:rgba(42,120,214,0.18);--tag-equity-fg:#7cb3f3;
+--tag-infra-bg:rgba(22,101,52,0.18);--tag-infra-fg:#86efac;
+--tag-guidance-bg:rgba(107,33,168,0.18);--tag-guidance-fg:#d8b4fe;
+--tag-policy-bg:rgba(194,65,12,0.18);--tag-policy-fg:#fdba74;
+--tag-analytics-bg:rgba(190,24,93,0.18);--tag-analytics-fg:#f472b6;
+}}
+:root[data-theme="dark"]{--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103;
+--tag-equity-bg:rgba(42,120,214,0.18);--tag-equity-fg:#7cb3f3;
+--tag-infra-bg:rgba(22,101,52,0.18);--tag-infra-fg:#86efac;
+--tag-guidance-bg:rgba(107,33,168,0.18);--tag-guidance-fg:#d8b4fe;
+--tag-policy-bg:rgba(194,65,12,0.18);--tag-policy-fg:#fdba74;
+--tag-analytics-bg:rgba(190,24,93,0.18);--tag-analytics-fg:#f472b6;
+}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1000px;margin:0 auto;padding:24px 16px 40px}
-h1{font-size:24px;font-weight:500;line-height:1.25;margin:0 0 6px;max-width:34ch}
-h2{font-size:18px;font-weight:500;margin:0 0 2px}
-.sub{color:var(--sec);margin:0 0 20px;max-width:70ch}
+main{max-width:1050px;margin:0 auto;padding:24px 16px 40px}
+h1{font-size:26px;font-weight:600;line-height:1.25;margin:0 0 6px}
+h2{font-size:17px;font-weight:600;margin:0 0 4px}
+.sub{color:var(--sec);margin:0 0 20px;max-width:75ch}
+
+/* Navigation & Header Bar */
+.top-bar{display:flex;align-items:center;justify-space:between;margin-bottom:18px;gap:12px}
+.nav{font-size:13px;margin:0}
+.nav a{color:var(--sec);text-decoration:none}
+.nav a:hover{color:var(--ink);text-decoration:underline}
+
+.theme-toggle-btn{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s ease}
+.theme-toggle-btn:hover{border-color:var(--sec);background:var(--bg)}
+
+/* Hero Section */
+.hero-banner{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 28px;margin-bottom:24px}
+.hero-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.hero-badge{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:20px;background:var(--hi);color:#fff}
+.hero-title{font-size:26px;font-weight:600;line-height:1.25;margin:6px 0 8px}
+.hero-sub{color:var(--sec);margin:0 0 20px;font-size:14px;max-width:70ch}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+.stat-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.stat-num{display:block;font-size:22px;font-weight:700;color:var(--hi);line-height:1.2}
+.stat-label{font-size:12px;color:var(--sec)}
+
+/* Filter Chips */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;align-items:center}
+.filter-chip{font:inherit;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;border:1px solid var(--line);background:var(--surface);color:var(--sec);cursor:pointer;transition:all 0.15s ease}
+.filter-chip:hover,.filter-chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Card Grid */
+ul.pages{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:16px}
+@media (max-width: 640px){ul.pages{grid-template-columns:1fr}}
+
+ul.pages li{background:none;border:none}
+.dashboard-card{display:flex;flex-direction:column;height:100%;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;transition:transform 0.15s ease,box-shadow 0.15s ease,border-color 0.15s ease}
+.dashboard-card:hover{transform:translateY(-2px);border-color:var(--hi);box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+
+.card-header-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;text-transform:uppercase;letter-spacing:0.3px}
+.tag-equity{background:var(--tag-equity-bg);color:var(--tag-equity-fg)}
+.tag-infra{background:var(--tag-infra-bg);color:var(--tag-infra-fg)}
+.tag-guidance{background:var(--tag-guidance-bg);color:var(--tag-guidance-fg)}
+.tag-policy{background:var(--tag-policy-bg);color:var(--tag-policy-fg)}
+.tag-analytics{background:var(--tag-analytics-bg);color:var(--tag-analytics-fg)}
+
+.arrow-action{font-size:13px;font-weight:500;color:var(--hi);transition:transform 0.15s ease}
+.dashboard-card:hover .arrow-action{transform:translateX(3px)}
+
+.dashboard-card h2{font-size:17px;font-weight:600;margin:0 0 6px;line-height:1.35;color:var(--ink)}
+.dashboard-card p{margin:0 0 14px;color:var(--sec);font-size:13.5px;line-height:1.5;flex-grow:1}
+.card-footer-meta{font-size:11.5px;color:var(--mut);display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
+
+/* General Card UI */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
 .lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12px;color:var(--sec);align-items:center}
 .lg i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px}
@@ -27,11 +102,8 @@ h2{font-size:18px;font-weight:500;margin:0 0 2px}
 .bar{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sec);margin:0 0 4px}
 .bar button{font:inherit;font-size:12px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:3px 10px;cursor:pointer}
 .bar button[aria-pressed="true"]{border-color:var(--ink)}
-footer{font-size:12px;color:var(--mut);max-width:85ch}
+footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 :focus-visible{outline:2px solid var(--hi);outline-offset:2px}
-.nav{margin:0 0 14px;font-size:13px}
-.nav a{color:var(--sec);text-decoration:none}
-.nav a:hover{color:var(--ink);text-decoration:underline}
 
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
 .facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
@@ -61,7 +133,12 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 </head>
 <body>
 <main>
-<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<div class="top-bar">
+  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
+  </button>
+</div>
 <h1>Do richer schools really have better tech? It depends what you ask.</h1>
 <p class="sub">PISA 2025, up to 91 education systems. We looked at seven measures of school computer/device resourcing and checked, for each one, whether richer schools, city schools and private schools are actually ahead &mdash; or whether the gap runs the other way.</p>
 <div class="facts" id="facts"></div>
@@ -230,6 +307,38 @@ $('pgGrid').addEventListener('click',()=>{$('pgGrid').setAttribute('aria-pressed
 $('pgScore').addEventListener('click',()=>{$('pgScore').setAttribute('aria-pressed','true');$('pgGrid').setAttribute('aria-pressed','false');$('panelScore').classList.add('on');$('panelGrid').classList.remove('on')});
 
 renderGrid();renderRank();renderSys('');
+</script>
+<script>
+(function(){
+  function initTheme() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function syncUI() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var isDark = cur === 'dark';
+      var icon = btn.querySelector('.theme-icon');
+      var label = btn.querySelector('.theme-label');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (label) label.textContent = isDark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-pressed', isDark);
+    }
+    syncUI();
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncUI();
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
 </script>
 </body>
 </html>

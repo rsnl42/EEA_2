@@ -24,6 +24,9 @@ from site_common import DEFAULT_XLSX, DOCS, fill, load_template, write_page
 PAGES = [
     {
         "slug": "equity-gaps",
+        "category": "Equity & Access",
+        "badge_class": "tag-equity",
+        "cat_code": "equity",
         "title": "Who uses AI and digital devices in class, and who doesn't?",
         "blurb": ("72 group gaps (gender, SES, immigrant background, education level, programme, "
                   "school location and type) across nine AI and device outcomes. Select any cell "
@@ -34,6 +37,9 @@ PAGES = [
     },
     {
         "slug": "infrastructure-divides",
+        "category": "Tech Resources",
+        "badge_class": "tag-infra",
+        "cat_code": "infra",
         "title": "Do richer schools really have better tech? It depends what you ask.",
         "blurb": ("Seven school-resourcing measures, split by rich/poor, city/rural and private/public "
                   "schools. Raw device counts often favour poorer or rural schools, but reported "
@@ -45,6 +51,9 @@ PAGES = [
     },
     {
         "slug": "use-guidance",
+        "category": "Policy & Guidance",
+        "badge_class": "tag-guidance",
+        "cat_code": "policy",
         "title": "Does school guidance keep pace with student AI use?",
         "blurb": ("Compares the share of students using AI for schoolwork with the share asked, in "
                   "lessons, to assess AI output, across 85 systems. Includes a comparison with "
@@ -55,6 +64,9 @@ PAGES = [
     },
     {
         "slug": "policy-typologies",
+        "category": "Policy & Governance",
+        "badge_class": "tag-policy",
+        "cat_code": "policy",
         "title": "How are schools governing devices and AI, and is it changing?",
         "blurb": ("A nine-item policy-intensity index, plus the four device-policy regimes compared "
                   "2022 vs 2025 with each system's shift tested against its own standard error and "
@@ -66,6 +78,9 @@ PAGES = [
     },
     {
         "slug": "cross-domain",
+        "category": "Cross-Domain Analytics",
+        "badge_class": "tag-analytics",
+        "cat_code": "analytics",
         "title": "How do resources, capacity, time use and AI relate?",
         "blurb": ("Nine country-level composite indices built from resourcing, teacher capacity, "
                   "time use, leisure, distraction, device rules and AI use/guidance. A correlation "
@@ -80,10 +95,21 @@ PAGES = [
 def landing_items() -> str:
     e = html.escape
     return "\n".join(
-        f'<li><a class="page" href="{e(p["slug"])}/"><h2>{e(p["title"])}</h2>'
-        f'<p>{e(p["blurb"])}</p><small>Tables {e(p["tables"])} &middot; script {e(p["script"])}</small></a></li>'
+        f'<li class="card-item" data-cat="{p["cat_code"]}">'
+        f'<a class="dashboard-card" href="{e(p["slug"])}/">'
+        f'<div class="card-header-row">'
+        f'<span class="tag {p["badge_class"]}">{e(p["category"])}</span>'
+        f'<span class="arrow-action">Explore &rarr;</span>'
+        f'</div>'
+        f'<h2>{e(p["title"])}</h2>'
+        f'<p>{e(p["blurb"])}</p>'
+        f'<div class="card-footer-meta">'
+        f'<span>OECD Tables {e(p["tables"])}</span>'
+        f'</div>'
+        f'</a></li>'
         for p in PAGES
     )
+
 
 
 def main() -> None:

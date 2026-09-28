@@ -3,20 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PISA 2025: digital devices and AI in school</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<title>PISA 2025: Digital Devices & AI in School</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap">
+<script>
+(function(){
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72}
+--bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72;
+--tag-equity-bg:#eef6ff;--tag-equity-fg:#1e65bd;
+--tag-infra-bg:#f0fdf4;--tag-infra-fg:#166534;
+--tag-guidance-bg:#faf5ff;--tag-guidance-fg:#6b21a8;
+--tag-policy-bg:#fff7ed;--tag-policy-fg:#c2410c;
+--tag-analytics-bg:#fdf2f8;--tag-analytics-fg:#be185d;
+}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}}
-:root[data-theme="dark"]{--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103;
+--tag-equity-bg:rgba(42,120,214,0.18);--tag-equity-fg:#7cb3f3;
+--tag-infra-bg:rgba(22,101,52,0.18);--tag-infra-fg:#86efac;
+--tag-guidance-bg:rgba(107,33,168,0.18);--tag-guidance-fg:#d8b4fe;
+--tag-policy-bg:rgba(194,65,12,0.18);--tag-policy-fg:#fdba74;
+--tag-analytics-bg:rgba(190,24,93,0.18);--tag-analytics-fg:#f472b6;
+}}
+:root[data-theme="dark"]{--bg:#12151a;--surface:#1a1e25;--ink:#eceff4;--sec:#b3bbc8;--mut:#8590a0;--line:#2b313b;--hi:#3987e5;--lo:#e66767;--ns:#8590a0;--hib:57,135,229;--lob:230,103,103;
+--tag-equity-bg:rgba(42,120,214,0.18);--tag-equity-fg:#7cb3f3;
+--tag-infra-bg:rgba(22,101,52,0.18);--tag-infra-fg:#86efac;
+--tag-guidance-bg:rgba(107,33,168,0.18);--tag-guidance-fg:#d8b4fe;
+--tag-policy-bg:rgba(194,65,12,0.18);--tag-policy-fg:#fdba74;
+--tag-analytics-bg:rgba(190,24,93,0.18);--tag-analytics-fg:#f472b6;
+}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1000px;margin:0 auto;padding:24px 16px 40px}
-h1{font-size:24px;font-weight:500;line-height:1.25;margin:0 0 6px;max-width:34ch}
-h2{font-size:18px;font-weight:500;margin:0 0 2px}
-.sub{color:var(--sec);margin:0 0 20px;max-width:70ch}
+main{max-width:1050px;margin:0 auto;padding:24px 16px 40px}
+h1{font-size:26px;font-weight:600;line-height:1.25;margin:0 0 6px}
+h2{font-size:17px;font-weight:600;margin:0 0 4px}
+.sub{color:var(--sec);margin:0 0 20px;max-width:75ch}
+
+/* Navigation & Header Bar */
+.top-bar{display:flex;align-items:center;justify-space:between;margin-bottom:18px;gap:12px}
+.nav{font-size:13px;margin:0}
+.nav a{color:var(--sec);text-decoration:none}
+.nav a:hover{color:var(--ink);text-decoration:underline}
+
+.theme-toggle-btn{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s ease}
+.theme-toggle-btn:hover{border-color:var(--sec);background:var(--bg)}
+
+/* Hero Section */
+.hero-banner{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 28px;margin-bottom:24px}
+.hero-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.hero-badge{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:20px;background:var(--hi);color:#fff}
+.hero-title{font-size:26px;font-weight:600;line-height:1.25;margin:6px 0 8px}
+.hero-sub{color:var(--sec);margin:0 0 20px;font-size:14px;max-width:70ch}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+.stat-card{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.stat-num{display:block;font-size:22px;font-weight:700;color:var(--hi);line-height:1.2}
+.stat-label{font-size:12px;color:var(--sec)}
+
+/* Filter Chips */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;align-items:center}
+.filter-chip{font:inherit;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;border:1px solid var(--line);background:var(--surface);color:var(--sec);cursor:pointer;transition:all 0.15s ease}
+.filter-chip:hover,.filter-chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Card Grid */
+ul.pages{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:16px}
+@media (max-width: 640px){ul.pages{grid-template-columns:1fr}}
+
+ul.pages li{background:none;border:none}
+.dashboard-card{display:flex;flex-direction:column;height:100%;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;transition:transform 0.15s ease,box-shadow 0.15s ease,border-color 0.15s ease}
+.dashboard-card:hover{transform:translateY(-2px);border-color:var(--hi);box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+
+.card-header-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;text-transform:uppercase;letter-spacing:0.3px}
+.tag-equity{background:var(--tag-equity-bg);color:var(--tag-equity-fg)}
+.tag-infra{background:var(--tag-infra-bg);color:var(--tag-infra-fg)}
+.tag-guidance{background:var(--tag-guidance-bg);color:var(--tag-guidance-fg)}
+.tag-policy{background:var(--tag-policy-bg);color:var(--tag-policy-fg)}
+.tag-analytics{background:var(--tag-analytics-bg);color:var(--tag-analytics-fg)}
+
+.arrow-action{font-size:13px;font-weight:500;color:var(--hi);transition:transform 0.15s ease}
+.dashboard-card:hover .arrow-action{transform:translateX(3px)}
+
+.dashboard-card h2{font-size:17px;font-weight:600;margin:0 0 6px;line-height:1.35;color:var(--ink)}
+.dashboard-card p{margin:0 0 14px;color:var(--sec);font-size:13.5px;line-height:1.5;flex-grow:1}
+.card-footer-meta{font-size:11.5px;color:var(--mut);display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
+
+/* General Card UI */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
 .lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12px;color:var(--sec);align-items:center}
 .lg i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-2px;margin-right:5px}
@@ -27,33 +102,113 @@ h2{font-size:18px;font-weight:500;margin:0 0 2px}
 .bar{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--sec);margin:0 0 4px}
 .bar button{font:inherit;font-size:12px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:3px 10px;cursor:pointer}
 .bar button[aria-pressed="true"]{border-color:var(--ink)}
-footer{font-size:12px;color:var(--mut);max-width:85ch}
+footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 :focus-visible{outline:2px solid var(--hi);outline-offset:2px}
-.nav{margin:0 0 14px;font-size:13px}
-.nav a{color:var(--sec);text-decoration:none}
-.nav a:hover{color:var(--ink);text-decoration:underline}
 
-ul.pages{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:12px}
-ul.pages li{background:var(--surface);border:1px solid var(--line);border-radius:10px}
-ul.pages a.page{display:block;padding:16px 18px;color:inherit;text-decoration:none;border-radius:10px}
-ul.pages a.page:hover{outline:1px solid var(--sec)}
-ul.pages h2{margin:0 0 4px}
-ul.pages p{margin:0 0 8px;color:var(--sec);max-width:70ch;font-size:14px}
-ul.pages small{color:var(--mut);font-size:12px}
 </style>
 </head>
 <body>
 <main>
-<h1>Digital devices and AI in school: PISA 2025</h1>
-<p class="sub">Interactive analyses of the OECD's chapter 4 country tables. Each page is generated from the same workbook by a Python script in the repository.</p>
-<ul class="pages">
-<li><a class="page" href="equity-gaps/"><h2>Who uses AI and digital devices in class, and who doesn&#x27;t?</h2><p>72 group gaps (gender, SES, immigrant background, education level, programme, school location and type) across nine AI and device outcomes. Select any cell for country-level gaps with confidence intervals and a written summary.</p><small>Tables I.B1.4.26, 43, 54 to 59, 68 &middot; script analysis/01_equity_gaps.py</small></a></li>
-<li><a class="page" href="infrastructure-divides/"><h2>Do richer schools really have better tech? It depends what you ask.</h2><p>Seven school-resourcing measures, split by rich/poor, city/rural and private/public schools. Raw device counts often favour poorer or rural schools, but reported shortages, poor quality and readiness to teach digitally clearly favour richer and private ones. Plain-language grid plus a per-country lookup.</p><small>Tables I.B1.4.1, 4, 5, 7, 8, 11, 15 &middot; script analysis/02_infrastructure_divides.py</small></a></li>
-<li><a class="page" href="use-guidance/"><h2>Does school guidance keep pace with student AI use?</h2><p>Compares the share of students using AI for schoolwork with the share asked, in lessons, to assess AI output, across 85 systems. Includes a comparison with guidance on online information, a ranking, and a lookup for any system.</p><small>Tables I.B1.4.53, 55, 67, 68 &middot; script analysis/07_use_guidance_gap.py</small></a></li>
-<li><a class="page" href="policy-typologies/"><h2>How are schools governing devices and AI, and is it changing?</h2><p>A nine-item policy-intensity index, plus the four device-policy regimes compared 2022 vs 2025 with each system&#x27;s shift tested against its own standard error and classified as a fast adopter or lagging. Includes open questions on whether phone bans track with less in-school leisure device use or less AI use.</p><small>Tables I.B1.4.47, 49 &middot; script analysis/08_policy_typologies.py</small></a></li>
-<li><a class="page" href="cross-domain/"><h2>How do resources, capacity, time use and AI relate?</h2><p>Nine country-level composite indices built from resourcing, teacher capacity, time use, leisure, distraction, device rules and AI use/guidance. A correlation explorer with country-level scatterplots, plus five clustered country archetypes.</p><small>Tables I.B1.4.1, 4, 6, 11, 14, 21, 37, 43, 47, 53, 55, 67, 68 &middot; script analysis/09_cross_domain_panel.py + 09b + 09c</small></a></li>
+<div class="top-bar">
+  <div class="hero-badge">OECD PISA 2025 Volume I</div>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
+  </button>
+</div>
+
+<section class="hero-banner">
+  <h1 class="hero-title">Digital Devices & AI in School</h1>
+  <p class="hero-sub">Interactive policy & research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-num">85+</span>
+      <span class="stat-label">School Systems Analyzed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Interactive Dashboards</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">70+</span>
+      <span class="stat-label">OECD Data Tables</span>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <button class="filter-chip active" data-filter="all">All Dashboards</button>
+  <button class="filter-chip" data-filter="equity">Equity & Access</button>
+  <button class="filter-chip" data-filter="infra">Tech Resources</button>
+  <button class="filter-chip" data-filter="policy">Policy & Guidance</button>
+  <button class="filter-chip" data-filter="analytics">Cross-Domain Analytics</button>
+</div>
+
+<ul class="pages" id="dashboard-grid">
+<li class="card-item" data-cat="equity"><a class="dashboard-card" href="equity-gaps/"><div class="card-header-row"><span class="tag tag-equity">Equity &amp; Access</span><span class="arrow-action">Explore &rarr;</span></div><h2>Who uses AI and digital devices in class, and who doesn&#x27;t?</h2><p>72 group gaps (gender, SES, immigrant background, education level, programme, school location and type) across nine AI and device outcomes. Select any cell for country-level gaps with confidence intervals and a written summary.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.26, 43, 54 to 59, 68</span></div></a></li>
+<li class="card-item" data-cat="infra"><a class="dashboard-card" href="infrastructure-divides/"><div class="card-header-row"><span class="tag tag-infra">Tech Resources</span><span class="arrow-action">Explore &rarr;</span></div><h2>Do richer schools really have better tech? It depends what you ask.</h2><p>Seven school-resourcing measures, split by rich/poor, city/rural and private/public schools. Raw device counts often favour poorer or rural schools, but reported shortages, poor quality and readiness to teach digitally clearly favour richer and private ones. Plain-language grid plus a per-country lookup.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.1, 4, 5, 7, 8, 11, 15</span></div></a></li>
+<li class="card-item" data-cat="policy"><a class="dashboard-card" href="use-guidance/"><div class="card-header-row"><span class="tag tag-guidance">Policy &amp; Guidance</span><span class="arrow-action">Explore &rarr;</span></div><h2>Does school guidance keep pace with student AI use?</h2><p>Compares the share of students using AI for schoolwork with the share asked, in lessons, to assess AI output, across 85 systems. Includes a comparison with guidance on online information, a ranking, and a lookup for any system.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.53, 55, 67, 68</span></div></a></li>
+<li class="card-item" data-cat="policy"><a class="dashboard-card" href="policy-typologies/"><div class="card-header-row"><span class="tag tag-policy">Policy &amp; Governance</span><span class="arrow-action">Explore &rarr;</span></div><h2>How are schools governing devices and AI, and is it changing?</h2><p>A nine-item policy-intensity index, plus the four device-policy regimes compared 2022 vs 2025 with each system&#x27;s shift tested against its own standard error and classified as a fast adopter or lagging. Includes open questions on whether phone bans track with less in-school leisure device use or less AI use.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.47, 49</span></div></a></li>
+<li class="card-item" data-cat="analytics"><a class="dashboard-card" href="cross-domain/"><div class="card-header-row"><span class="tag tag-analytics">Cross-Domain Analytics</span><span class="arrow-action">Explore &rarr;</span></div><h2>How do resources, capacity, time use and AI relate?</h2><p>Nine country-level composite indices built from resourcing, teacher capacity, time use, leisure, distraction, device rules and AI use/guidance. A correlation explorer with country-level scatterplots, plus five clustered country archetypes.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.1, 4, 6, 11, 14, 21, 37, 43, 47, 53, 55, 67, 68</span></div></a></li>
 </ul>
+
 <footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables. Pages are rebuilt from <code>data/digital_devices_AI_chapter4.xlsx</code> with <code>python build_site.py</code>. Figures are descriptive; see each page's footnote for how estimates and significance are defined.</footer>
 </main>
+
+<script>
+(function(){
+  // 1. Theme toggle persistence
+  function initTheme() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function syncUI() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var isDark = cur === 'dark';
+      var icon = btn.querySelector('.theme-icon');
+      var label = btn.querySelector('.theme-label');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (label) label.textContent = isDark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-pressed', isDark);
+    }
+    syncUI();
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncUI();
+    });
+  }
+
+  // 2. Category Filter Chips
+  function initFilters() {
+    var chips = document.querySelectorAll('.filter-chip');
+    var cards = document.querySelectorAll('#dashboard-grid .card-item');
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var cat = this.getAttribute('data-filter');
+        chips.forEach(function(c) { c.classList.remove('active'); });
+        this.classList.add('active');
+        cards.forEach(function(card) {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); });
+  } else {
+    initTheme();
+    initFilters();
+  }
+})();
+</script>
 </body>
 </html>

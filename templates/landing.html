@@ -3,27 +3,116 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PISA 2025: digital devices and AI in school</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<title>PISA 2025: Digital Devices & AI in School</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap">
+<script>
+(function(){
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <style>
 %%BASE_CSS%%
-ul.pages{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:12px}
-ul.pages li{background:var(--surface);border:1px solid var(--line);border-radius:10px}
-ul.pages a.page{display:block;padding:16px 18px;color:inherit;text-decoration:none;border-radius:10px}
-ul.pages a.page:hover{outline:1px solid var(--sec)}
-ul.pages h2{margin:0 0 4px}
-ul.pages p{margin:0 0 8px;color:var(--sec);max-width:70ch;font-size:14px}
-ul.pages small{color:var(--mut);font-size:12px}
 </style>
 </head>
 <body>
 <main>
-<h1>Digital devices and AI in school: PISA 2025</h1>
-<p class="sub">Interactive analyses of the OECD's chapter 4 country tables. Each page is generated from the same workbook by a Python script in the repository.</p>
-<ul class="pages">
+<div class="top-bar">
+  <div class="hero-badge">OECD PISA 2025 Volume I</div>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
+  </button>
+</div>
+
+<section class="hero-banner">
+  <h1 class="hero-title">Digital Devices & AI in School</h1>
+  <p class="hero-sub">Interactive policy & research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-num">85+</span>
+      <span class="stat-label">School Systems Analyzed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">5</span>
+      <span class="stat-label">Interactive Dashboards</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">70+</span>
+      <span class="stat-label">OECD Data Tables</span>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <button class="filter-chip active" data-filter="all">All Dashboards</button>
+  <button class="filter-chip" data-filter="equity">Equity & Access</button>
+  <button class="filter-chip" data-filter="infra">Tech Resources</button>
+  <button class="filter-chip" data-filter="policy">Policy & Guidance</button>
+  <button class="filter-chip" data-filter="analytics">Cross-Domain Analytics</button>
+</div>
+
+<ul class="pages" id="dashboard-grid">
 %%PAGES%%
 </ul>
+
 <footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables. Pages are rebuilt from <code>data/digital_devices_AI_chapter4.xlsx</code> with <code>python build_site.py</code>. Figures are descriptive; see each page's footnote for how estimates and significance are defined.</footer>
 </main>
+
+<script>
+(function(){
+  // 1. Theme toggle persistence
+  function initTheme() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function syncUI() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var isDark = cur === 'dark';
+      var icon = btn.querySelector('.theme-icon');
+      var label = btn.querySelector('.theme-label');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (label) label.textContent = isDark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-pressed', isDark);
+    }
+    syncUI();
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncUI();
+    });
+  }
+
+  // 2. Category Filter Chips
+  function initFilters() {
+    var chips = document.querySelectorAll('.filter-chip');
+    var cards = document.querySelectorAll('#dashboard-grid .card-item');
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var cat = this.getAttribute('data-filter');
+        chips.forEach(function(c) { c.classList.remove('active'); });
+        this.classList.add('active');
+        cards.forEach(function(card) {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); });
+  } else {
+    initTheme();
+    initFilters();
+  }
+})();
+</script>
 </body>
 </html>

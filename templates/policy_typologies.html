@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: device and AI policy typologies</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+<script>
+(function(){
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 <style>
 %%BASE_CSS%%
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
@@ -36,7 +42,12 @@ table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line
 </head>
 <body>
 <main>
-<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+<div class="top-bar">
+  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
+  </button>
+</div>
 <h1>How are schools governing devices and AI &mdash; and is it changing?</h1>
 <p class="sub">PISA 2025, up to 91 education systems. Table 4.47's nine 2025 policy items rolled into a policy-intensity index; table 4.49's four device-policy regimes compared 2022 vs 2025, with each system's shift tested against its own standard error.</p>
 <div class="facts" id="facts"></div>
@@ -201,6 +212,38 @@ $('pgPolicy').addEventListener('click',()=>{$('pgPolicy').setAttribute('aria-pre
 
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{renderSlope();renderOQ()},150)});
 renderSlope();renderRank();renderSysOut();renderIdx();renderOQ();
+</script>
+<script>
+(function(){
+  function initTheme() {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function syncUI() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var isDark = cur === 'dark';
+      var icon = btn.querySelector('.theme-icon');
+      var label = btn.querySelector('.theme-label');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (label) label.textContent = isDark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-pressed', isDark);
+    }
+    syncUI();
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncUI();
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    initTheme();
+  }
+})();
 </script>
 </body>
 </html>
