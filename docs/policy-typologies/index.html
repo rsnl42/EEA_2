@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: device and AI policy typologies</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-<script>
-(function(){
-  var t = localStorage.getItem('theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72;
@@ -134,12 +128,7 @@ table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line
 </head>
 <body>
 <main>
-<div class="top-bar">
-  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
-  </button>
-</div>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
 <h1>How are schools governing devices and AI &mdash; and is it changing?</h1>
 <p class="sub">PISA 2025, up to 91 education systems. Table 4.47's nine 2025 policy items rolled into a policy-intensity index; table 4.49's four device-policy regimes compared 2022 vs 2025, with each system's shift tested against its own standard error.</p>
 <div class="facts" id="facts"></div>
@@ -287,8 +276,12 @@ function renderOQ(){
  s+=`<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--sec)">Phone ban prevalence, 2025 (%)</text>`;
  s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">${OQ_LABELS[selOQ]} (standardised)</text>`;
  for(let v=Math.ceil(xlo/20)*20;v<=xhi;v+=20){s+=`<line x1="${xs(v)}" y1="${T}" x2="${xs(v)}" y2="${H-B}" style="stroke:var(--line);stroke-width:0.5"/><text x="${xs(v)}" y="${H-B+16}" text-anchor="middle" style="font-size:11px;fill:var(--mut)">${v}</text>`}
+ const lab=data.slice().sort((a,b)=>Math.abs(b.y)-Math.abs(a.y)).slice(0,5).map(d=>d.n);
+ const offs=[[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']];let k=0;
  data.forEach(d=>{
-  s+=`<g><title>${d.n}: ban ${f1(d.x)}%, ${OQ_LABELS[selOQ]} ${f2(d.y)}</title><circle cx="${xs(d.x)}" cy="${ys(d.y)}" r="4" style="fill:var(--hi);fill-opacity:.85"/></g>`;
+  const cx=xs(d.x),cy=ys(d.y);
+  s+=`<g><title>${d.n}: ban ${f1(d.x)}%, ${OQ_LABELS[selOQ]} ${f2(d.y)}</title><circle cx="${cx}" cy="${cy}" r="4" style="fill:var(--hi);fill-opacity:.85"/></g>`;
+  if(lab.includes(d.n)){const o=offs[k++%4];s+=`<text x="${cx+o[0]}" y="${cy+o[1]}" text-anchor="${o[2]}" style="font-size:11px;fill:var(--ink);paint-order:stroke fill;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round">${short(d.n)}</text>`}
  });
  $('oqPlot').innerHTML=s+'</svg>';
  const strength=Math.abs(info.rho)>=0.3?'a moderate':Math.abs(info.rho)>=0.15?'a weak':'almost no';
@@ -304,38 +297,8 @@ $('pgPolicy').addEventListener('click',()=>{$('pgPolicy').setAttribute('aria-pre
 
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{renderSlope();renderOQ()},150)});
 renderSlope();renderRank();renderSysOut();renderIdx();renderOQ();
-</script>
-<script>
-(function(){
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function syncUI() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var isDark = cur === 'dark';
-      var icon = btn.querySelector('.theme-icon');
-      var label = btn.querySelector('.theme-label');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-pressed', isDark);
-    }
-    syncUI();
-    btn.addEventListener('click', function() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncUI();
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-})();
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n)chooseSys(n);}})();
 </script>
 </body>
 </html>

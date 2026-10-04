@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: group gaps in AI and digital-device use</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-<script>
-(function(){
-  var t = localStorage.getItem('theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72;
@@ -120,12 +114,7 @@ footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 </head>
 <body>
 <main>
-<div class="top-bar">
-  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
-  </button>
-</div>
+<nav class="nav"><a href="../">‹ All dashboards</a></nav>
 <h1>Who uses AI and digital devices in class, and who doesn't?</h1>
 <p class="sub">Gaps between student and school groups across up to 90 education systems in PISA 2025. Select any cell to see the gap country by country.</p>
 
@@ -262,38 +251,6 @@ $('s1').addEventListener('click',()=>{mode='gap';$('s1').setAttribute('aria-pres
 $('s2').addEventListener('click',()=>{mode='az';$('s2').setAttribute('aria-pressed','true');$('s1').setAttribute('aria-pressed','false');renderDetail()});
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(renderDetail,150)});
 select(0,0,false);
-</script>
-<script>
-(function(){
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function syncUI() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var isDark = cur === 'dark';
-      var icon = btn.querySelector('.theme-icon');
-      var label = btn.querySelector('.theme-label');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-pressed', isDark);
-    }
-    syncUI();
-    btn.addEventListener('click', function() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncUI();
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-})();
 </script>
 </body>
 </html>

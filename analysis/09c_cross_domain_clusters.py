@@ -144,7 +144,11 @@ def cluster_systems(C: pd.DataFrame, k: int = 5):
     profiles = result.groupby("cluster")[cols].mean().round(2)
     profiles["n"] = result.groupby("cluster").size()
     profiles["science_mean"] = result.groupby("cluster")["science"].mean().round(0)
-    profiles["label"] = profiles.apply(lambda r: name_cluster(r, cols), axis=1)
+    # Label from STANDARDISED cluster means, the same unit-variance scale the clustering used.
+    # Composites are averages of several z-scores, so their raw SDs differ (0.56 to 1.0) and
+    # ranking raw means would favour the high-variance composites.
+    zmeans = pd.DataFrame(Zs, index=D.index, columns=cols).assign(cluster=labels).groupby("cluster")[cols].mean()
+    profiles["label"] = zmeans.apply(lambda r: name_cluster(r, cols), axis=1)
     profiles["systems"] = result.groupby("cluster").apply(lambda g: ", ".join(sorted(g.index)))
     profiles.attrs["var_explained"] = float(var_explained.sum())
     return cols, result, profiles

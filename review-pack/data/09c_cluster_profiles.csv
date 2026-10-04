@@ -1,0 +1,6 @@
+cluster,resources,capacity,learning_time_school,leisure_at_school,leisure_outside_school,distraction,rules,ai_use,ai_guidance,n,science_mean,label
+1,0.69,0.38,-0.06,0.14,0.98,-0.09,-0.28,0.06,0.33,22,479.0,"high leisure outside school, high resources"
+2,0.01,0.68,0.99,0.14,-0.16,0.05,0.2,0.26,0.8,21,438.0,"high learning time school, high AI guidance"
+3,-0.92,-1.08,-0.32,0.42,-0.7,0.91,-0.34,0.49,-0.54,14,390.0,"low capacity, low resources"
+4,0.45,-0.3,-0.33,-1.51,-0.76,-1.5,0.13,-2.86,-2.54,4,536.0,"low AI use, low AI guidance"
+5,-0.08,-0.26,-0.71,-0.58,-0.08,-0.29,0.36,-0.01,-0.29,22,446.0,"low learning time school, high rules"

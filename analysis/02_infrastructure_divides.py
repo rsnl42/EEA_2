@@ -86,9 +86,12 @@ def extract(wb: Workbook) -> tuple[pd.DataFrame, pd.DataFrame]:
                 "n_systems": s.gap.notna().sum(),
                 "n_sig_expected": int(((s.favorability_gap > 0) & s.sig).sum()),
                 "n_sig_flipped": int(((s.favorability_gap < 0) & s.sig).sum()),
-                "n_not_sig": int((~s.sig).sum()),
+                # only systems WITH a gap can be "not significant": a missing gap is not a null result
+                "n_not_sig": int((s.gap.notna() & ~s.sig).sum()),
             })
     summary = pd.DataFrame(summary_rows)
+    assert (summary.n_sig_expected + summary.n_sig_flipped + summary.n_not_sig == summary.n_systems).all(), \
+        "significance counts do not add up to n_systems"
     return long_df, summary
 
 

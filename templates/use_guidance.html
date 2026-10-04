@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: does school guidance keep pace with AI use?</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-<script>
-(function(){
-  var t = localStorage.getItem('theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 <style>
 %%BASE_CSS%%
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
@@ -32,12 +26,7 @@ table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line
 </head>
 <body>
 <main>
-<div class="top-bar">
-  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
-  </button>
-</div>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
 <h1>Does school guidance keep pace with student AI use?</h1>
 <p class="sub">PISA 2025, up to 85 education systems. How many students use AI for schoolwork, against how many are asked in lessons to judge what AI tells them. OECD averages first.</p>
 <div class="facts" id="facts"></div>
@@ -85,7 +74,7 @@ $('lgd').innerHTML=QN.map((q,i)=>`<span><i style="background:${QC[i]}"></i>${q} 
 $('pick').innerHTML='<option value="">Choose a system</option>'+ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
 function nice(r){for(const v of[1,2,5,10,20,50]){if(r/v<=8)return v}return 50}
 const ln=(x1,y1,x2,y2,c,w,d)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${c};stroke-width:${w||1}${d?';stroke-dasharray:'+d:''}"/>`;
-const tx=(x,y,t,a,sz,c,wt)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" style="font-size:${sz||11}px;fill:${c||'var(--mut)'}${wt?';font-weight:'+wt:''}">${t}</text>`;
+const tx=(x,y,t,a,sz,c,wt,halo)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" style="font-size:${sz||11}px;fill:${c||'var(--mut)'}${wt?';font-weight:'+wt:''}${halo?';paint-order:stroke fill;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round':''}">${t}</text>`;
 function labelSet(){
  const s=new Set();if(sel)s.add(sel);
  if(view==='A'){ROWS.slice().sort((a,b)=>a.res-b.res).slice(0,4).forEach(r=>s.add(r.n));ROWS.slice().sort((a,b)=>b.res-a.res).slice(0,2).forEach(r=>s.add(r.n))}
@@ -103,19 +92,19 @@ function scatter(){
  if(A){
   s+=ln(xs(OE.use_any),T,xs(OE.use_any),H-B,'var(--mut)',1,'4 4')+ln(L,ys(OE.guid),W-R,ys(OE.guid),'var(--mut)',1,'4 4');
   s+=ln(xs(xr[0]),ys(ST.ols.a+ST.ols.b*xr[0]),xs(xr[1]),ys(ST.ols.a+ST.ols.b*xr[1]),'var(--ink)',1);
-  s+=tx(xs(OE.use_any)+4,T+10,'OECD average','start',11,'var(--sec)');
+  s+=tx(xs(OE.use_any)+4,T+10,'OECD average','start',11,'var(--sec)',400,true);
  }else{
-  s+=ln(xs(50),ys(50),xs(92),ys(92),'var(--mut)',1,'4 4')+tx(xs(88),ys(92)-6,'equal','end',11,'var(--sec)');
+  s+=ln(xs(50),ys(50),xs(92),ys(92),'var(--mut)',1,'4 4')+tx(xs(88),ys(92)-6,'equal','end',11,'var(--sec)',400,true);
   const px=xs(OE.online),py=ys(OE.guid);
   s+=`<path d="M${px} ${py-6}L${px+6} ${py}L${px} ${py+6}L${px-6} ${py}Z" style="fill:var(--ink)"><title>OECD average: online ${OE.online}%, AI ${OE.guid}%</title></path>`;
  }
- const lab=labelSet(),offs=[[7,4,'start'],[-7,-4,'end'],[7,-6,'start']];let k=0;
+ const lab=labelSet(),offs=[[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']];let k=0;
  ROWS.forEach(r=>{
   const cx=xs(A?r.u:r.o),cy=ys(r.g),on=r.n===sel;
   s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: used AI ${f1(r.u)}%, assess AI ${f1(r.g)}%, assess online ${f1(r.o)}%</title>`;
   if(on)s+=`<circle cx="${cx}" cy="${cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:2"/>`;
   s+=`<circle cx="${cx}" cy="${cy}" r="${on?5:4}" style="fill:${QC[r.q]};fill-opacity:.9"/></g>`;
-  if(lab.has(r.n)){const o=offs[k++%3];s+=tx(cx+o[0],cy+o[1],short(r.n),o[2],11,'var(--ink)',on?500:400)}
+  if(lab.has(r.n)){const o=offs[k++%4];s+=tx(cx+o[0],cy+o[1],short(r.n),o[2],11,'var(--ink)',on?600:400,true)}
  });
  $('plot').innerHTML=s+'</svg>';
  $('plot').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>choose(g.dataset.n)));
@@ -175,38 +164,8 @@ $('metric').addEventListener('change',e=>{metric=e.target.value;render()});
 $('pick').addEventListener('change',e=>{sel=e.target.value;render()});
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,150)});
 render();
-</script>
-<script>
-(function(){
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function syncUI() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var isDark = cur === 'dark';
-      var icon = btn.querySelector('.theme-icon');
-      var label = btn.querySelector('.theme-label');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-pressed', isDark);
-    }
-    syncUI();
-    btn.addEventListener('click', function() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncUI();
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-})();
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n)choose(n);}})();
 </script>
 </body>
 </html>

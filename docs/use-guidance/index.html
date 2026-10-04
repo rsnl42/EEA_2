@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: does school guidance keep pace with AI use?</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-<script>
-(function(){
-  var t = localStorage.getItem('theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --bg:#f6f7f9;--surface:#fff;--ink:#14181f;--sec:#4a5361;--mut:#7b8494;--line:#dfe3ea;--hi:#2a78d6;--lo:#e34948;--ns:#8a8f99;--hib:42,120,214;--lob:227,73,72;
@@ -124,12 +118,7 @@ table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line
 </head>
 <body>
 <main>
-<div class="top-bar">
-  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
-  </button>
-</div>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
 <h1>Does school guidance keep pace with student AI use?</h1>
 <p class="sub">PISA 2025, up to 85 education systems. How many students use AI for schoolwork, against how many are asked in lessons to judge what AI tells them. OECD averages first.</p>
 <div class="facts" id="facts"></div>
@@ -160,7 +149,7 @@ table.sys td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line
 <footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.53, 55, 67 and 68. "Used AI" means at least one of four schoolwork purposes; "AI guidance" means students said they assess the quality of chatbot-generated information in lessons at least sometimes. Use and guidance are country shares from different questions, not the same students, and the comparisons are correlational across systems. Groups compare each system with the OECD average; "significantly" means a 95% confidence interval that excludes it. Systems marked * carry comparability flags in the source.</footer>
 </main>
 <script>
-const ROWS=[["B-S-J-Z (China)",82.33,44.64,63.16,2,-14.11,2],["Singapore",95.59,81.03,88.61,0,8.23,0],["Macao (China)",95.31,74.54,78.66,0,2.04,0],["Chinese Taipei",84.06,65.87,71.14,3,5.29,3],["Japan",60.93,31.16,53.71,2,-4.89,2],["Estonia",92.69,72.51,74.75,0,2.78,0],["Korea",87.81,66.52,68.75,0,1.96,0],["United Kingdom",71.72,42.38,69.92,2,-5.11,2],["Canada*",77.3,56.22,85.11,2,2.8,2],["New Zealand*",83.77,64.56,89.16,3,4.29,3],["Australia",85.08,68.32,90.95,3,6.67,3],["Finland",74.05,60.97,83.21,2,11.01,2],["United States*",79.31,56.33,88.76,2,0.8,2],["Switzerland",91.33,69.02,76.31,0,0.73,0],["Ireland",72.48,47.18,81.8,2,-1.12,2],["Austria",88.67,62.78,70.16,0,-2.69,0],["Hong Kong (China)",92.76,69.34,80.34,0,-0.46,0],["Poland",90.14,62.4,75.28,1,-4.61,0],["Türkiye",91.85,68.06,84.65,0,-0.78,0],["Czechia",87.93,70.04,75.17,0,5.37,0],["Belgium",89.84,58.57,69.44,1,-8.13,1],["Lithuania",91.39,73.94,82.08,0,5.6,0],["Germany",91.02,59.34,67.76,1,-8.62,1],["Netherlands*",86.57,55.39,72.17,1,-7.85,0],["Sweden",83.46,64.9,90.04,3,4.96,3],["Slovenia",89.54,63.71,69.23,0,-2.68,0],["France",84.77,46.84,66.8,2,-14.49,2],["Italy",90.97,73.67,81.22,0,5.77,0],["Portugal",92.19,57.4,73.66,1,-11.79,1],["Hungary",83.64,60.98,57.29,2,0.85,0],["Denmark",84.14,69.06,92.11,3,8.4,3],["Spain",91.81,59.53,75.19,1,-9.27,1],["Croatia",87.15,69.22,79.84,0,5.37,0],["Slovak Republic",89.07,71.11,80.54,0,5.23,0],["Luxembourg",88.94,65.8,73.63,0,0.05,0],["Norway*",88.54,74.32,92.71,0,8.99,0],["Latvia",92.05,79.11,84.39,0,10.07,0],["United Arab Emirates",94.73,81.72,87.06,0,9.82,0],["Viet Nam",95.86,69.95,88.83,0,-3.14,0],["Malta",90.54,61.94,70.25,1,-5.5,0],["Uruguay",92.8,65.31,82.76,0,-4.53,0],["Chile",93.5,61.54,80.07,1,-9.05,0],["Israel",90.56,63.01,76.69,0,-4.46,0],["Iceland",82.06,72.84,93.57,3,14.39,3],["Brunei Darussalam",93.86,73.44,84.47,0,2.48,0],["Uzbekistan",91.27,80.58,86.83,0,12.35,0],["Montenegro",87.38,57.9,73.78,1,-6.19,1],["Albania*",92.46,81.56,93.1,0,12.07,0],["Qatar",89.69,68.6,77.42,0,2.05,0],["Greece",83.84,60.74,69.82,2,0.4,2],["Thailand",95.5,68.88,90.76,0,-3.83,0],["Serbia",87.86,61.61,69.27,1,-2.99,0],["Romania",90.56,72.63,83.21,0,5.16,0],["Mongolia",91.95,74.27,84.23,0,5.32,0],["Costa Rica",90.26,66.14,82.9,0,-1.01,0],["Georgia",86.4,69.33,80.12,0,6.27,0],["Moldova",92.57,74.22,84.2,0,4.62,0],["Bulgaria",86.34,71.27,80.73,0,8.27,0],["Kazakhstan",92.13,80.19,88.46,0,11.06,0],["Malaysia",93.58,70.81,81.85,0,0.15,0],["Colombia",93.74,63.53,80.68,0,-7.31,0],["Mexico",91.71,59.25,86.3,1,-9.44,1],["Saudi Arabia",91.65,74.85,82.19,0,6.23,0],["Cyprus",85.01,67.64,72.15,3,6.06,3],["Azerbaijan",91.53,76.09,83.87,0,7.59,0],["Brazil",88.72,51.23,66.4,1,-14.28,1],["Jordan",87.66,59.17,76.1,1,-5.22,1],["Peru",91.99,55.33,72.1,1,-13.65,1],["Ecuador",93.24,61.21,78.88,1,-9.1,1],["Argentina",90.42,60.71,79.46,1,-6.6,1],["Indonesia",92.63,73.17,83.61,0,3.51,0],["El Salvador",89.12,60.53,79.22,1,-5.4,1],["North Macedonia",89.84,75.47,83.75,0,8.76,0],["Philippines",95.19,70.8,89.17,0,-1.58,0],["Lebanon",94.14,73.66,81.57,0,2.4,0],["Armenia",89.72,75.95,78.73,0,9.37,0],["Kyrgyzstan",93.71,74.85,88.35,0,4.05,0],["Dominican Republic",90.59,64.69,79.32,0,-2.81,0],["Palestinian Authority",87.71,61.37,80.63,1,-3.08,0],["Morocco",91.39,52.72,68.52,1,-15.62,1],["Kosovo",93.11,76.65,85.94,0,6.48,0],["Paraguay",89.52,53.73,76.16,1,-12.64,1],["Guatemala",88.61,52.55,77.18,1,-12.85,1],["Kenya",86.86,55.51,67.73,1,-8.03,0],["Ukrainian regions (17 of 27)",91.95,77.71,87.71,0,8.77,0]].map(r=>({n:r[0],u:r[1],g:r[2],o:r[3],q:r[4],res:r[5],f:r[6],lag:r[3]-r[2],gap:r[1]-r[2]}));
+const ROWS=[["B-S-J-Z (China)",82.3309,44.636,63.1616,2,-14.1063,2],["Singapore",95.5858,81.0253,88.6108,0,8.2308,0],["Macao (China)",95.3103,74.5396,78.6577,0,2.0372,0],["Chinese Taipei",84.0601,65.8667,71.1371,3,5.2912,3],["Japan",60.9276,31.1621,53.711,2,-4.8895,2],["Estonia",92.6917,72.5108,74.7535,0,2.7845,0],["Korea",87.8136,66.5166,68.7526,0,1.9618,0],["United Kingdom",71.7152,42.3816,69.9234,2,-5.1064,2],["Canada*",77.3023,56.2154,85.1115,2,2.8042,2],["New Zealand*",83.7724,64.5592,89.155,3,4.2886,3],["Australia",85.0787,68.3221,90.9509,3,6.6667,3],["Finland",74.0491,60.9705,83.2128,2,11.0081,2],["United States*",79.3072,56.332,88.761,2,0.7954,2],["Switzerland",91.3322,69.0185,76.313,0,0.7334,0],["Ireland",72.483,47.1839,81.8021,2,-1.1181,2],["Austria",88.6738,62.7766,70.1571,0,-2.6901,0],["Hong Kong (China)",92.7601,69.3368,80.3386,0,-0.462,0],["Poland",90.1351,62.402,75.2771,1,-4.614,0],["Türkiye",91.851,68.0577,84.6476,0,-0.7774,0],["Czechia",87.9261,70.0411,75.1698,0,5.367,0],["Belgium",89.8354,58.5682,69.4355,1,-8.1301,1],["Lithuania",91.3857,73.9376,82.0775,0,5.5958,0],["Germany",91.0225,59.3389,67.7574,1,-8.6178,1],["Netherlands*",86.5691,55.387,72.168,1,-7.8484,0],["Sweden",83.4628,64.8984,90.0393,3,4.9561,3],["Slovenia",89.5409,63.7065,69.2296,0,-2.6795,0],["France",84.7696,46.8415,66.8016,2,-14.4862,2],["Italy",90.9711,73.6683,81.2165,0,5.7661,0],["Portugal",92.1855,57.4032,73.6572,1,-11.7864,1],["Hungary",83.6407,60.9787,57.286,2,0.8478,0],["Denmark",84.1401,69.0598,92.1135,3,8.3994,3],["Spain",91.8127,59.5272,75.195,1,-9.2672,1],["Croatia",87.1541,69.2228,79.8409,0,5.3672,0],["Slovak Republic",89.0683,71.1127,80.5397,0,5.2277,0],["Luxembourg",88.941,65.7956,73.629,0,0.0456,0],["Norway*",88.5434,74.3209,92.7149,0,8.9925,0],["Latvia",92.0455,79.1101,84.3869,0,10.0688,0],["United Arab Emirates",94.7349,81.7154,87.0594,0,9.8229,0],["Viet Nam",95.8614,69.951,88.8294,0,-3.1357,0],["Malta",90.5355,61.9354,70.2509,1,-5.505,0],["Uruguay",92.7997,65.3059,82.7601,0,-4.5349,0],["Chile",93.5022,61.5359,80.0705,1,-9.0497,0],["Israel",90.5644,63.0121,76.6945,0,-4.459,0],["Iceland",82.0567,72.8429,93.5657,3,14.3914,3],["Brunei Darussalam",93.8612,73.4424,84.4745,0,2.4762,0],["Uzbekistan",91.2732,80.5759,86.8289,0,12.3534,0],["Montenegro",87.3753,57.9023,73.7753,1,-6.1878,1],["Albania*",92.463,81.5578,93.0978,0,12.074,0],["Qatar",89.691,68.5998,77.4223,0,2.0547,0],["Greece",83.8366,60.7408,69.8175,2,0.4022,2],["Thailand",95.5043,68.8764,90.7561,0,-3.8317,0],["Serbia",87.8582,61.6096,69.2741,1,-2.9925,0],["Romania",90.5577,72.6273,83.2101,0,5.1633,0],["Mongolia",91.9525,74.2674,84.2284,0,5.3248,0],["Costa Rica",90.263,66.1426,82.897,0,-1.0089,0],["Georgia",86.399,69.327,80.1201,0,6.2718,0],["Moldova",92.5701,74.2183,84.1969,0,4.6209,0],["Bulgaria",86.3442,71.2659,80.7309,0,8.2689,0],["Kazakhstan",92.1262,80.1861,88.4594,0,11.0592,0],["Malaysia",93.5772,70.8114,81.8505,0,0.1463,0],["Colombia",93.7355,63.5271,80.6843,0,-7.3058,0],["Mexico",91.7095,59.2491,86.2952,1,-9.4359,1],["Saudi Arabia",91.6488,74.8484,82.1895,0,6.2277,0],["Cyprus",85.0064,67.6394,72.1531,3,6.0606,3],["Azerbaijan",91.534,76.0932,83.8654,0,7.5942,0],["Brazil",88.719,51.2302,66.4007,1,-14.2845,1],["Jordan",87.6633,59.1712,76.1043,1,-5.2243,1],["Peru",91.9907,55.3328,72.0984,1,-13.6504,1],["Ecuador",93.2431,61.2064,78.8758,1,-9.1045,1],["Argentina",90.4152,60.7092,79.4591,1,-6.6038,1],["Indonesia",92.6251,73.1665,83.6071,0,3.5108,0],["El Salvador",89.1186,60.5348,79.2182,1,-5.4034,1],["North Macedonia",89.8411,75.4692,83.7511,0,8.765,0],["Philippines",95.1898,70.796,89.1711,0,-1.5786,0],["Lebanon",94.136,73.6606,81.5722,0,2.4031,0],["Armenia",89.7198,75.9488,78.7278,0,9.3731,0],["Kyrgyzstan",93.7054,74.8499,88.3472,0,4.0489,0],["Dominican Republic",90.5897,64.6926,79.3151,0,-2.8053,0],["Palestinian Authority",87.714,61.3705,80.6336,1,-3.0787,0],["Morocco",91.3851,52.7176,68.5191,1,-15.6235,1],["Kosovo",93.1147,76.6528,85.9444,0,6.4781,0],["Paraguay",89.5192,53.7253,76.1639,1,-12.6377,1],["Guatemala",88.6066,52.5502,77.1834,1,-12.8453,1],["Kenya",86.8602,55.5124,67.7284,1,-8.0316,0],["Ukrainian regions (17 of 27)",91.9471,77.7071,87.7123,0,8.7702,0]].map(r=>({n:r[0],u:r[1],g:r[2],o:r[3],q:r[4],res:r[5],f:r[6],lag:r[3]-r[2],gap:r[1]-r[2]}));
 const ST={"n":85,"oecd":{"use_any":86.3,"guid":62.6,"online":78.1,"lag":15.4,"gap":23.7,"wk_learn":45.5,"guid_reg":34.1},"rho":{"use_any~guid":0.52,"idx~guid":0.48,"wk_learn~guid":0.43,"wk_draft~guid":0.51,"wk_sum~guid":0.42,"wk_res~guid":0.32,"online~guid":0.62,"use_any~lag":-0.27},"r2":{"use":0.4,"online":0.44,"both":0.64},"partial":0.59,"ols":{"a":-28.541,"b":1.06},"resid_sd":7.5,"lag_pos":84,"lag_gt20":15,"lag_median":11.5};
 const OE=ST.oecd;
 const QN=["High use, high guidance","High use, low guidance","Low use, low guidance","Low use, high guidance"];
@@ -177,7 +166,7 @@ $('lgd').innerHTML=QN.map((q,i)=>`<span><i style="background:${QC[i]}"></i>${q} 
 $('pick').innerHTML='<option value="">Choose a system</option>'+ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
 function nice(r){for(const v of[1,2,5,10,20,50]){if(r/v<=8)return v}return 50}
 const ln=(x1,y1,x2,y2,c,w,d)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:${c};stroke-width:${w||1}${d?';stroke-dasharray:'+d:''}"/>`;
-const tx=(x,y,t,a,sz,c,wt)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" style="font-size:${sz||11}px;fill:${c||'var(--mut)'}${wt?';font-weight:'+wt:''}">${t}</text>`;
+const tx=(x,y,t,a,sz,c,wt,halo)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" style="font-size:${sz||11}px;fill:${c||'var(--mut)'}${wt?';font-weight:'+wt:''}${halo?';paint-order:stroke fill;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round':''}">${t}</text>`;
 function labelSet(){
  const s=new Set();if(sel)s.add(sel);
  if(view==='A'){ROWS.slice().sort((a,b)=>a.res-b.res).slice(0,4).forEach(r=>s.add(r.n));ROWS.slice().sort((a,b)=>b.res-a.res).slice(0,2).forEach(r=>s.add(r.n))}
@@ -195,19 +184,19 @@ function scatter(){
  if(A){
   s+=ln(xs(OE.use_any),T,xs(OE.use_any),H-B,'var(--mut)',1,'4 4')+ln(L,ys(OE.guid),W-R,ys(OE.guid),'var(--mut)',1,'4 4');
   s+=ln(xs(xr[0]),ys(ST.ols.a+ST.ols.b*xr[0]),xs(xr[1]),ys(ST.ols.a+ST.ols.b*xr[1]),'var(--ink)',1);
-  s+=tx(xs(OE.use_any)+4,T+10,'OECD average','start',11,'var(--sec)');
+  s+=tx(xs(OE.use_any)+4,T+10,'OECD average','start',11,'var(--sec)',400,true);
  }else{
-  s+=ln(xs(50),ys(50),xs(92),ys(92),'var(--mut)',1,'4 4')+tx(xs(88),ys(92)-6,'equal','end',11,'var(--sec)');
+  s+=ln(xs(50),ys(50),xs(92),ys(92),'var(--mut)',1,'4 4')+tx(xs(88),ys(92)-6,'equal','end',11,'var(--sec)',400,true);
   const px=xs(OE.online),py=ys(OE.guid);
   s+=`<path d="M${px} ${py-6}L${px+6} ${py}L${px} ${py+6}L${px-6} ${py}Z" style="fill:var(--ink)"><title>OECD average: online ${OE.online}%, AI ${OE.guid}%</title></path>`;
  }
- const lab=labelSet(),offs=[[7,4,'start'],[-7,-4,'end'],[7,-6,'start']];let k=0;
+ const lab=labelSet(),offs=[[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']];let k=0;
  ROWS.forEach(r=>{
   const cx=xs(A?r.u:r.o),cy=ys(r.g),on=r.n===sel;
   s+=`<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: used AI ${f1(r.u)}%, assess AI ${f1(r.g)}%, assess online ${f1(r.o)}%</title>`;
   if(on)s+=`<circle cx="${cx}" cy="${cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:2"/>`;
   s+=`<circle cx="${cx}" cy="${cy}" r="${on?5:4}" style="fill:${QC[r.q]};fill-opacity:.9"/></g>`;
-  if(lab.has(r.n)){const o=offs[k++%3];s+=tx(cx+o[0],cy+o[1],short(r.n),o[2],11,'var(--ink)',on?500:400)}
+  if(lab.has(r.n)){const o=offs[k++%4];s+=tx(cx+o[0],cy+o[1],short(r.n),o[2],11,'var(--ink)',on?600:400,true)}
  });
  $('plot').innerHTML=s+'</svg>';
  $('plot').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>choose(g.dataset.n)));
@@ -267,38 +256,8 @@ $('metric').addEventListener('change',e=>{metric=e.target.value;render()});
 $('pick').addEventListener('change',e=>{sel=e.target.value;render()});
 let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,150)});
 render();
-</script>
-<script>
-(function(){
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function syncUI() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var isDark = cur === 'dark';
-      var icon = btn.querySelector('.theme-icon');
-      var label = btn.querySelector('.theme-label');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-pressed', isDark);
-    }
-    syncUI();
-    btn.addEventListener('click', function() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncUI();
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-})();
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n)choose(n);}})();
 </script>
 </body>
 </html>

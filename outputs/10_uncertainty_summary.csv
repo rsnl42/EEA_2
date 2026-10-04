@@ -1,0 +1,11 @@
+indicator,label,n,z_bonf,pairs_sig,pairs_sig_bonf,adjacent_sig,adjacent_sig_bonf,median_rank_width,contain,mean_unweighted,mean_fe,se_fe,mean_re,se_re,tau,I2,n_eff,top_name,top_share,tiny_se
+ai_index,AI-use index (mean),85,3.4338,84.7339,74.3137,8.3333,4.7619,10.0,100.0,0.1041,0.1255,0.0017,0.1043,0.022,0.2024,99.4132,69.894,Kazakhstan,3.4181,
+ai_never,Never used AI for any purpose (%),85,3.4338,81.8768,68.7395,3.5714,2.381,12.0,100.0,11.2278,9.1572,0.0462,11.1725,0.4421,4.0425,98.8951,60.6688,United Arab Emirates,4.0626,
+no_draft,Never use AI to draft texts (%),85,3.4338,86.9748,77.2549,4.7619,3.5714,9.0,100.0,27.1981,24.6853,0.0693,27.1745,0.9104,8.3616,99.4178,64.7169,United Arab Emirates,4.5877,
+no_learn,Never use AI to help them learn (%),85,3.4338,84.0616,71.3725,5.9524,1.1905,12.0,100.0,17.5965,15.1452,0.0574,17.5621,0.615,5.6357,99.1223,56.9216,United Arab Emirates,6.6574,
+assess_ai,Asked to assess AI output (%),85,3.4338,85.7423,76.0224,2.381,2.381,10.0,100.0,65.5711,68.0234,0.0815,65.5843,1.0553,9.693,99.3994,61.1382,United Arab Emirates,6.1587,
+distraction,Peers distracted by digital devices in most or every science lesson (%),85,3.4338,87.7871,78.4874,4.7619,3.5714,8.0,100.0,26.7068,22.5476,0.0736,26.6908,1.1397,10.4777,99.5788,52.1651,B-S-J-Z (China),7.2,
+capacity,School capacity to teach digitally (index),91,3.4524,84.0049,72.3077,2.2222,0.0,10.0,100.0,-0.1756,0.1478,0.0005,-0.1766,0.0499,0.4722,99.9846,3.0296,Luxembourg,49.3938,Macao (China); Luxembourg; Malta; Iceland; Brunei Darussalam; Dushanbe (Tajikistan)
+lack_res,Schools lacking digital resources (%),89,3.4464,81.3585,67.4157,2.2727,1.1364,14.0,100.0,31.926,5.1214,0.0138,31.6628,1.7119,15.9159,99.9746,1.3503,Luxembourg,85.6738,Macao (China); Luxembourg; Malta; Iceland; Brunei Darussalam; Qatar
+poor_res,Schools with inadequate digital resources (%),89,3.4464,79.571,64.811,1.1364,1.1364,14.0,100.0,31.7466,9.444,0.0177,31.4477,1.5891,14.7337,99.9766,2.187,Luxembourg,65.5544,Macao (China); Denmark; Luxembourg; Malta; Iceland; Brunei Darussalam; Qatar
+computers,Computer availability (mean ratio),89,3.4464,84.9847,73.9019,3.4091,1.1364,9.0,100.0,6.5902,5.2824,0.0035,6.5177,0.3854,3.6089,99.9895,4.5619,North Macedonia,34.9865,Macao (China); Luxembourg; Malta; Iceland; Brunei Darussalam; Montenegro; North Macedonia

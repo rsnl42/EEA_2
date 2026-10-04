@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: Where does school capacity actually break down?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:30ch}
+.pagetabs{display:flex;gap:6px;margin:0 0 16px}
+.pagetabs button{font:inherit;font-size:14px;padding:8px 14px;border-radius:7px 7px 0 0;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--sec);cursor:pointer}
+.pagetabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+.panel{display:none}
+.panel.on{display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px}
+.tabs select{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:5px;padding:5px 8px;background:var(--surface);color:var(--ink)}
+.tabs label{font-size:12px;color:var(--sec)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;margin:0 0 16px}
+.note{font-size:12px;color:var(--sec);margin:4px 0 12px}
+table.rank{border-collapse:collapse;font-size:13px;width:100%;max-width:100%}
+table.rank th{font-weight:600;color:var(--sec);text-align:left;padding:6px 8px;border-bottom:2px solid var(--line)}
+table.rank td{padding:6px 8px;border-bottom:1px solid var(--line);color:var(--ink)}
+table.rank tr:hover{background:rgba(0,0,0,0.02)}
+.badge-tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;background:var(--tag-infra-bg);color:var(--tag-infra-fg);font-weight:500}
+.ccards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:0 0 16px}
+.ccard{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px;cursor:pointer;text-align:left;font:inherit}
+.ccard:hover,.ccard[aria-pressed="true"]{border-color:var(--hi);background:var(--bg)}
+.ccard b{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
+.ccard span{display:block;font-size:12px;color:var(--sec)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+table.sys{border-collapse:collapse;font-size:13px;width:100%;margin-top:10px}
+table.sys th{text-align:left;padding:6px 8px;border-bottom:2px solid var(--line);color:var(--sec)}
+table.sys td{padding:5px 8px;border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main>
+<div class="top-bar">
+ <nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+ <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme"><span>&#9790;</span> Switch Theme</button>
+</div>
+<h1>Where does school capacity actually break down?</h1>
+<p class="sub">PISA 2025, Table I.B1.4.14 across 91 education systems. We examine 12 dimensions behind school digital capacity &mdash; from connectivity and computing power to teacher skills, prep time, professional development, and incentives &mdash; to identify recurring bottlenecks.</p>
+
+<div class="facts" id="facts"></div>
+
+<div class="pagetabs" role="tablist">
+ <button id="tabWeak" role="tab" aria-pressed="true">Weakest Links by System</button>
+ <button id="tabItem" role="tab" aria-pressed="false">12-Item Sufficiency</button>
+ <button id="tabClus" role="tab" aria-pressed="false">Capacity Archetypes</button>
+</div>
+
+<section class="panel on" id="panelWeak">
+ <div class="card">
+  <h2>Weakest Capacity Item per System</h2>
+  <p class="note">Filter by item or search to see which systems experience a given bottleneck. <strong>Absolute weakest</strong> is the lowest raw agreement %; <strong>relative weakest</strong> is the dimension furthest below the system's own mean profile (z-score).</p>
+  <div class="tabs">
+   <label for="weakPick">Filter by Weakest Item:</label>
+   <select id="weakPick"><option value="">All Capacity Items</option></select>
+  </div>
+  <div style="overflow-x:auto">
+   <table class="rank" id="weakTable">
+    <thead>
+     <tr>
+      <th>System</th>
+      <th>Absolute Weakest Link</th>
+      <th>Agreement %</th>
+      <th>Relative Weakest Link</th>
+      <th>Relative z-score</th>
+      <th>Cluster Archetype</th>
+     </tr>
+    </thead>
+    <tbody id="weakTbody"></tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section class="panel" id="panelItem">
+ <div class="card">
+  <h2>Comparing 12 Capacity Items Across OECD</h2>
+  <p class="note">Select a system to compare its capacity profile against the OECD average across all 12 measured dimensions.</p>
+  <div class="tabs">
+   <label for="itemSysPick">Select System:</label>
+   <select id="itemSysPick"></select>
+  </div>
+  <div id="itemBars"></div>
+ </div>
+</section>
+
+<section class="panel" id="panelClus">
+ <div class="card">
+  <h2>Four Capacity Bottleneck Archetypes</h2>
+  <p class="note">Ward clustering on all 12 capacity items identifies 4 distinct system archetypes. Click any archetype card to highlight its member systems on the PCA scatterplot.</p>
+  <div class="ccards" id="cards"></div>
+  <div id="clusPlot" style="min-height:400px"></div>
+  <div id="clusSum" class="note" style="margin-top:10px"></div>
+ </div>
+</section>
+
+<section class="card">
+ <h2>System Lookup</h2>
+ <div class="tabs">
+  <label for="sysPick">Choose a system:</label>
+  <select id="sysPick"><option value="">Select a system...</option></select>
+ </div>
+ <div id="sysOut"></div>
+</section>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), Table I.B1.4.14. Percentages represent school principals reporting that digital capacity in their school is sufficient. Archetypes derived via hierarchical Ward clustering on standardized z-scores across all 12 items.</footer>
+</main>
+
+<script>
+const ITEMS = %%ITEMS%%;
+const OECD = %%OECD%%;
+const ROWS = %%ROWS%%;
+const PROFILES = %%PROFILES%%;
+
+const CCOL = ["#2a78d6", "#166534", "#d97706", "#dc2626"];
+const $ = id => document.getElementById(id);
+const f1 = v => v != null ? Number(v).toFixed(1) : 'n/a';
+const f2 = v => v != null ? Number(v).toFixed(2) : 'n/a';
+const short = n => n.replace(' (China)','').replace(' (17 of 27)','');
+
+// Setup theme toggle
+const themeBtn = $('themeToggleBtn');
+if(themeBtn){
+ themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+ });
+}
+
+// Facts
+$('facts').innerHTML = [
+ ['52.7%', 'OECD average for digital incentives (the lowest capacity item)'],
+ ['35 of 91', 'systems where teacher incentives is the absolute weakest link'],
+ ['4 Archetypes', 'recurring bottleneck shapes across PISA 2025 systems'],
+ ['12 Items', 'detailed school digital readiness dimensions measured']
+].map(x => `<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+
+// Populate dropdowns
+const itemKeys = Object.keys(ITEMS);
+$('weakPick').innerHTML += itemKeys.map(k => `<option value="${k}">${ITEMS[k]}</option>`).join('');
+const sysOptions = '<option value="">Select a system...</option>' + ROWS.map(r => r.n).sort().map(n => `<option>${n}</option>`).join('');
+$('sysPick').innerHTML = sysOptions;
+$('itemSysPick').innerHTML = ROWS.map(r => r.n).sort().map(n => `<option>${n}</option>`).join('');
+
+// Populate Weakest Links Table
+let selWeakItem = '';
+function renderWeakTable(){
+ const filtered = ROWS.filter(r => !selWeakItem || r.weak_abs === selWeakItem || r.weak_rel === selWeakItem);
+ $('weakTbody').innerHTML = filtered.map(r => `
+  <tr>
+   <td><strong>${r.n}</strong></td>
+   <td>${ITEMS[r.weak_abs] || r.weak_abs}</td>
+   <td>${f1(r.weak_abs_pct)}%</td>
+   <td>${ITEMS[r.weak_rel] || r.weak_rel}</td>
+   <td>${f2(r.weak_rel_z)}</td>
+   <td><span class="badge-tag" style="background:${CCOL[(r.cluster-1)%4]}22;color:${CCOL[(r.cluster-1)%4]}">Cluster ${r.cluster}</span></td>
+  </tr>
+ `).join('');
+}
+$('weakPick').addEventListener('change', e => { selWeakItem = e.target.value; renderWeakTable(); });
+renderWeakTable();
+
+// Render 12 Item Sufficiency Bars
+function renderItemBars(sysName){
+ const sys = ROWS.find(r => r.n === sysName) || ROWS[0];
+ const html = itemKeys.map(k => {
+  const oecdVal = OECD[k] || 0;
+  const sysVal = sys[k] || 0;
+  return `
+   <div style="margin:10px 0">
+    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
+     <span><strong>${ITEMS[k]}</strong></span>
+     <span>${sys.n}: <strong>${f1(sysVal)}%</strong> (OECD: ${f1(oecdVal)}%)</span>
+    </div>
+    <div style="position:relative;background:var(--line);height:14px;border-radius:4px;overflow:hidden">
+     <div style="position:absolute;left:0;top:0;bottom:0;width:${Math.min(100,sysVal)}%;background:var(--hi);opacity:0.85"></div>
+     <div style="position:absolute;left:${Math.min(100,oecdVal)}%;top:0;bottom:0;width:2px;background:var(--ink)"></div>
+    </div>
+   </div>
+  `;
+ }).join('');
+ $('itemBars').innerHTML = html;
+}
+$('itemSysPick').addEventListener('change', e => renderItemBars(e.target.value));
+renderItemBars(ROWS[0]?.n || '');
+
+// Cluster PCA Scatter
+let selCluster = null, selSys = '';
+$('cards').innerHTML = PROFILES.map((p, i) => `
+ <button class="ccard" data-c="${p.cluster}" aria-pressed="false">
+  <b><span class="dot" style="background:${CCOL[i]}"></span>Cluster ${p.cluster} (n=${p.n})</b>
+  <span>${p.label}</span>
+  <span>Science mean: ${p.science_mean}</span>
+ </button>
+`).join('');
+
+function renderClusterScatter(){
+ const W = Math.max($('clusPlot').clientWidth, 340), H = 420, L = 44, R = 16, T = 10, B = 42;
+ const xs_ = ROWS.map(r => r.pc1), ys_ = ROWS.map(r => r.pc2);
+ let xlo = Math.min(...xs_), xhi = Math.max(...xs_), ylo = Math.min(...ys_), yhi = Math.max(...ys_);
+ const xp = (xhi - xlo) * 0.08, yp = (yhi - ylo) * 0.08; xlo -= xp; xhi += xp; ylo -= yp; yhi += yp;
+ const xs = v => L + (v - xlo) / (xhi - xlo) * (W - L - R);
+ const ys = v => H - B - (v - ylo) / (yhi - ylo) * (H - B - T);
+
+ let s = `<svg width="${W}" height="${H}" role="img" aria-label="PCA scatter of capacity clusters">`;
+ s += `<line x1="${xs(0)}" y1="${T}" x2="${xs(0)}" y2="${H-B}" style="stroke:var(--line);stroke-width:0.5"/>`;
+ s += `<line x1="${L}" y1="${ys(0)}" x2="${W-R}" y2="${ys(0)}" style="stroke:var(--line);stroke-width:0.5"/>`;
+ s += `<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--sec)">PC1 (General Capacity level)</text>`;
+ s += `<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">PC2 (Teacher vs Device ratio)</text>`;
+
+ const lab = new Set(selSys ? [selSys] : []);
+ const labPts = ROWS.slice().sort((a,b) => Math.abs(b.pc1*b.pc2) - Math.abs(a.pc1*a.pc2)).slice(0,5).map(r=>r.n);
+ labPts.forEach(n => lab.add(n));
+
+ const offs = [[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']]; let k = 0;
+ ROWS.forEach(r => {
+  const dim = selCluster != null && r.cluster !== selCluster;
+  const on = r.n === selSys;
+  const cx = xs(r.pc1), cy = ys(r.pc2);
+  s += `<g style="cursor:pointer" data-n="${r.n}"><title>${r.n}: Cluster ${r.cluster}, Weakest: ${ITEMS[r.weak_abs] || r.weak_abs}</title>`;
+  if(on) s += `<circle cx="${cx}" cy="${cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:2"/>`;
+  s += `<circle cx="${cx}" cy="${cy}" r="${on?6:4}" style="fill:${CCOL[(r.cluster-1)%4]};fill-opacity:${dim?0.15:0.85}"/></g>`;
+  if(lab.has(r.n) && !dim){
+   const o = offs[k++%4];
+   s += `<text x="${cx+o[0]}" y="${cy+o[1]}" text-anchor="${o[2]}" style="font-size:11px;fill:var(--ink);paint-order:stroke fill;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round;pointer-events:none">${short(r.n)}</text>`;
+  }
+ });
+ $('clusPlot').innerHTML = s + '</svg>';
+ $('clusPlot').querySelectorAll('g[data-n]').forEach(g => g.addEventListener('click', () => chooseSys(g.dataset.n)));
+
+ const p = selCluster ? PROFILES.find(p => p.cluster === selCluster) : null;
+ $('clusSum').innerHTML = p
+  ? `<strong>Cluster ${p.cluster}:</strong> ${p.label}. Average Science Score: ${p.science_mean}. Member systems (${p.n}): ${p.systems}.`
+  : `Showing all 91 systems across 4 capacity bottleneck clusters. Click an archetype card or system dot to inspect.`;
+}
+
+document.querySelectorAll('.ccard').forEach(b => {
+ b.addEventListener('click', () => {
+  const c = +b.dataset.c;
+  selCluster = selCluster === c ? null : c;
+  document.querySelectorAll('.ccard').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.c === selCluster)));
+  renderClusterScatter();
+ });
+});
+
+// System Lookup
+function chooseSys(n){
+ selSys = n;
+ $('sysPick').value = n;
+ $('itemSysPick').value = n;
+ renderSys();
+ renderItemBars(n);
+ renderClusterScatter();
+}
+
+function renderSys(){
+ const r = ROWS.find(x => x.n === selSys);
+ if(!r){ $('sysOut').innerHTML = '<p class="note">Select a system above or click a point on the scatterplot.</p>'; return; }
+ const p = PROFILES.find(p => p.cluster === r.cluster);
+ const rows = itemKeys.map(k => `
+  <tr>
+   <td>${ITEMS[k]}</td>
+   <td><strong>${f1(r[k])}%</strong></td>
+   <td>${f1(OECD[k])}%</td>
+   <td>${r[k] != null && OECD[k] != null ? f1(r[k] - OECD[k]) + ' pp' : 'n/a'}</td>
+  </tr>
+ `).join('');
+
+ $('sysOut').innerHTML = `
+  <h3>${r.n} Profile Overview</h3>
+  <p class="note">Assigned to <strong>Cluster ${r.cluster}</strong> (${p ? p.label : ''}). Science mean: <strong>${r.science || 'n/a'}</strong>. Absolute weakest capacity link: <strong>${ITEMS[r.weak_abs] || r.weak_abs} (${f1(r.weak_abs_pct)}%)</strong>.</p>
+  <table class="sys">
+   <thead><tr><th>Capacity Dimension</th><th>${r.n} %</th><th>OECD Average %</th><th>Difference</th></tr></thead>
+   <tbody>${rows}</tbody>
+  </table>
+ `;
+}
+$('sysPick').addEventListener('change', e => chooseSys(e.target.value));
+
+// Tab Navigation
+function setTab(activeTab, activePanel){
+ ['tabWeak','tabItem','tabClus'].forEach(t => $(t).setAttribute('aria-pressed', t === activeTab ? 'true' : 'false'));
+ ['panelWeak','panelItem','panelClus'].forEach(p => $(p).classList.toggle('on', p === activePanel));
+ if(activePanel === 'panelClus') renderClusterScatter();
+}
+$('tabWeak').addEventListener('click', () => setTab('tabWeak', 'panelWeak'));
+$('tabItem').addEventListener('click', () => setTab('tabItem', 'panelItem'));
+$('tabClus').addEventListener('click', () => setTab('tabClus', 'panelClus'));
+
+let rt;
+addEventListener('resize', () => {
+ clearTimeout(rt);
+ rt = setTimeout(() => { if($('panelClus').classList.contains('on')) renderClusterScatter(); }, 150);
+});
+renderClusterScatter();
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n)chooseSys(n);}})();
+</script>
+</body>
+</html>

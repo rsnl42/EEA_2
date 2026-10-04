@@ -13,6 +13,21 @@
 </script>
 <style>
 %%BASE_CSS%%
+/* Dynamic Hero Content Layout: Findings + Mini SVG Chart */
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media(max-width:768px){.hero-content{grid-template-columns:1fr}}
+.findings-col{display:flex;flex-direction:column;gap:10px}
+.finding-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-decoration:none;color:inherit;display:block;transition:border-color 0.15s,box-shadow 0.15s}
+.finding-card:hover{border-color:var(--hi);box-shadow:0 4px 14px rgba(0,0,0,0.06)}
+.finding-num{display:block;font-size:22px;font-weight:700;color:var(--hi);line-height:1.1;margin-bottom:2px}
+.finding-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;color:var(--mut);margin-bottom:4px}
+.finding-insight{font-size:12.5px;color:var(--sec);margin:0;line-height:1.4}
+.finding-link{font-size:11px;color:var(--hi);margin-top:4px;display:inline-block;font-weight:500}
+.chart-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between}
+.chart-card h3{font-size:13px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.chart-card .chart-sub{font-size:11.5px;color:var(--sec);margin:0 0 10px}
+.chart-card svg{display:block;width:100%;height:auto;max-height:160px}
+.chart-card .chart-footer{font-size:11px;color:var(--mut);margin-top:8px;display:flex;justify-content:space-between;align-items:center}
 </style>
 </head>
 <body>
@@ -25,22 +40,54 @@
 </div>
 
 <section class="hero-banner">
-  <h1 class="hero-title">Digital Devices & AI in School</h1>
-  <p class="hero-sub">Interactive policy & research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
+  <h1 class="hero-title">Digital Devices &amp; AI in School</h1>
+  <p class="hero-sub">Interactive policy &amp; research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
   
-  <div class="stats-grid">
-    <div class="stat-card">
-      <span class="stat-num">85+</span>
-      <span class="stat-label">School Systems Analyzed</span>
+  <div class="hero-content">
+%%HERO_CONTENT%%
+  </div>
+</section>
+
+<!-- Country Deep-Dive & Multi-Country Comparison Explorer -->
+<section class="card" id="country-explorer-section" style="margin:24px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+    <div>
+      <h2 style="font-size:18px;font-weight:600;margin:0 0 4px;color:var(--ink)">Country Deep-Dive &amp; Multi-Country Comparison</h2>
+      <p style="font-size:13px;color:var(--sec);margin:0">Instantly view any system's master profile across all 9 digital domains or compare peer countries side by side.</p>
     </div>
-    <div class="stat-card">
-      <span class="stat-num">5</span>
-      <span class="stat-label">Interactive Dashboards</span>
+    <div class="pagetabs" role="tablist" style="margin:0;display:flex;gap:6px">
+      <button id="modeSingle" role="tab" aria-pressed="true" style="font:inherit;font-size:13px;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--sec);cursor:pointer">Single Country Profile</button>
+      <button id="modeCompare" role="tab" aria-pressed="false" style="font:inherit;font-size:13px;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--sec);cursor:pointer">Compare 2+ Countries</button>
     </div>
-    <div class="stat-card">
-      <span class="stat-num">70+</span>
-      <span class="stat-label">OECD Data Tables</span>
+  </div>
+
+  <!-- Single Country View -->
+  <div id="viewSingle" class="panel on">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px">
+      <label for="masterSysPick" style="font-size:13px;font-weight:500;color:var(--sec)">Select Country/System:</label>
+      <select id="masterSysPick" style="font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);max-width:280px"></select>
     </div>
+    <div id="singleCountryOutput"></div>
+  </div>
+
+  <!-- Multi Country Comparison View -->
+  <div id="viewCompare" class="panel" style="display:none">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+      <div>
+        <label style="font-size:13px;font-weight:500;color:var(--sec);display:block;margin-bottom:6px">Select Systems to Compare:</label>
+        <div id="comparePickers" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <select class="comp-select" id="cPick1" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick2" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick3" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick4" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+        </div>
+      </div>
+      <div>
+        <label for="metricPick" style="font-size:13px;font-weight:500;color:var(--sec);display:block;margin-bottom:6px">Comparison Metric:</label>
+        <select id="metricPick" style="font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%"></select>
+      </div>
+    </div>
+    <div id="compareOutput"></div>
   </div>
 </section>
 
@@ -106,11 +153,293 @@
     });
   }
 
+  // 3. Country Deep-Dive & Multi-Country Comparison Explorer
+  // 3. Country Deep-Dive & Multi-Country Comparison Explorer
+  const MASTER_DATA = %%MASTER_DATA%%;
+  const DOMAINS = {
+    resources: "School Resourcing Index",
+    capacity: "Teacher Digital Capacity",
+    ai_use: "Student AI Adoption",
+    ai_guidance: "Teacher AI Guidance",
+    learning_time_school: "Learning Device Time (School)",
+    leisure_at_school: "Leisure Device Time (School)",
+    distraction: "Digital Distraction in Class",
+    rules: "School Device Rules / Restrictions",
+    science: "PISA Science Mean Score"
+  };
+
+  // Colorblind-friendly Okabe-Ito palette
+  const COLORBLIND_PALETTE = [
+    { fill: "#0072B2", border: "#004B75", name: "Deep Blue" },       // Country 1
+    { fill: "#D55E00", border: "#9E4400", name: "Vermilion Red" },  // Country 2
+    { fill: "#009E73", border: "#006B4E", name: "Bluish Green" },   // Country 3
+    { fill: "#CC79A7", border: "#994D77", name: "Reddish Purple" }  // Country 4
+  ];
+
+  const DOMAIN_DASHBOARDS = {
+    resources: "infrastructure-divides",
+    capacity: "capacity-bottlenecks",
+    ai_use: "use-guidance",
+    ai_guidance: "use-guidance",
+    learning_time_school: "time-use",
+    leisure_at_school: "leisure-profiles",
+    distraction: "policy-typologies",
+    rules: "policy-typologies",
+    science: "cross-domain"
+  };
+
+  const CAPACITY_ITEM_NAMES = {
+    devices_connected: "Internet-connected devices",
+    bandwidth: "Internet bandwidth/speed",
+    devices_instruction: "Instructional devices",
+    software: "Educational software",
+    teacher_skills: "Teacher tech skills",
+    teacher_time: "Teacher prep time",
+    pd_resources: "Teacher PD resources",
+    online_platform: "Online learning platform",
+    incentives: "Teacher digital incentives",
+    curriculum_fit: "Curriculum alignment",
+    support_staff: "Tech support staff",
+    device_power: "Computing power"
+  };
+
+  // Ordinal suffix helper (81st, 82nd, 83rd, 84th, etc.)
+  function getOrdinalSuffix(n) {
+    if (n == null) return '';
+    var s = ["th", "st", "nd", "rd"];
+    var v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  // Convert z-score to normal cumulative percentile
+  function zToPercentile(z) {
+    if (z == null) return null;
+    var t = 1 / (1 + 0.2316419 * Math.abs(z));
+    var d = 0.3989423 * Math.exp(-z * z / 2);
+    var p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+    if (z > 0) p = 1 - p;
+    return Math.round(p * 100);
+  }
+
+  function getDomainInsight(key, z) {
+    if (z == null) return "Data not available";
+    var high = z >= 0;
+    switch(key) {
+      case 'resources':
+        return high ? "Abundant tech infrastructure and devices in schools." 
+                    : "Severe shortages of school digital devices and internet.";
+      case 'capacity':
+        return high ? "Teachers have high digital skills and strong technical support." 
+                    : "Teachers face capacity bottlenecks and lack preparation time.";
+      case 'ai_use':
+        return high ? "High student AI adoption for homework and study." 
+                    : "Low AI adoption; very few students use AI tools for school.";
+      case 'ai_guidance':
+        return high ? "Active AI instruction; lessons teach critical AI evaluation." 
+                    : "Low AI guidance; schools rarely teach students to assess AI.";
+      case 'learning_time_school':
+        return high ? "High digital device use for learning during school hours." 
+                    : "Minimal digital device use in school lessons.";
+      case 'leisure_at_school':
+        return high ? "High digital device use for fun/gaming at school." 
+                    : "Low digital leisure during school hours.";
+      case 'distraction':
+        return !high ? "Great learning focus! Students report significantly fewer in-class digital disruptions." 
+                     : "High classroom distraction from digital devices.";
+      case 'rules':
+        return high ? "Strict school device rules and phone bans enforced." 
+                    : "Permissive or un-enforced school device rules.";
+      default:
+        return "Relative standing compared to global OECD average.";
+    }
+  }
+
+  function initCountryExplorer(){
+    var sysKeys = Object.keys(MASTER_DATA).sort();
+    if(!sysKeys.length) return;
+    
+    var masterPick = document.getElementById('masterSysPick');
+    if(masterPick){
+      masterPick.innerHTML = sysKeys.map(function(n){ return '<option>' + n + '</option>'; }).join('');
+      masterPick.value = sysKeys.includes('Singapore') ? 'Singapore' : sysKeys[0];
+      masterPick.addEventListener('change', renderSingleCountry);
+    }
+    
+    var defaultSelects = ['Singapore', 'Estonia', 'Japan', 'OECD average'];
+    for(var i=1; i<=4; i++){
+      var p = document.getElementById('cPick' + i);
+      if(p){
+        p.innerHTML = '<option value="">(None)</option>' + sysKeys.map(function(n){ return '<option>' + n + '</option>'; }).join('');
+        p.value = sysKeys.includes(defaultSelects[i-1]) ? defaultSelects[i-1] : (sysKeys[i-1] || '');
+        p.addEventListener('change', renderCompare);
+      }
+    }
+
+    var metricPick = document.getElementById('metricPick');
+    if(metricPick){
+      metricPick.innerHTML = Object.keys(DOMAINS).map(function(k){ return '<option value="' + k + '">' + DOMAINS[k] + '</option>'; }).join('');
+      metricPick.addEventListener('change', renderCompare);
+    }
+
+    var btnSingle = document.getElementById('modeSingle');
+    var btnCompare = document.getElementById('modeCompare');
+    var viewSingle = document.getElementById('viewSingle');
+    var viewCompare = document.getElementById('viewCompare');
+
+    if(btnSingle && btnCompare){
+      btnSingle.addEventListener('click', function(){
+        btnSingle.setAttribute('aria-pressed', 'true');
+        btnCompare.setAttribute('aria-pressed', 'false');
+        viewSingle.style.display = '';
+        viewCompare.style.display = 'none';
+        renderSingleCountry();
+      });
+      btnCompare.addEventListener('click', function(){
+        btnCompare.setAttribute('aria-pressed', 'true');
+        btnSingle.setAttribute('aria-pressed', 'false');
+        viewCompare.style.display = '';
+        viewSingle.style.display = 'none';
+        renderCompare();
+      });
+    }
+
+    renderSingleCountry();
+  }
+
+  function renderSingleCountry(){
+    var sysName = document.getElementById('masterSysPick').value;
+    var d = MASTER_DATA[sysName];
+    if(!d) return;
+
+    var weakTitle = CAPACITY_ITEM_NAMES[d.weakest_link] || d.weakest_link || 'n/a';
+
+    var html = '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:16px;font-size:12.5px;color:var(--sec)">';
+    html += '<strong style="color:var(--ink)">💡 How to read these scores:</strong> Values are relative standing scores centered at the <strong>OECD Average (0.00)</strong>. A positive score (+1.00) means the country ranks in the top ~16% globally, while a negative score (-1.00) means the bottom ~16%. <em>Note: For distraction, a lower/negative score is better (fewer classroom disruptions).</em>';
+    html += '</div>';
+
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px">';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Science Performance</span><br><span style="font-size:22px;font-weight:700;color:var(--hi)">' + (d.science || 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is ~482</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Student AI Adoption</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.use_any_pct != null ? d.use_any_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 75.0%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Teacher AI Guidance</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.guid_pct != null ? d.guid_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 64.4%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">School Phone Bans</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.phone_ban_pct != null ? d.phone_ban_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 49.5%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Weakest Capacity Bottleneck</span><br><span style="font-size:13px;color:var(--lo);font-weight:700">' + weakTitle + '</span><br><span style="font-size:11px;color:var(--sec)">Lowest school principal agreement</span></div>';
+    html += '</div>';
+
+    html += '<h3 style="font-size:14px;font-weight:600;margin:0 0 12px;color:var(--ink)">Domain-by-Domain Profile &amp; Real-World Meaning</h3>';
+    html += '<div style="display:flex;flex-direction:column;gap:12px">';
+
+    var keys = ['resources','capacity','ai_use','ai_guidance','learning_time_school','leisure_at_school','distraction','rules'];
+    keys.forEach(function(k){
+      var v = d[k];
+      var pct = zToPercentile(v);
+      var insight = getDomainInsight(k, v);
+      var valStr = v != null ? (v > 0 ? '+' : '') + v.toFixed(2) + ' z-score' : 'n/a';
+      var dashSlug = DOMAIN_DASHBOARDS[k] || '';
+      var dashUrl = dashSlug ? '../' + dashSlug + '/#sys=' + encodeURIComponent(sysName) : '#';
+
+      var isGood = k === 'distraction' ? (v != null && v <= 0) : (v != null && v >= 0);
+      var badgeBg = isGood ? 'var(--tag-infra-bg)' : 'var(--tag-policy-bg)';
+      var badgeFg = isGood ? 'var(--tag-infra-fg)' : 'var(--tag-policy-fg)';
+      var barCol = isGood ? '#009E73' : '#D55E00';
+
+      html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:3px">';
+      // Domain name IS the link — ink colour, subtle ↗ arrow suffix
+      html += '<a href="' + dashUrl + '" style="font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;cursor:pointer" title="Open ' + DOMAINS[k] + ' dashboard — ' + sysName + ' pre-selected">' + DOMAINS[k] + ' <span style="font-size:10px;opacity:0.5">↗</span></a>';
+      html += '<div style="display:flex;align-items:center;gap:8px">';
+      if (pct != null) html += '<span style="font-size:11px;padding:2px 8px;border-radius:12px;background:' + badgeBg + ';color:' + badgeFg + ';font-weight:600">' + getOrdinalSuffix(pct) + ' Percentile</span>';
+      html += '<strong style="font-size:12px;color:var(--sec)">' + valStr + '</strong>';
+      html += '</div>';
+      html += '</div>';
+
+      // Insight as subtitle above the bar — replaces the old below-bar explanation
+      html += '<div style="font-size:11.5px;color:var(--sec);line-height:1.4;margin-bottom:7px">💬 ' + insight + '</div>';
+
+      // Bar visual centered at 50% (OECD avg midline)
+      html += '<div style="position:relative;background:var(--line);height:8px;border-radius:4px;overflow:hidden">';
+      html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--mut);z-index:2" title="OECD Average"></div>';
+      if(v != null){
+        if(v >= 0) html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:' + Math.min(50, v * 20) + '%;background:' + barCol + '"></div>';
+        else html += '<div style="position:absolute;right:50%;top:0;bottom:0;width:' + Math.min(50, Math.abs(v) * 20) + '%;background:' + barCol + '"></div>';
+      }
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+
+    document.getElementById('singleCountryOutput').innerHTML = html;
+  }
+
+  function renderCompare(){
+    var selectedSys = [];
+    for(var i=1; i<=4; i++){
+      var val = document.getElementById('cPick' + i).value;
+      if(val && !selectedSys.includes(val)) selectedSys.push(val);
+    }
+    var metricKey = document.getElementById('metricPick').value;
+
+    if(!selectedSys.length){
+      document.getElementById('compareOutput').innerHTML = '<p style="font-size:13px;color:var(--sec)">Select at least one country to compare.</p>';
+      return;
+    }
+
+    var html = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px">';
+    html += '<h3 style="font-size:14px;font-weight:600;margin:0;color:var(--ink)">Comparing: ' + DOMAINS[metricKey] + '</h3>';
+    html += '<div style="display:flex;gap:12px;flex-wrap:wrap">';
+    selectedSys.forEach(function(sys, idx){
+      var palette = COLORBLIND_PALETTE[idx % COLORBLIND_PALETTE.length];
+      html += '<span style="font-size:12px;display:inline-flex;align-items:center;gap:4px;font-weight:500;color:var(--ink)">';
+      html += '<i style="display:inline-block;width:12px;height:12px;border-radius:3px;background:' + palette.fill + '"></i> ' + sys;
+      html += '</span>';
+    });
+    html += '</div>';
+    html += '</div>';
+
+    html += '<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">';
+
+    var maxVal = 1;
+    selectedSys.forEach(function(sys){
+      var v = MASTER_DATA[sys] ? MASTER_DATA[sys][metricKey] : null;
+      if(v != null && Math.abs(v) > maxVal) maxVal = Math.abs(v);
+    });
+
+    selectedSys.forEach(function(sys, idx){
+      var palette = COLORBLIND_PALETTE[idx % COLORBLIND_PALETTE.length];
+      var d = MASTER_DATA[sys] || {};
+      var v = d[metricKey];
+      var pctNum = metricKey === 'science' || metricKey.endsWith('_pct') ? null : zToPercentile(v);
+      var valStr = v != null ? (metricKey.endsWith('_pct') ? v + '%' : (metricKey === 'science' ? v : (v > 0 ? '+' : '') + v.toFixed(2) + ' z-score')) : 'n/a';
+      var pctBar = v != null ? (metricKey === 'science' ? (v / 600 * 100) : (metricKey.endsWith('_pct') ? v : Math.max(5, Math.min(95, 50 + (v / maxVal) * 45)))) : 0;
+
+      html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:6px">';
+      html += '<div style="display:flex;align-items:center;gap:6px"><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + palette.fill + '"></i><strong style="color:var(--ink)">' + sys + '</strong></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px">';
+      if(pctNum != null) html += '<span style="font-size:11px;color:var(--sec)">' + getOrdinalSuffix(pctNum) + ' percentile</span>';
+      html += '<span style="font-weight:700;color:' + palette.fill + '">' + valStr + '</span>';
+      html += '</div>';
+      html += '</div>';
+
+      // Bar visual with high-contrast colorblind-safe palette
+      html += '<div style="background:var(--line);height:12px;border-radius:6px;overflow:hidden;position:relative">';
+      if(!metricKey.endsWith('_pct') && metricKey !== 'science'){
+        html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--mut);z-index:2" title="OECD Average"></div>';
+      }
+      html += '<div style="background:' + palette.fill + ';height:100%;width:' + pctBar + '%;border-radius:6px"></div>';
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+
+    document.getElementById('compareOutput').innerHTML = html;
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); });
+    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); initCountryExplorer(); });
   } else {
     initTheme();
     initFilters();
+    initCountryExplorer();
   }
 })();
 </script>

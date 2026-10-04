@@ -39,8 +39,8 @@ def build(xlsx: Path, out: Path) -> str:
     X, S, O = ug.prepare(Workbook(xlsx))
     flag = np.select([S.sig_mismatch, S.sig_low_low, S.sig_low_high], [1, 2, 3], default=0)
     rows = [
-        [name, round(r.use_any, 2), round(r.guid, 2), round(r.online, 2),
-         QUADRANTS.index(r.quadrant), round(r.resid, 2), int(f)]
+        [name, round(r.use_any, 4), round(r.guid, 4), round(r.online, 4),
+         QUADRANTS.index(r.quadrant), round(r.resid, 4), int(f)]
         for (name, r), f in zip(S.iterrows(), flag)
     ]
     dump = lambda o: json.dumps(o, separators=(",", ":"), ensure_ascii=False)  # noqa: E731

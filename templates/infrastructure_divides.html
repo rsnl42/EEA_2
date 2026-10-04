@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PISA 2025: do richer schools really have better tech?</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-<script>
-(function(){
-  var t = localStorage.getItem('theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
 <style>
 %%BASE_CSS%%
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
@@ -41,12 +35,7 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 </head>
 <body>
 <main>
-<div class="top-bar">
-  <nav class="nav"><a href="../">‹ All dashboards</a></nav>
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
-    <span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>
-  </button>
-</div>
+<nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
 <h1>Do richer schools really have better tech? It depends what you ask.</h1>
 <p class="sub">PISA 2025, up to 91 education systems. We looked at seven measures of school computer/device resourcing and checked, for each one, whether richer schools, city schools and private schools are actually ahead &mdash; or whether the gap runs the other way.</p>
 <div class="facts" id="facts"></div>
@@ -215,38 +204,8 @@ $('pgGrid').addEventListener('click',()=>{$('pgGrid').setAttribute('aria-pressed
 $('pgScore').addEventListener('click',()=>{$('pgScore').setAttribute('aria-pressed','true');$('pgGrid').setAttribute('aria-pressed','false');$('panelScore').classList.add('on');$('panelGrid').classList.remove('on')});
 
 renderGrid();renderRank();renderSys('');
-</script>
-<script>
-(function(){
-  function initTheme() {
-    var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function syncUI() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var isDark = cur === 'dark';
-      var icon = btn.querySelector('.theme-icon');
-      var label = btn.querySelector('.theme-label');
-      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-      if (label) label.textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-pressed', isDark);
-    }
-    syncUI();
-    btn.addEventListener('click', function() {
-      var cur = document.documentElement.getAttribute('data-theme') || 
-        (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncUI();
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-})();
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n){$('pick').value=n;renderSys(n);}}})();
 </script>
 </body>
 </html>

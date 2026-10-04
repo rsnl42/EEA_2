@@ -105,6 +105,21 @@ ul.pages li{background:none;border:none}
 footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 :focus-visible{outline:2px solid var(--hi);outline-offset:2px}
 
+/* Dynamic Hero Content Layout: Findings + Mini SVG Chart */
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media(max-width:768px){.hero-content{grid-template-columns:1fr}}
+.findings-col{display:flex;flex-direction:column;gap:10px}
+.finding-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-decoration:none;color:inherit;display:block;transition:border-color 0.15s,box-shadow 0.15s}
+.finding-card:hover{border-color:var(--hi);box-shadow:0 4px 14px rgba(0,0,0,0.06)}
+.finding-num{display:block;font-size:22px;font-weight:700;color:var(--hi);line-height:1.1;margin-bottom:2px}
+.finding-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;color:var(--mut);margin-bottom:4px}
+.finding-insight{font-size:12.5px;color:var(--sec);margin:0;line-height:1.4}
+.finding-link{font-size:11px;color:var(--hi);margin-top:4px;display:inline-block;font-weight:500}
+.chart-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between}
+.chart-card h3{font-size:13px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.chart-card .chart-sub{font-size:11.5px;color:var(--sec);margin:0 0 10px}
+.chart-card svg{display:block;width:100%;height:auto;max-height:160px}
+.chart-card .chart-footer{font-size:11px;color:var(--mut);margin-top:8px;display:flex;justify-content:space-between;align-items:center}
 </style>
 </head>
 <body>
@@ -117,22 +132,270 @@ footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 </div>
 
 <section class="hero-banner">
-  <h1 class="hero-title">Digital Devices & AI in School</h1>
-  <p class="hero-sub">Interactive policy & research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
+  <h1 class="hero-title">Digital Devices &amp; AI in School</h1>
+  <p class="hero-sub">Interactive policy &amp; research dashboards compiled from OECD PISA 2025 Chapter 4 tables. Explore equity gaps, school technology divides, AI guidance, and governance typologies.</p>
   
-  <div class="stats-grid">
-    <div class="stat-card">
-      <span class="stat-num">85+</span>
-      <span class="stat-label">School Systems Analyzed</span>
+  <div class="hero-content">
+<div class="findings-col">
+  <a class="finding-card" href="equity-gaps/">
+    <span class="finding-label">Equity &amp; Access Gap</span>
+    <span class="finding-num">63 / 85 Systems</span>
+    <p class="finding-insight">Boys are significantly more likely than girls to report never using AI for schoolwork across 63 school systems.</p>
+    <span class="finding-link">Explore Equity Gaps &rarr;</span>
+  </a>
+  <a class="finding-card" href="use-guidance/">
+    <span class="finding-label">Policy &amp; Guidance Lag</span>
+    <span class="finding-num">37.7 pp Gap</span>
+    <p class="finding-insight">Average gap between students using AI for schoolwork vs. receiving classroom guidance on evaluating AI output.</p>
+    <span class="finding-link">Explore Guidance Gap &rarr;</span>
+  </a>
+</div>
+<div class="chart-card" id="hero-chart-card">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div>
+      <h3 id="hero-chart-title">Student AI Use vs. Lesson Guidance</h3>
+      <p class="chart-sub" id="hero-chart-sub">System-level comparison across 85 OECD systems (% of students)</p>
     </div>
-    <div class="stat-card">
-      <span class="stat-num">5</span>
-      <span class="stat-label">Interactive Dashboards</span>
+    <button id="next-chart-btn" style="background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-size:11px;color:var(--sec);cursor:pointer;white-space:nowrap;" title="Cycle to next chart">🔀 Next</button>
+  </div>
+  <div id="hero-chart-svg-wrap">
+    <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        text.lbl{font-size:9.5px;font-family:sans-serif;paint-order:stroke fill;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round;}
+        text.axis{font-size:9px;font-family:sans-serif;fill:var(--sec);}
+      </style>
+      <line x1="40" y1="20" x2="300" y2="20" stroke="var(--line)" stroke-dasharray="2,2" />
+      <line x1="40" y1="65" x2="300" y2="65" stroke="var(--line)" stroke-dasharray="2,2" />
+      <line x1="40" y1="110" x2="300" y2="110" stroke="var(--line)" />
+      <line x1="40" y1="20" x2="40" y2="110" stroke="var(--line)" />
+      
+      <text class="axis" x="35" y="24" text-anchor="end">80%</text>
+      <text class="axis" x="35" y="69" text-anchor="end">40%</text>
+      <text class="axis" x="35" y="114" text-anchor="end">0%</text>
+      
+      <text class="axis" x="40" y="124">0%</text>
+      <text class="axis" x="170" y="124" text-anchor="middle">50%</text>
+      <text class="axis" x="300" y="124" text-anchor="end">100%</text>
+      <text class="axis" x="170" y="138" fill="var(--mut)" text-anchor="middle">Student AI Use (%)</text>
+      
+      <line x1="40" y1="110" x2="300" y2="20" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="4,4" />
+      
+      <circle cx="288" cy="38" r="4" fill="var(--hi)" />
+      <text class="lbl" x="282" y="28" font-weight="600" fill="var(--ink)" text-anchor="end">Singapore</text>
+      
+      <circle cx="253" cy="78" r="4" fill="var(--hi)" />
+      <text class="lbl" x="261" y="81" fill="var(--sec)" text-anchor="start">China (B-S-J-Z)</text>
+      
+      <circle cx="196" cy="83" r="5" fill="var(--lo)" />
+      <text class="lbl" x="196" y="73" font-weight="600" fill="var(--lo)" text-anchor="middle">OECD Avg</text>
+      
+      <circle cx="183" cy="94" r="3.5" fill="var(--hi)" />
+      <text class="lbl" x="175" y="105" fill="var(--sec)" text-anchor="end">Denmark</text>
+      
+      <circle cx="150" cy="90" r="2.5" fill="var(--sec)" opacity="0.4" />
+      <circle cx="210" cy="70" r="2.5" fill="var(--sec)" opacity="0.4" />
+      <circle cx="230" cy="65" r="2.5" fill="var(--sec)" opacity="0.4" />
+      <circle cx="175" cy="85" r="2.5" fill="var(--sec)" opacity="0.4" />
+      <circle cx="260" cy="50" r="2.5" fill="var(--sec)" opacity="0.4" />
+      <circle cx="120" cy="95" r="2.5" fill="var(--sec)" opacity="0.4" />
+    </svg>
+  </div>
+  <div class="chart-footer">
+    <span id="hero-chart-note">Dashed line = 1:1 Guidance Parity</span>
+    <a id="hero-chart-link" href="use-guidance/" style="color:var(--hi);font-weight:500;text-decoration:none;">View Guidance Gap &rarr;</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var HERO_CHARTS = [
+    {
+      title: "Student AI Use vs. Lesson Guidance",
+      sub: "System-level comparison across 85 OECD systems (% of students)",
+      note: "Dashed line = 1:1 Guidance Parity",
+      linkText: "View Guidance Gap &rarr;",
+      linkHref: "use-guidance/",
+      svg: `<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          text.lbl{font-size:9.5px;font-family:sans-serif;paint-order:stroke fill;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round;}
+          text.axis{font-size:9px;font-family:sans-serif;fill:var(--sec);}
+        </style>
+        <line x1="40" y1="20" x2="300" y2="20" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="65" x2="300" y2="65" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="110" x2="300" y2="110" stroke="var(--line)" />
+        <line x1="40" y1="20" x2="40" y2="110" stroke="var(--line)" />
+        <text class="axis" x="35" y="24" text-anchor="end">80%</text>
+        <text class="axis" x="35" y="69" text-anchor="end">40%</text>
+        <text class="axis" x="35" y="114" text-anchor="end">0%</text>
+        <text class="axis" x="40" y="124">0%</text>
+        <text class="axis" x="170" y="124" text-anchor="middle">50%</text>
+        <text class="axis" x="300" y="124" text-anchor="end">100%</text>
+        <text class="axis" x="170" y="138" fill="var(--mut)" text-anchor="middle">Student AI Use (%)</text>
+        <line x1="40" y1="110" x2="300" y2="20" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="4,4" />
+        <circle cx="288" cy="38" r="4" fill="var(--hi)" />
+        <text class="lbl" x="282" y="28" font-weight="600" fill="var(--ink)" text-anchor="end">Singapore</text>
+        <circle cx="253" cy="78" r="4" fill="var(--hi)" />
+        <text class="lbl" x="261" y="81" fill="var(--sec)" text-anchor="start">China (B-S-J-Z)</text>
+        <circle cx="196" cy="83" r="5" fill="var(--lo)" />
+        <text class="lbl" x="196" y="73" font-weight="600" fill="var(--lo)" text-anchor="middle">OECD Avg</text>
+        <circle cx="183" cy="94" r="3.5" fill="var(--hi)" />
+        <text class="lbl" x="175" y="105" fill="var(--sec)" text-anchor="end">Denmark</text>
+        <circle cx="150" cy="90" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="210" cy="70" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="230" cy="65" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="175" cy="85" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="260" cy="50" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="120" cy="95" r="2.5" fill="var(--sec)" opacity="0.4" />
+      </svg>`
+    },
+    {
+      title: "School Phone Bans vs. In-School Leisure Use",
+      sub: "Do strict phone rules correlate with reduced leisure device use? (% of students)",
+      note: "Trend line: Stronger bans track lower leisure device use",
+      linkText: "View Policy Governance &rarr;",
+      linkHref: "policy-typologies/",
+      svg: `<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          text.lbl{font-size:9.5px;font-family:sans-serif;paint-order:stroke fill;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round;}
+          text.axis{font-size:9px;font-family:sans-serif;fill:var(--sec);}
+        </style>
+        <line x1="40" y1="20" x2="300" y2="20" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="65" x2="300" y2="65" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="110" x2="300" y2="110" stroke="var(--line)" />
+        <line x1="40" y1="20" x2="40" y2="110" stroke="var(--line)" />
+        <text class="axis" x="35" y="24" text-anchor="end">80%</text>
+        <text class="axis" x="35" y="69" text-anchor="end">40%</text>
+        <text class="axis" x="35" y="114" text-anchor="end">0%</text>
+        <text class="axis" x="40" y="124">0%</text>
+        <text class="axis" x="170" y="124" text-anchor="middle">50%</text>
+        <text class="axis" x="300" y="124" text-anchor="end">100%</text>
+        <text class="axis" x="170" y="138" fill="var(--mut)" text-anchor="middle">% Schools with Phone Bans</text>
+        <line x1="50" y1="45" x2="280" y2="95" stroke="var(--lo)" stroke-width="1.5" stroke-dasharray="3,3" />
+        <circle cx="269" cy="88" r="4" fill="var(--hi)" />
+        <text class="lbl" x="261" y="88" font-weight="600" fill="var(--ink)" text-anchor="end">UK (88%)</text>
+        <circle cx="279" cy="98" r="4" fill="var(--hi)" />
+        <text class="lbl" x="285" y="110" fill="var(--sec)" text-anchor="start">Japan (92%)</text>
+        <circle cx="168" cy="63" r="5" fill="var(--lo)" />
+        <text class="lbl" x="168" y="52" font-weight="600" fill="var(--lo)" text-anchor="middle">OECD Avg</text>
+        <circle cx="131" cy="47" r="3.5" fill="var(--hi)" />
+        <text class="lbl" x="123" y="44" fill="var(--sec)" text-anchor="end">Spain (35%)</text>
+        <circle cx="140" cy="55" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="190" cy="70" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="220" cy="78" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="110" cy="40" r="2.5" fill="var(--sec)" opacity="0.4" />
+      </svg>`
+    },
+    {
+      title: "Weekday vs. Weekend Device Time",
+      sub: "Average student hours/day spent on digital devices for leisure",
+      note: "Dashed line = Equal weekday/weekend hours",
+      linkText: "View Time Use Budgets &rarr;",
+      linkHref: "time-use/",
+      svg: `<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          text.lbl{font-size:9.5px;font-family:sans-serif;paint-order:stroke fill;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round;}
+          text.axis{font-size:9px;font-family:sans-serif;fill:var(--sec);}
+        </style>
+        <line x1="40" y1="20" x2="300" y2="20" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="65" x2="300" y2="65" stroke="var(--line)" stroke-dasharray="2,2" />
+        <line x1="40" y1="110" x2="300" y2="110" stroke="var(--line)" />
+        <line x1="40" y1="20" x2="40" y2="110" stroke="var(--line)" />
+        <text class="axis" x="35" y="24" text-anchor="end">8h</text>
+        <text class="axis" x="35" y="69" text-anchor="end">4h</text>
+        <text class="axis" x="35" y="114" text-anchor="end">0h</text>
+        <text class="axis" x="40" y="124">0h</text>
+        <text class="axis" x="170" y="124" text-anchor="middle">4h</text>
+        <text class="axis" x="300" y="124" text-anchor="end">8h</text>
+        <text class="axis" x="170" y="138" fill="var(--mut)" text-anchor="middle">Weekday Device Hours</text>
+        <line x1="40" y1="110" x2="300" y2="20" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="4,4" />
+        <circle cx="186" cy="40" r="4" fill="var(--hi)" />
+        <text class="lbl" x="194" y="42" font-weight="600" fill="var(--ink)" text-anchor="start">Korea (6.2h WE)</text>
+        <circle cx="163" cy="52" r="4" fill="var(--hi)" />
+        <text class="lbl" x="155" y="48" fill="var(--sec)" text-anchor="end">Finland (5.1h WE)</text>
+        <circle cx="144" cy="60" r="5" fill="var(--lo)" />
+        <text class="lbl" x="144" y="76" font-weight="600" fill="var(--lo)" text-anchor="middle">OECD Avg (4.4h)</text>
+        <circle cx="108" cy="76" r="3.5" fill="var(--hi)" />
+        <text class="lbl" x="100" y="78" fill="var(--sec)" text-anchor="end">Japan (3.0h)</text>
+        <circle cx="130" cy="65" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="155" cy="58" r="2.5" fill="var(--sec)" opacity="0.4" />
+        <circle cx="170" cy="48" r="2.5" fill="var(--sec)" opacity="0.4" />
+      </svg>`
+    }
+  ];
+
+  var currentIdx = Math.floor(Math.random() * HERO_CHARTS.length);
+
+  function renderChart(idx) {
+    var c = HERO_CHARTS[idx];
+    document.getElementById('hero-chart-title').textContent = c.title;
+    document.getElementById('hero-chart-sub').textContent = c.sub;
+    document.getElementById('hero-chart-note').textContent = c.note;
+    var l = document.getElementById('hero-chart-link');
+    l.innerHTML = c.linkText;
+    l.setAttribute('href', c.linkHref);
+    document.getElementById('hero-chart-svg-wrap').innerHTML = c.svg;
+  }
+
+  function initChartRotator() {
+    var btn = document.getElementById('next-chart-btn');
+    if (!btn) return;
+    renderChart(currentIdx);
+    btn.addEventListener('click', function() {
+      currentIdx = (currentIdx + 1) % HERO_CHARTS.length;
+      renderChart(currentIdx);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChartRotator);
+  } else {
+    initChartRotator();
+  }
+})();
+</script>
+  </div>
+</section>
+
+<!-- Country Deep-Dive & Multi-Country Comparison Explorer -->
+<section class="card" id="country-explorer-section" style="margin:24px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+    <div>
+      <h2 style="font-size:18px;font-weight:600;margin:0 0 4px;color:var(--ink)">Country Deep-Dive &amp; Multi-Country Comparison</h2>
+      <p style="font-size:13px;color:var(--sec);margin:0">Instantly view any system's master profile across all 9 digital domains or compare peer countries side by side.</p>
     </div>
-    <div class="stat-card">
-      <span class="stat-num">70+</span>
-      <span class="stat-label">OECD Data Tables</span>
+    <div class="pagetabs" role="tablist" style="margin:0;display:flex;gap:6px">
+      <button id="modeSingle" role="tab" aria-pressed="true" style="font:inherit;font-size:13px;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--sec);cursor:pointer">Single Country Profile</button>
+      <button id="modeCompare" role="tab" aria-pressed="false" style="font:inherit;font-size:13px;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--sec);cursor:pointer">Compare 2+ Countries</button>
     </div>
+  </div>
+
+  <!-- Single Country View -->
+  <div id="viewSingle" class="panel on">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px">
+      <label for="masterSysPick" style="font-size:13px;font-weight:500;color:var(--sec)">Select Country/System:</label>
+      <select id="masterSysPick" style="font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);max-width:280px"></select>
+    </div>
+    <div id="singleCountryOutput"></div>
+  </div>
+
+  <!-- Multi Country Comparison View -->
+  <div id="viewCompare" class="panel" style="display:none">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+      <div>
+        <label style="font-size:13px;font-weight:500;color:var(--sec);display:block;margin-bottom:6px">Select Systems to Compare:</label>
+        <div id="comparePickers" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <select class="comp-select" id="cPick1" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick2" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick3" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+          <select class="comp-select" id="cPick4" style="font:inherit;font-size:13px;padding:5px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink)"></select>
+        </div>
+      </div>
+      <div>
+        <label for="metricPick" style="font-size:13px;font-weight:500;color:var(--sec);display:block;margin-bottom:6px">Comparison Metric:</label>
+        <select id="metricPick" style="font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%"></select>
+      </div>
+    </div>
+    <div id="compareOutput"></div>
   </div>
 </section>
 
@@ -147,9 +410,14 @@ footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 <ul class="pages" id="dashboard-grid">
 <li class="card-item" data-cat="equity"><a class="dashboard-card" href="equity-gaps/"><div class="card-header-row"><span class="tag tag-equity">Equity &amp; Access</span><span class="arrow-action">Explore &rarr;</span></div><h2>Who uses AI and digital devices in class, and who doesn&#x27;t?</h2><p>72 group gaps (gender, SES, immigrant background, education level, programme, school location and type) across nine AI and device outcomes. Select any cell for country-level gaps with confidence intervals and a written summary.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.26, 43, 54 to 59, 68</span></div></a></li>
 <li class="card-item" data-cat="infra"><a class="dashboard-card" href="infrastructure-divides/"><div class="card-header-row"><span class="tag tag-infra">Tech Resources</span><span class="arrow-action">Explore &rarr;</span></div><h2>Do richer schools really have better tech? It depends what you ask.</h2><p>Seven school-resourcing measures, split by rich/poor, city/rural and private/public schools. Raw device counts often favour poorer or rural schools, but reported shortages, poor quality and readiness to teach digitally clearly favour richer and private ones. Plain-language grid plus a per-country lookup.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.1, 4, 5, 7, 8, 11, 15</span></div></a></li>
+<li class="card-item" data-cat="infra"><a class="dashboard-card" href="capacity-bottlenecks/"><div class="card-header-row"><span class="tag tag-infra">Tech Resources</span><span class="arrow-action">Explore &rarr;</span></div><h2>Where does school capacity actually break down?</h2><p>12 items behind the single capacity index — bandwidth, devices, software, teacher skills and time, PD, incentives, curriculum fit, support staff and more. Ranks each country’s weakest link two ways (absolute and relative to its own profile) and groups countries into four recurring bottleneck shapes.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.14</span></div></a></li>
+<li class="card-item" data-cat="equity"><a class="dashboard-card" href="time-use/"><div class="card-header-row"><span class="tag tag-equity">Equity &amp; Access</span><span class="arrow-action">Explore &rarr;</span></div><h2>How do students split their device time between learning and leisure?</h2><p>Hours per day on devices for learning vs leisure at school, before/after school and on weekends. Compares the learning-to-leisure ratio country by country, splits the weekday between school and home, shows the heavy-use tails (over 5 or 7 hours) and groups countries into four time-use archetypes.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.21</span></div></a></li>
+<li class="card-item" data-cat="equity"><a class="dashboard-card" href="leisure-profiles/"><div class="card-header-row"><span class="tag tag-equity">Equity &amp; Access</span><span class="arrow-action">Explore &rarr;</span></div><h2>What do students do online for fun, and how does it change at weekends?</h2><p>Seven digital leisure activities (gaming, social media, creating content, tutorials and more) on weekdays and weekends. Compares activity mixes across countries, measures the weekday-to-weekend shift, and contrasts passive consumption with creative use. Only 44 systems have data in these tables.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.37, 40</span></div></a></li>
+<li class="card-item" data-cat="policy"><a class="dashboard-card" href="ai-portfolios/"><div class="card-header-row"><span class="tag tag-guidance">Policy &amp; Guidance</span><span class="arrow-action">Explore &rarr;</span></div><h2>Do students use AI to draft or to learn?</h2><p>Four school purposes (summarising, research, drafting, helping me learn) by five frequency levels. Compares drafting, a rough proxy for offloading, with learning country by country, separates adoption from intensity among users, and groups 85 systems into three patterns.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.53 (56 to 59 map to its never-use share)</span></div></a></li>
 <li class="card-item" data-cat="policy"><a class="dashboard-card" href="use-guidance/"><div class="card-header-row"><span class="tag tag-guidance">Policy &amp; Guidance</span><span class="arrow-action">Explore &rarr;</span></div><h2>Does school guidance keep pace with student AI use?</h2><p>Compares the share of students using AI for schoolwork with the share asked, in lessons, to assess AI output, across 85 systems. Includes a comparison with guidance on online information, a ranking, and a lookup for any system.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.53, 55, 67, 68</span></div></a></li>
-<li class="card-item" data-cat="policy"><a class="dashboard-card" href="policy-typologies/"><div class="card-header-row"><span class="tag tag-policy">Policy &amp; Governance</span><span class="arrow-action">Explore &rarr;</span></div><h2>How are schools governing devices and AI, and is it changing?</h2><p>A nine-item policy-intensity index, plus the four device-policy regimes compared 2022 vs 2025 with each system&#x27;s shift tested against its own standard error and classified as a fast adopter or lagging. Includes open questions on whether phone bans track with less in-school leisure device use or less AI use.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.47, 49</span></div></a></li>
+<li class="card-item" data-cat="policy"><a class="dashboard-card" href="policy-typologies/"><div class="card-header-row"><span class="tag tag-policy">Policy &amp; Governance</span><span class="arrow-action">Explore &rarr;</span></div><h2>How are schools governing devices and AI, and is it changing?</h2><p>A nine-item policy-intensity index, plus the four device-policy regimes compared 2022 vs 2025 with each system’s shift tested against its own standard error and classified as a fast adopter or lagging. Includes open questions on whether phone bans track with less in-school leisure device use or less AI use.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.47, 49</span></div></a></li>
 <li class="card-item" data-cat="analytics"><a class="dashboard-card" href="cross-domain/"><div class="card-header-row"><span class="tag tag-analytics">Cross-Domain Analytics</span><span class="arrow-action">Explore &rarr;</span></div><h2>How do resources, capacity, time use and AI relate?</h2><p>Nine country-level composite indices built from resourcing, teacher capacity, time use, leisure, distraction, device rules and AI use/guidance. A correlation explorer with country-level scatterplots, plus five clustered country archetypes.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.1, 4, 6, 11, 14, 21, 37, 43, 47, 53, 55, 67, 68</span></div></a></li>
+<li class="card-item" data-cat="analytics"><a class="dashboard-card" href="uncertainty-ranking/"><div class="card-header-row"><span class="tag tag-analytics">Cross-Domain Analytics</span><span class="arrow-action">Explore &rarr;</span></div><h2>How much of a country ranking is real?</h2><p>Puts the published standard errors back in: 95% intervals, rank ranges, pairwise significance tests and inverse-variance weighting for ten headline indicators. Most pairs of systems differ, but almost no neighbours in a ranking do, and the near-census systems (Luxembourg, Macao, Malta) can dominate any precision-weighted average.</p><div class="card-footer-meta"><span>OECD Tables I.B1.4.1, 7, 8, 14, 43, 53, 55, 58, 59, 68</span></div></a></li>
 </ul>
 
 <footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables. Pages are rebuilt from <code>data/digital_devices_AI_chapter4.xlsx</code> with <code>python build_site.py</code>. Figures are descriptive; see each page's footnote for how estimates and significance are defined.</footer>
@@ -202,11 +470,293 @@ footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
     });
   }
 
+  // 3. Country Deep-Dive & Multi-Country Comparison Explorer
+  // 3. Country Deep-Dive & Multi-Country Comparison Explorer
+  const MASTER_DATA = {"B-S-J-Z (China)":{"science":597.0,"resources":-0.07,"capacity":1.26,"learning_time_school":-0.85,"leisure_at_school":-1.02,"leisure_outside_school":-1.43,"distraction":-2.2,"rules":0.53,"ai_use":-1.47,"ai_guidance":-2.19,"cluster":4,"cluster_label":"","weakest_link":"device_power","phone_ban_pct":82.8,"use_any_pct":82.3,"guid_pct":44.6},"Singapore":{"science":560.0,"resources":1.38,"capacity":1.67,"learning_time_school":1.13,"leisure_at_school":-0.61,"leisure_outside_school":0.41,"distraction":0.22,"rules":0.63,"ai_use":1.24,"ai_guidance":1.62,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":43.1,"use_any_pct":95.6,"guid_pct":81.0},"Macao (China)":{"science":541.0,"resources":1.02,"capacity":0.4,"learning_time_school":0.02,"leisure_at_school":-0.62,"leisure_outside_school":1.0,"distraction":-1.43,"rules":0.27,"ai_use":1.08,"ai_guidance":0.94,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":49.2,"use_any_pct":95.3,"guid_pct":74.5},"Chinese Taipei":{"science":540.0,"resources":0.89,"capacity":0.88,"learning_time_school":-0.03,"leisure_at_school":-0.19,"leisure_outside_school":0.74,"distraction":-1.36,"rules":0.34,"ai_use":-1.13,"ai_guidance":0.03,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":43.3,"use_any_pct":84.1,"guid_pct":65.9},"Japan":{"science":538.0,"resources":0.55,"capacity":-1.69,"learning_time_school":0.51,"leisure_at_school":-1.97,"leisure_outside_school":-2.16,"distraction":-2.02,"rules":-0.96,"ai_use":-4.33,"ai_guidance":-3.6,"cluster":4,"cluster_label":"","weakest_link":"teacher_time","phone_ban_pct":33.9,"use_any_pct":60.9,"guid_pct":31.2},"Estonia":{"science":527.0,"resources":0.91,"capacity":-0.06,"learning_time_school":0.35,"leisure_at_school":0.31,"leisure_outside_school":1.82,"distraction":0.89,"rules":-0.69,"ai_use":0.13,"ai_guidance":0.73,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":26.0,"use_any_pct":92.7,"guid_pct":72.5},"Korea":{"science":526.0,"resources":1.0,"capacity":0.51,"learning_time_school":-0.02,"leisure_at_school":-0.36,"leisure_outside_school":0.32,"distraction":-2.02,"rules":-0.17,"ai_use":0.08,"ai_guidance":0.1,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":34.1,"use_any_pct":87.8,"guid_pct":66.5},"United Kingdom":{"science":511.0,"resources":0.85,"capacity":-0.01,"learning_time_school":-0.42,"leisure_at_school":-1.5,"leisure_outside_school":0.75,"distraction":-0.78,"rules":0.14,"ai_use":-2.85,"ai_guidance":-2.43,"cluster":4,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":80.3,"use_any_pct":71.7,"guid_pct":42.4},"Canada*":{"science":510.0,"resources":0.63,"capacity":0.13,"learning_time_school":0.12,"leisure_at_school":-0.4,"leisure_outside_school":-0.15,"distraction":0.56,"rules":0.2,"ai_use":-1.97,"ai_guidance":-0.98,"cluster":5,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":36.7,"use_any_pct":77.3,"guid_pct":56.2},"New Zealand*":{"science":509.0,"resources":0.53,"capacity":0.59,"learning_time_school":1.37,"leisure_at_school":-0.7,"leisure_outside_school":-0.19,"distraction":1.14,"rules":0.54,"ai_use":-0.86,"ai_guidance":-0.11,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":88.9,"use_any_pct":83.8,"guid_pct":64.6},"Australia":{"science":509.0,"resources":0.86,"capacity":0.69,"learning_time_school":1.47,"leisure_at_school":-0.74,"leisure_outside_school":-0.25,"distraction":1.22,"rules":0.81,"ai_use":-0.51,"ai_guidance":0.29,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":85.3,"use_any_pct":85.1,"guid_pct":68.3},"Finland":{"science":504.0,"resources":0.66,"capacity":0.47,"learning_time_school":1.47,"leisure_at_school":0.19,"leisure_outside_school":-0.27,"distraction":-0.12,"rules":-1.18,"ai_use":-2.37,"ai_guidance":-0.48,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":5.2,"use_any_pct":74.0,"guid_pct":61.0},"United States*":{"science":502.0,"resources":1.79,"capacity":1.23,"learning_time_school":null,"leisure_at_school":null,"leisure_outside_school":null,"distraction":0.26,"rules":0.43,"ai_use":-1.78,"ai_guidance":-0.97,"cluster":null,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":31.3,"use_any_pct":79.3,"guid_pct":56.3},"Switzerland":{"science":501.0,"resources":1.07,"capacity":1.28,"learning_time_school":0.19,"leisure_at_school":-0.99,"leisure_outside_school":-0.09,"distraction":-0.04,"rules":-0.21,"ai_use":0.48,"ai_guidance":0.36,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":50.6,"use_any_pct":91.3,"guid_pct":69.0},"Ireland":{"science":500.0,"resources":0.48,"capacity":-0.79,"learning_time_school":-0.55,"leisure_at_school":-1.55,"leisure_outside_school":-0.19,"distraction":-1.0,"rules":0.82,"ai_use":-2.81,"ai_guidance":-1.93,"cluster":4,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":77.6,"use_any_pct":72.5,"guid_pct":47.2},"Austria":{"science":497.0,"resources":0.83,"capacity":0.62,"learning_time_school":-0.35,"leisure_at_school":-0.73,"leisure_outside_school":-0.19,"distraction":0.15,"rules":-0.04,"ai_use":-0.0,"ai_guidance":-0.29,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":27.1,"use_any_pct":88.7,"guid_pct":62.8},"Hong Kong (China)":{"science":496.0,"resources":1.07,"capacity":0.94,"learning_time_school":-0.04,"leisure_at_school":-0.41,"leisure_outside_school":0.8,"distraction":-0.71,"rules":0.38,"ai_use":0.67,"ai_guidance":0.39,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":85.1,"use_any_pct":92.8,"guid_pct":69.3},"Poland":{"science":495.0,"resources":0.53,"capacity":0.13,"learning_time_school":-0.6,"leisure_at_school":0.96,"leisure_outside_school":1.9,"distraction":1.42,"rules":-0.33,"ai_use":0.39,"ai_guidance":-0.33,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":18.2,"use_any_pct":90.1,"guid_pct":62.4},"Türkiye":{"science":494.0,"resources":-0.34,"capacity":0.03,"learning_time_school":-1.05,"leisure_at_school":-1.13,"leisure_outside_school":0.46,"distraction":-0.92,"rules":0.88,"ai_use":0.75,"ai_guidance":0.26,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":82.9,"use_any_pct":91.9,"guid_pct":68.1},"Czechia":{"science":490.0,"resources":0.94,"capacity":-0.06,"learning_time_school":0.06,"leisure_at_school":1.12,"leisure_outside_school":1.22,"distraction":0.55,"rules":-0.42,"ai_use":-0.28,"ai_guidance":0.47,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":28.0,"use_any_pct":87.9,"guid_pct":70.0},"Belgium":{"science":490.0,"resources":0.61,"capacity":0.1,"learning_time_school":-0.36,"leisure_at_school":-0.83,"leisure_outside_school":0.4,"distraction":-0.54,"rules":-0.15,"ai_use":-0.27,"ai_guidance":-0.73,"cluster":5,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":52.0,"use_any_pct":89.8,"guid_pct":58.6},"Lithuania":{"science":488.0,"resources":1.32,"capacity":0.55,"learning_time_school":0.47,"leisure_at_school":-0.2,"leisure_outside_school":-0.21,"distraction":0.05,"rules":-0.42,"ai_use":0.33,"ai_guidance":0.88,"cluster":1,"cluster_label":"","weakest_link":"teacher_time","phone_ban_pct":11.3,"use_any_pct":91.4,"guid_pct":73.9},"Germany":{"science":486.0,"resources":0.73,"capacity":-0.48,"learning_time_school":-0.75,"leisure_at_school":-1.04,"leisure_outside_school":1.24,"distraction":0.59,"rules":0.18,"ai_use":0.18,"ai_guidance":-0.65,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":64.3,"use_any_pct":91.0,"guid_pct":59.3},"Netherlands*":{"science":485.0,"resources":1.16,"capacity":1.11,"learning_time_school":0.42,"leisure_at_school":-0.42,"leisure_outside_school":0.61,"distraction":-0.37,"rules":-0.32,"ai_use":-0.67,"ai_guidance":-1.07,"cluster":1,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":58.5,"use_any_pct":86.6,"guid_pct":55.4},"Sweden":{"science":485.0,"resources":1.04,"capacity":1.24,"learning_time_school":1.17,"leisure_at_school":-0.19,"leisure_outside_school":0.3,"distraction":0.64,"rules":0.32,"ai_use":-0.92,"ai_guidance":-0.07,"cluster":2,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":57.5,"use_any_pct":83.5,"guid_pct":64.9},"Slovenia":{"science":484.0,"resources":0.44,"capacity":0.55,"learning_time_school":-1.04,"leisure_at_school":-0.92,"leisure_outside_school":-0.85,"distraction":-0.49,"rules":-0.04,"ai_use":0.02,"ai_guidance":-0.2,"cluster":5,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":45.8,"use_any_pct":89.5,"guid_pct":63.7},"France":{"science":483.0,"resources":0.26,"capacity":-0.59,"learning_time_school":-1.04,"leisure_at_school":-0.8,"leisure_outside_school":-0.01,"distraction":-0.05,"rules":-0.6,"ai_use":-0.91,"ai_guidance":-1.96,"cluster":5,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":27.1,"use_any_pct":84.8,"guid_pct":46.8},"Italy":{"science":483.0,"resources":0.45,"capacity":0.34,"learning_time_school":0.53,"leisure_at_school":0.61,"leisure_outside_school":1.4,"distraction":1.06,"rules":0.15,"ai_use":0.29,"ai_guidance":0.85,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":63.2,"use_any_pct":91.0,"guid_pct":73.7},"Portugal":{"science":482.0,"resources":-0.21,"capacity":-0.85,"learning_time_school":-0.4,"leisure_at_school":-0.17,"leisure_outside_school":0.8,"distraction":0.46,"rules":0.22,"ai_use":0.42,"ai_guidance":-0.85,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":24.7,"use_any_pct":92.2,"guid_pct":57.4},"Hungary":{"science":480.0,"resources":0.41,"capacity":-0.17,"learning_time_school":-0.96,"leisure_at_school":-0.22,"leisure_outside_school":1.97,"distraction":-1.47,"rules":-0.66,"ai_use":-1.02,"ai_guidance":-0.48,"cluster":1,"cluster_label":"","weakest_link":"teacher_time","phone_ban_pct":89.8,"use_any_pct":83.6,"guid_pct":61.0},"Denmark":{"science":478.0,"resources":1.1,"capacity":1.13,"learning_time_school":1.81,"leisure_at_school":-0.83,"leisure_outside_school":0.12,"distraction":0.96,"rules":-0.09,"ai_use":-0.64,"ai_guidance":0.36,"cluster":2,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":64.8,"use_any_pct":84.1,"guid_pct":69.1},"Spain":{"science":477.0,"resources":0.41,"capacity":-0.71,"learning_time_school":-0.35,"leisure_at_school":-1.32,"leisure_outside_school":-0.69,"distraction":0.25,"rules":0.63,"ai_use":0.54,"ai_guidance":-0.63,"cluster":5,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":86.3,"use_any_pct":91.8,"guid_pct":59.5},"Croatia":{"science":476.0,"resources":0.09,"capacity":0.66,"learning_time_school":-0.27,"leisure_at_school":-0.08,"leisure_outside_school":0.41,"distraction":-0.7,"rules":-0.69,"ai_use":-0.15,"ai_guidance":0.38,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":26.2,"use_any_pct":87.2,"guid_pct":69.2},"Slovak Republic":{"science":475.0,"resources":0.2,"capacity":-0.12,"learning_time_school":0.17,"leisure_at_school":0.8,"leisure_outside_school":1.95,"distraction":-0.73,"rules":-0.76,"ai_use":-0.05,"ai_guidance":0.58,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":56.7,"use_any_pct":89.1,"guid_pct":71.1},"Luxembourg":{"science":474.0,"resources":1.06,"capacity":0.97,"learning_time_school":-0.71,"leisure_at_school":-0.97,"leisure_outside_school":-0.23,"distraction":-0.27,"rules":-0.85,"ai_use":-0.12,"ai_guidance":0.02,"cluster":1,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":35.3,"use_any_pct":88.9,"guid_pct":65.8},"Norway*":{"science":470.0,"resources":null,"capacity":0.87,"learning_time_school":1.42,"leisure_at_school":-1.03,"leisure_outside_school":-0.16,"distraction":0.42,"rules":0.09,"ai_use":-0.13,"ai_guidance":0.92,"cluster":null,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":87.5,"use_any_pct":88.5,"guid_pct":74.3},"Latvia":{"science":468.0,"resources":1.55,"capacity":-0.11,"learning_time_school":1.24,"leisure_at_school":1.1,"leisure_outside_school":1.37,"distraction":0.7,"rules":0.06,"ai_use":0.34,"ai_guidance":1.42,"cluster":1,"cluster_label":"","weakest_link":"teacher_time","phone_ban_pct":22.9,"use_any_pct":92.0,"guid_pct":79.1},"United Arab Emirates":{"science":458.0,"resources":0.81,"capacity":1.61,"learning_time_school":0.36,"leisure_at_school":0.3,"leisure_outside_school":0.43,"distraction":-0.39,"rules":1.26,"ai_use":1.59,"ai_guidance":1.69,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":90.1,"use_any_pct":94.7,"guid_pct":81.7},"Viet Nam":{"science":457.0,"resources":-0.7,"capacity":1.15,"learning_time_school":1.17,"leisure_at_school":0.62,"leisure_outside_school":0.26,"distraction":-1.24,"rules":0.09,"ai_use":1.39,"ai_guidance":0.46,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":24.3,"use_any_pct":95.9,"guid_pct":70.0},"Malta":{"science":453.0,"resources":0.41,"capacity":-0.14,"learning_time_school":-1.2,"leisure_at_school":-1.01,"leisure_outside_school":0.83,"distraction":-1.17,"rules":-0.63,"ai_use":0.45,"ai_guidance":-0.38,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":87.7,"use_any_pct":90.5,"guid_pct":61.9},"Uruguay":{"science":445.0,"resources":-0.88,"capacity":-1.04,"learning_time_school":0.02,"leisure_at_school":0.41,"leisure_outside_school":-0.1,"distraction":3.03,"rules":-0.84,"ai_use":0.87,"ai_guidance":-0.03,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":14.1,"use_any_pct":92.8,"guid_pct":65.3},"Chile":{"science":442.0,"resources":-0.05,"capacity":-0.79,"learning_time_school":-0.49,"leisure_at_school":-0.18,"leisure_outside_school":-0.8,"distraction":2.14,"rules":-0.34,"ai_use":0.67,"ai_guidance":-0.42,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":58.5,"use_any_pct":93.5,"guid_pct":61.5},"Israel":{"science":442.0,"resources":-0.41,"capacity":-0.39,"learning_time_school":-0.59,"leisure_at_school":0.81,"leisure_outside_school":0.9,"distraction":0.64,"rules":-0.34,"ai_use":0.39,"ai_guidance":-0.27,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":30.0,"use_any_pct":90.6,"guid_pct":63.0},"Iceland":{"science":441.0,"resources":1.08,"capacity":0.8,"learning_time_school":2.3,"leisure_at_school":-1.46,"leisure_outside_school":-2.05,"distraction":-0.27,"rules":0.32,"ai_use":-1.06,"ai_guidance":0.76,"cluster":2,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":51.4,"use_any_pct":82.1,"guid_pct":72.8},"Brunei Darussalam":{"science":439.0,"resources":-0.32,"capacity":-0.72,"learning_time_school":-0.7,"leisure_at_school":-1.42,"leisure_outside_school":-1.33,"distraction":-1.48,"rules":1.17,"ai_use":0.67,"ai_guidance":0.82,"cluster":5,"cluster_label":"","weakest_link":"bandwidth","phone_ban_pct":90.3,"use_any_pct":93.9,"guid_pct":73.4},"Mauritius":{"science":438.0,"resources":-0.72,"capacity":-0.88,"learning_time_school":-0.29,"leisure_at_school":0.81,"leisure_outside_school":0.26,"distraction":null,"rules":0.37,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":79.4,"use_any_pct":null,"guid_pct":null},"Uzbekistan":{"science":438.0,"resources":-0.04,"capacity":1.78,"learning_time_school":0.83,"leisure_at_school":0.53,"leisure_outside_school":-0.63,"distraction":-1.26,"rules":0.04,"ai_use":0.67,"ai_guidance":1.57,"cluster":2,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":69.2,"use_any_pct":91.3,"guid_pct":80.6},"Montenegro":{"science":435.0,"resources":-0.36,"capacity":-0.01,"learning_time_school":-0.67,"leisure_at_school":-0.55,"leisure_outside_school":-0.77,"distraction":-0.22,"rules":-0.24,"ai_use":-0.34,"ai_guidance":-0.8,"cluster":5,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":94.5,"use_any_pct":87.4,"guid_pct":57.9},"Albania*":{"science":435.0,"resources":-0.67,"capacity":0.12,"learning_time_school":0.02,"leisure_at_school":-0.34,"leisure_outside_school":-0.43,"distraction":-1.3,"rules":1.03,"ai_use":0.7,"ai_guidance":1.67,"cluster":5,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":95.9,"use_any_pct":92.5,"guid_pct":81.6},"Qatar":{"science":434.0,"resources":0.54,"capacity":1.3,"learning_time_school":-0.82,"leisure_at_school":0.26,"leisure_outside_school":0.26,"distraction":-0.71,"rules":1.14,"ai_use":0.17,"ai_guidance":0.32,"cluster":5,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":88.6,"use_any_pct":89.7,"guid_pct":68.6},"Greece":{"science":434.0,"resources":-0.47,"capacity":-1.27,"learning_time_school":-1.39,"leisure_at_school":-0.14,"leisure_outside_school":0.53,"distraction":0.59,"rules":0.1,"ai_use":-1.01,"ai_guidance":-0.51,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":98.3,"use_any_pct":83.8,"guid_pct":60.7},"Thailand":{"science":432.0,"resources":-0.54,"capacity":1.29,"learning_time_school":1.01,"leisure_at_school":0.73,"leisure_outside_school":1.24,"distraction":-0.27,"rules":-0.64,"ai_use":1.25,"ai_guidance":0.35,"cluster":2,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":8.0,"use_any_pct":95.5,"guid_pct":68.9},"Serbia":{"science":429.0,"resources":-0.45,"capacity":-0.01,"learning_time_school":-1.08,"leisure_at_school":-0.56,"leisure_outside_school":0.14,"distraction":-0.18,"rules":-0.01,"ai_use":0.18,"ai_guidance":-0.41,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":47.7,"use_any_pct":87.9,"guid_pct":61.6},"Romania":{"science":425.0,"resources":1.07,"capacity":0.14,"learning_time_school":0.11,"leisure_at_school":1.19,"leisure_outside_school":1.3,"distraction":0.28,"rules":0.3,"ai_use":0.2,"ai_guidance":0.74,"cluster":1,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":49.3,"use_any_pct":90.6,"guid_pct":72.6},"Mongolia":{"science":424.0,"resources":0.28,"capacity":0.35,"learning_time_school":0.37,"leisure_at_school":-0.38,"leisure_outside_school":0.08,"distraction":0.76,"rules":-0.34,"ai_use":0.59,"ai_guidance":0.91,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":48.5,"use_any_pct":92.0,"guid_pct":74.3},"Costa Rica":{"science":424.0,"resources":-1.14,"capacity":-1.82,"learning_time_school":-0.11,"leisure_at_school":0.23,"leisure_outside_school":-0.76,"distraction":1.09,"rules":-1.01,"ai_use":0.35,"ai_guidance":0.06,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":22.7,"use_any_pct":90.3,"guid_pct":66.1},"Georgia":{"science":422.0,"resources":-0.3,"capacity":0.19,"learning_time_school":-0.78,"leisure_at_school":-0.37,"leisure_outside_school":1.62,"distraction":0.34,"rules":-0.84,"ai_use":-0.4,"ai_guidance":0.39,"cluster":1,"cluster_label":"","weakest_link":"device_power","phone_ban_pct":23.3,"use_any_pct":86.4,"guid_pct":69.3},"Moldova":{"science":422.0,"resources":0.07,"capacity":-0.14,"learning_time_school":-0.09,"leisure_at_school":0.58,"leisure_outside_school":-0.26,"distraction":0.18,"rules":0.12,"ai_use":0.49,"ai_guidance":0.91,"cluster":2,"cluster_label":"","weakest_link":"software","phone_ban_pct":51.4,"use_any_pct":92.6,"guid_pct":74.2},"Bulgaria":{"science":421.0,"resources":0.56,"capacity":0.88,"learning_time_school":-0.12,"leisure_at_school":2.49,"leisure_outside_school":1.79,"distraction":1.53,"rules":-0.02,"ai_use":-0.37,"ai_guidance":0.6,"cluster":1,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":39.2,"use_any_pct":86.3,"guid_pct":71.3},"Kazakhstan":{"science":420.0,"resources":0.11,"capacity":1.26,"learning_time_school":0.97,"leisure_at_school":-0.09,"leisure_outside_school":-0.92,"distraction":-0.82,"rules":0.5,"ai_use":0.59,"ai_guidance":1.53,"cluster":2,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":39.2,"use_any_pct":92.1,"guid_pct":80.2},"Malaysia":{"science":419.0,"resources":-0.92,"capacity":-0.93,"learning_time_school":-0.6,"leisure_at_school":-0.59,"leisure_outside_school":-0.98,"distraction":-1.23,"rules":0.09,"ai_use":0.74,"ai_guidance":0.55,"cluster":5,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":84.0,"use_any_pct":93.6,"guid_pct":70.8},"Colombia":{"science":414.0,"resources":-0.8,"capacity":-1.22,"learning_time_school":0.26,"leisure_at_school":0.18,"leisure_outside_school":-0.95,"distraction":0.91,"rules":-0.58,"ai_use":0.99,"ai_guidance":-0.21,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":37.5,"use_any_pct":93.7,"guid_pct":63.5},"Mexico":{"science":414.0,"resources":-0.93,"capacity":-0.76,"learning_time_school":0.29,"leisure_at_school":-0.13,"leisure_outside_school":-1.08,"distraction":1.06,"rules":-0.39,"ai_use":0.4,"ai_guidance":-0.66,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":27.2,"use_any_pct":91.7,"guid_pct":59.2},"Saudi Arabia":{"science":413.0,"resources":-0.83,"capacity":0.04,"learning_time_school":-0.59,"leisure_at_school":-0.43,"leisure_outside_school":0.27,"distraction":-1.57,"rules":0.64,"ai_use":0.94,"ai_guidance":0.97,"cluster":5,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":84.1,"use_any_pct":91.6,"guid_pct":74.8},"Cyprus":{"science":411.0,"resources":0.32,"capacity":0.33,"learning_time_school":-1.29,"leisure_at_school":-0.36,"leisure_outside_school":0.18,"distraction":0.61,"rules":0.58,"ai_use":-0.57,"ai_guidance":0.22,"cluster":5,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":83.4,"use_any_pct":85.0,"guid_pct":67.6},"Azerbaijan":{"science":409.0,"resources":-0.62,"capacity":-0.49,"learning_time_school":0.89,"leisure_at_school":1.22,"leisure_outside_school":0.07,"distraction":-0.65,"rules":-0.12,"ai_use":0.46,"ai_guidance":1.1,"cluster":2,"cluster_label":"","weakest_link":"device_power","phone_ban_pct":64.6,"use_any_pct":91.5,"guid_pct":76.1},"Brazil":{"science":409.0,"resources":-0.56,"capacity":-1.54,"learning_time_school":-0.61,"leisure_at_school":-0.54,"leisure_outside_school":0.85,"distraction":-0.18,"rules":0.78,"ai_use":-0.03,"ai_guidance":-1.5,"cluster":5,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":81.4,"use_any_pct":88.7,"guid_pct":51.2},"Jordan":{"science":407.0,"resources":-0.85,"capacity":-0.28,"learning_time_school":-1.12,"leisure_at_school":-0.58,"leisure_outside_school":-0.09,"distraction":-0.35,"rules":0.59,"ai_use":-0.22,"ai_guidance":-0.67,"cluster":5,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":82.8,"use_any_pct":87.7,"guid_pct":59.2},"Peru":{"science":406.0,"resources":-0.86,"capacity":-0.82,"learning_time_school":-0.41,"leisure_at_school":-0.46,"leisure_outside_school":-1.23,"distraction":-0.23,"rules":-0.49,"ai_use":0.71,"ai_guidance":-1.07,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":86.4,"use_any_pct":92.0,"guid_pct":55.3},"Ecuador":{"science":393.0,"resources":-1.18,"capacity":-0.95,"learning_time_school":-0.21,"leisure_at_school":-0.04,"leisure_outside_school":-0.76,"distraction":0.16,"rules":-0.27,"ai_use":0.8,"ai_guidance":-0.46,"cluster":3,"cluster_label":"","weakest_link":"device_power","phone_ban_pct":85.7,"use_any_pct":93.2,"guid_pct":61.2},"Argentina":{"science":393.0,"resources":-1.28,"capacity":-1.87,"learning_time_school":0.44,"leisure_at_school":1.04,"leisure_outside_school":1.29,"distraction":2.89,"rules":-0.01,"ai_use":0.46,"ai_guidance":-0.51,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":37.0,"use_any_pct":90.4,"guid_pct":60.7},"Indonesia":{"science":389.0,"resources":-0.44,"capacity":0.66,"learning_time_school":1.19,"leisure_at_school":0.2,"leisure_outside_school":-0.92,"distraction":-0.41,"rules":0.52,"ai_use":0.4,"ai_guidance":0.8,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":45.4,"use_any_pct":92.6,"guid_pct":73.2},"El Salvador":{"science":385.0,"resources":0.66,"capacity":-0.27,"learning_time_school":-0.43,"leisure_at_school":-0.03,"leisure_outside_school":-1.46,"distraction":-0.37,"rules":0.36,"ai_use":-0.07,"ai_guidance":-0.53,"cluster":5,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":71.2,"use_any_pct":89.1,"guid_pct":60.5},"Cambodia":{"science":382.0,"resources":-1.5,"capacity":0.5,"learning_time_school":0.14,"leisure_at_school":-0.24,"leisure_outside_school":-1.9,"distraction":null,"rules":-0.43,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":48.6,"use_any_pct":null,"guid_pct":null},"North Macedonia":{"science":378.0,"resources":-0.55,"capacity":0.26,"learning_time_school":0.08,"leisure_at_school":0.48,"leisure_outside_school":-0.05,"distraction":0.62,"rules":0.58,"ai_use":0.15,"ai_guidance":1.04,"cluster":2,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":59.9,"use_any_pct":89.8,"guid_pct":75.5},"Philippines":{"science":373.0,"resources":-0.81,"capacity":0.71,"learning_time_school":0.76,"leisure_at_school":0.23,"leisure_outside_school":-1.99,"distraction":1.27,"rules":0.51,"ai_use":1.02,"ai_guidance":0.55,"cluster":2,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":20.5,"use_any_pct":95.2,"guid_pct":70.8},"Lebanon":{"science":372.0,"resources":-0.67,"capacity":-0.91,"learning_time_school":-0.58,"leisure_at_school":2.12,"leisure_outside_school":-0.26,"distraction":0.02,"rules":-0.41,"ai_use":0.74,"ai_guidance":0.85,"cluster":3,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":85.1,"use_any_pct":94.1,"guid_pct":73.7},"Armenia":{"science":369.0,"resources":-0.93,"capacity":-0.5,"learning_time_school":0.6,"leisure_at_school":0.35,"leisure_outside_school":0.73,"distraction":-0.95,"rules":-0.6,"ai_use":0.33,"ai_guidance":1.09,"cluster":2,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":34.1,"use_any_pct":89.7,"guid_pct":75.9},"Kyrgyzstan":{"science":363.0,"resources":-1.27,"capacity":-0.24,"learning_time_school":0.51,"leisure_at_school":0.42,"leisure_outside_school":0.68,"distraction":-0.06,"rules":0.44,"ai_use":0.84,"ai_guidance":0.97,"cluster":2,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":51.3,"use_any_pct":93.7,"guid_pct":74.8},"Dominican Republic":{"science":361.0,"resources":-0.56,"capacity":-0.72,"learning_time_school":-0.37,"leisure_at_school":1.42,"leisure_outside_school":-0.81,"distraction":0.57,"rules":0.25,"ai_use":0.64,"ai_guidance":-0.09,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":77.1,"use_any_pct":90.6,"guid_pct":64.7},"Palestinian Authority":{"science":359.0,"resources":-1.17,"capacity":-1.18,"learning_time_school":-1.07,"leisure_at_school":-0.14,"leisure_outside_school":0.08,"distraction":-0.06,"rules":0.47,"ai_use":-0.07,"ai_guidance":-0.44,"cluster":5,"cluster_label":"","weakest_link":"bandwidth","phone_ban_pct":73.6,"use_any_pct":87.7,"guid_pct":61.4},"Morocco":{"science":358.0,"resources":-1.34,"capacity":-1.07,"learning_time_school":-1.69,"leisure_at_school":-1.01,"leisure_outside_school":-0.85,"distraction":0.83,"rules":-0.67,"ai_use":0.1,"ai_guidance":-1.35,"cluster":3,"cluster_label":"","weakest_link":"support_staff","phone_ban_pct":81.8,"use_any_pct":91.4,"guid_pct":52.7},"Kosovo":{"science":357.0,"resources":-0.93,"capacity":-0.11,"learning_time_school":-0.03,"leisure_at_school":0.55,"leisure_outside_school":-0.2,"distraction":0.5,"rules":0.64,"ai_use":0.62,"ai_guidance":1.16,"cluster":2,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":73.2,"use_any_pct":93.1,"guid_pct":76.7},"Paraguay":{"science":355.0,"resources":-0.99,"capacity":-1.46,"learning_time_school":-0.41,"leisure_at_school":1.36,"leisure_outside_school":-0.93,"distraction":1.12,"rules":0.02,"ai_use":0.11,"ai_guidance":-1.24,"cluster":3,"cluster_label":"","weakest_link":"software","phone_ban_pct":42.6,"use_any_pct":89.5,"guid_pct":53.7},"Kurdistan Region (Iraq)":{"science":352.0,"resources":null,"capacity":-1.1,"learning_time_school":0.6,"leisure_at_school":1.77,"leisure_outside_school":-0.12,"distraction":null,"rules":-1.47,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":81.3,"use_any_pct":null,"guid_pct":null},"Guatemala":{"science":351.0,"resources":-0.81,"capacity":-0.39,"learning_time_school":-0.97,"leisure_at_school":-0.72,"leisure_outside_school":-1.84,"distraction":0.03,"rules":0.11,"ai_use":0.22,"ai_guidance":-1.36,"cluster":3,"cluster_label":"","weakest_link":"incentives","phone_ban_pct":50.1,"use_any_pct":88.6,"guid_pct":52.5},"Zambia":{"science":337.0,"resources":-1.7,"capacity":-0.97,"learning_time_school":-2.85,"leisure_at_school":-0.96,"leisure_outside_school":-2.98,"distraction":null,"rules":-0.58,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":83.2,"use_any_pct":null,"guid_pct":null},"Kenya":{"science":335.0,"resources":-1.36,"capacity":-1.31,"learning_time_school":-0.3,"leisure_at_school":1.69,"leisure_outside_school":-0.65,"distraction":-0.85,"rules":-0.11,"ai_use":-0.18,"ai_guidance":-1.05,"cluster":3,"cluster_label":"","weakest_link":"devices_instruction","phone_ban_pct":59.8,"use_any_pct":86.9,"guid_pct":55.5},"Dushanbe (Tajikistan)":{"science":334.0,"resources":-0.47,"capacity":0.49,"learning_time_school":1.08,"leisure_at_school":2.2,"leisure_outside_school":0.45,"distraction":null,"rules":-0.33,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"online_platform","phone_ban_pct":85.2,"use_any_pct":null,"guid_pct":null},"Rwanda":{"science":317.0,"resources":-0.9,"capacity":-0.63,"learning_time_school":2.0,"leisure_at_school":4.17,"leisure_outside_school":0.75,"distraction":null,"rules":-0.14,"ai_use":null,"ai_guidance":null,"cluster":null,"cluster_label":"","weakest_link":"software","phone_ban_pct":66.7,"use_any_pct":null,"guid_pct":null},"Ukrainian regions (17 of 27)":{"science":448.0,"resources":-0.58,"capacity":0.35,"learning_time_school":1.75,"leisure_at_school":1.21,"leisure_outside_school":0.15,"distraction":0.75,"rules":-0.53,"ai_use":0.76,"ai_guidance":1.27,"cluster":2,"cluster_label":"","weakest_link":"device_power","phone_ban_pct":9.8,"use_any_pct":91.9,"guid_pct":77.7}};
+  const DOMAINS = {
+    resources: "School Resourcing Index",
+    capacity: "Teacher Digital Capacity",
+    ai_use: "Student AI Adoption",
+    ai_guidance: "Teacher AI Guidance",
+    learning_time_school: "Learning Device Time (School)",
+    leisure_at_school: "Leisure Device Time (School)",
+    distraction: "Digital Distraction in Class",
+    rules: "School Device Rules / Restrictions",
+    science: "PISA Science Mean Score"
+  };
+
+  // Colorblind-friendly Okabe-Ito palette
+  const COLORBLIND_PALETTE = [
+    { fill: "#0072B2", border: "#004B75", name: "Deep Blue" },       // Country 1
+    { fill: "#D55E00", border: "#9E4400", name: "Vermilion Red" },  // Country 2
+    { fill: "#009E73", border: "#006B4E", name: "Bluish Green" },   // Country 3
+    { fill: "#CC79A7", border: "#994D77", name: "Reddish Purple" }  // Country 4
+  ];
+
+  const DOMAIN_DASHBOARDS = {
+    resources: "infrastructure-divides",
+    capacity: "capacity-bottlenecks",
+    ai_use: "use-guidance",
+    ai_guidance: "use-guidance",
+    learning_time_school: "time-use",
+    leisure_at_school: "leisure-profiles",
+    distraction: "policy-typologies",
+    rules: "policy-typologies",
+    science: "cross-domain"
+  };
+
+  const CAPACITY_ITEM_NAMES = {
+    devices_connected: "Internet-connected devices",
+    bandwidth: "Internet bandwidth/speed",
+    devices_instruction: "Instructional devices",
+    software: "Educational software",
+    teacher_skills: "Teacher tech skills",
+    teacher_time: "Teacher prep time",
+    pd_resources: "Teacher PD resources",
+    online_platform: "Online learning platform",
+    incentives: "Teacher digital incentives",
+    curriculum_fit: "Curriculum alignment",
+    support_staff: "Tech support staff",
+    device_power: "Computing power"
+  };
+
+  // Ordinal suffix helper (81st, 82nd, 83rd, 84th, etc.)
+  function getOrdinalSuffix(n) {
+    if (n == null) return '';
+    var s = ["th", "st", "nd", "rd"];
+    var v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  // Convert z-score to normal cumulative percentile
+  function zToPercentile(z) {
+    if (z == null) return null;
+    var t = 1 / (1 + 0.2316419 * Math.abs(z));
+    var d = 0.3989423 * Math.exp(-z * z / 2);
+    var p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+    if (z > 0) p = 1 - p;
+    return Math.round(p * 100);
+  }
+
+  function getDomainInsight(key, z) {
+    if (z == null) return "Data not available";
+    var high = z >= 0;
+    switch(key) {
+      case 'resources':
+        return high ? "Abundant tech infrastructure and devices in schools." 
+                    : "Severe shortages of school digital devices and internet.";
+      case 'capacity':
+        return high ? "Teachers have high digital skills and strong technical support." 
+                    : "Teachers face capacity bottlenecks and lack preparation time.";
+      case 'ai_use':
+        return high ? "High student AI adoption for homework and study." 
+                    : "Low AI adoption; very few students use AI tools for school.";
+      case 'ai_guidance':
+        return high ? "Active AI instruction; lessons teach critical AI evaluation." 
+                    : "Low AI guidance; schools rarely teach students to assess AI.";
+      case 'learning_time_school':
+        return high ? "High digital device use for learning during school hours." 
+                    : "Minimal digital device use in school lessons.";
+      case 'leisure_at_school':
+        return high ? "High digital device use for fun/gaming at school." 
+                    : "Low digital leisure during school hours.";
+      case 'distraction':
+        return !high ? "Great learning focus! Students report significantly fewer in-class digital disruptions." 
+                     : "High classroom distraction from digital devices.";
+      case 'rules':
+        return high ? "Strict school device rules and phone bans enforced." 
+                    : "Permissive or un-enforced school device rules.";
+      default:
+        return "Relative standing compared to global OECD average.";
+    }
+  }
+
+  function initCountryExplorer(){
+    var sysKeys = Object.keys(MASTER_DATA).sort();
+    if(!sysKeys.length) return;
+    
+    var masterPick = document.getElementById('masterSysPick');
+    if(masterPick){
+      masterPick.innerHTML = sysKeys.map(function(n){ return '<option>' + n + '</option>'; }).join('');
+      masterPick.value = sysKeys.includes('Singapore') ? 'Singapore' : sysKeys[0];
+      masterPick.addEventListener('change', renderSingleCountry);
+    }
+    
+    var defaultSelects = ['Singapore', 'Estonia', 'Japan', 'OECD average'];
+    for(var i=1; i<=4; i++){
+      var p = document.getElementById('cPick' + i);
+      if(p){
+        p.innerHTML = '<option value="">(None)</option>' + sysKeys.map(function(n){ return '<option>' + n + '</option>'; }).join('');
+        p.value = sysKeys.includes(defaultSelects[i-1]) ? defaultSelects[i-1] : (sysKeys[i-1] || '');
+        p.addEventListener('change', renderCompare);
+      }
+    }
+
+    var metricPick = document.getElementById('metricPick');
+    if(metricPick){
+      metricPick.innerHTML = Object.keys(DOMAINS).map(function(k){ return '<option value="' + k + '">' + DOMAINS[k] + '</option>'; }).join('');
+      metricPick.addEventListener('change', renderCompare);
+    }
+
+    var btnSingle = document.getElementById('modeSingle');
+    var btnCompare = document.getElementById('modeCompare');
+    var viewSingle = document.getElementById('viewSingle');
+    var viewCompare = document.getElementById('viewCompare');
+
+    if(btnSingle && btnCompare){
+      btnSingle.addEventListener('click', function(){
+        btnSingle.setAttribute('aria-pressed', 'true');
+        btnCompare.setAttribute('aria-pressed', 'false');
+        viewSingle.style.display = '';
+        viewCompare.style.display = 'none';
+        renderSingleCountry();
+      });
+      btnCompare.addEventListener('click', function(){
+        btnCompare.setAttribute('aria-pressed', 'true');
+        btnSingle.setAttribute('aria-pressed', 'false');
+        viewCompare.style.display = '';
+        viewSingle.style.display = 'none';
+        renderCompare();
+      });
+    }
+
+    renderSingleCountry();
+  }
+
+  function renderSingleCountry(){
+    var sysName = document.getElementById('masterSysPick').value;
+    var d = MASTER_DATA[sysName];
+    if(!d) return;
+
+    var weakTitle = CAPACITY_ITEM_NAMES[d.weakest_link] || d.weakest_link || 'n/a';
+
+    var html = '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:16px;font-size:12.5px;color:var(--sec)">';
+    html += '<strong style="color:var(--ink)">💡 How to read these scores:</strong> Values are relative standing scores centered at the <strong>OECD Average (0.00)</strong>. A positive score (+1.00) means the country ranks in the top ~16% globally, while a negative score (-1.00) means the bottom ~16%. <em>Note: For distraction, a lower/negative score is better (fewer classroom disruptions).</em>';
+    html += '</div>';
+
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px">';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Science Performance</span><br><span style="font-size:22px;font-weight:700;color:var(--hi)">' + (d.science || 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is ~482</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Student AI Adoption</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.use_any_pct != null ? d.use_any_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 75.0%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Teacher AI Guidance</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.guid_pct != null ? d.guid_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 64.4%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">School Phone Bans</span><br><span style="font-size:22px;font-weight:700;color:var(--ink)">' + (d.phone_ban_pct != null ? d.phone_ban_pct + '%' : 'n/a') + '</span><br><span style="font-size:11px;color:var(--sec)">OECD Avg is 49.5%</span></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px"><span style="font-size:11px;color:var(--sec);text-transform:uppercase;font-weight:600">Weakest Capacity Bottleneck</span><br><span style="font-size:13px;color:var(--lo);font-weight:700">' + weakTitle + '</span><br><span style="font-size:11px;color:var(--sec)">Lowest school principal agreement</span></div>';
+    html += '</div>';
+
+    html += '<h3 style="font-size:14px;font-weight:600;margin:0 0 12px;color:var(--ink)">Domain-by-Domain Profile &amp; Real-World Meaning</h3>';
+    html += '<div style="display:flex;flex-direction:column;gap:12px">';
+
+    var keys = ['resources','capacity','ai_use','ai_guidance','learning_time_school','leisure_at_school','distraction','rules'];
+    keys.forEach(function(k){
+      var v = d[k];
+      var pct = zToPercentile(v);
+      var insight = getDomainInsight(k, v);
+      var valStr = v != null ? (v > 0 ? '+' : '') + v.toFixed(2) + ' z-score' : 'n/a';
+      var dashSlug = DOMAIN_DASHBOARDS[k] || '';
+      var dashUrl = dashSlug ? '../' + dashSlug + '/#sys=' + encodeURIComponent(sysName) : '#';
+
+      var isGood = k === 'distraction' ? (v != null && v <= 0) : (v != null && v >= 0);
+      var badgeBg = isGood ? 'var(--tag-infra-bg)' : 'var(--tag-policy-bg)';
+      var badgeFg = isGood ? 'var(--tag-infra-fg)' : 'var(--tag-policy-fg)';
+      var barCol = isGood ? '#009E73' : '#D55E00';
+
+      html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:3px">';
+      // Domain name IS the link — ink colour, subtle ↗ arrow suffix
+      html += '<a href="' + dashUrl + '" style="font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;cursor:pointer" title="Open ' + DOMAINS[k] + ' dashboard — ' + sysName + ' pre-selected">' + DOMAINS[k] + ' <span style="font-size:10px;opacity:0.5">↗</span></a>';
+      html += '<div style="display:flex;align-items:center;gap:8px">';
+      if (pct != null) html += '<span style="font-size:11px;padding:2px 8px;border-radius:12px;background:' + badgeBg + ';color:' + badgeFg + ';font-weight:600">' + getOrdinalSuffix(pct) + ' Percentile</span>';
+      html += '<strong style="font-size:12px;color:var(--sec)">' + valStr + '</strong>';
+      html += '</div>';
+      html += '</div>';
+
+      // Insight as subtitle above the bar — replaces the old below-bar explanation
+      html += '<div style="font-size:11.5px;color:var(--sec);line-height:1.4;margin-bottom:7px">💬 ' + insight + '</div>';
+
+      // Bar visual centered at 50% (OECD avg midline)
+      html += '<div style="position:relative;background:var(--line);height:8px;border-radius:4px;overflow:hidden">';
+      html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--mut);z-index:2" title="OECD Average"></div>';
+      if(v != null){
+        if(v >= 0) html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:' + Math.min(50, v * 20) + '%;background:' + barCol + '"></div>';
+        else html += '<div style="position:absolute;right:50%;top:0;bottom:0;width:' + Math.min(50, Math.abs(v) * 20) + '%;background:' + barCol + '"></div>';
+      }
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+
+    document.getElementById('singleCountryOutput').innerHTML = html;
+  }
+
+  function renderCompare(){
+    var selectedSys = [];
+    for(var i=1; i<=4; i++){
+      var val = document.getElementById('cPick' + i).value;
+      if(val && !selectedSys.includes(val)) selectedSys.push(val);
+    }
+    var metricKey = document.getElementById('metricPick').value;
+
+    if(!selectedSys.length){
+      document.getElementById('compareOutput').innerHTML = '<p style="font-size:13px;color:var(--sec)">Select at least one country to compare.</p>';
+      return;
+    }
+
+    var html = '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px">';
+    html += '<h3 style="font-size:14px;font-weight:600;margin:0;color:var(--ink)">Comparing: ' + DOMAINS[metricKey] + '</h3>';
+    html += '<div style="display:flex;gap:12px;flex-wrap:wrap">';
+    selectedSys.forEach(function(sys, idx){
+      var palette = COLORBLIND_PALETTE[idx % COLORBLIND_PALETTE.length];
+      html += '<span style="font-size:12px;display:inline-flex;align-items:center;gap:4px;font-weight:500;color:var(--ink)">';
+      html += '<i style="display:inline-block;width:12px;height:12px;border-radius:3px;background:' + palette.fill + '"></i> ' + sys;
+      html += '</span>';
+    });
+    html += '</div>';
+    html += '</div>';
+
+    html += '<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">';
+
+    var maxVal = 1;
+    selectedSys.forEach(function(sys){
+      var v = MASTER_DATA[sys] ? MASTER_DATA[sys][metricKey] : null;
+      if(v != null && Math.abs(v) > maxVal) maxVal = Math.abs(v);
+    });
+
+    selectedSys.forEach(function(sys, idx){
+      var palette = COLORBLIND_PALETTE[idx % COLORBLIND_PALETTE.length];
+      var d = MASTER_DATA[sys] || {};
+      var v = d[metricKey];
+      var pctNum = metricKey === 'science' || metricKey.endsWith('_pct') ? null : zToPercentile(v);
+      var valStr = v != null ? (metricKey.endsWith('_pct') ? v + '%' : (metricKey === 'science' ? v : (v > 0 ? '+' : '') + v.toFixed(2) + ' z-score')) : 'n/a';
+      var pctBar = v != null ? (metricKey === 'science' ? (v / 600 * 100) : (metricKey.endsWith('_pct') ? v : Math.max(5, Math.min(95, 50 + (v / maxVal) * 45)))) : 0;
+
+      html += '<div style="background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px">';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:6px">';
+      html += '<div style="display:flex;align-items:center;gap:6px"><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + palette.fill + '"></i><strong style="color:var(--ink)">' + sys + '</strong></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px">';
+      if(pctNum != null) html += '<span style="font-size:11px;color:var(--sec)">' + getOrdinalSuffix(pctNum) + ' percentile</span>';
+      html += '<span style="font-weight:700;color:' + palette.fill + '">' + valStr + '</span>';
+      html += '</div>';
+      html += '</div>';
+
+      // Bar visual with high-contrast colorblind-safe palette
+      html += '<div style="background:var(--line);height:12px;border-radius:6px;overflow:hidden;position:relative">';
+      if(!metricKey.endsWith('_pct') && metricKey !== 'science'){
+        html += '<div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--mut);z-index:2" title="OECD Average"></div>';
+      }
+      html += '<div style="background:' + palette.fill + ';height:100%;width:' + pctBar + '%;border-radius:6px"></div>';
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
+
+    document.getElementById('compareOutput').innerHTML = html;
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); });
+    document.addEventListener('DOMContentLoaded', function(){ initTheme(); initFilters(); initCountryExplorer(); });
   } else {
     initTheme();
     initFilters();
+    initCountryExplorer();
   }
 })();
 </script>

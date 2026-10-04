@@ -1,0 +1,73 @@
+breakdown,outcome,unit,oecd_gap,oecd_se,oecd_z,n_systems,n_sig_positive,n_sig_negative,n_not_sig,median_gap,largest_positive,largest_positive_gap,largest_negative,largest_negative_gap
+Gender (boys - girls),Never used AI for any purpose,pp,2.4735,0.164,15.08,85,63,1,21,2.95,B-S-J-Z (China),10.8455,Denmark,-2.3872
+Gender (boys - girls),AI-use index,index points,0.0379,0.0049,7.73,85,18,28,39,-0.01,Denmark,0.2177,Palestinian Authority,-0.3061
+Gender (boys - girls),Not using AI to summarise,pp,-3.2731,0.2189,-14.95,85,16,30,39,-1.44,Palestinian Authority,9.6376,Denmark,-10.3231
+Gender (boys - girls),Not using AI for research,pp,-2.4366,0.2186,-11.15,85,23,21,41,-0.3,Palestinian Authority,6.7379,Estonia,-8.269
+Gender (boys - girls),Not using AI to draft text,pp,-3.9505,0.2189,-18.05,85,14,42,29,-2.39,B-S-J-Z (China),9.3792,Indonesia,-11.8263
+Gender (boys - girls),Not using AI to help them learn,pp,2.1919,0.1946,11.26,85,51,2,32,2.87,B-S-J-Z (China),11.1769,Denmark,-3.3835
+Gender (boys - girls),Tasked with assessing AI-generated information,pp,0.8428,0.2406,3.5,85,19,12,54,0.29,Türkiye,9.0087,Chile,-5.868
+Gender (boys - girls),Digital distraction in class,pp,1.0843,0.2096,5.17,85,50,7,28,2.85,Palestinian Authority,24.5574,Denmark,-6.0046
+Gender (boys - girls),Not using digital devices for learning at school,pp,3.4434,0.1742,19.77,90,47,12,31,2.3,Slovenia,7.1966,Malaysia,-6.4367
+Student SES (advantaged - disadvantaged),Never used AI for any purpose,pp,-5.0054,0.2368,-21.14,84,0,68,16,-4.24,Estonia,-0.4717,Chinese Taipei,-14.8394
+Student SES (advantaged - disadvantaged),AI-use index,index points,0.1856,0.0068,27.29,84,75,0,9,0.22,Australia,0.4926,Estonia,-0.0528
+Student SES (advantaged - disadvantaged),Not using AI to summarise,pp,-3.7783,0.321,-11.77,84,1,45,38,-4.24,Greece,3.5747,Chinese Taipei,-14.7754
+Student SES (advantaged - disadvantaged),Not using AI for research,pp,-5.8386,0.3127,-18.67,84,0,63,21,-6.18,Estonia,0.9649,Kenya,-21.8084
+Student SES (advantaged - disadvantaged),Not using AI to draft text,pp,-3.62,0.3164,-11.44,84,3,40,41,-3.36,Estonia,5.7151,Kenya,-18.3665
+Student SES (advantaged - disadvantaged),Not using AI to help them learn,pp,-6.1697,0.2754,-22.4,84,0,74,10,-5.42,United States*,-0.6259,Chinese Taipei,-16.3648
+Student SES (advantaged - disadvantaged),Tasked with assessing AI-generated information,pp,9.231,0.346,26.68,84,78,0,6,10.17,Kenya,31.7944,Portugal,1.7002
+Student SES (advantaged - disadvantaged),Digital distraction in class,pp,-1.6778,0.3091,-5.43,84,12,29,43,-2.02,Kenya,9.0561,Slovenia,-9.953
+Student SES (advantaged - disadvantaged),Not using digital devices for learning at school,pp,-6.1711,0.2672,-23.1,89,0,63,26,-5.03,Azerbaijan,1.8511,Zambia,-27.3255
+Immigrant background (immigrant - non-immigrant),Never used AI for any purpose,pp,-2.2468,0.386,-5.82,83,1,22,60,-1.03,Korea,18.8098,United Kingdom,-14.2709
+Immigrant background (immigrant - non-immigrant),AI-use index,index points,0.0598,0.0106,5.64,83,20,11,52,-0.0,Japan,0.3748,Korea,-0.4843
+Immigrant background (immigrant - non-immigrant),Not using AI to summarise,pp,-3.2092,0.4794,-6.69,83,6,18,59,-0.43,Indonesia,16.8648,Japan,-15.4323
+Immigrant background (immigrant - non-immigrant),Not using AI for research,pp,-3.8607,0.5013,-7.7,83,4,25,54,-2.15,Korea,19.6995,Japan,-16.7277
+Immigrant background (immigrant - non-immigrant),Not using AI to draft text,pp,-3.0646,0.4795,-6.39,83,3,14,66,-1.37,Korea,10.8125,Estonia,-17.1843
+Immigrant background (immigrant - non-immigrant),Not using AI to help them learn,pp,-3.1818,0.4373,-7.28,83,3,23,57,-1.06,Korea,15.8737,Canada*,-14.5925
+Immigrant background (immigrant - non-immigrant),Tasked with assessing AI-generated information,pp,2.65,0.5137,5.16,83,17,3,63,1.14,Kenya,17.1705,Korea,-15.2401
+Immigrant background (immigrant - non-immigrant),Digital distraction in class,pp,1.5351,0.4163,3.69,83,26,9,48,3.36,Indonesia,24.6052,Qatar,-6.3242
+Immigrant background (immigrant - non-immigrant),Not using digital devices for learning at school,pp,0.6887,0.3893,1.77,86,9,17,60,-0.83,Korea,14.7797,Zambia,-27.7932
+Education level (ISCED 3 - ISCED 2),Never used AI for any purpose,pp,-4.2901,0.466,-9.21,71,1,35,35,-3.03,Kenya,11.0621,Korea,-12.6198
+Education level (ISCED 3 - ISCED 2),AI-use index,index points,0.173,0.0142,12.18,71,44,2,25,0.15,Korea,0.5907,United Kingdom,-0.2396
+Education level (ISCED 3 - ISCED 2),Not using AI to summarise,pp,-4.6362,0.6936,-6.68,71,2,23,46,-2.59,Kenya,13.8943,Estonia,-23.4532
+Education level (ISCED 3 - ISCED 2),Not using AI for research,pp,-4.9047,0.6327,-7.75,71,2,33,36,-4.15,United Kingdom,13.6249,Viet Nam,-21.4612
+Education level (ISCED 3 - ISCED 2),Not using AI to draft text,pp,-3.781,0.768,-4.92,71,2,21,48,-2.48,Kenya,16.7453,Estonia,-21.3485
+Education level (ISCED 3 - ISCED 2),Not using AI to help them learn,pp,-4.5181,0.5402,-8.36,71,3,35,33,-3.64,United Kingdom,12.5585,Malaysia,-16.109
+Education level (ISCED 3 - ISCED 2),Tasked with assessing AI-generated information,pp,3.0521,0.7763,3.93,71,34,2,35,3.78,Viet Nam,21.3829,Kenya,-20.7397
+Education level (ISCED 3 - ISCED 2),Digital distraction in class,pp,0.5002,0.6875,0.73,71,13,22,36,-1.72,Philippines,34.4275,Malaysia,-17.2669
+Education level (ISCED 3 - ISCED 2),Not using digital devices for learning at school,pp,-4.2428,0.6858,-6.19,76,7,27,42,-2.26,Kenya,16.7816,Luxembourg,-13.3721
+Programme orientation (general - vocational),Never used AI for any purpose,pp,-3.3917,0.5174,-6.56,52,6,20,26,-1.61,Palestinian Authority,3.7798,Belgium,-11.6623
+Programme orientation (general - vocational),AI-use index,index points,0.0628,0.0151,4.16,52,22,8,22,0.03,United Kingdom,0.333,Malaysia,-0.2545
+Programme orientation (general - vocational),Not using AI to summarise,pp,-2.0033,0.6383,-3.14,52,11,15,26,-0.78,Malaysia,11.1648,United Kingdom,-11.8734
+Programme orientation (general - vocational),Not using AI for research,pp,-1.6119,0.6244,-2.58,52,9,14,29,-0.12,Malaysia,8.337,United Kingdom,-20.7352
+Programme orientation (general - vocational),Not using AI to draft text,pp,-0.5377,0.7073,-0.76,52,12,9,31,1.26,Italy,9.7195,United Kingdom,-17.2905
+Programme orientation (general - vocational),Not using AI to help them learn,pp,-3.6751,0.5655,-6.5,52,6,22,24,-1.72,Dominican Republic,5.661,Spain,-15.8365
+Programme orientation (general - vocational),Tasked with assessing AI-generated information,pp,2.4998,0.7935,3.15,52,14,10,28,1.24,Germany,18.6917,Qatar,-17.392
+Programme orientation (general - vocational),Digital distraction in class,pp,-6.4026,0.6886,-9.3,53,4,32,17,-4.41,Australia,18.0542,Greece,-23.5093
+Programme orientation (general - vocational),Not using digital devices for learning at school,pp,-1.816,0.5997,-3.03,54,14,13,27,-0.3,Malaysia,11.1543,Belgium,-16.2964
+School SES (advantaged - disadvantaged schools),Never used AI for any purpose,pp,-5.8041,0.287,-20.22,84,0,63,21,-3.92,Saudi Arabia,0.3833,Australia,-18.7123
+School SES (advantaged - disadvantaged schools),AI-use index,index points,0.183,0.0088,20.8,84,64,0,20,0.18,Australia,0.6578,Estonia,-0.0784
+School SES (advantaged - disadvantaged schools),Not using AI to summarise,pp,-4.0612,0.3787,-10.72,84,2,38,44,-4.0,Greece,5.8986,Australia,-20.4827
+School SES (advantaged - disadvantaged schools),Not using AI for research,pp,-4.5687,0.3773,-12.11,84,0,47,37,-4.59,Greece,3.352,Australia,-22.6158
+School SES (advantaged - disadvantaged schools),Not using AI to draft text,pp,-2.5274,0.3802,-6.65,84,9,33,42,-2.35,Estonia,9.3214,Korea,-16.9577
+School SES (advantaged - disadvantaged schools),Not using AI to help them learn,pp,-7.1343,0.3365,-21.2,84,0,67,17,-5.88,Brunei Darussalam,1.6425,Australia,-21.4591
+School SES (advantaged - disadvantaged schools),Tasked with assessing AI-generated information,pp,8.1064,0.4126,19.65,84,64,0,20,7.63,Australia,22.9012,Portugal,-2.6059
+School SES (advantaged - disadvantaged schools),Digital distraction in class,pp,-4.2759,0.396,-10.8,84,9,33,42,-3.04,Switzerland,11.8487,Slovenia,-16.9266
+School SES (advantaged - disadvantaged schools),Not using digital devices for learning at school,pp,-6.2321,0.3334,-18.69,89,5,48,36,-3.58,Mauritius,7.2136,Zambia,-30.983
+School location (city - rural),Never used AI for any purpose,pp,-5.6229,0.6258,-8.99,72,2,28,42,-2.52,Iceland,5.0026,New Zealand*,-21.1651
+School location (city - rural),AI-use index,index points,0.1855,0.0162,11.45,72,35,4,33,0.12,Australia,0.6008,Mongolia,-0.2618
+School location (city - rural),Not using AI to summarise,pp,-4.9966,0.7814,-6.39,72,6,26,40,-3.19,Mongolia,11.8607,Australia,-24.3384
+School location (city - rural),Not using AI for research,pp,-5.8459,0.726,-8.05,72,2,21,49,-2.58,Mongolia,7.2991,Australia,-21.1596
+School location (city - rural),Not using AI to draft text,pp,-3.8921,0.761,-5.11,72,2,12,58,-1.71,Denmark,9.2584,New Zealand*,-17.9124
+School location (city - rural),Not using AI to help them learn,pp,-6.8194,0.6971,-9.78,72,2,31,39,-3.31,Iceland,6.4741,Australia,-20.1788
+School location (city - rural),Tasked with assessing AI-generated information,pp,5.7429,0.7686,7.47,72,29,2,41,4.33,New Zealand*,23.7706,Cyprus,-11.1944
+School location (city - rural),Digital distraction in class,pp,2.7032,0.9022,3.0,73,17,5,51,1.76,Italy,14.7452,United Kingdom,-13.2168
+School location (city - rural),Not using digital devices for learning at school,pp,-1.8239,0.6656,-2.74,78,10,14,54,-0.24,Jordan,7.6558,Zambia,-34.0989
+Type of school (private - public),Never used AI for any purpose,pp,-2.9257,0.4089,-7.16,75,5,33,37,-2.05,Latvia,9.5463,United Kingdom,-15.2004
+Type of school (private - public),AI-use index,index points,0.0938,0.0134,7.0,75,32,8,35,0.1,Australia,0.4837,Latvia,-0.2512
+Type of school (private - public),Not using AI to summarise,pp,-2.7831,0.557,-5.0,75,4,24,47,-2.28,Azerbaijan,8.2174,Australia,-16.2811
+Type of school (private - public),Not using AI for research,pp,-2.9523,0.5451,-5.42,75,5,29,41,-2.55,Latvia,6.7967,United Kingdom,-17.1002
+Type of school (private - public),Not using AI to draft text,pp,-1.729,0.6032,-2.87,75,15,20,40,-1.6,Bulgaria,16.0681,Australia,-12.0685
+Type of school (private - public),Not using AI to help them learn,pp,-3.3795,0.461,-7.33,75,3,26,46,-2.2,Bulgaria,8.1931,United Kingdom,-15.8887
+Type of school (private - public),Tasked with assessing AI-generated information,pp,4.5482,0.6299,7.22,75,27,2,46,3.44,United Kingdom,22.4981,Indonesia,-11.1532
+Type of school (private - public),Digital distraction in class,pp,-3.9794,0.6528,-6.1,75,6,35,34,-5.35,Romania,7.9175,Uruguay,-20.1521
+Type of school (private - public),Not using digital devices for learning at school,pp,-2.4995,0.4463,-5.6,79,12,22,45,-0.85,Dushanbe (Tajikistan),14.12,Zambia,-18.4463
