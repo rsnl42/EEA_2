@@ -51,6 +51,9 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 .key{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--sec);margin:0 0 8px}
 .key i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 #rankOut,#wOut{overflow-x:auto}
+
+.ui-tooltip{position:fixed;top:0;left:0;z-index:99999;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.45;max-width:320px;white-space:pre-line;box-shadow:0 4px 16px rgba(0,0,0,0.22);opacity:0;visibility:hidden;transition:opacity 0.1s ease,transform 0.1s ease}
+.ui-tooltip.visible{opacity:1;visibility:visible}
 </style>
 </head>
 <body>
@@ -149,6 +152,96 @@ $('thU').onclick=()=>{bonf=false;$('thU').setAttribute('aria-pressed','true');$(
 $('thB').onclick=()=>{bonf=true;$('thB').setAttribute('aria-pressed','true');$('thU').setAttribute('aria-pressed','false');if(!ref&&DATA[ind])ref=DATA[ind].rows[0][0];renderRank()};
 let rsz;addEventListener('resize',()=>{clearTimeout(rsz);rsz=setTimeout(render,150)});
 render();
+</script>
+<script>
+(function(){
+  let tt = document.getElementById('ui-tooltip');
+  if(!tt){
+    tt = document.createElement('div');
+    tt.id = 'ui-tooltip';
+    tt.className = 'ui-tooltip';
+    tt.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(tt);
+  }
+  let activeEl = null;
+
+  function findTarget(el){
+    while(el && el !== document.body && el !== document.documentElement){
+      if(el.hasAttribute && el.hasAttribute('title')){
+        const titleText = el.getAttribute('title');
+        if(titleText){
+          el.setAttribute('data-tooltip', titleText);
+          el.removeAttribute('title');
+        }
+      }
+      if(el.tagName === 'g' || el.tagName === 'circle' || el.tagName === 'path' || el.tagName === 'rect'){
+        const tChild = el.querySelector && el.querySelector('title');
+        if(tChild && tChild.textContent){
+          el.setAttribute('data-tooltip', tChild.textContent);
+          tChild.remove();
+        }
+      }
+      if(el.hasAttribute && el.hasAttribute('data-tooltip')){
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  function positionTooltip(e){
+    if(!tt.classList.contains('visible')) return;
+    const pad = 10;
+    const mx = e.clientX;
+    const my = e.clientY;
+
+    tt.style.left = mx + 'px';
+    tt.style.top = (my - 12) + 'px';
+    tt.style.transform = 'translate(-50%, -100%)';
+
+    const rect = tt.getBoundingClientRect();
+    if(rect.top < pad){
+      tt.style.top = (my + 22) + 'px';
+      tt.style.transform = 'translate(-50%, 0)';
+    }
+
+    const curRect = tt.getBoundingClientRect();
+    if(curRect.left < pad){
+      tt.style.left = (pad + curRect.width / 2) + 'px';
+    } else if(curRect.right > window.innerWidth - pad){
+      tt.style.left = (window.innerWidth - pad - curRect.width / 2) + 'px';
+    }
+  }
+
+  document.addEventListener('mouseover', function(e){
+    const target = findTarget(e.target);
+    if(target){
+      activeEl = target;
+      const text = target.getAttribute('data-tooltip');
+      if(text){
+        tt.textContent = text;
+        tt.classList.add('visible');
+        positionTooltip(e);
+      }
+    }
+  }, true);
+
+  document.addEventListener('mousemove', function(e){
+    if(activeEl){
+      positionTooltip(e);
+    }
+  }, true);
+
+  document.addEventListener('mouseout', function(e){
+    if(activeEl){
+      const target = findTarget(e.relatedTarget);
+      if(target !== activeEl){
+        activeEl = null;
+        tt.classList.remove('visible');
+      }
+    }
+  }, true);
+})();
 </script>
 </body>
 </html>

@@ -476,6 +476,24 @@ def main() -> None:
     }))
     print(f"{'landing':20s} {index}: {len(PAGES)} dashboards linked")
 
+    # Post-process all docs HTML files to ensure floating tooltips exist everywhere
+    from site_common import TOOLTIP_SCRIPT
+    for html_file in args.docs.glob("**/*.html"):
+        c = html_file.read_text(encoding="utf-8")
+        mod = False
+        if ".ui-tooltip{" not in c and "</style>" in c:
+            c = c.replace("</style>", "\n.ui-tooltip{position:fixed;top:0;left:0;z-index:99999;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.45;max-width:320px;white-space:pre-line;box-shadow:0 4px 16px rgba(0,0,0,0.22);opacity:0;visibility:hidden;transition:opacity 0.1s ease,transform 0.1s ease}\n.ui-tooltip.visible{opacity:1;visibility:visible}\n</style>")
+            mod = True
+        if "ui-tooltip" not in c or "id='ui-tooltip'" not in c:
+            if "ui-tooltip" not in c:
+                if "</body>" in c:
+                    c = c.replace("</body>", f"{TOOLTIP_SCRIPT}\n</body>")
+                else:
+                    c += f"\n{TOOLTIP_SCRIPT}"
+                mod = True
+        if mod:
+            html_file.write_text(c, encoding="utf-8")
+
 
 if __name__ == "__main__":
     main()

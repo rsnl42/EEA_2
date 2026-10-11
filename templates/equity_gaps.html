@@ -18,6 +18,8 @@
 .c b{display:block;font-weight:500;font-size:14px}
 .c span{display:block;font-size:11px;color:var(--sec)}
 #plot{overflow-x:auto}
+.tooltip{position:fixed;z-index:9999;pointer-events:none;background:#0f172a;color:#f8fafc;padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.45;max-width:280px;box-shadow:0 10px 25px -5px rgba(0,0,0,0.4),0 8px 10px -6px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);opacity:0;visibility:hidden;transition:opacity 0.12s ease-out,visibility 0.12s ease-out;white-space:pre-line;word-wrap:break-word}
+.tooltip.show{opacity:1;visibility:visible}
 </style>
 </head>
 <body>
@@ -28,13 +30,38 @@
 
 <section class="card" aria-labelledby="hmh">
 <h2 id="hmh" style="margin-bottom:10px">OECD-average gaps</h2>
+
+<details class="guide-box" style="margin-bottom:14px;background:var(--card-bg, #f8f9fa);border:1px solid var(--line, #e2e8f0);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--ink, #1e293b)">
+  <summary style="font-weight:600;cursor:pointer;user-select:none;color:var(--ink)">💡 How to read this heatmap (Hover over any column header or cell for details)</summary>
+  <div style="margin-top:8px;display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;line-height:1.4">
+    <div>
+      <strong style="color:var(--sec)">1. Big Number (+5.2 / −3.1)</strong><br>
+      The <strong>OECD-average gap</strong> between the two groups.<br>
+      • <strong>Positive (+)</strong>: 1st group (e.g. Boys) is higher.<br>
+      • <strong>Negative (−)</strong>: 2nd group (e.g. Girls) is higher.
+    </div>
+    <div>
+      <strong style="color:var(--sec)">2. Small Numbers (34 · 2)</strong><br>
+      Number of countries with a <strong>significant gap</strong>.<br>
+      • <strong>Left (34)</strong>: Countries where 1st group is higher.<br>
+      • <strong>Right (2)</strong>: Countries where 2nd group is higher.
+    </div>
+    <div>
+      <strong style="color:var(--sec)">3. Cell Shading & "Not Using" Columns</strong><br>
+      • 🟦 <strong>Blue shading</strong>: 1st group higher in most countries.<br>
+      • 🟥 <strong>Red shading</strong>: 1st group lower in most countries.<br>
+      • <em>Note</em>: For "Not using" columns, a positive gap (+) means the 1st group uses AI/devices <strong>less</strong>.
+    </div>
+  </div>
+</details>
+
 <div class="hmwrap"><div id="hm" class="hm" role="grid"></div></div>
 <div class="lg">
 <span><i style="background:rgba(var(--hib),.6)"></i>First-named group higher in most systems</span>
 <span><i style="background:rgba(var(--lob),.6)"></i>Lower in most systems</span>
 <span><i style="border:1px solid var(--mut)"></i>Mixed or no gap</span>
 </div>
-<p class="note">Big number: OECD-average gap (percentage points; index points for the AI-use index). Small numbers: systems with a significant gap, higher · lower. Shading shows how consistent the gap is across systems, not how large it is. For the "not using" columns a positive gap means the first group uses AI less.</p>
+<p class="note">Big number: OECD-average gap (percentage points; index points for the AI-use index). Small numbers: systems with a significant gap, higher · lower. Shading shows how consistent the gap is across systems, not how large it is.</p>
 </section>
 
 <section class="card" id="detail" aria-live="polite">
@@ -52,20 +79,21 @@
 
 <footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 tables I.B1.4.26, 43, 54 to 59 and 68. Gaps are unadjusted differences in group shares or means; bars are 95% confidence intervals (estimate ± 1.96 S.E.). Systems marked * carry comparability flags in the source. With around 85 systems per cell, a few significant results in each direction can arise by chance, so read single-system results with care.</footer>
 </main>
+<div id="tt" class="tooltip" role="tooltip" aria-hidden="true"></div>
 <script>
 const NAMES=%%NAMES%%;
 const D=%%D%%;
 const O=%%O%%;
 const cols=[
-{s:"Never used AI",f:"Never used AI for any purpose",p:"have never used AI for any purpose",k:"pp",inv:1},
-{s:"AI-use index",f:"AI-use index",k:"idx"},
-{s:"Not: summarise",f:"Not using AI to summarise",p:"report not using AI to summarise",k:"pp",inv:1},
-{s:"Not: research",f:"Not using AI for research",p:"report not using AI for research",k:"pp",inv:1},
-{s:"Not: draft",f:"Not using AI to draft text",p:"report not using AI to draft text",k:"pp",inv:1},
-{s:"Not: to learn",f:"Not using AI to help them learn",p:"report not using AI to help them learn",k:"pp",inv:1},
-{s:"Assess AI tasks",f:"Tasked with assessing AI-generated information",p:"have been tasked with assessing AI-generated information",k:"pp"},
-{s:"Distraction",f:"Digital distraction in class",p:"report digital distraction in class",k:"pp"},
-{s:"No device use",f:"Not using digital devices for learning at school",p:"report not using digital devices for learning at school",k:"pp"}];
+{s:"Never used AI",f:"Never used AI for any purpose",d:"% of students who report never using AI tools for any school or personal task.",p:"have never used AI for any purpose",k:"pp",inv:1},
+{s:"AI-use index",f:"AI-use index",d:"Composite index measuring overall frequency of student AI use (higher = more frequent AI use).",k:"idx"},
+{s:"Not: summarise",f:"Not using AI to summarise",d:"% of students who report NOT using AI tools to summarise texts, books, or articles.",p:"report not using AI to summarise",k:"pp",inv:1},
+{s:"Not: research",f:"Not using AI for research",d:"% of students who report NOT using AI tools for researching topics or looking up information.",p:"report not using AI for research",k:"pp",inv:1},
+{s:"Not: draft",f:"Not using AI to draft text",d:"% of students who report NOT using AI tools to draft essays, emails, or written texts.",p:"report not using AI to draft text",k:"pp",inv:1},
+{s:"Not: to learn",f:"Not using AI to help them learn",d:"% of students who report NOT using AI tools as a learning tutor or study aid.",p:"report not using AI to help them learn",k:"pp",inv:1},
+{s:"Assess AI tasks",f:"Tasked with assessing AI-generated information",d:"% of students tasked by teachers with critically evaluating or checking AI-generated content.",p:"have been tasked with assessing AI-generated information",k:"pp"},
+{s:"Distraction",f:"Digital distraction in class",d:"% of students who report being distracted by digital devices during classroom lessons.",p:"report digital distraction in class",k:"pp"},
+{s:"No device use",f:"Not using digital devices for learning at school",d:"% of students who report NOT using digital devices (laptops, tablets, phones) for learning at school.",p:"report not using digital devices for learning at school",k:"pp",inv:1}];
 const rows=[
 {s:"Gender (boys vs girls)",f:"Gender",A:"boys",B:"girls"},
 {s:"Student SES (adv. vs disadv.)",f:"Student socio-economic status",A:"advantaged students",B:"disadvantaged students"},
@@ -82,15 +110,53 @@ const dec=c=>cols[c].k==='idx'?2:1;
 function stats(r,c){let p=0,q=0;D[r][c].forEach(x=>{const z=x[1]/x[2];if(z>1.96)p++;else if(z<-1.96)q++});return{n:D[r][c].length,p:p,q:q,o:O[r][c]}}
 let sel=[0,0],mode='gap';
 const hm=$('hm');
+const tt=$('tt');
+function showTT(e,text){
+ tt.textContent=text;
+ tt.classList.add('show');
+ moveTT(e);
+}
+function moveTT(e){
+ if(!tt.classList.contains('show'))return;
+ const pad=12;
+ const w=tt.offsetWidth||240;
+ const h=tt.offsetHeight||60;
+ let top=e.clientY-h-pad;
+ let left=e.clientX-w/2;
+ if(top<10){top=e.clientY+pad+16}
+ left=Math.max(10,Math.min(window.innerWidth-w-10,left));
+ tt.style.top=top+'px';
+ tt.style.left=left+'px';
+}
+function hideTT(){tt.classList.remove('show')}
+function attachTT(el,text){
+ el.addEventListener('mouseenter',e=>showTT(e,text));
+ el.addEventListener('mousemove',moveTT);
+ el.addEventListener('mouseleave',hideTT);
+ el.addEventListener('focus',e=>{
+  const r=el.getBoundingClientRect();
+  showTT({clientX:r.left+r.width/2,clientY:r.top},text);
+ });
+ el.addEventListener('blur',hideTT);
+}
 function cell(cls,txt,st){const d=document.createElement('div');d.className=cls;if(txt!==undefined)d.textContent=txt;if(st)d.style.cssText=st;hm.appendChild(d);return d}
 cell('');cell('g','AI use','grid-column:span 6');cell('g','Guidance');cell('g','Devices','grid-column:span 2');
-cell('');cols.forEach(c=>cell('h',c.s));
+cell('');cols.forEach(c=>{
+ const el=cell('h',c.s);
+ el.style.cursor='pointer';
+ el.style.textDecoration='underline dotted';
+ el.style.textUnderlineOffset='3px';
+ attachTT(el,`${c.f}: ${c.d}`);
+});
 const btns=[];
 rows.forEach((r,i)=>{cell('r',r.s);btns[i]=[];cols.forEach((c,j)=>{
  const st=stats(i,j),net=(st.p-st.q)/st.n,a=Math.min(Math.abs(net),1)*0.62;
  const b=document.createElement('button');b.className='c';
  b.style.background=Math.abs(net)<0.12?'transparent':`rgba(var(--${net>0?'hib':'lob'}),${a})`;
  b.innerHTML=`<b>${sg(st.o[0],dec(j))}</b><span>${st.p} \u00b7 ${st.q}</span>`;
+ const unitText=c.k==='idx'?'index points':'percentage points';
+ const tooltipText=`${r.f}: ${c.f}\n• OECD Average Gap: ${sg(st.o[0],dec(j))} ${unitText}\n• Country Gaps: ${st.p} countries where ${r.A} are higher, ${st.q} where ${r.B} are higher (out of ${st.n} countries with data).\n(Click cell to see country dot plot)`;
+ attachTT(b,tooltipText);
  b.setAttribute('aria-label',`${r.f}, ${c.f}: OECD gap ${sg(st.o[0],dec(j))}; ${st.p} of ${st.n} systems significantly higher, ${st.q} lower`);
  b.setAttribute('aria-pressed','false');
  b.addEventListener('click',()=>select(i,j,true));
@@ -107,19 +173,23 @@ function renderDetail(){
  const data=D[r][c].map(x=>({n:NAMES[x[0]],g:x[1],se:x[2],lo:x[1]-1.96*x[2],hi:x[1]+1.96*x[2]}));
  data.forEach(x=>x.sig=x.lo>0||x.hi<0);
  const o={n:'OECD average',g:O[r][c][0],se:O[r][c][1]};o.lo=o.g-1.96*o.se;o.hi=o.g+1.96*o.se;o.sig=o.lo>0||o.hi<0;
+ const presentIdx=new Set(D[r][c].map(x=>x[0]));
+ const missingNames=NAMES.filter((_,i)=>!presentIdx.has(i));
  $('dt').textContent=`${R.f}: ${C.f}`;
- $('du').textContent=`Gap = ${R.A} minus ${R.B}, in ${idx?'index points':'percentage points'}. ${data.length} systems with data.`;
+ const mLabel=missingNames.length?` (${missingNames.length} missing / labelled M: ${missingNames.join(', ')})`:'';
+ $('du').textContent=`Gap = ${R.A} minus ${R.B}, in ${idx?'index points':'percentage points'}. ${data.length} systems with data${mLabel}.`;
  const p=data.filter(x=>x.g/x.se>1.96).length,q=data.filter(x=>x.g/x.se<-1.96).length,m=o.g>=0?1:-1;
  let how,head;
  if(idx){
   how=`Each dot is one system's gap on the AI-use index. Right of zero: ${R.A} score higher than ${R.B} (more frequent AI use); left of zero: lower.`;
   head=`On the OECD average, ${R.A} score ${Math.abs(o.g).toFixed(2)} index points ${o.g>0?'higher':'lower'} than ${R.B}${o.sig?'':' (not statistically significant)'}.`;
  }else{
-  how=`Each dot is one system's gap in the share of students. Right of zero: ${R.A} are more likely than ${R.B} to ${C.p}; left of zero: less likely.`+(C.inv?` This is a non-use measure, so right of zero means ${R.A} use AI less.`:'');
+  const devText=c===8?'digital devices':'AI';
+  how=`Each dot is one system's gap in the share of students. Right of zero: ${R.A} are more likely than ${R.B} to ${C.p}; left of zero: less likely.`+(C.inv?` This is a non-use measure, so right of zero means ${R.A} use ${devText} less.`:'');
   head=`On the OECD average, ${R.A} are ${Math.abs(o.g).toFixed(1)} pp ${o.g>0?'more':'less'} likely than ${R.B} to ${C.p}${o.sig?'':' (not statistically significant)'}.`;
  }
  how+=` A bar that crosses zero means the gap could be chance.`;
- head+=` Of ${data.length} systems, ${p} show a significantly positive gap, ${q} a significantly negative one, and ${data.length-p-q} no clear gap.`;
+ head+=` Of ${data.length} systems with data, ${p} show a significantly positive gap, ${q} a significantly negative one, and ${data.length-p-q} no clear gap.`;
  const inDir=data.filter(x=>x.sig&&Math.sign(x.g)===m).sort((a,b)=>m*(b.g-a.g)).slice(0,3);
  const opp=data.filter(x=>x.sig&&Math.sign(x.g)===-m).sort((a,b)=>-m*(b.g-a.g));
  const wide=data.slice().sort((a,b)=>b.se-a.se).slice(0,2);
@@ -162,3 +232,4 @@ select(0,0,false);
 </script>
 </body>
 </html>
+

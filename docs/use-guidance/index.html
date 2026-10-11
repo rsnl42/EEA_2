@@ -99,6 +99,10 @@ ul.pages li{background:none;border:none}
 footer{font-size:12px;color:var(--mut);max-width:85ch;margin-top:24px}
 :focus-visible{outline:2px solid var(--hi);outline-offset:2px}
 
+/* Universal Floating Tooltip */
+.ui-tooltip{position:fixed;top:0;left:0;z-index:99999;pointer-events:none;background:var(--ink);color:var(--bg);padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.45;max-width:320px;white-space:pre-line;box-shadow:0 4px 16px rgba(0,0,0,0.22);opacity:0;visibility:hidden;transition:opacity 0.1s ease,transform 0.1s ease}
+.ui-tooltip.visible{opacity:1;visibility:visible}
+
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
 .facts b{display:block;font-size:24px;font-weight:500;line-height:1.2}
 .facts span{display:block;font-size:12px;color:var(--sec);max-width:26ch}
