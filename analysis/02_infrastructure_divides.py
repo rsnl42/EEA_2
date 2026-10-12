@@ -88,6 +88,7 @@ def extract(wb: Workbook) -> tuple[pd.DataFrame, pd.DataFrame]:
                 "n_sig_flipped": int(((s.favorability_gap < 0) & s.sig).sum()),
                 # only systems WITH a gap can be "not significant": a missing gap is not a null result
                 "n_not_sig": int((s.gap.notna() & ~s.sig).sum()),
+                "n_missing": int(s.gap.isna().sum()),
             })
     summary = pd.DataFrame(summary_rows)
     assert (summary.n_sig_expected + summary.n_sig_flipped + summary.n_not_sig == summary.n_systems).all(), \
@@ -103,7 +104,8 @@ def build_scorecard(long_df: pd.DataFrame) -> pd.DataFrame:
         S.sig & (S.favorability_gap < 0),
     ]
     choices = [np.nan, 1.0, -1.0]
-    S["sign"] = np.select(conds, choices, default=0.0)
+    S["sign"] = np.select(conds, choices, default=0.0).astype(float)
+    S.loc[S.gap.isna(), "sign"]=np.nan  # no estimate for this system/table: not "no clear gap"
     wide = S.pivot_table(index="system", columns=["dimension", "table_label"], values="sign", aggfunc="first")
     wide.columns = [f"{dim}:{lbl}" for dim, lbl in wide.columns]
 
@@ -114,6 +116,7 @@ def build_scorecard(long_df: pd.DataFrame) -> pd.DataFrame:
         n_missing=lambda s: s.isna().sum(),
     )
     counts["n_tested"] = counts.n_expected + counts.n_flipped + counts.n_flat
+    assert (counts.n_expected + counts.n_flipped + counts.n_flat + counts.n_missing == 21).all(), "scorecard cells do not add up to 21"
     counts["n_scored"] = counts.n_expected + counts.n_flipped
     counts["share_flipped"] = (counts.n_flipped / counts.n_scored).where(counts.n_scored > 0)
 

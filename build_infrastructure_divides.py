@@ -31,6 +31,12 @@ def load_analysis():
 def isna(v) -> bool:
     return v is None or (isinstance(v, float) and math.isnan(v))
 
+def loc_no_clear(long_df, oecd_row) -> str:
+    """'54 of 77': countries with no clear city-vs-rural gap on BOTH lack-of-resources (7) and poor-quality (8)."""
+    s = long_df[(long_df.system != oecd_row) & (long_df.dimension == "location") & long_df.table.isin(["7", "8"])]
+    gap, sig = s.pivot(index="system", columns="table", values="gap"), s.pivot(index="system", columns="table", values="sig")
+    both = gap.notna().all(axis=1)
+    return f"{int((both & ~sig['7'].astype(bool) & ~sig['8'].astype(bool)).sum())} of {int(both.sum())}"
 
 def build(xlsx: Path, out: Path) -> str:
     idv = load_analysis()
@@ -49,7 +55,7 @@ def build(xlsx: Path, out: Path) -> str:
          "oecd_se": round(float(r.oecd_se), 3),
          "oecd_z": round(float(r.oecd_z), 2), "n_systems": int(r.n_systems),
          "n_sig_expected": int(r.n_sig_expected), "n_sig_flipped": int(r.n_sig_flipped),
-         "n_not_sig": int(r.n_not_sig)}
+         "n_not_sig": int(r.n_not_sig), "n_missing": int(r.n_missing)}
         for r in summary.itertuples()
     ]
 
@@ -57,7 +63,7 @@ def build(xlsx: Path, out: Path) -> str:
     dim_cols = [c for c in scorecard.columns if ":" in c]
     for name, row in scorecard.iterrows():
         entry = {"n_expected": int(row.n_expected), "n_flipped": int(row.n_flipped),
-                  "n_flat": int(row.n_flat), "n_missing": int(row.n_missing),
+                  "n_flat": int(row.n_flat), "n_missing": int(row.n_missing), "n_scored": int(row.n_scored),
                   "n_tested": int(row.n_tested), "n_scored": int(row.n_scored),
                   "share_flipped": None if isna(row.share_flipped) else round(float(row.share_flipped), 3),
                   "pattern": row.pattern}
@@ -72,6 +78,7 @@ def build(xlsx: Path, out: Path) -> str:
         "SUMMARY": dump(summary_rows),
         "SCORE": dump(score),
         "TABLES": dump(table_labels),
+        "LOC_NOCLEAR": loc_no_clear(long_df, OECD_ROW),
     })
     write_page(out, html)
     return f"{len(score)} systems, {len(summary_rows)} table x dimension cells, {len(html) / 1024:.0f} KB"

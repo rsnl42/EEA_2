@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PISA 2025: how do students split their device time between learning and leisure?</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+%%BASE_CSS%%
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:0 0 20px}
+.facts b{display:block;font-size:22px;font-weight:500;line-height:1.2}
+.facts span{display:block;font-size:12px;color:var(--sec);max-width:30ch}
+.pagetabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.pagetabs button{font:inherit;font-size:14px;padding:8px 14px;border-radius:7px 7px 0 0;border:1px solid var(--line);border-bottom:none;background:var(--bg);color:var(--sec);cursor:pointer}
+.pagetabs button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:500}
+.panel{display:none}.panel.on{display:block}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+.tabs select{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:5px;padding:5px 8px;background:var(--surface);color:var(--ink)}
+.tabs label{font-size:12px;color:var(--sec)}
+.tabs button{font:inherit;font-size:12px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:5px;padding:3px 10px;cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--ink)}
+table.rank{border-collapse:collapse;font-size:13px;width:100%;max-width:640px}
+table.rank th{font-weight:600;color:var(--sec);text-align:right;padding:4px 8px;border-bottom:1px solid var(--line)}
+table.rank th:first-child,table.rank td:first-child{text-align:left;padding-left:0}
+table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line);color:var(--ink)}
+.ccard{border:1px solid var(--line);border-radius:8px;padding:10px 12px;cursor:pointer;background:var(--surface);font:inherit;text-align:left}
+.ccard[aria-pressed="true"]{border-color:var(--ink);outline:1px solid var(--ink)}
+.ccard b{display:block;font-size:14px;margin-bottom:2px;color:var(--ink)}
+.ccard span{display:block;font-size:12px;color:var(--sec)}
+#rankOut,#plot,#budget{overflow-x:auto}
+.badge-m{display:inline-block;padding:1px 6px;border-radius:4px;background:var(--line);color:var(--sec);font-weight:600;font-size:11px}
+</style>
+</head>
+<body>
+<main>
+<div class="top-bar">
+ <nav class="nav"><a href="../">&#8249; All dashboards</a></nav>
+ <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme"><span>&#9790;</span> Switch Theme</button>
+</div>
+<h1>How do students split their device time between learning and leisure?</h1>
+<p class="sub">PISA 2025, up to 91 education systems. Students reported hours per day on digital devices for learning and for leisure at school, before/after school on weekdays, and on a weekend day. The OECD text gives the OECD averages; this compares learning with leisure country by country, splits the weekday between school and home, and looks at the heavy-use tails.%%EXCL%%</p>
+<div class="facts" id="facts"></div>
+
+<div class="pagetabs" role="tablist">
+<button data-t="ratio" aria-pressed="true">Learning vs leisure</button>
+<button data-t="split" aria-pressed="false">School vs out of school</button>
+<button data-t="tail" aria-pressed="false">Heavy-use tails</button>
+<button data-t="clus" aria-pressed="false">Four time-use archetypes</button>
+</div>
+
+<section class="panel on" id="p_ratio"><div class="card">
+<h2 style="margin-bottom:4px">OECD-average hours per day</h2>
+<div id="budget"></div>
+<p class="note" style="margin:6px 0 0">Weekday total = at school + before/after school. A weekend figure is for one weekend day, so no weekly total is implied.</p>
+</div></section>
+<section class="panel" id="p_rankhost"><div class="card">
+<h2 id="rankTitle" style="margin-bottom:4px"></h2>
+<p class="note" id="rankNote" style="margin:0 0 10px"></p>
+<div class="tabs" id="rankCtl"></div>
+<div id="rankOut"></div>
+</div></section>
+
+<section class="panel" id="p_clus"><div class="card">
+<h2 style="margin-bottom:4px">Four time-use archetypes</h2>
+<p class="note" style="margin:0 0 10px">Ward clustering on weekday device time, weekend device time and the learning share of device time in each of the three contexts (silhouette 0.24, bootstrap stability 0.63). Clustering the six raw hour figures was unstable (stability 0.33&ndash;0.45) because they mostly measure overall device intensity. Click a card to highlight its countries, or a dot to open that country&rsquo;s lookup below.</p>
+<div id="cards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:0 0 16px"></div>
+<div id="plot"></div>
+<p class="note" style="margin:8px 0 0">Each dot is a country, positioned by its first two principal components. Some dots overlap, so a country can sit underneath another; pick it from the country dropdown in the lookup below instead. These are unsupervised groupings on 5 features across 90 clustered countries &mdash; a broad summary, not a firm classification.</p>
+</div></section>
+
+<div class="card" id="lookup">
+<h2 style="margin-bottom:8px">Look up a country</h2>
+<div class="tabs"><label for="pick">Country</label><select id="pick"></select></div>
+<div id="sysOut"></div>
+</div>
+
+<footer>Source: OECD, PISA 2025 Results (Volume I), chapter 4 table I.B1.4.21. Ratios and splits are derived from separately reported means and carry no confidence intervals (their covariance is not in the table). Tail shares are the sum of the reported hour bands; their whiskers are 95% intervals from a conservative standard error. Self-reported hours: the open-ended top band (&ldquo;more than 7 hours&rdquo;) is large in a few systems, so treat extreme tails with care. Missing data coded as 'm' in OECD source tables are labelled M.</footer>
+</main>
+<script>
+const ROWS=%%ROWS%%, OECD=%%OECD%%, CLUS=%%CLUS%%, PROF=%%PROF%%, STATS=%%STATS%%;
+const $=id=>document.getElementById(id);
+const CT={s:'at school',b:'before/after school',w:'on weekends'}, AC={L:'learning',E:'leisure'};
+const M={
+ ratio_s:{l:'Learning-to-leisure ratio at school',f:v=>v.toFixed(2),ref:1,d:'Hours of learning divided by hours of leisure. Above 1 means more learning than leisure.'},
+ ratio_b:{l:'Learning-to-leisure ratio before/after school',f:v=>v.toFixed(2),ref:1,d:'Same ratio for weekday hours outside school.'},
+ ratio_w:{l:'Learning-to-leisure ratio on weekends',f:v=>v.toFixed(2),ref:1,d:'Same ratio for a weekend day.'},
+ ratio_wd:{l:'Learning-to-leisure ratio, whole weekday',f:v=>v.toFixed(2),ref:1,d:'(Learning at school + before/after) divided by (leisure at school + before/after).'},
+ school_share_learn:{l:'Share of weekday learning hours spent at school',f:v=>v.toFixed(0)+'%',d:'At-school learning hours as a share of at-school plus before/after school learning.'},
+ school_share_leisure:{l:'Share of weekday leisure hours spent at school',f:v=>v.toFixed(0)+'%',d:'The same split for leisure: high means more of weekday leisure happens on school grounds.'},
+ wd_total:{l:'Total device hours per weekday',f:v=>v.toFixed(1),d:'Learning plus leisure, at school plus before/after school.'},
+ we_total:{l:'Total device hours per weekend day',f:v=>v.toFixed(1),d:'Learning plus leisure on a weekend day.'}
+};
+const TAILS=['Es','Eb','Ew','Ls','Lb','Lw'];
+TAILS.forEach(k=>['gt5','gt7'].forEach(t=>M[k+'_'+t]={l:'% of students above '+t.slice(2)+' hours per day: '+AC[k[0]]+' '+CT[k[1]],f:v=>v.toFixed(1)+'%',se:k+'_'+t+'_se',d:'Sum of reported student shares in heavy-use hour bands.'}));
+const fmt=(k,v)=>v==null?'<span class="badge-m" title="Missing from source table">M</span>':M[k].f(v);
+
+// Theme toggle with localStorage persistence
+(function(){
+ try {
+  var t = localStorage.getItem('theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+ } catch(e){}
+})();
+const themeBtn=$('themeToggleBtn');
+if(themeBtn){
+ themeBtn.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  const next=cur==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  try { localStorage.setItem('theme', next); } catch(e){}
+ });
+}
+
+// facts
+const best=(k)=>ROWS.filter(r=>r[k]!=null).sort((a,b)=>b[k]-a[k])[0];
+const hi=best('ratio_s');
+$('facts').innerHTML=[
+ [OECD.Ls+OECD.Lb>0?(OECD.Ls+OECD.Lb).toFixed(1)+' h vs '+(OECD.Es+OECD.Eb).toFixed(1)+' h':'','OECD weekday: learning vs leisure on devices'],
+ [OECD.ratio_s.toFixed(2)+' \u2192 '+OECD.ratio_w.toFixed(2),'OECD learning-to-leisure ratio at school, then on weekends'],
+ [OECD.Ew_gt5.toFixed(0)+'%','of students spend over 5 hours on a weekend day on device leisure (OECD)'],
+ [hi?hi.ratio_s.toFixed(1)+' in '+hi.n.replace(' (China)'):'','highest learning-to-leisure ratio at school, of '+STATS.n+' systems']
+].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
+
+// OECD budget chart
+function renderBudget(){
+ const W=Math.max($('budget').clientWidth,360),L=215,R=50,rh=22,gap=6,mx=4;
+ const xs=v=>L+v/mx*(W-L-R); let s='';const rows=[];
+ ['s','b','w'].forEach(c=>['L','E'].forEach(a=>rows.push([AC[a][0].toUpperCase()+AC[a].slice(1)+' '+CT[c],OECD[a+c],a])));
+ s=`<svg width="${W}" height="${rows.length*(rh+gap)+8}" role="img" aria-label="OECD average hours per day, learning and leisure in each context">`;
+ rows.forEach((r,i)=>{const y=4+i*(rh+gap);
+  s+=`<text x="${L-8}" y="${y+15}" text-anchor="end" style="font-size:12px;fill:var(--ink)">${r[0]}</text><rect x="${L}" y="${y}" width="${Math.max(xs(r[1])-L,1)}" height="${rh}" rx="3" fill="${r[2]==='L'?'var(--hi)':'var(--lo)'}" fill-opacity=".8"/><text x="${xs(r[1])+6}" y="${y+15}" style="font-size:12px;fill:var(--ink)">${r[1].toFixed(2)} h</text>`;
+ });
+ $('budget').innerHTML=s+'</svg>';
+}
+
+// ranking tab
+const VIEWS={
+ ratio:{t:'Learning-to-leisure ratio by country',n:'Hours of learning on devices divided by hours of leisure.',keys:['ratio_s','ratio_b','ratio_w','ratio_wd']},
+ split:{t:'School vs home share of weekday device time',n:'What percent of weekday device hours happen at school?',keys:['school_share_learn','school_share_leisure','wd_total','we_total']},
+ tail:{t:'Heavy-use tails: students on devices >5 or >7 hours/day',n:'Tail percentages with 95% confidence intervals from reported standard errors.',keys:['Ew_gt5','Ew_gt7','Eb_gt5','Eb_gt7','Es_gt5','Es_gt7','Lw_gt5','Lw_gt7','Lb_gt5','Lb_gt7','Ls_gt5','Ls_gt7']}
+};
+let view='ratio', metric={ratio:'ratio_s',split:'school_share_learn',tail:'Ew_gt5'}, selSys='';
+function renderRank(){
+ const V=VIEWS[view],mk=metric[view],m=M[mk];
+ $('rankTitle').textContent=V.t;$('rankNote').textContent=V.n+' '+m.d;
+ $('rankCtl').innerHTML='<label for="mpick">Measure</label><select id="mpick">'+V.keys.map(k=>`<option value="${k}"${k===mk?' selected':''}>${M[k].l}</option>`).join('')+'</select>';
+ $('mpick').onchange=e=>{metric[view]=e.target.value;renderRank()};
+ const rows=ROWS.filter(r=>r[mk]!=null).sort((a,b)=>b[mk]-a[mk]);
+ const hiv=Math.max(...rows.map(r=>r[mk]+(m.se?1.96*(r[m.se]||0):0)),OECD[mk]||0,m.ref||0)*1.05;
+ const W=Math.max($('rankOut').clientWidth,360),L=170,R=70,rh=14,gap=4;
+ const xs=v=>L+v/hiv*(W-L-R);
+ let s=`<svg width="${W}" height="${rows.length*(rh+gap)+30}" role="img" aria-label="${m.l}, all countries ranked">`;
+ rows.forEach((r,i)=>{const y=22+i*(rh+gap),sel=r.n===selSys;
+  s+=`<g data-n="${r.n}" style="cursor:pointer"><text x="${L-8}" y="${y+11}" text-anchor="end" style="font-size:11px;fill:${sel?'#c0453f':'var(--ink)'};font-weight:${sel?600:400}">${r.n.replace(' (China)','')}</text><rect x="${L}" y="${y}" width="${Math.max(xs(r[mk])-L,1)}" height="${rh}" rx="2" fill="${sel?'#c0453f':'var(--hi)'}" fill-opacity=".75"/>`;
+  if(m.se&&r[m.se]!=null)s+=`<line x1="${xs(Math.max(r[mk]-1.96*r[m.se],0))}" x2="${xs(r[mk]+1.96*r[m.se])}" y1="${y+rh/2}" y2="${y+rh/2}" stroke="var(--ink)" stroke-width="1"/>`;
+  s+=`<text x="${xs(r[mk]+(m.se?1.96*(r[m.se]||0):0))+6}" y="${y+11}" style="font-size:11px;fill:var(--ink)">${m.f(r[mk])}</text></g>`});
+ if(OECD[mk]!=null)s+=`<line x1="${xs(OECD[mk])}" x2="${xs(OECD[mk])}" y1="16" y2="${rows.length*(rh+gap)+24}" stroke="var(--ink)" stroke-dasharray="4 3"/><text x="${xs(OECD[mk])+4}" y="12" style="font-size:11px;fill:var(--ink)">OECD average ${m.f(OECD[mk])}</text>`;
+ if(m.ref&&m.ref!==OECD[mk])s+=`<line x1="${xs(m.ref)}" x2="${xs(m.ref)}" y1="16" y2="${rows.length*(rh+gap)+24}" stroke="var(--line)"/>`;
+ $('rankOut').innerHTML=s+'</svg>';
+ $('rankOut').querySelectorAll('g[data-n]').forEach(g=>g.addEventListener('click',()=>choose(g.dataset.n,false)));
+}
+
+// lookup
+$('pick').innerHTML='<option value="">Choose a country</option>'+ROWS.map(r=>r.n).sort((a,b)=>a.localeCompare(b)).map(n=>`<option>${n}</option>`).join('');
+$('pick').onchange=e=>choose(e.target.value,false);
+function choose(n,scroll){selSys=n;$('pick').value=n;renderLookup();if(view!=='clus')renderRank();if(scroll)$('lookup').scrollIntoView({behavior:'smooth',block:'start'})}
+function renderLookup(){
+ const r=ROWS.find(x=>x.n===selSys),o=$('sysOut');
+ if(!r){o.innerHTML='<p class="note">Choose a country, or click a bar or a dot, to compare it with the OECD average.</p>';return}
+ const ks=['ratio_s','ratio_b','ratio_w','school_share_learn','school_share_leisure','wd_total','we_total','Eb_gt5','Ew_gt5','Ew_gt7','Ls_gt5'];
+ const cl=CLUS.find(x=>x.n===r.n);
+ const clDesc=cl?`Cluster ${cl.cluster}: ${PROF.find(p=>p.cluster===cl.cluster)?.label || ''}`:'<span style="color:var(--sec);font-style:italic">Unclustered (missing time-use data)</span>';
+ const isMissingAll=ks.every(k=>r[k]==null);
+ let notice='';
+ if(isMissingAll){
+  notice=`<div style="background:var(--bg);border-left:4px solid var(--lo);padding:8px 12px;margin:8px 0 12px;border-radius:4px"><strong style="color:var(--ink)">Notice:</strong> ${r.n} did not report time-use data in PISA 2025 Table I.B1.4.21. All items are missing (<strong>M</strong>).</div>`;
+ }
+ o.innerHTML=notice+`<p class="note" style="margin-bottom:8px">Archetype: <strong>${clDesc}</strong></p><table class="rank"><tr><th>Measure</th><th>${r.n}</th><th>OECD average</th></tr>`+ks.map(k=>`<tr><td>${M[k].l}</td><td>${fmt(k,r[k])}</td><td>${fmt(k,OECD[k])}</td></tr>`).join('')+'</table>';
+}
+
+// archetypes
+const CCOL=['#2461a8','#c0453f','#2a9d6f','#c99a2e','#8a5fd6','#e0709a'];let hiC=null;
+function renderClusters(){
+ $('cards').innerHTML=PROF.map(p=>`<button class="ccard" data-c="${p.cluster}" aria-pressed="false"><b>Cluster ${p.cluster} (n=${p.n})</b><span>${p.label}</span><span>science mean: ${p.science_mean==null?'<span class="badge-m">M</span>':Math.round(p.science_mean)}</span></button>`).join('');
+ $('cards').querySelectorAll('.ccard').forEach(b=>b.addEventListener('click',()=>{hiC=hiC===+b.dataset.c?null:+b.dataset.c;$('cards').querySelectorAll('.ccard').forEach(x=>x.setAttribute('aria-pressed',String(+x.dataset.c===hiC)));renderScatter()}));
+ renderScatter();
+}
+function renderScatter(){
+ const validPts=CLUS.filter(r=>r.pc1!=null&&r.pc2!=null);
+ const W=Math.max($('plot').clientWidth,360),H=380,L=20,R=16,T=10,B=10,px=validPts.map(r=>r.pc1),py=validPts.map(r=>r.pc2);
+ let x0=Math.min(...px),x1=Math.max(...px),y0=Math.min(...py),y1=Math.max(...py);const a=(x1-x0)*.06,b=(y1-y0)*.06;x0-=a;x1+=a;y0-=b;y1+=b;
+ const xs=v=>L+(v-x0)/(x1-x0)*(W-L-R),ys=v=>H-B-(v-y0)/(y1-y0)*(H-T-B);
+ let s=`<svg width="${W}" height="${H}" role="img" aria-label="Countries plotted by principal components of five time-use features"><line x1="${L}" x2="${W-R}" y1="${ys(0)}" y2="${ys(0)}" stroke="var(--line)"/><line x1="${xs(0)}" x2="${xs(0)}" y1="${T}" y2="${H-B}" stroke="var(--line)"/>`;
+ const labPts=validPts.slice().sort((a,b)=>Math.abs(b.pc1*b.pc2)-Math.abs(a.pc1*a.pc2)).slice(0,5).map(r=>r.n);
+ const offs=[[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']];let k=0;
+ validPts.forEach(r=>{
+  const dim=hiC!=null&&r.cluster!==hiC,cx=xs(r.pc1),cy=ys(r.pc2);
+  s+=`<circle cx="${cx}" cy="${cy}" r="4" fill="${CCOL[(r.cluster-1)%6]}" fill-opacity="${dim?.12:.85}" style="cursor:pointer" data-n="${r.n}"><title>${r.n} (cluster ${r.cluster})</title></circle>`;
+  if(labPts.includes(r.n)&&!dim){const o=offs[k++%4];s+=`<text x="${cx+o[0]}" y="${cy+o[1]}" text-anchor="${o[2]}" style="font-size:11px;fill:var(--ink);paint-order:stroke fill;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round;pointer-events:none">${r.n.replace(' (China)','').replace(' (17 of 27)','')}</text>`}
+ });
+ $('plot').innerHTML=s+'</svg>';
+ $('plot').querySelectorAll('circle[data-n]').forEach(c=>c.addEventListener('click',()=>choose(c.dataset.n,true)));
+}
+
+// tabs
+function tab(t){
+ document.querySelectorAll('.pagetabs button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.t===t)));
+ view=t;const rk=t!=='clus';
+ $('p_ratio').classList.toggle('on',t==='ratio');$('p_clus').classList.toggle('on',t==='clus');$('p_rankhost').classList.toggle('on',rk);
+ if(rk)renderRank();else renderScatter();
+}
+document.querySelectorAll('.pagetabs button').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.t)));
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{renderBudget();view==='clus'?renderScatter():renderRank()},150)});
+renderBudget();renderClusters();renderLookup();tab('ratio');
+// Deep-link: auto-select country from URL hash (#sys=<encoded name>)
+(function(){var h=window.location.hash;if(h&&h.startsWith('#sys=')){var n=decodeURIComponent(h.slice(5));if(n)choose(n,false);}})();
+</script>
+</body>
+</html>

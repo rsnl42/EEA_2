@@ -60,7 +60,7 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 <li><strong>Richer schools report fewer problems too.</strong> The gap is about 9 to 10 percentage points on average, and it clearly favours richer schools in 40 to 45 of 89 countries, against only 2 or 3 the other way.</li>
 <li><strong>Raw device counts tell a different story.</strong> For computers, poorer schools are clearly ahead in 29 countries and richer schools in 17. Rural schools are clearly ahead in 28 countries and city schools in only 3. Because these are per-student counts, a small school can look well supplied without having more in total, and the OECD notes the pattern may partly reflect that.</li>
 <li><strong>Readiness to teach digitally leans towards richer and private schools.</strong> The average gap is modest (about 0.2 to 0.35 index points) but very consistent: richer schools clearly ahead in 47 of 90 countries versus 6 the other way, private schools in 48 of 79 versus 4.</li>
-<li><strong>Location matters least for quality.</strong> City vs rural gaps on shortages and poor quality are not statistically clear on average, and in 57 of 77 countries there's no clear difference at all.</li>
+<li><strong>Location matters least for quality.</strong> City vs rural gaps on shortages and poor quality are not statistically clear on average, and in %%LOC_NOCLEAR%% countries there's no clear difference on either measure.</li>
 <li><strong>Teacher connectivity is mixed.</strong> Average gaps are small or unclear, yet richer schools are clearly ahead in more countries than behind (32 vs 9 by socio-economic profile, 25 vs 12 by school type), while by location countries split 12 vs 11. E-readers are so rare that their gaps hardly matter.</li>
 </ul>
 <p class="note" style="margin:10px 0 0">"Clearly" means the difference is larger than sampling error would explain (about 95% confidence). Country counts come from testing each country separately.</p>
@@ -185,7 +185,7 @@ function renderSys(name){
   const nTested = r.n_tested !== undefined ? r.n_tested : (r.n_expected + r.n_flipped + r.n_flat);
   const nMiss = r.n_missing !== undefined ? r.n_missing : (21 - nTested);
   const missNote = nMiss > 0 ? ` (${nMiss} not reported / labelled M)` : '';
-  let h=`<p>${badgeFor(r.pattern)} &mdash; richer/city/private schools clearly ahead on ${r.n_expected} of ${nTested} measures tested${missNote}, poorer/rural/public schools clearly ahead on ${r.n_flipped}, and ${r.n_flat} show no clear gap.</p>`;
+  let h=`<p>${badgeFor(r.pattern)} &mdash; richer/city/private schools clearly ahead on ${r.n_expected} of ${nTested} measures tested${missNote}, poorer/rural/public schools clearly ahead on ${r.n_flipped}, and ${r.n_flat} show no clear gap${r.n_missing?`; ${r.n_missing} have no data`:''}.</p>`;
   h+='<table class="mini"><tr><td></td>'+DIMS.map(d=>`<td class="rl">${DIMLABEL[d]}</td>`).join('')+'</tr>';
   for(const t of TABLES){
     h+=`<tr><td class="rl">${t}</td>`;

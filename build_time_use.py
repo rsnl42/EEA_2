@@ -46,7 +46,8 @@ def build(xlsx=DEFAULT_XLSX, out=DOCS / "time-use" / "index.html") -> str:
 
     S = X.drop(ta.OECD_ROW)
     have = S.index[S[["Ls", "Lb", "Lw", "Es", "Eb", "Ew"]].notna().all(axis=1)]
-    rows = [{"n": n, **{k: clean(S.loc[n, k]) for k in KEEP}} for n in have]
+    all_systems = list(S.index)
+    rows = [{"n": n, **{k: clean(S.loc[n, k]) for k in KEEP}} for n in all_systems]
     oecd = {k: clean(X.loc[ta.OECD_ROW, k]) for k in KEEP}
     clus = [{"n": n, "cluster": int(r.cluster), "pc1": round(float(r.pc1), 2), "pc2": round(float(r.pc2), 2)}
             for n, r in res.iterrows()]
@@ -57,8 +58,8 @@ def build(xlsx=DEFAULT_XLSX, out=DOCS / "time-use" / "index.html") -> str:
     excl = ""
     if missing:
         who = "; ".join(html_escape(n) for n in missing)
-        excl = (f" {len(have)} of {len(S)} systems are covered: {who} has no time-use values in the "
-                f"OECD table, so it is absent everywhere on this page.")
+        excl = (f" {len(have)} of {len(S)} systems have full time-use data. {who} has no time-use "
+                f"figures in Table I.B1.4.21 (all items marked M in the country lookup).")
     stats = {"n": len(have), "oecd": oecd}
     html = fill(load_template("time_use.html"), {
         "ROWS": dump(rows), "OECD": dump(oecd), "CLUS": dump(clus), "PROF": dump(profs),
