@@ -161,7 +161,7 @@ function renderWeakTable(){
    <td>${f1(r.weak_abs_pct)}%</td>
    <td>${ITEMS[r.weak_rel] || r.weak_rel}</td>
    <td>${f2(r.weak_rel_z)}</td>
-   <td><span class="badge-tag" style="background:${CCOL[(r.cluster-1)%4]}22;color:${CCOL[(r.cluster-1)%4]}">Cluster ${r.cluster}</span></td>
+   <td>${r.cluster != null ? `<span class="badge-tag" style="background:${CCOL[(r.cluster-1)%4]}22;color:${CCOL[(r.cluster-1)%4]}">Cluster ${r.cluster}</span>` : `<span class="badge-tag" style="background:#f1f3f5;color:var(--sec);border:1px solid var(--line)" title="Missing curriculum fit item">Unclustered</span>`}</td>
   </tr>
  `).join('');
 }
@@ -173,16 +173,18 @@ function renderItemBars(sysName){
  const sys = ROWS.find(r => r.n === sysName) || ROWS[0];
  const html = itemKeys.map(k => {
   const oecdVal = OECD[k] || 0;
-  const sysVal = sys[k] || 0;
+  const sysVal = sys[k];
+  const isM = sysVal == null;
+  const displayVal = isM ? '<span style="color:var(--sec)">M (missing)</span>' : `<strong>${f1(sysVal)}%</strong>`;
   return `
    <div style="margin:10px 0">
     <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
      <span><strong>${ITEMS[k]}</strong></span>
-     <span>${sys.n}: <strong>${f1(sysVal)}%</strong> (OECD: ${f1(oecdVal)}%)</span>
+     <span>${sys.n}: ${displayVal} (OECD: <strong>${f1(oecdVal)}%</strong>)</span>
     </div>
     <div style="position:relative;background:var(--line);height:14px;border-radius:4px;overflow:hidden">
-     <div style="position:absolute;left:0;top:0;bottom:0;width:${Math.min(100,sysVal)}%;background:var(--hi);opacity:0.85"></div>
-     <div style="position:absolute;left:${Math.min(100,oecdVal)}%;top:0;bottom:0;width:2px;background:var(--ink)"></div>
+     ${isM ? '<div style="position:absolute;left:0;top:0;bottom:0;right:0;background:repeating-linear-gradient(45deg,transparent,transparent 5px,rgba(0,0,0,0.06) 5px,rgba(0,0,0,0.06) 10px)"></div>' : `<div style="position:absolute;left:0;top:0;bottom:0;width:${Math.min(100,sysVal)}%;background:var(--hi);opacity:0.85"></div>`}
+     <div style="position:absolute;left:${Math.min(100,oecdVal)}%;top:0;bottom:0;width:2px;background:var(--ink)" title="OECD average: ${f1(oecdVal)}%"></div>
     </div>
    </div>
   `;
@@ -204,7 +206,8 @@ $('cards').innerHTML = PROFILES.map((p, i) => `
 
 function renderClusterScatter(){
  const W = Math.max($('clusPlot').clientWidth, 340), H = 420, L = 44, R = 16, T = 10, B = 42;
- const xs_ = ROWS.map(r => r.pc1), ys_ = ROWS.map(r => r.pc2);
+ const validPts = ROWS.filter(r => r.pc1 != null && r.pc2 != null);
+ const xs_ = validPts.map(r => r.pc1), ys_ = validPts.map(r => r.pc2);
  let xlo = Math.min(...xs_), xhi = Math.max(...xs_), ylo = Math.min(...ys_), yhi = Math.max(...ys_);
  const xp = (xhi - xlo) * 0.08, yp = (yhi - ylo) * 0.08; xlo -= xp; xhi += xp; ylo -= yp; yhi += yp;
  const xs = v => L + (v - xlo) / (xhi - xlo) * (W - L - R);
@@ -217,11 +220,11 @@ function renderClusterScatter(){
  s += `<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" style="font-size:11px;fill:var(--sec)">PC2 (Teacher vs Device ratio)</text>`;
 
  const lab = new Set(selSys ? [selSys] : []);
- const labPts = ROWS.slice().sort((a,b) => Math.abs(b.pc1*b.pc2) - Math.abs(a.pc1*a.pc2)).slice(0,5).map(r=>r.n);
+ const labPts = validPts.slice().sort((a,b) => Math.abs(b.pc1*b.pc2) - Math.abs(a.pc1*a.pc2)).slice(0,5).map(r=>r.n);
  labPts.forEach(n => lab.add(n));
 
  const offs = [[8,-6,'start'],[-8,-6,'end'],[8,14,'start'],[-8,14,'end']]; let k = 0;
- ROWS.forEach(r => {
+ validPts.forEach(r => {
   const dim = selCluster != null && r.cluster !== selCluster;
   const on = r.n === selSys;
   const cx = xs(r.pc1), cy = ys(r.pc2);
@@ -239,7 +242,7 @@ function renderClusterScatter(){
  const p = selCluster ? PROFILES.find(p => p.cluster === selCluster) : null;
  $('clusSum').innerHTML = p
   ? `<strong>Cluster ${p.cluster}:</strong> ${p.label}. Average Science Score: ${p.science_mean}. Member systems (${p.n}): ${p.systems}.`
-  : `Showing all 91 systems across 4 capacity bottleneck clusters. Click an archetype card or system dot to inspect.`;
+  : `Showing 90 clustered systems (Sweden unclustered due to missing curriculum item in Table I.B1.4.14) across 4 capacity bottleneck archetypes. Click an archetype card or system dot to inspect.`;
 }
 
 document.querySelectorAll('.ccard').forEach(b => {
@@ -264,19 +267,28 @@ function chooseSys(n){
 function renderSys(){
  const r = ROWS.find(x => x.n === selSys);
  if(!r){ $('sysOut').innerHTML = '<p class="note">Select a system above or click a point on the scatterplot.</p>'; return; }
- const p = PROFILES.find(p => p.cluster === r.cluster);
- const rows = itemKeys.map(k => `
+ const p = r.cluster != null ? PROFILES.find(p => p.cluster === r.cluster) : null;
+ const rows = itemKeys.map(k => {
+  const isM = r[k] == null;
+  const valText = isM ? '<span style="color:var(--sec)">M (missing)</span>' : `<strong>${f1(r[k])}%</strong>`;
+  const diff = !isM && OECD[k] != null ? f1(r[k] - OECD[k]) + ' pp' : 'M';
+  return `
   <tr>
    <td>${ITEMS[k]}</td>
-   <td><strong>${f1(r[k])}%</strong></td>
+   <td>${valText}</td>
    <td>${f1(OECD[k])}%</td>
-   <td>${r[k] != null && OECD[k] != null ? f1(r[k] - OECD[k]) + ' pp' : 'n/a'}</td>
+   <td>${diff}</td>
   </tr>
- `).join('');
+ `;
+ }).join('');
+
+ const clusterDesc = r.cluster != null
+  ? `Assigned to <strong>Cluster ${r.cluster}</strong> (${p ? p.label : ''})`
+  : `<em>Unclustered (missing curriculum-fit item in PISA Table I.B1.4.14)</em>`;
 
  $('sysOut').innerHTML = `
   <h3>${r.n} Profile Overview</h3>
-  <p class="note">Assigned to <strong>Cluster ${r.cluster}</strong> (${p ? p.label : ''}). Science mean: <strong>${r.science || 'n/a'}</strong>. Absolute weakest capacity link: <strong>${ITEMS[r.weak_abs] || r.weak_abs} (${f1(r.weak_abs_pct)}%)</strong>.</p>
+  <p class="note">${clusterDesc}. Science mean: <strong>${r.science != null ? f1(r.science) : 'n/a'}</strong>. Absolute weakest capacity link: <strong>${ITEMS[r.weak_abs] || r.weak_abs} (${f1(r.weak_abs_pct)}%)</strong>.</p>
   <table class="sys">
    <thead><tr><th>Capacity Dimension</th><th>${r.n} %</th><th>OECD Average %</th><th>Difference</th></tr></thead>
    <tbody>${rows}</tbody>

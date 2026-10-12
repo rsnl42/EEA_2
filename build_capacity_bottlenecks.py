@@ -45,20 +45,21 @@ def build(xlsx: Path = DEFAULT_XLSX, out: Path = DOCS / "capacity-bottlenecks" /
     oecd_dict = {k: (round(float(oecd_row[k]), 1) if k in oecd_row and not pd.isna(oecd_row[k]) else None) for k in ITEMS} if oecd_row is not None else {}
 
     systems_list = []
-    for sys_name in clus_df["system"]:
-        if sys_name == "OECD average":
-            continue
+    all_systems = [s for s in weak_df["system"] if s != "OECD average"]
+    for sys_name in all_systems:
         it = items_map.loc[sys_name] if sys_name in items_map.index else {}
         wk = weak_map.loc[sys_name] if sys_name in weak_map.index else {}
         cl = clus_map.loc[sys_name] if sys_name in clus_map.index else {}
 
+        has_cluster = "cluster" in cl and not pd.isna(cl.get("cluster"))
+        sci_val = it.get("science") if not pd.isna(it.get("science")) else cl.get("science")
         rec = {
             "n": sys_name,
-            "cluster": int(cl.get("cluster", 1)),
-            "silhouette": round(float(cl.get("silhouette", 0)), 3),
-            "pc1": round(float(cl.get("pc1", 0)), 3),
-            "pc2": round(float(cl.get("pc2", 0)), 3),
-            "science": None if pd.isna(cl.get("science")) else round(float(cl.get("science")), 1),
+            "cluster": int(cl["cluster"]) if has_cluster else None,
+            "silhouette": round(float(cl["silhouette"]), 3) if has_cluster and not pd.isna(cl.get("silhouette")) else None,
+            "pc1": round(float(cl["pc1"]), 3) if has_cluster and not pd.isna(cl.get("pc1")) else None,
+            "pc2": round(float(cl["pc2"]), 3) if has_cluster and not pd.isna(cl.get("pc2")) else None,
+            "science": None if pd.isna(sci_val) else round(float(sci_val), 1),
             "weak_abs": str(wk.get("weakest_absolute", "")),
             "weak_abs_pct": round(float(wk.get("weakest_absolute_pct", 0)), 1) if not pd.isna(wk.get("weakest_absolute_pct")) else None,
             "weak_rel": str(wk.get("weakest_relative", "")),

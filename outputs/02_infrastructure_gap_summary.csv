@@ -1,22 +1,22 @@
 table,table_label,dimension,oecd_gap,oecd_favorability_gap,oecd_se,oecd_z,n_systems,n_sig_expected,n_sig_flipped,n_not_sig
-1,Computer availability,ses,-1.494,-1.494,0.248,-6.018,88,17,29,45
-1,Computer availability,location,-2.28,-2.28,0.383,-5.946,74,3,28,60
-1,Computer availability,type,0.306,0.306,0.293,1.044,73,30,8,53
-4,Tablet availability,ses,-0.61,-0.61,0.27,-2.257,87,13,14,64
-4,Tablet availability,location,-1.498,-1.498,0.328,-4.568,73,3,19,69
-4,Tablet availability,type,0.446,0.446,0.223,2.0,72,11,7,73
-5,E-book reader availability,ses,0.032,0.032,0.113,0.283,86,14,7,70
-5,E-book reader availability,location,-0.47,-0.47,0.238,-1.97,72,6,4,81
-5,E-book reader availability,type,0.318,0.318,0.115,2.764,71,7,13,71
-7,Lack of digital resources,ses,-8.644,8.644,1.228,-7.041,89,40,2,49
-7,Lack of digital resources,location,-1.363,1.363,1.842,-0.74,77,11,9,71
-7,Lack of digital resources,type,-12.224,12.224,1.213,-10.081,79,51,0,40
-8,Inadequate/poor-quality digital resources,ses,-10.058,10.058,1.234,-8.149,89,45,3,43
-8,Inadequate/poor-quality digital resources,location,-3.327,3.327,1.954,-1.703,77,12,8,71
-8,Inadequate/poor-quality digital resources,type,-12.362,12.362,1.461,-8.46,79,51,0,40
-11,Internet-connected computers for teachers,ses,-0.511,-0.511,0.531,-0.963,88,32,9,50
-11,Internet-connected computers for teachers,location,-3.032,-3.032,1.189,-2.55,75,12,11,68
-11,Internet-connected computers for teachers,type,-0.197,-0.197,0.339,-0.582,76,25,12,54
-15,Capacity to enhance teaching with digital devices,ses,0.24,0.24,0.028,8.517,90,47,6,38
-15,Capacity to enhance teaching with digital devices,location,0.032,0.032,0.046,0.697,78,17,5,69
-15,Capacity to enhance teaching with digital devices,type,0.348,0.348,0.039,9.021,79,48,4,39
+1,Computer availability,ses,-1.494,-1.494,0.248,-6.018,88,17,29,42
+1,Computer availability,location,-2.28,-2.28,0.383,-5.946,74,3,28,43
+1,Computer availability,type,0.306,0.306,0.293,1.044,73,30,8,35
+4,Tablet availability,ses,-0.61,-0.61,0.27,-2.257,87,13,14,60
+4,Tablet availability,location,-1.498,-1.498,0.328,-4.568,73,3,19,51
+4,Tablet availability,type,0.446,0.446,0.223,2.0,72,11,7,54
+5,E-book reader availability,ses,0.032,0.032,0.113,0.283,86,14,7,65
+5,E-book reader availability,location,-0.47,-0.47,0.238,-1.97,72,6,4,62
+5,E-book reader availability,type,0.318,0.318,0.115,2.764,71,7,13,51
+7,Lack of digital resources,ses,-8.644,8.644,1.228,-7.041,89,40,2,47
+7,Lack of digital resources,location,-1.363,1.363,1.842,-0.74,77,11,9,57
+7,Lack of digital resources,type,-12.224,12.224,1.213,-10.081,79,51,0,28
+8,Inadequate/poor-quality digital resources,ses,-10.058,10.058,1.234,-8.149,89,45,3,41
+8,Inadequate/poor-quality digital resources,location,-3.327,3.327,1.954,-1.703,77,12,8,57
+8,Inadequate/poor-quality digital resources,type,-12.362,12.362,1.461,-8.46,79,51,0,28
+11,Internet-connected computers for teachers,ses,-0.511,-0.511,0.531,-0.963,88,32,9,47
+11,Internet-connected computers for teachers,location,-3.032,-3.032,1.189,-2.55,75,12,11,52
+11,Internet-connected computers for teachers,type,-0.197,-0.197,0.339,-0.582,76,25,12,39
+15,Capacity to enhance teaching with digital devices,ses,0.24,0.24,0.028,8.517,90,47,6,37
+15,Capacity to enhance teaching with digital devices,location,0.032,0.032,0.046,0.697,78,17,5,56
+15,Capacity to enhance teaching with digital devices,type,0.348,0.348,0.039,9.021,79,48,4,27

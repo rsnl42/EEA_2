@@ -97,14 +97,23 @@ def extract(wb: Workbook) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 def build_scorecard(long_df: pd.DataFrame) -> pd.DataFrame:
     S = long_df[long_df.system != OECD_ROW].copy()
-    S["sign"] = np.select([S.sig & (S.favorability_gap > 0), S.sig & (S.favorability_gap < 0)], [1, -1], default=0)
+    conds = [
+        S.gap.isna(),
+        S.sig & (S.favorability_gap > 0),
+        S.sig & (S.favorability_gap < 0),
+    ]
+    choices = [np.nan, 1.0, -1.0]
+    S["sign"] = np.select(conds, choices, default=0.0)
     wide = S.pivot_table(index="system", columns=["dimension", "table_label"], values="sign", aggfunc="first")
     wide.columns = [f"{dim}:{lbl}" for dim, lbl in wide.columns]
 
     counts = S.groupby("system")["sign"].agg(
-        n_expected=lambda s: (s == 1).sum(), n_flipped=lambda s: (s == -1).sum(),
+        n_expected=lambda s: (s == 1).sum(),
+        n_flipped=lambda s: (s == -1).sum(),
         n_flat=lambda s: (s == 0).sum(),
+        n_missing=lambda s: s.isna().sum(),
     )
+    counts["n_tested"] = counts.n_expected + counts.n_flipped + counts.n_flat
     counts["n_scored"] = counts.n_expected + counts.n_flipped
     counts["share_flipped"] = (counts.n_flipped / counts.n_scored).where(counts.n_scored > 0)
 

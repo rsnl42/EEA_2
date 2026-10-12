@@ -60,7 +60,7 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 <li><strong>Richer schools report fewer problems too.</strong> The gap is about 9 to 10 percentage points on average, and it clearly favours richer schools in 40 to 45 of 89 countries, against only 2 or 3 the other way.</li>
 <li><strong>Raw device counts tell a different story.</strong> For computers, poorer schools are clearly ahead in 29 countries and richer schools in 17. Rural schools are clearly ahead in 28 countries and city schools in only 3. Because these are per-student counts, a small school can look well supplied without having more in total, and the OECD notes the pattern may partly reflect that.</li>
 <li><strong>Readiness to teach digitally leans towards richer and private schools.</strong> The average gap is modest (about 0.2 to 0.35 index points) but very consistent: richer schools clearly ahead in 47 of 90 countries versus 6 the other way, private schools in 48 of 79 versus 4.</li>
-<li><strong>Location matters least for quality.</strong> City vs rural gaps on shortages and poor quality are not statistically clear on average, and in 71 of 77 countries there's no clear difference at all.</li>
+<li><strong>Location matters least for quality.</strong> City vs rural gaps on shortages and poor quality are not statistically clear on average, and in 57 of 77 countries there's no clear difference at all.</li>
 <li><strong>Teacher connectivity is mixed.</strong> Average gaps are small or unclear, yet richer schools are clearly ahead in more countries than behind (32 vs 9 by socio-economic profile, 25 vs 12 by school type), while by location countries split 12 vs 11. E-readers are so rare that their gaps hardly matter.</li>
 </ul>
 <p class="note" style="margin:10px 0 0">"Clearly" means the difference is larger than sampling error would explain (about 95% confidence). Country counts come from testing each country separately.</p>
@@ -76,7 +76,7 @@ table.rank td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--lin
 <div class="card">
 <h2 style="margin-bottom:8px">Pick a country to see its full picture</h2>
 <div class="tabs"><label for="pick">Country</label><select id="pick"></select></div>
-<p class="note" id="legend" style="margin:8px 0"><span class="mcell" style="background:#2461a8;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Richer/city/private schools clearly ahead &nbsp; <span class="mcell" style="background:#c0453f;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Poorer/rural/public schools clearly ahead &nbsp; <span class="mcell" style="background:#e3e7ec;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> No clear gap</p>
+<p class="note" id="legend" style="margin:8px 0"><span class="mcell" style="background:#2461a8;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Richer/city/private schools clearly ahead &nbsp; <span class="mcell" style="background:#c0453f;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> Poorer/rural/public schools clearly ahead &nbsp; <span class="mcell" style="background:#e3e7ec;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle"></span> No clear gap &nbsp; <span class="mcell" style="background:#f1f3f5;color:#64748b;border:1px solid #cbd5e1;display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;text-align:center;font-size:10px;line-height:12px;font-weight:600">M</span> Missing / not reported</p>
 <div id="sysOut"></div>
 </div>
 </section>
@@ -165,8 +165,9 @@ function renderGrid(){
 
 // ---------- Rank ----------
 function renderRank(){
-  const rows=Object.entries(SCORE).filter(([n,r])=>r.n_scored>=3).sort((a,b)=>b[1].share_flipped-a[1].share_flipped);
-  const top=rows.slice(0,10),bottom=rows.slice(-10).reverse();
+  const rows=Object.entries(SCORE).filter(([n,r])=>r.n_scored>=3).sort((a,b)=>b[1].share_flipped-a[1].share_flipped || b[1].n_flipped-a[1].n_flipped);
+  const bottomRows=Object.entries(SCORE).filter(([n,r])=>r.n_scored>=3).sort((a,b)=>a[1].share_flipped-b[1].share_flipped || b[1].n_expected-a[1].n_expected);
+  const top=rows.slice(0,10),bottom=bottomRows.slice(0,10);
   const row=([n,r])=>`<tr><td>${short(n)}</td><td>${r.n_expected}</td><td>${r.n_flipped}</td><td>${(r.share_flipped*100).toFixed(0)}%</td><td>${badgeFor(r.pattern)}</td></tr>`;
   const hdr='<tr><th>Country</th><th>Richer ahead</th><th>Poorer ahead</th><th>Share poorer-ahead</th><th></th></tr>';
   $('rankOut').innerHTML=`<p class="note" style="margin:4px 0 8px">Most likely to buck the usual pattern &mdash; poorer schools ahead on most of what's measurable:</p>
@@ -181,16 +182,22 @@ function renderSys(name){
   const o=$('sysOut');
   if(!name){o.innerHTML='<p class="note">Choose a country above to see which way each of its 21 gaps runs.</p>';return}
   const r=SCORE[name];
-  let h=`<p>${badgeFor(r.pattern)} &mdash; richer/city/private schools clearly ahead on ${r.n_expected} of ${r.n_expected+r.n_flipped+r.n_flat} measures we could test, poorer/rural/public schools clearly ahead on ${r.n_flipped}, and ${r.n_flat} show no clear gap.</p>`;
+  const nTested = r.n_tested !== undefined ? r.n_tested : (r.n_expected + r.n_flipped + r.n_flat);
+  const nMiss = r.n_missing !== undefined ? r.n_missing : (21 - nTested);
+  const missNote = nMiss > 0 ? ` (${nMiss} not reported / labelled M)` : '';
+  let h=`<p>${badgeFor(r.pattern)} &mdash; richer/city/private schools clearly ahead on ${r.n_expected} of ${nTested} measures tested${missNote}, poorer/rural/public schools clearly ahead on ${r.n_flipped}, and ${r.n_flat} show no clear gap.</p>`;
   h+='<table class="mini"><tr><td></td>'+DIMS.map(d=>`<td class="rl">${DIMLABEL[d]}</td>`).join('')+'</tr>';
   for(const t of TABLES){
     h+=`<tr><td class="rl">${t}</td>`;
     for(const d of DIMS){
       const v=r[d+':'+t];
-      const bg=v===1?'#2461a8':v===-1?'#c0453f':'#e3e7ec';
-      const sym=v===1?'R':v===-1?'P':'\u2013';
-      const words=v===1?DIMWORDS[d][0]+' clearly ahead':v===-1?DIMWORDS[d][1]+' clearly ahead':'no clear gap';
-      h+=`<td><div class="mcell" style="background:${bg};color:#fff" title="${t}, ${DIMLABEL[d]}: ${words}">${sym}</div></td>`;
+      const isM=v==null;
+      const bg=isM?'#f1f3f5':v===1?'#2461a8':v===-1?'#c0453f':'#e3e7ec';
+      const col=isM?'#64748b':'#fff';
+      const sym=isM?'M':v===1?'R':v===-1?'P':'\u2013';
+      const border=isM?'border:1px solid #cbd5e1;line-height:24px;':'';
+      const words=isM?'data missing or not reported (M)':v===1?DIMWORDS[d][0]+' clearly ahead':v===-1?DIMWORDS[d][1]+' clearly ahead':'no clear gap';
+      h+=`<td><div class="mcell" style="background:${bg};color:${col};${border}" title="${t}, ${DIMLABEL[d]}: ${words}">${sym}</div></td>`;
     }
     h+='</tr>';
   }

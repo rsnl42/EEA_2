@@ -57,7 +57,8 @@ def build(xlsx: Path, out: Path) -> str:
     dim_cols = [c for c in scorecard.columns if ":" in c]
     for name, row in scorecard.iterrows():
         entry = {"n_expected": int(row.n_expected), "n_flipped": int(row.n_flipped),
-                  "n_flat": int(row.n_flat), "n_scored": int(row.n_scored),
+                  "n_flat": int(row.n_flat), "n_missing": int(row.n_missing),
+                  "n_tested": int(row.n_tested), "n_scored": int(row.n_scored),
                   "share_flipped": None if isna(row.share_flipped) else round(float(row.share_flipped), 3),
                   "pattern": row.pattern}
         for c in dim_cols:
